@@ -1,62 +1,87 @@
-# Collatz R♯ / RL Research Archive
+# Collatz R♯ / RL Research Repository
 
-This repository houses the historical research bundles, verification scripts, and session state ledgers for the **Collatz R♯ / RL** program investigating nontrivial cycles in the Collatz (`3n + 1`) dynamical system.
-
----
-
-## Current Authoritative Research State
-
-The current authoritative incoming research state is **RL64** (2026-08-24):
-
-- **Authoritative Handover Bundle**: [`authoritative/RL64/RL64_Full_Phase_Recovery_and_All_Word_Cylinder_Selector_2026-08-24.zip`](file:///authoritative/RL64/RL64_Full_Phase_Recovery_and_All_Word_Cylinder_Selector_2026-08-24.zip)
-- **Matching Sidecar**: [`authoritative/RL64/RL64_Full_Phase_Recovery_and_All_Word_Cylinder_Selector_2026-08-24.zip.sha256`](file:///authoritative/RL64/RL64_Full_Phase_Recovery_and_All_Word_Cylinder_Selector_2026-08-24.zip.sha256)
-- **Authoritative State Ledger**: [`RL64_SESSION_STATE_AND_KICKOFF_2026-08-24.md`](file:///RL64_SESSION_STATE_AND_KICKOFF_2026-08-24.md)
-- **Current State Summary**: [`CURRENT_RESEARCH_STATE.md`](file:///CURRENT_RESEARCH_STATE.md)
-- **Gate A Status**: **Open** (*"Gate A remains open"*). No result in RL64 proves Gate A, Gate B, RL closure, nontrivial-cycle exclusion, or the Collatz conjecture.
+This repository houses the research bundles, mathematical proofs, verification code, and session-state ledgers for the **Collatz R♯ / RL** research program investigating nontrivial cycles in the Collatz (`3n + 1`) dynamical system.
 
 ---
 
-## Repository Structure & Navigation
+## Repository Structure & Architecture
+
+The repository is organized into three primary tiers:
 
 ```text
-/
-├── README.md                          # Repository overview & navigation guide (this file)
-├── CURRENT_RESEARCH_STATE.md          # Pointer to current authoritative research state (RL64)
-├── RESEARCH_INDEX.md                  # Comprehensive chronological index across all RL sessions
-├── RL64_SESSION_STATE_AND_KICKOFF_... # Authoritative RL64 state ledger
-│
-├── authoritative/                     # Verified convenience copies of latest authoritative bundles
-│   └── RL64/                          # Current authoritative RL64 ZIP + .sha256 sidecar
-│
-├── sessions/                          # Searchable extracted mirrors of historical RL iterations
-│   ├── RL00/                          # Pre-RL Odometer / Packet Potential Handover
-│   ├── RL02/                          # Suffix Obstruction & XiProbe
-│   ├── RL05/                          # Seed & Ancestors RL3/RL4
-│   ├── RL07/                          # Handover & Ancestor RL6
-│   ├── ...
-│   ├── RL63/                          # Even Exit Selector & Ownership Target
-│   └── RL64/                          # Full Phase Recovery & All-Word Cylinder Selector
-│
-└── Archive/                           # Immutable historical ZIP archives, sidecars, and standalone notes
+.
+├── authoritative/   # Current authoritative three-file research handover
+├── sessions/        # Frozen, searchable historical session mirrors (RL00, RL01, ...)
+└── Archive/         # Original immutable historical ZIP bundles and sidecars
 ```
+
+### 1. Current Authoritative Handover (`authoritative/`)
+
+The [`authoritative/`](authoritative/) directory contains the **sole, current authoritative three-file research handover** for the ongoing investigation:
+
+1. **Session Bundle (`.zip`)**: The primary archive containing all current mathematical theorems, verifiers, test runners, and certificates.
+2. **Sidecar Checksum (`.zip.sha256`)**: The SHA-256 sidecar verifying the integrity of the ZIP bundle.
+3. **Session State & Kickoff Ledger (`.md`)**: The Markdown ledger summarizing proven theorems, open gates, active invariants, dependency trees, and the kickoff prompt for the next research phase.
+
+Any new research session begins directly from the three files present in `authoritative/`.
+
+### 2. Searchable Historical Sessions (`sessions/`)
+
+The [`sessions/`](sessions/) directory contains extracted, searchable mirrors of historical research iterations (`sessions/RL00/`, `sessions/RL01/`, etc.):
+
+- Provides full-text and GitHub code search over historical mathematical notes, verifiers (`.py`, `.cpp`, `.sh`), and test outputs.
+- Contains a `SOURCE_BUNDLE.md` in each session directory documenting the source archive, SHA-256 hashes, sidecar verification status, and git provenance.
+- Serves as the long-term historical archive when handovers are rotated out of `authoritative/`.
+
+> [!IMPORTANT]
+> **Provenance Precedence**: Extracted session directories are convenience and search mirrors. When mathematical provenance or exact byte integrity matters, the canonical ZIP archives, their `.sha256` sidecars, internal checksum manifests (`SHA256SUMS.txt`), and verifier logs take precedence.
+
+### 3. Canonical Historical Archives (`Archive/`)
+
+The [`Archive/`](Archive/) directory contains original, immutable historical `.zip` handover bundles, standalone research notes, and historical SHA-256 sidecars. These files are permanent records of the research trajectory and are preserved without modification.
 
 ---
 
-## Architecture & Provenance Rules
+## Session Rollover Procedure
 
-### 1. Canonical Archives (`Archive/` and root bundles)
-All original `.zip` handover bundles and their corresponding `.sha256` sidecars are **immutable archival artifacts**. Their byte contents and sidecars are never modified, rewritten, or regenerated.
+When an RL research session finishes and produces a new three-file handover, the handover transition is self-contained:
 
-### 2. Searchable Extracted Mirrors (`sessions/`)
-To enable full-text and GitHub code search across historical mathematical proofs, theorem statements, and verifiers, all historical handover bundles have been extracted into predictable session directories under `sessions/RLXX/`. Each session directory contains:
-- The extracted source files (`.py`, `.cpp`, `.sh`, `.md`, certificates, logs);
-- A `SOURCE_BUNDLE.md` documenting exact source archive paths, SHA-256 hashes, sidecar validation results, and Git commit provenance.
+### 1. Before Rollover
 
-> [!IMPORTANT]
-> **Extracted session directories are convenience/search mirrors.** When provenance matters, the corresponding ZIP, `.sha256` sidecar, internal checksum manifest (`SHA256SUMS.txt`), and verifier results take precedence.
+`authoritative/` holds the previous session's three files:
 
-### 3. Authoritative Pointer (`authoritative/` & `CURRENT_RESEARCH_STATE.md`)
-The `authoritative/` directory provides a verified convenience pointer to the current latest handover bundle. Downstream research sessions should verify the authoritative sidecar and internal checksum manifest before trusting workspace files.
+```text
+authoritative/
+├── PREVIOUS_SESSION.zip
+├── PREVIOUS_SESSION.zip.sha256
+└── PREVIOUS_SESSION_STATE_AND_KICKOFF.md
+```
 
-### 4. Complete Research Index (`RESEARCH_INDEX.md`)
-For a complete chronological index of all research iterations from RL00 through RL64, see [`RESEARCH_INDEX.md`](file:///RESEARCH_INDEX.md).
+### 2. Archiving the Previous Handover
+
+Move the previous three authoritative files into the corresponding historical session directory:
+
+```bash
+mkdir -p sessions/RLXX/handover
+mv authoritative/* sessions/RLXX/handover/
+```
+
+*(where `RLXX` is the session identifier being archived)*
+
+### 3. Installing the New Handover
+
+Place the newly completed session's three authoritative files directly into `authoritative/`:
+
+```text
+authoritative/
+├── NEW_SESSION.zip
+├── NEW_SESSION.zip.sha256
+└── NEW_SESSION_STATE_AND_KICKOFF.md
+```
+
+### 4. Zero Repository-Wide Dependencies
+
+Because `authoritative/` is the sole designated handover location:
+- No `README.md`, index, pointer file, or top-level status document requires updating between sessions.
+- No dynamic pointer files or symlinks are maintained.
+- Downstream agents or researchers simply inspect `authoritative/` to resume work.
