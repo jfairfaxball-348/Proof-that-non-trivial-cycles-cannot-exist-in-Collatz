@@ -1,0 +1,153 @@
+{
+  "contract_id": "G10.RULES.v1.0",
+  "title": "Standard Chess Legal-Play State and Semantics Contract",
+  "date_frozen": "2026-08-11",
+  "authority": {
+    "primary": "FIDE Laws of Chess taking effect from 1 January 2023, current in the FIDE Handbook when checked 2026-08-11",
+    "scope_note": "This contract formalizes the adversarial board-game/legal-play semantics needed for a weak solution. Tournament administration, clocks, conduct penalties, resignation and bilateral draw offers are not core graph actions. Claimable draws are core actions; automatic draws are core terminals.",
+    "historical_project_authority": [
+      "G9_G10_Onwards_Long_Range_Plan.docx",
+      "G9_Road_to_100_Assessment.docx",
+      "G8_Certificate_Engine_and_Reascent_Final_Technical_Handoff.docx"
+    ]
+  },
+  "outcomes": [
+    "WHITE_WIN",
+    "DRAW",
+    "BLACK_WIN"
+  ],
+  "state_schema": {
+    "board64": {
+      "type": "string",
+      "length": 64,
+      "alphabet": ".PNBRQKpnbrqk",
+      "order": "a1,b1,...,h1,a2,...,h8",
+      "meaning": "Piece placement only; piece identities beyond type/colour are not state."
+    },
+    "turn": {
+      "enum": [
+        "w",
+        "b"
+      ]
+    },
+    "castling_rights": {
+      "type": "set",
+      "members": [
+        "K",
+        "Q",
+        "k",
+        "q"
+      ],
+      "meaning": "Persistent historical rights. Rights are monotone: once lost they never return. A true right requires the corresponding king and rook to occupy their standard home squares."
+    },
+    "ep_effective": {
+      "type": [
+        "square",
+        "null"
+      ],
+      "meaning": "En-passant target is retained only if at least one en-passant capture is legal in the current position. A merely nominal/pseudo-legal target that cannot be legally captured is canonicalized to null."
+    },
+    "halfmove_clock": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum_active": 149,
+      "meaning": "Number of halfmoves since the last pawn move or capture. A legal non-resetting move increments it by one. Pawn move or capture resets it to zero."
+    },
+    "rep_counts": {
+      "type": "sorted_map",
+      "key": "raw canonical repetition key bytes",
+      "value": "integer 1..4 in every active state",
+      "meaning": "Occurrence counts since the most recent repetition barrier. Hashes may address keys on disk, but semantic identity is the raw canonical key; hash collision cannot define equality."
+    }
+  },
+  "repetition_key": {
+    "fields": [
+      "board64",
+      "turn",
+      "castling_rights",
+      "ep_effective"
+    ],
+    "excludes": [
+      "halfmove_clock",
+      "rep_counts"
+    ],
+    "rationale": "This captures the FIDE same-position test: same side to move, same piece placement, same move possibilities, with castling and en-passant rights handled explicitly."
+  },
+  "full_state_identity": {
+    "fields": [
+      "board64",
+      "turn",
+      "castling_rights",
+      "ep_effective",
+      "halfmove_clock",
+      "rep_counts"
+    ],
+    "note": "Full state identity is history-sensitive. Two identical boards can be different game states because claimability/automatic-draw futures differ."
+  },
+  "repetition_barrier": {
+    "trigger_if_move_is_any_of": [
+      "pawn_move",
+      "capture",
+      "permanent_castling_rights_reduction"
+    ],
+    "effect": "After the move, discard all earlier repetition counts and set rep_counts to {successor_repetition_key: 1}.",
+    "proof_obligation": "Earlier repetition keys cannot recur after a barrier: pawn progress is monotone, captures reduce total piece count, and castling rights are monotone decreasing."
+  },
+  "actions": {
+    "board_move": "Any legal move under standard chess movement, check, promotion, castling and en-passant rules.",
+    "claim_threefold_now": "Available if the current repetition key has occurred at least three times.",
+    "claim_threefold_by_move": "Available by naming a legal intended move whose resulting repetition key would be at least the third occurrence. The claim terminates the game as a draw before the move is executed.",
+    "claim_fifty_now": "Available if halfmove_clock >= 100.",
+    "claim_fifty_by_move": "Available by naming a legal intended non-pawn, non-capture move that would make halfmove_clock >= 100. The claim terminates the game as a draw before the move is executed."
+  },
+  "automatic_terminals": {
+    "checkmate": "Immediate win for the player who delivered mate.",
+    "stalemate": "Immediate draw.",
+    "dead_position": "Immediate draw iff no legal sequence from the position can ever reach checkmate by either player. Insufficient-material heuristics are not an exact substitute.",
+    "fivefold_repetition": "Immediate draw when the current repetition key reaches occurrence count 5.",
+    "seventy_five_move": "Immediate draw when halfmove_clock reaches 150, except that checkmate delivered by that move takes precedence."
+  },
+  "post_move_terminal_precedence": [
+    "checkmate",
+    "stalemate",
+    "dead_position",
+    "fivefold_repetition",
+    "seventy_five_move",
+    "otherwise_active"
+  ],
+  "reachability_typing": {
+    "LOCAL_ADMISSIBLE": "Satisfies the declared local/state invariants and legal-move semantics; may be historically unreachable from the standard initial position.",
+    "START_REACHABLE": "There exists a legal full-state path from the standard initial state under this contract.",
+    "rule": "Backward/arena truth may be certified over LOCAL_ADMISSIBLE states. It can enter a final initial-position proof only at a full-state entry reached from an already START_REACHABLE parent, or with an explicit reachability certificate."
+  },
+  "core_graph_exclusions": {
+    "draw_by_agreement": "Bilateral and therefore not a unilateral forced non-loss resource against an adversarial opponent; excluded from the core graph without changing the existence of a forced White non-loss strategy.",
+    "resignation": "Voluntary concession; excluded because a non-losing strategy never needs to resign.",
+    "clock_forfeit_and_tournament_sanctions": "Depend on event-specific time controls/administration rather than the abstract legal-play game graph; outside the weak-solution theorem declared here."
+  },
+  "active_state_invariants": [
+    "exactly one white king and one black king",
+    "side-to-move position is not already checkmate or stalemate",
+    "position is not dead",
+    "current repetition occurrence is less than 5",
+    "halfmove_clock is less than 150",
+    "ep_effective is null unless a legal en-passant capture exists",
+    "castling rights are consistent with king/rook home-square occupancy",
+    "rep_counts contains the current repetition key with positive count",
+    "every rep_counts value is at most 4"
+  ],
+  "serialization": {
+    "semantic_form": "Length-prefixed UTF-8 fields in the full_state_identity order; castling rights sorted KQkq; rep_counts sorted lexicographically by raw repetition-key bytes.",
+    "transport_digest": "SHA-256 of semantic_form may be used for content addressing, but equality must be confirmed against canonical bytes on any digest collision."
+  },
+  "versioning": {
+    "breaking_change": "Any change to state identity, claimability, terminal precedence, reachability typing or move legality increments the major contract version and invalidates unqualified truth hashes.",
+    "nonbreaking_change": "Serialization container or implementation optimization that preserves canonical semantic bytes and transition relation may increment a minor implementation version."
+  },
+  "derived_lemmas": {
+    "G10-L1_HISTORY_BARRIER": "After a pawn move, capture, or permanent castling-right reduction, no repetition key from before that move can ever recur. Therefore all earlier repetition counts may be discarded exactly.",
+    "G10-L2_COUNT_SUFFICIENCY": "Within one barrier epoch, threefold/fivefold semantics depend only on the occurrence count of each repetition key, not the order in which those keys occurred. A sorted count map is therefore a semantics-preserving quotient of the ordered trace.",
+    "G10-L3_ACTIVE_COUNT_BOUND": "No active state can contain a repetition-key count above 4, because the fifth occurrence is an automatic draw terminal.",
+    "G10-L4_HISTORY_FINITE": "The history component is finite: between pawn moves/captures the 75-move rule terminates by 150 halfmoves, and castling-right reductions only shorten repetition epochs. Thus an active repetition-count map needs at most the keys encountered within the bounded current epoch."
+  }
+}
