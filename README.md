@@ -62,3 +62,13 @@ Notation and specialised terminology are defined within the relevant session doc
 This repository should be read as a **research record**, not as a claim that the Collatz conjecture has been proved.
 
 The purpose is to develop, test, verify, reject, and combine possible mathematical routes while retaining a traceable record of what has and has not been established.
+
+## Research provenance
+
+This project uses AI-assisted mathematical exploration, drafting, code generation, verification, and research-state management. Mathematical claims are classified according to their proof or verification status rather than being treated as established because they were generated or reviewed by an AI system.
+
+## Licensing and citation
+
+Unless otherwise noted, source code and verification scripts are licensed under the MIT License, while mathematical research notes, documentation, reports, diagrams, and other non-code written material are licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0). See [`LICENSE.md`](LICENSE.md) for the licensing overview.
+
+Citation metadata is provided in [`CITATION.cff`](CITATION.cff). Contributions and corrections are described in [`CONTRIBUTING.md`](CONTRIBUTING.md).
