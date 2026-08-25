@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use or discuss this research repository, please cite it using the metadata below."
+authors:
+  - family-names: "Fairfax-Ball"
+    given-names: "John"
+title: "Collatz / 3n+1 Research Repository"
+type: software
+repository-code: "https://github.com/jfairfaxball-348/Proof-that-non-trivial-cycles-cannot-exist-in-Collatz"
+license: "MIT AND CC-BY-4.0"
