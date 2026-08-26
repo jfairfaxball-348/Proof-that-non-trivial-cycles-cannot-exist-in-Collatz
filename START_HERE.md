@@ -2,7 +2,7 @@
 
 This is an exploratory Collatz research record, not a proof claim. The repository is the only authoritative research-state carrier; worker conversations are disposable.
 
-The current incoming state is [authoritative/](authoritative/), presently **RL111**. Begin with the extracted [RL111 start-here file](authoritative/RL111_Owned_Sparse_Support_Selection_2026-08-26/START_HERE.md), then read `RL110_SPARSE_DIAMETER_BASELINE_AND_SUPPORT_SELECTION_BARRIER_2026-08-26.md` and `RL111_OWNED_SPARSE_SUPPORT_SELECTION_TARGET.md`. The complete verified handover is the RL111 ZIP and sidecar in `authoritative/`. Do not begin mathematics until the start gate in [AGENTS.md](AGENTS.md) has passed.
+The current incoming state is [authoritative/](authoritative/), presently **RL112 — New Attacks Priority**. Begin with the extracted [RL112 start-here file](authoritative/RL112_New_Attacks_Priority_2026-08-26/START_HERE.md), then read `RL111_TO_RL112_FREEZE_AND_FULL_AUDIT.md`, `RL112_NEW_ATTACKS_PRIORITY_TARGET.md`, and the canonical lemma/result registry. The complete verified handover is the RL112 ZIP and sidecar in `authoritative/`. Do not begin mathematics until the start gate in [AGENTS.md](AGENTS.md) has passed.
 
 Process documentation:
 
