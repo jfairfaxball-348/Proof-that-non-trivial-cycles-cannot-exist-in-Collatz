@@ -43,6 +43,9 @@ ENV/
 # Logs
 *.log
 
+# Local RL research scratch space and resumable, non-authoritative checkpoints
+.rl-work/
+
 # Local environment / secrets
 .env
 .env.*

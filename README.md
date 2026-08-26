@@ -4,6 +4,8 @@ This repository contains an ongoing mathematical research project investigating 
 
 The project is exploratory research rather than a published proof.
 
+For the current incoming handover and the worker-independent RL process, begin at [`START_HERE.md`](START_HERE.md).
+
 ## What is in this repository?
 
 The work is organised as a sequence of research sessions. Each session may contain some combination of:
