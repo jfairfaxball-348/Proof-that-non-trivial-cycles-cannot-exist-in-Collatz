@@ -47,10 +47,12 @@ def state():
         raise Failure("authoritative/ is missing")
     files = [p for p in AUTH.rglob("*") if p.is_file()]
     numbers = [int(m.group(1)) for p in files for m in re.finditer(r"RL(\d+)", p.name, re.I)]
-    targets = sorted(AUTH.glob("*TARGET*.md"))
+    # Authoritative handovers are extracted below one package directory; the
+    # target is therefore nested rather than a top-level authority file.
+    targets = sorted(AUTH.rglob("*TARGET*.md"))
     bundles = sorted(AUTH.glob("*.zip"))
     if not numbers or len(targets) != 1 or len(bundles) != 1:
-        raise Failure("expected one top-level target, one bundle, and an RL number in authoritative/")
+        raise Failure("expected one target, one bundle, and an RL number in authoritative/")
     return {
         "base_head": git("rev-parse", "HEAD").strip(),
         "current_rl": max(numbers),
