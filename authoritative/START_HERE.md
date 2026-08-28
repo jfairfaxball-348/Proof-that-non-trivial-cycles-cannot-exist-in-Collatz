@@ -1,5 +1,5 @@
-# RL164 authoritative handover
+# RL165 authoritative handover
 
-Read `RL164_ARC_CONTENT_OVERLAP_BARRIER_2026-08-28.md`, then run `python3 verify_rl164_report.py .`. The next target is `RL165_NONLOCAL_ARC_OWNERSHIP_TARGET.md`.
+Read `RL165_SHALLOW_PHASE_PAIR_NONFORCING_2026-08-28.md`, then run `python3 verify_rl165_report.py .`. The next target is `RL166_PHASE_DISTRIBUTION_OWNERSHIP_TARGET.md`.
 
-This package freezes a branch-specific non-consumption barrier, not an exclusion theorem.
+This package records a local-grammar barrier only, not a Collatz cycle or exclusion.
