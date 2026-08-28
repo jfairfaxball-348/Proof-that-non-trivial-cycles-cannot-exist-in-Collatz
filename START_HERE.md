@@ -2,9 +2,9 @@
 
 This is an exploratory Collatz research record, not a proof claim. The repository is the only authoritative research-state carrier; worker conversations are disposable.
 
-The current incoming state is [authoritative/](authoritative/), presently the **RL141 closeout / RL142 kickoff**. Begin with the extracted RL141 start-here file and its session state, report, completion review, and RL142 target. The complete verified handover includes the lossless bundle transport in `authoritative/RL141_BUNDLE_TRANSPORT/`. Do not begin mathematics until the start gate in [AGENTS.md](AGENTS.md) has passed.
+The current incoming state is [authoritative/](authoritative/), presently the **RL142 closeout / RL143 kickoff**. Begin with the extracted RL142 start-here file and its session state, report, completion review, and RL143 target. The complete verified handover includes the lossless bundle transport in `authoritative/RL142_BUNDLE_TRANSPORT/`. Do not begin mathematics until the start gate in [AGENTS.md](AGENTS.md) has passed.
 
-Frozen scope entering RL142 is unchanged. RL141 excludes bounded non-wrapping consecutive height-one contact interfaces using full affine ownership; no multiplicity, frontier, or global gate changes.
+Frozen scope entering RL143 is unchanged. RL142 excludes bounded cyclic consecutive height-one contact interfaces using full affine ownership; no multiplicity, frontier, or global gate changes.
 
 Process documentation:
 
