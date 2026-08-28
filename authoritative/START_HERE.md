@@ -1,5 +1,5 @@
-# RL163 authoritative handover
+# RL164 authoritative handover
 
-Read `RL163_PHASE_STEP_PHYSICAL_ARC_LIFT_2026-08-28.md` first. Run `python3 verify_rl163_report.py .` from this directory. The next target is `RL164_PHASE_ARC_CONTENT_TARGET.md`.
+Read `RL164_ARC_CONTENT_OVERLAP_BARRIER_2026-08-28.md`, then run `python3 verify_rl164_report.py .`. The next target is `RL165_NONLOCAL_ARC_OWNERSHIP_TARGET.md`.
 
-This package records a branch-specific physical identity, not a cycle exclusion or global Collatz result.
+This package freezes a branch-specific non-consumption barrier, not an exclusion theorem.
