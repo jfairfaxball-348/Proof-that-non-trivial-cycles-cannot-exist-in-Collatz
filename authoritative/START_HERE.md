@@ -1,8 +1,5 @@
-# RL162 — start here
+# RL163 authoritative handover
 
-RL162 closes one precise ordered bridge: chronological physical runs do not
-control phase-residue boundary sparsity after full-modulus phase compression.
-It does not exclude a non-trivial cycle.
+Read `RL163_PHASE_STEP_PHYSICAL_ARC_LIFT_2026-08-28.md` first. Run `python3 verify_rl163_report.py .` from this directory. The next target is `RL164_PHASE_ARC_CONTENT_TARGET.md`.
 
-Run `python3 verify_rl162_report.py .`, then read the session state before
-starting RL163.
+This package records a branch-specific physical identity, not a cycle exclusion or global Collatz result.
