@@ -2,9 +2,9 @@
 
 This is an exploratory Collatz research record, not a proof claim. The repository is the only authoritative research-state carrier; worker conversations are disposable.
 
-The current incoming state is [authoritative/](authoritative/), presently the **RL143 closeout / RL144 kickoff**. Begin with the extracted RL143 start-here file and its session state, report, completion review, and RL144 target. The complete verified handover includes the lossless bundle transport in `authoritative/RL143_BUNDLE_TRANSPORT/`. Do not begin mathematics until the start gate in [AGENTS.md](AGENTS.md) has passed.
+The current incoming state is [authoritative/](authoritative/), presently the **RL144 repair closeout / RL145 kickoff**. Begin with the extracted RL144 start-here file, then read the correction/demotion ledger, report, session state, completion review, and RL145 target. The complete verified handover includes the lossless bundle transport in `authoritative/RL144_BUNDLE_TRANSPORT/`. Do not begin mathematics until the start gate in [AGENTS.md](AGENTS.md) has passed.
 
-Frozen scope entering RL144: RL143 excludes the height-one full-count branch only for the certified multiplicity interval `303,279,262,681..771,316,334,039`, using the inherited RL123 CRT run fibres and RL137 least-state ceiling. Smaller multiplicities, mixed-height paths, negative defects, full multiplicity/frontier exclusion, global RL closure, and Collatz remain open.
+Frozen scope entering RL145: the RL143 height-one multiplicity-interval exclusion is **demoted/retracted** because it identified the RL123 boundary count `C_(2,1)` with the larger window count `O_2`. RL144 proves height-one ordinary odd runs have length at most four and replaces the invalid lower bound by `W >= (162/13)(g(2L-A)-3)`. That repaired floor does not contradict the favorable carried state/width ceiling anywhere in the inherited one-defect range. No multiplicity, Gate A/B, global nontrivial-cycle exclusion, or Collatz closure is claimed.
 
 Process documentation:
 
