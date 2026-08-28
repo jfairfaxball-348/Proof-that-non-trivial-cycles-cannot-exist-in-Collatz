@@ -9,7 +9,7 @@ python3 tools/rl_conveyor.py init-checkpoint
 python3 tools/rl_conveyor.py check-snapshot .rl-work/RL102/authoritative-snapshot.json
 ```
 
-`status` discovers the current incoming RL from the actual `authoritative/` convention. `verify-incoming` verifies the outer SHA-256 sidecar, fresh-unpacks the bundle, verifies its internal SHA-256 manifest, and runs portable `verification/verify_*.py` checks. It fails closed if the current convention is ambiguous or incomplete.
+`status` discovers the current incoming RL from the actual `authoritative/` convention. `verify-incoming` verifies the outer SHA-256 sidecar, fresh-unpacks the bundle, verifies its internal SHA-256 manifest, and runs portable `verification/verify_*.py` checks. When a handover stores its ZIP through the documented lossless Base64 transport instead of as a top-level ZIP, it first verifies every transport part and reconstructs the archive only in a temporary directory. It fails closed if the convention is ambiguous or incomplete.
 
 `init-checkpoint` is the only write-capable command. It creates ignored `.rl-work/RL<current>/CHECKPOINT.md`, `STATE.json`, `commands.log`, `artifacts/`, and the start snapshot. Refresh these records at material milestones; record partial scans as **NOT PROMOTED** with their exact uncovered range.
 

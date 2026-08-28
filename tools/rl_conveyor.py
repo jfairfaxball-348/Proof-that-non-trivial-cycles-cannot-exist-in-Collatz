@@ -2,6 +2,7 @@
 """Fail-closed, non-promoting utilities for the RL research conveyor."""
 
 import argparse
+import base64
 import hashlib
 import json
 import re
@@ -51,13 +52,35 @@ def state():
     # target is therefore nested rather than a top-level authority file.
     targets = sorted(AUTH.rglob("*TARGET*.md"))
     bundles = sorted(AUTH.glob("*.zip"))
-    if not numbers or len(targets) != 1 or len(bundles) != 1:
-        raise Failure("expected one target, one bundle, and an RL number in authoritative/")
+    sidecars = sorted(AUTH.glob("*.zip.sha256"))
+    if not numbers or len(targets) != 1 or len(sidecars) != 1:
+        raise Failure("expected one target, one bundle sidecar, and an RL number in authoritative/")
+    outer = read_sums(sidecars[0])
+    if len(outer) != 1:
+        raise Failure("outer sidecar must contain exactly one checksum")
+    expected_name = safe(outer[0][1]).as_posix()
+    if expected_name != Path(expected_name).name:
+        raise Failure("outer sidecar must name a top-level ZIP")
+    if len(bundles) == 1 and bundles[0].name == expected_name:
+        bundle = bundles[0]
+        transport = None
+    elif not bundles:
+        transports = sorted(
+            path for path in AUTH.glob("*_BUNDLE_TRANSPORT")
+            if path.is_dir() and (path / "PART_SHA256SUMS.txt").is_file()
+        )
+        if len(transports) != 1:
+            raise Failure("expected one physical ZIP or one reconstructible bundle transport")
+        bundle = AUTH / expected_name
+        transport = transports[0]
+    else:
+        raise Failure("bundle files are ambiguous or do not match the outer sidecar")
     return {
         "base_head": git("rev-parse", "HEAD").strip(),
         "current_rl": max(numbers),
         "target": targets[0].relative_to(ROOT).as_posix(),
-        "bundle": bundles[0].relative_to(ROOT).as_posix(),
+        "bundle": bundle.relative_to(ROOT).as_posix(),
+        "bundle_transport": transport.relative_to(ROOT).as_posix() if transport else None,
         "working_tree_clean": not bool(git("status", "--porcelain", "--untracked-files=all").strip()),
     }
 
@@ -97,13 +120,35 @@ def verify_incoming():
     if len(sidecars) != 1 or sidecars[0].name != bundle.name + ".sha256":
         raise Failure("bundle sidecar is missing or ambiguous")
     outer = read_sums(sidecars[0])
-    if len(outer) != 1 or safe(outer[0][1]).as_posix() != bundle.name or digest(bundle) != outer[0][0]:
+    if len(outer) != 1 or safe(outer[0][1]).as_posix() != bundle.name:
         raise Failure("outer SHA-256 sidecar mismatch")
-    with zipfile.ZipFile(bundle) as archive, tempfile.TemporaryDirectory(prefix="rl-fresh-") as temp:
-        for name in archive.namelist():
-            if name.rstrip("/"):
-                safe(name.rstrip("/"))
-        archive.extractall(temp)
+    with tempfile.TemporaryDirectory(prefix="rl-fresh-") as temp:
+        if bundle.is_file():
+            checked_bundle = bundle
+        else:
+            transport = ROOT / (incoming["bundle_transport"] or "")
+            records = read_sums(transport / "PART_SHA256SUMS.txt")
+            parts = []
+            for expected, name in records:
+                part = transport / safe(name)
+                if not part.is_file() or digest(part) != expected:
+                    raise Failure("bundle transport part mismatch: " + name)
+                parts.append(part)
+            if not parts:
+                raise Failure("bundle transport has no parts")
+            try:
+                raw = base64.b64decode("".join(part.read_text(encoding="utf-8").strip() for part in parts), validate=True)
+            except ValueError as error:
+                raise Failure("bundle transport Base64 decode failed: %s" % error)
+            checked_bundle = Path(temp) / bundle.name
+            checked_bundle.write_bytes(raw)
+        if digest(checked_bundle) != outer[0][0]:
+            raise Failure("outer SHA-256 sidecar mismatch")
+        with zipfile.ZipFile(checked_bundle) as archive:
+            for name in archive.namelist():
+                if name.rstrip("/"):
+                    safe(name.rstrip("/"))
+            archive.extractall(temp)
         manifests = list(Path(temp).rglob("SHA256SUMS.txt"))
         if len(manifests) != 1:
             raise Failure("fresh unpack needs exactly one SHA256SUMS.txt")
