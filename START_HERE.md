@@ -2,9 +2,9 @@
 
 This is an exploratory Collatz research record, not a proof claim. The repository is the only authoritative research-state carrier; worker conversations are disposable.
 
-The current incoming state is [authoritative/](authoritative/), presently the **RL147 closeout / RL148 kickoff**. Begin with the extracted RL147 start-here file, then read the correction/demotion ledger, report, completion review, session state, open frontier, and RL148 target. The complete verified handover includes the lossless bundle transport in `authoritative/RL147_BUNDLE_TRANSPORT/`. Do not begin mathematics until the start gate in [AGENTS.md](AGENTS.md) has passed.
+The current incoming state is [authoritative/](authoritative/), presently the **RL148 closeout / RL149 kickoff**. Begin with the extracted RL148 start-here file, then read the correction/demotion ledger, report, completion review, session state, open frontier, and RL149 target. The complete verified handover includes the lossless bundle transport in `authoritative/RL148_BUNDLE_TRANSPORT/`. Do not begin mathematics until the start gate in [AGENTS.md](AGENTS.md) has passed.
 
-Frozen scope entering RL148: RL147 proves an exact combined carry identity for bounded nonnegative height, but shows the RL146 strict-order carry mechanism does not lift through simple binary layering. The live target is genuine negative defect. This does **not** close mixed height, `g=1`, negative-defect configurations, Gate A/B globally, all non-trivial cycles, or the Collatz conjecture.
+Frozen scope entering RL149: RL148 proves a factor-four exact-depth packing refinement for isolated negative-defect entries in the inherited RL136 range. The live target is an owned connection between realised excursion depth and global structure. This does **not** close mixed height, `g=1`, negative-defect configurations, Gate A/B globally, all non-trivial cycles, or the Collatz conjecture.
 
 Process documentation:
 
