@@ -1,97 +1,43 @@
 # Repository knowledge index
 
-This directory is the deterministic locator layer between the current
-`authoritative/` generation and immutable historical evidence. It contains no
-new mathematics and does not replace the RL conveyor.
+This directory is a deterministic lookup acceleration layer between current `authoritative/` and historical evidence. It contains no mathematics and does not replace the RL conveyor.
 
-Use the single public command surface:
+## Authority status
 
-```sh
-python3 tools/rl_conveyor.py startup
-python3 tools/rl_conveyor.py session RL174
-python3 tools/rl_conveyor.py result 'RL175.4'
-python3 tools/rl_conveyor.py index-validate
-```
+The catalogue is **non-authoritative cache data**.
 
-Open an exact returned source for full provenance. Do not recursively search
-all of `sessions/`, `Archive/`, bundles, transports, or certificate payloads
-during ordinary startup.
+- `authoritative/` remains the sole incoming mathematical state.
+- A missing or stale catalogue does not block startup, research, or a numbered RL promotion.
+- Catalogue absence is never evidence that a mathematical result, correction, session, or certificate does not exist.
+- Do not hand-edit generated catalogue files.
 
-## Historical convention
-
-`sessions/RL<n>/` is a stable container label, not a universal completed-RL
-identifier. Layouts vary: a container may hold a same-labelled completed
-generation, the preceding completed generation that launched incoming
-`RL<n>`, several explicit `from_RLx_to_RLy` transitions, or cumulative
-inherited material. Historical paths must not be renamed to make the layout
-look uniform.
-
-The catalogue therefore keeps these concepts separate:
-
-- physical container path and label;
-- one or more generation roots;
-- completed and incoming RL identifiers only when explicit metadata records
-  them;
-- embedded-only locators when an old RL label exists only inside a cumulative
-  package;
-- all role paths as arrays;
-- predecessor/successor relationships derived only from explicit transition
-  pairs;
-- deterministic SHA-256 identities of the indexed source generation and its
-  container.
-
-Null fields and `ambiguities` are deliberate. They are safer than guessing.
+This rule exists so both shell-based Codex and cloud ChatGPT workers can run the complete RL conveyor without environment handoffs.
 
 ## Generated files
 
-- `session_catalog.jsonl` contains one record per mechanically identified
-  transition plus unresolved or embedded locators. It records entry points,
-  reports, handovers, targets, proof/correction ledgers, verifier and
-  certificate locations, bundles, sidecars, manifests, archive provenance,
-  relationships, and source identities.
-- `result_catalog.jsonl` contains conservative locators extracted only from
-  designated proof/status, correction/demotion, and session-state sources.
-  It stores exact source lines, aliases, and verbatim classifications where
-  the source explicitly encodes one.
-- `index_metadata.json` records schemas, counts, coverage, and content hashes.
+- `session_catalog.jsonl` — historical generation/session locators.
+- `result_catalog.jsonl` — conservative locators extracted from designated proof/status and correction sources.
+- `index_metadata.json` — schema/count/hash metadata.
 
-The result catalogue does not infer truth, falsity, supersession, scope, or
-claim-specific verifier coverage. A verifier or certificate root returned
-with a result is a session-level candidate unless the canonical source itself
-links it. Conflicting records are returned together and are never
-adjudicated. Absence of a dedicated correction ledger means only that no such
-ledger was indexed, not that no correction exists.
-
-These three files are generated. Do not edit them by hand.
+The catalogue does not infer truth, falsity, supersession, scope, or claim-specific verifier coverage. Open the canonical source for full provenance.
 
 ## Maintenance
 
-After a future verified RL closeout has assembled the final frozen session and
-replacement authority, but before the atomic commit, run:
+When a repository shell is available, regenerate deterministically with:
 
 ```sh
 python3 tools/rl_conveyor.py index-build
 python3 tools/rl_conveyor.py index-validate
 ```
 
-Run `index-validate` again after the commit/read-back. Generation is sorted,
-timestamp-free, and requires no semantic summary, so identical repository
-state produces byte-identical indexes. Validation rebuilds the expected bytes
-in memory and fails closed on a missing or stale generated file. It also
-checks that root `START_HERE.md` remains a timeless pointer to the startup
-command and current authoritative entry point rather than duplicating an RL
-number.
+A shell worker should normally refresh after a closeout when practical. A connector/cloud worker may defer regeneration and leave the tracked catalogue at its previous known generation. Such a transition must report catalogue status as `stale/deferred`, but the RL closeout remains complete if all mathematical, packaging, atomic Git, push, and readback gates pass.
 
-## Search policy
+A later dedicated infrastructure commit or shell-capable session may refresh the index without consuming an RL number.
 
-The tracked `.rgignore` keeps normal `rg` searches on the live and operational
-surface. After an index query, open or search the exact returned path. Use
-`rg --no-ignore` only for a named dependency, verifier failure, apparent
-conflict, stop-and-repair reconstruction, or an explicitly requested
-historical/global audit.
+## Historical convention and search policy
 
-ZIP contents, inherited trees, bundle transports, logs, and certificate
-payloads are packaging or deep provenance surfaces. Search them only when the
-exact indexed source is insufficient. Historical duplicate files and OS
-metadata are preserved because removal offers negligible lookup benefit and
-stable paths retain provenance.
+Historical container names are not universal completed-RL identifiers; preserve existing paths and explicit provenance.
+
+Prefer exact catalogue-returned paths when the catalogue is current enough. If it is stale for the needed generation, use a narrowly targeted repository lookup. Do not recursively search all `sessions/`, `Archive/`, bundle contents, transports, or certificate payloads unless an explicit dependency or audit requires it.
+
+The index is an optimisation for speed, never a safety barrier that can strand an otherwise verified RL.
