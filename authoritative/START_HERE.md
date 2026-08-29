@@ -1,5 +1,5 @@
-# RL169 start here
+# RL170 start here
 
-Read `RL169_ORDERED_CHAIN_GAP_CAPACITY_BARRIER_2026-08-29.md`, run
-`python3 verify_rl169_report.py .`, then begin
-`RL170_NONCHAIN_ORDER_PERMUTATION_TARGET.md`.
+Read `RL170_ORDER_PERMUTATION_BUDGET_BARRIER_2026-08-29.md`, run
+`python3 verify_rl170_report.py .`, then begin
+`RL171_ARITHMETIC_RANK_POSITION_TARGET.md`.
