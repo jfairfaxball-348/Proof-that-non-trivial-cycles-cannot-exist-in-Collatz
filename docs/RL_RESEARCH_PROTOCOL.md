@@ -10,4 +10,12 @@ Work only in `.rl-work/RL<current>/`. Checkpoint meaningful exact batches, candi
 
 Keep analytic theorems, exact certificates, inherited certificates, evidence, conjectures, barriers, demotions, and obligations distinct. Preserve the incoming scope and named red teams. On any integrity failure, contradiction, scope error, range gap, failed red team, or invalidated floor, stop ordinary work and repair from the last sound frontier.
 
+## Reserved closeout phase
+
+A worker must preserve enough remaining context/compute/tool capacity to finish the repository transaction. When capacity is estimable, reserve roughly the final 15–20% for closeout; otherwise stop conservatively once continued exploration could threaten a clean promotion. Stabilizing one more marginal result is less important than leaving one complete, auditable RL generation.
+
+An explicit user request to **finish**, **finish up**, **close out**, **close session**, **make the handover**, or **commit/push** enters `CLOSEOUT_LOCK` immediately. The worker may also enter it proactively when the closeout reserve is reached. Once locked, new mathematics, scans, historical audits, and opportunistic improvements stop. Create `.rl-work/RL<current>/CLOSEOUT_STATE.md` as a compact context-compression record and execute only the verify/package/promote/push/post-check sequence in `docs/CLOSEOUT_LOCK.md`.
+
+A failure during closeout permits only the smallest necessary stop-and-repair, followed by a direct return to closeout. Closeout is complete only after the intended remote branch/ref points at the new atomic transition commit and the committed `sessions/` and `authoritative/` paths have been read back successfully.
+
 Only a completed and independently verified handover can become an atomic transition. No partial research commit is allowed.
