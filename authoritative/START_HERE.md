@@ -1,4 +1,4 @@
-# RL172 start here
+# RL173 start here
 
-Read the RL172 barrier report, run `python3 verify_rl172_report.py .`, then
-begin `RL173_NEW_PHYSICAL_TRANSPORT_TARGET.md`.
+Read the RL173 report, run `python3 verify_rl173_report.py .`, then begin
+`RL174_PHYSICAL_GAP_TARGET.md`.
