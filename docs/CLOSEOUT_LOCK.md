@@ -1,47 +1,85 @@
-# Closeout lock and reserved completion budget
+# CLOSEOUT_LOCK and reserved completion budget
 
-This document defines the compact closeout discipline used by both ChatGPT and Codex workers. `AGENTS.md` remains the binding operational contract.
+`AGENTS.md` is binding. This document is the canonical detailed procedure for entering and remaining in `CLOSEOUT_LOCK`. Load it when the lock is triggered; it is not ordinary startup material.
 
-## Why this exists
+## Purpose
 
-An RL session is not complete merely because the mathematics is complete. Packaging, checksum creation, fresh-unpack verification, atomic repository promotion, branch/ref advancement, and post-commit sanity checking are part of the job. A worker must therefore preserve enough remaining context, compute, and tool budget to finish those deterministic steps.
+An incoming RL job is not complete when research stops. Classification, candidate freezing, packaging, checksums, fresh-unpack verification, atomic repository promotion, remote-ref advancement, and post-commit readback are part of the same transaction. A worker must retain enough context, compute, and tool capacity to finish them safely.
 
 ## Closeout reserve
 
-Treat the final roughly 15–20% of a session's usable context/compute/tool capacity as a **closeout reserve** when that capacity can be estimated. If it cannot be estimated reliably, use judgement conservatively: after a meaningful promoted result or verifier milestone, stop further exploration once continuing could put a clean closeout at risk. A marginal extra lemma is lower priority than a complete, auditable repository transition.
+When usable capacity can be estimated, reserve approximately the final 15–20% for closeout. When it cannot, act conservatively: after a meaningful result or verifier milestone, stop further exploration once continuing could endanger a clean transition.
 
-As soon as the promoted result is stable, create or refresh `.rl-work/RL<current>/CLOSEOUT_STATE.md`. It should be a compact context-compression checkpoint containing at least:
+Do not launch a marginal lemma, scan, audit, or long computation at the expense of a complete handover. As soon as the promoted result is stable, prepare the compact closeout state below.
 
-- `BASE_HEAD` and authoritative snapshot identity;
-- current RL and next RL numbers;
-- promoted results and any correction/demotion;
-- candidate file paths and hashes/blob identities;
-- verifier/red-team/fresh-unpack status;
-- any active stop-and-repair issue;
-- the exact remaining closeout operations;
-- the expected commit message and target branch/ref.
-
-Once this file is sufficient, earlier conversational or scratch context is non-load-bearing for closeout.
-
-## CLOSEOUT_LOCK triggers
+## Lock triggers
 
 Enter `CLOSEOUT_LOCK` immediately when either:
 
-- the user says words to the effect of **finish**, **finish up**, **close out**, **close session**, **make the handover**, **commit/push**, or otherwise explicitly asks to end/promote the RL job; or
+- the user says words to the effect of **finish**, **finish up**, **close out**, **close session**, **make the handover**, **handover**, **commit/push**, or otherwise explicitly asks to end or promote the incoming RL; or
 - the worker judges that the closeout reserve has been reached and delaying closeout risks an incomplete transition.
 
-Only an explicit user instruction to resume mathematical research should unlock a session before successful promotion.
+Only an explicit user instruction to resume mathematical research may unlock the job before successful promotion. A verifier, packaging, catalogue, Git, or push problem does not unlock it.
+
+## Compact closeout state
+
+Create or refresh:
+
+`.rl-work/RL<incoming_rl>/CLOSEOUT_STATE.md`
+
+It must be sufficient to finish without conversational memory. Record at least:
+
+- `BASE_HEAD`;
+- authoritative snapshot path and hash/tree identity;
+- incoming RL, handover generation, and intended successor RL;
+- exact target being closed;
+- promoted results with their recorded classifications and scope;
+- corrections/demotions, or an explicit statement that there are none;
+- barriers, failed routes, dependencies, and remaining open obligations;
+- candidate root and every candidate path needed for promotion;
+- candidate file hashes or Git blob identities;
+- exact certificate ranges and coverage status;
+- verifier and red-team commands already run, with results;
+- bundle, sidecar, internal-manifest, and fresh-unpack status;
+- catalogue build/validation status;
+- any active repair issue, classified as mechanical or mathematical;
+- exact remaining deterministic operations;
+- intended completed-session path and successor-authority paths;
+- expected commit message, target branch/ref, and remote;
+- outstanding processes, if any.
+
+Once this record and the candidate handover are complete, earlier scratch discussion is non-load-bearing.
 
 ## Behaviour while locked
 
 While `CLOSEOUT_LOCK` is active:
 
-1. **Do not begin new mathematics, scans, historical audits, route exploration, or opportunistic improvements.**
-2. Do not recursively reread frozen history merely to regain context. Use `CLOSEOUT_STATE.md`, the candidate handover, and the current authoritative snapshot.
-3. Execute only the deterministic closeout sequence: freeze/classify → red teams/verifiers → bundle/sidecar → clean fresh unpack → manifest/fast suite → snapshot check → atomic Git transition → push/ref update → post-commit sanity check.
-4. If a closeout check exposes a genuine error, enter the smallest necessary stop-and-repair, fix only the invalid dependency, rebuild/reverify the candidate, then return directly to `CLOSEOUT_LOCK`. Do not reopen the sustained attack.
-5. Packaging or hash mismatches are closeout defects, not invitations to resume research.
-6. Prefer one atomic Git transition. Where direct Git-object tooling exists, constructing the final tree/commit and moving the branch ref once is preferred to a chain of per-file commits. With ordinary local Git, stage the complete transition, inspect it, create one commit, and push it.
-7. Closeout is not complete until the target remote branch/ref points at the new commit and a post-commit read confirms both the frozen `sessions/RL.../` generation and the new `authoritative/` generation.
+1. Start no new mathematics, scans, historical audits, route exploration, or opportunistic improvements.
+2. Do not recursively reread frozen history to regain context. Use `CLOSEOUT_STATE.md`, the candidate handover, the current authoritative snapshot, and exact catalogue-returned sources.
+3. Do not alter `authoritative/` or `sessions/` until the pre-promotion verification gate has passed.
+4. Execute only the deterministic path:
+   candidate freeze/classification → required red teams/verifiers → bundle/sidecar → clean fresh unpack → manifest/fast suite → snapshot check → final-tree catalogue build/validation → atomic Git transition → push/ref update → post-commit readback.
+5. Treat packaging, hash, transport, catalogue, and path mismatches as mechanical closeout defects, not invitations to reopen research or alter proof classification.
+6. If a check exposes a genuine proof-state error, identify the first invalid dependency and make the smallest explicit correction/demotion necessary for a valid candidate.
+7. After either kind of repair, rebuild and reverify, then return directly to the locked path.
+8. Prefer one atomic Git transition. With ordinary Git, assemble and inspect the complete tree, stage it once, commit once, push, and read the ref back. Direct Git-object tooling is acceptable when it preserves the same atomic invariant.
+9. Do not amend a published RL commit or combine multiple numbered transitions.
+10. Do not call the job complete until the intended remote branch/ref points at the new commit and committed `sessions/` plus `authoritative/` have been read back.
 
-If the transition cannot be completed safely, follow the interruption rule: make no partial research-state promotion, leave the last committed authority as truth, and record the exact resume point.
+## Verification handoff
+
+After `CLOSEOUT_STATE.md` shows that the result is frozen and only deterministic work remains, follow `docs/VERIFICATION_AND_CLOSEOUT.md` in order. Do not interleave optional improvements or restart the sustained attack.
+
+The candidate remains under `.rl-work/` until the complete pre-promotion gate passes. A local bundle, verifier success, staged tree, or local commit alone is not authority.
+
+## Failure or interruption
+
+If the transition cannot be completed safely:
+
+- terminate or account for outstanding processes;
+- preserve the candidate and refresh `CLOSEOUT_STATE.md`;
+- leave the last committed authority as truth;
+- make no partial research-state promotion;
+- report the exact completed checks, first failing check, last valid checkpoint, and exact resume operation.
+
+If a local commit exists but has not reached the intended remote ref, report it as an incomplete closeout, not an authoritative transition. Do not begin the successor RL.

@@ -1,533 +1,77 @@
-# AGENTS.md — RL Research Conveyor Protocol
+# AGENTS.md — binding RL conveyor contract
 
-## Purpose
+## Purpose and authority
 
-This repository is a long-running mathematical research project organised as a sequence of numbered RL research jobs.
+The repository, not conversation or model memory, carries this numbered mathematical research state:
 
-The repository, not any ChatGPT or Codex conversation, is the authoritative carrier of project state.
+`authoritative/` → one RL job → verified freeze in `sessions/RL.../` + successor `authoritative/`
 
-A model session is only a worker. It may be ChatGPT, Codex, or another compatible environment. No important proof state may depend on conversational memory.
+**Incoming RL** is the job worked now; **handover generation** produced current authority; **successor RL** exists only after promotion. Each transition is a separate auditable commit.
 
-The core operating model is a conveyor belt:
+Authority order is:
 
-`authoritative/` → work one RL job → verify/freeze → `sessions/RL.../` + new `authoritative/` → next RL job
+1. direct user instruction;
+2. this file and nested `AGENTS.md`;
+3. current `authoritative/`;
+4. its proof-state, correction/demotion, and verification ledgers;
+5. frozen `sessions/` and `Archive/`, only when needed;
+6. conversation or memory.
 
-A single long Codex run may complete several RL jobs, but every RL job remains an independent, auditable transaction with its own handover and commit.
+`authoritative/` is the sole incoming mathematical state. `sessions/` and `Archive/` are history, not startup material. Scratch belongs only under ignored `.rl-work/RL<incoming_rl>/`. If inherited sources conflict, enter stop-and-repair and preserve the pointers.
 
----
+## Mathematical integrity and verification economy
 
-## 1. Repository state model
+Preserve the recorded distinction between analytic proof, exact finite certificate, inherited certificate, evidence, conjecture, barrier/dead route, correction/demotion, and open obligation. Definitions are in `docs/PROOF_STATE_CLASSIFICATIONS.md`.
 
-Use the repository's existing path names and conventions. In particular:
+Never promote evidence or incomplete coverage to theorem/certificate, a branch result to a global result, or silently strengthen scope, repair, demote, or reinterpret a claim. A finite elimination or successful branch cannot by itself close a global Gate, all nontrivial cycles, or the Collatz conjecture. Preserve every handover scope qualification and named red team.
 
-- `authoritative/` contains the **single current incoming RL state** from which new research is allowed to proceed.
-- `sessions/` contains frozen completed RL session states using the repository's established numbering/layout.
-- `Archive/` contains older historical material according to the repository's existing archival convention.
-- `.rl-work/` is the preferred **local, non-authoritative working/checkpoint area** for Codex research. It must be gitignored.
-- Existing repository documentation, verifier scripts, manifests, ledgers, naming conventions, and handover conventions take precedence over invented replacements unless a user explicitly requests a migration.
+After the current checksum, internal manifest, clean fresh unpack, and fast suite pass, accept the frozen incoming ledgers under **verification economy**. Rerun expensive history only for an unresolved live dependency, current failure, genuine contradiction, required repair, or explicit handover instruction.
 
-Do not treat an old session file, old chat, old Codex transcript, or unverified scratch result as current proof state merely because it exists.
+## Mandatory start gate
 
----
+Before mathematics, run from the repository root:
 
-## 2. Authority hierarchy
+```sh
+python3 tools/rl_conveyor.py startup
+python3 tools/rl_conveyor.py verify-incoming
+```
 
-For mathematical/research work, use this priority order:
+After `verify-incoming` passes, run `python3 tools/rl_conveyor.py init-checkpoint`.
 
-1. direct user instruction for the current task;
-2. this `AGENTS.md` and any more specific nested `AGENTS.md`;
-3. current files in `authoritative/`;
-4. current proof-state / correction-demotion / verification ledgers carried by the authoritative handover;
-5. frozen completed material in `sessions/` and `Archive/`, consulted only when needed;
-6. model memory or conversational history.
+Together these identify the target/ledgers/red teams, record `BASE_HEAD` and the authoritative snapshot, check tracked state, and verify sidecar, manifest, fresh unpack, and fast suite. Read root `START_HERE.md`, then the current read set emitted by `startup`. Query history only for needed provenance.
 
-If two inherited claims conflict, do not choose silently. Trigger stop-and-repair and record the conflict.
+If the gate fails, do not start ordinary research or mutate authority to make it pass. Follow stop-and-repair. Command details: `docs/CODEX_OPERATIONS.md`.
 
----
+## Research, Git, and interruption
 
-## 3. Non-negotiable proof-state classifications
+Keep all work under `.rl-work/RL<incoming_rl>/`. Checkpoint material results and long-work boundaries. Mark partial computation **NOT PROMOTED** with its exact uncovered range; it is never gap-free coverage.
 
-Preserve explicit distinctions between at least:
+Continue adjacent productive work only while verification and a complete closeout remain safe. Preserve closeout capacity. During research, do not stage outputs, create a research-state commit, move authority into sessions, replace authority, push partial state, amend published history, or mix unrelated cleanup into the transition.
 
-- proved analytic mathematics;
-- exact finite certificates;
-- externally inherited certificates;
-- computational evidence;
-- conjectures;
-- method barriers / dead routes;
-- repaired or demoted claims;
-- open obligations.
+If interrupted, account for processes, refresh the ignored checkpoint, leave authority/sessions unchanged, make no research-state commit, and report the last verified checkpoint plus unpromoted remainder.
 
-Do not promote evidence to theorem.
+Research/checkpoint/compute/reporting procedure: `docs/RL_RESEARCH_PROTOCOL.md`. State transitions: `docs/RL_STATE_MACHINE.md`.
 
-Do not promote a branch-specific exclusion to a global theorem.
+## Stop-and-repair
 
-Do not silently strengthen scope.
+Stop on any integrity/verifier failure, inherited contradiction, scope error, failed required red team, certificate range gap, invalidated live bound, incomplete work used as complete, or unexplained `BASE_HEAD` mismatch.
 
-Do not silently repair an inherited statement. Record repairs/demotions explicitly.
+Freeze the last valid frontier and identify the first invalid dependency. A mathematical correction/demotion is only for invalid proof state; checksum, packaging, transport, catalogue, or path defects are mechanical and do not alone change classification. Do not promote until the complete gate passes.
 
-Any claim of global Gate closure, RL/nontrivial-cycle exclusion, or Collatz closure requires the actual inherited proof obligations to be discharged. Never infer such closure merely from a large finite elimination or a successful branch computation.
+## CLOSEOUT_LOCK and promotion
 
----
+Reserve enough capacity for classification, packaging, clean verification, atomic promotion, push, and readback—approximately the final 15–20% when estimable. Enter **`CLOSEOUT_LOCK` immediately** when the user asks to finish, close, hand over, commit/push, end/promote the RL, or when delay risks incomplete closeout.
 
-## 4. Verification economy
+Once locked, stop mathematics, scans, historical audits, route exploration, and optional improvements. Use refreshed `CLOSEOUT_STATE.md`, the candidate, and the snapshot. Only explicit user instruction to resume mathematics may unlock the job.
 
-Apply the repository's verification-economy rule.
+Read `docs/CLOSEOUT_LOCK.md`, then execute `docs/VERIFICATION_AND_CLOSEOUT.md` without interleaved research. Failure permits only the minimum repair and a direct return to closeout.
 
-After the current authoritative bundle checksum, internal manifest, supplied fresh-unpack verification, and current fast verifier suite pass, accept the frozen incoming proof-state ledger as the authoritative inherited state.
+Promotion is one coherent transaction: freeze the completed incoming generation under the established sessions convention, replace authority with only the verified successor, inspect the full tree, create one RL commit, advance the intended remote ref, and read back both frozen session and new authority. A partial/local-only commit is not completion. Never combine numbered transitions; start another only after readback and a fresh start gate.
 
-Do **not** recursively rerun historical expensive certificates unless at least one of these occurs:
+## Portability and infrastructure
 
-- a new argument depends on an unresolved historical definition or certificate;
-- a current verifier fails;
-- a genuine apparent contradiction appears;
-- a stop-and-repair event requires historical reconstruction;
-- the authoritative handover explicitly requires the rerun.
+Every handover must carry all load-bearing definitions, constants, scope, obligations, corrections, provenance, verifiers, and target for a worker with no conversation history.
 
-Spend compute primarily on the live mathematical obstruction.
+Do not alter this protocol, repository architecture, verifier framework, or authority/session lifecycle during mathematical research. Infrastructure changes require an explicit dedicated task, consume no RL number, and must not mix with a mathematical promotion.
 
----
-
-## 5. Sustained attack rule
-
-An RL job should be manageable and auditable, but a successful theorem, scan chunk, endpoint elimination, support change, or local milestone is a **checkpoint**, not automatically a close trigger.
-
-Continue the live attack through adjacent productive steps while:
-
-- the route remains mathematically useful;
-- verification remains reliable;
-- compute/context/credit pressure is not threatening correctness;
-- no stop-and-repair event has occurred.
-
-For a long Codex macro-session, additional capacity should normally increase **the number of complete RL jobs processed**, not destroy RL granularity by turning many jobs into one huge indivisible session.
-
-### 5.1 Closeout reserve
-
-A complete RL job includes packaging, fresh-unpack verification, atomic promotion, branch/ref advancement, and post-commit sanity checking. Workers must reserve enough remaining context, compute, and tool budget to finish those steps.
-
-- When session capacity can be estimated, treat roughly the final **15–20%** as a closeout reserve rather than research budget.
-- When it cannot be estimated reliably, act conservatively: after a meaningful promoted result or verifier milestone, stop further exploration once continuing could put a clean closeout at risk.
-- A marginal extra lemma or scan is lower priority than a complete, auditable repository transition.
-- As soon as the promoted result is stable, create or refresh `.rl-work/RL<current>/CLOSEOUT_STATE.md` as a compact context-compression checkpoint containing `BASE_HEAD`, authoritative snapshot identity, current/next RL, promoted results/corrections, candidate paths and hashes/blob identities, verifier/red-team/fresh-unpack status, any active repair issue, exact remaining closeout operations, expected commit message, and target branch/ref.
-
-The detailed portable form is in `docs/CLOSEOUT_LOCK.md`.
-
-### 5.2 CLOSEOUT_LOCK
-
-Enter **`CLOSEOUT_LOCK` immediately** when either:
-
-- the user says words to the effect of **finish**, **finish up**, **close out**, **close session**, **make the handover**, **commit/push**, or otherwise explicitly asks to end/promote the current RL job; or
-- the worker judges that the closeout reserve has been reached and delaying closeout risks an incomplete transition.
-
-Once locked:
-
-1. **Stop new mathematics, scans, historical audits, route exploration, and opportunistic improvements.**
-2. Use `CLOSEOUT_STATE.md`, the candidate handover, and the current authoritative snapshot rather than recursively rereading frozen history.
-3. Execute only the deterministic closeout path: freeze/classify → required red teams/verifiers → bundle/sidecar → clean fresh unpack → manifest/fast suite → authoritative snapshot check → atomic Git transition → push/ref update → post-commit sanity check.
-4. If a closeout check reveals a genuine invalid dependency, enter the smallest necessary stop-and-repair, fix only that dependency, rebuild/reverify, then return directly to `CLOSEOUT_LOCK`. Do not resume the sustained attack.
-5. Packaging/hash/transport mismatches are closeout defects, not invitations to reopen mathematical exploration.
-6. Prefer one atomic Git transition. Where direct Git-object tooling is available, building the final tree/commit and moving the branch ref once is preferred to chains of per-file commits. With ordinary local Git, stage the complete transition, inspect it, create one commit, and push it.
-7. **Closeout is not complete until the target remote branch/ref points at the new commit and a post-commit read confirms both the frozen `sessions/RL.../` generation and the new `authoritative/` generation.**
-
-Only an explicit user instruction to resume mathematical research may unlock the session before successful promotion. If safe promotion cannot be completed, Section 7.4 applies.
-
----
-
-## 6. Start-of-RL gate
-
-Before new mathematics for an RL job:
-
-1. Read the current `authoritative/` state and identify:
-   - current RL number;
-   - next target;
-   - frozen proof-state ledger;
-   - correction/demotion ledger;
-   - required red teams;
-   - required verifier suite;
-   - inherited constants and exact certificates.
-2. Record the current Git `HEAD` as `BASE_HEAD`.
-3. Record a machine-checkable snapshot of the current `authoritative/` tree, preferably:
-   - paths;
-   - sizes;
-   - hashes or Git blob/tree identities.
-4. Confirm the working tree is clean apart from permitted ignored local work.
-5. Verify the incoming sidecar/checksum.
-6. Verify the incoming internal manifest.
-7. Run the supplied fresh-unpack/fast verifier gate.
-8. If the gate passes, apply verification economy.
-9. If the gate fails, do **not** begin ordinary new research. Enter stop-and-repair.
-
-Do not mutate `authoritative/` merely to make the start gate pass.
-
----
-
-## 7. Working area and checkpoint discipline
-
-### 7.1 Default working area
-
-During research, write scratch work, scan outputs, temporary certificates, candidate reports, logs, and resumable checkpoints under:
-
-`.rl-work/<current-RL>/`
-
-This area is **not authoritative** and must be excluded by `.gitignore`.
-
-Do not use `authoritative/` as a scratch directory.
-
-Do not use `sessions/` as a scratch directory.
-
-### 7.2 Sensible checkpoint moments
-
-Create or refresh a checkpoint after any materially useful event, including:
-
-- completion of a meaningful exact scan batch;
-- establishment of a new lemma/theorem candidate;
-- exact interval propagation;
-- support-edge or geometric crossover;
-- discovery of a new global minimum/floor;
-- any correction or demotion;
-- successful verifier milestone;
-- before launching a long or expensive computation;
-- after a long computation completes;
-- before a likely context/credit boundary;
-- before switching mathematical routes;
-- immediately before or on entry to `CLOSEOUT_LOCK`.
-
-### 7.3 Checkpoint contents
-
-A checkpoint should make resumption possible without conversational memory. At minimum record:
-
-- `BASE_HEAD`;
-- current RL number;
-- authoritative incoming target;
-- timestamp;
-- last fully verified mathematical checkpoint;
-- new proved results, clearly classified;
-- completed exact finite certificates and their exact ranges;
-- incomplete/partial computations, explicitly labelled **NOT PROMOTED**;
-- current constants/minima/floors/endpoints where relevant;
-- verifier commands already run and results;
-- failed commands or abandoned routes;
-- files produced in `.rl-work/`;
-- next intended command or mathematical step;
-- whether a stop-and-repair condition is active.
-
-Recommended files:
-
-- `.rl-work/<RL>/CHECKPOINT.md`
-- `.rl-work/<RL>/STATE.json`
-- `.rl-work/<RL>/commands.log`
-- `.rl-work/<RL>/CLOSEOUT_STATE.md` when closing;
-- `.rl-work/<RL>/artifacts/`
-
-A partial scan is never equivalent to a gap-free certificate. Preserve partial output if useful, but mark it unverified and never promote it as exact coverage.
-
-### 7.4 Credit/interruption rule
-
-If the run is ending before a complete RL promotion is ready:
-
-- update the local checkpoint, including `CLOSEOUT_STATE.md` if closeout had started;
-- terminate or account for outstanding processes;
-- leave `authoritative/` unchanged;
-- leave `sessions/` unchanged;
-- make **no research-state commit**;
-- report the exact last fully verified checkpoint and the exact unverified remainder.
-
-This protects the authoritative repository even if a long Codex run ends unexpectedly.
-
-Important limitation: uncommitted local checkpoint files are only as persistent as the execution environment that stores them. If guaranteed cross-machine survival of unfinished work is later required, configure a separate explicit persistent checkpoint channel (for example a dedicated non-authoritative branch, issue/artifact store, or other user-approved mechanism). Do **not** silently weaken the no-partial-commit rule.
-
----
-
-## 8. Git safety rule — no commit until atomic promotion
-
-This rule is strict.
-
-During an in-progress RL job, do **not**:
-
-- `git add` research outputs for commit;
-- create a research-state commit;
-- move current `authoritative/` material into `sessions/`;
-- replace current `authoritative/` with candidate next-session material;
-- push a partial RL state;
-- amend or rewrite published history;
-- mix unrelated repository cleanup into the RL promotion.
-
-The current authoritative state must remain recoverable and unchanged until the replacement state is proven ready.
-
-If tracked files outside the intended final promotion are modified accidentally, inspect and repair those changes before continuing. Never discard user changes blindly.
-
----
-
-## 9. Stop-and-repair conditions
-
-Stop ordinary promotion logic and enter repair mode if any of these occurs:
-
-- checksum/manifest failure;
-- verifier failure;
-- a newly discovered floor/minimum invalidates a promoted bound;
-- an apparent contradiction between inherited results;
-- a proof uses a scope stronger than its premises;
-- physical/quotient representative separation is violated;
-- a required red-team check fails;
-- a supposedly exact certificate has a range gap;
-- a supporting-edge or optimization claim was inherited without required revalidation;
-- an incomplete computation was accidentally used as complete evidence;
-- repository state no longer matches `BASE_HEAD` in an unexplained way.
-
-In repair mode:
-
-1. freeze the last unquestionably valid state;
-2. identify the first invalid dependency;
-3. demote/repair explicitly;
-4. rerun only the verification necessary to restore a trustworthy frontier;
-5. do not promote until the corrected state passes the complete close-out gate.
-
-If repair begins while `CLOSEOUT_LOCK` is active, remain in closeout mode: fix the minimum invalid dependency and return directly to the close-out gate rather than resuming research.
-
----
-
-## 10. Preparing a candidate next RL state
-
-Build the candidate next session under `.rl-work/`, not in `authoritative/`.
-
-Follow the repository's current file naming and bundle conventions rather than inventing a parallel format.
-
-A candidate next RL state normally includes the repository's established equivalents of:
-
-- complete research report / proof-state update;
-- session-state and next-RL kickoff;
-- next authoritative target;
-- authoritative bundle/archive;
-- SHA-256 sidecar;
-- internal manifest;
-- fresh-unpack verification report;
-- verifier scripts/certificates needed by the next session;
-- README/start-here material if that is part of the current convention.
-
-The candidate handover must be self-contained enough that **either ChatGPT or Codex** can continue from GitHub without access to the producing conversation.
-
----
-
-## 11. Close-out verification gate
-
-When `CLOSEOUT_LOCK` is active, run this gate without interleaving new research.
-
-Before changing tracked authoritative/session state:
-
-1. Freeze the exact proposed proof/research state.
-2. Classify every new result.
-3. Record:
-   - successes;
-   - failures/dead routes;
-   - corrections/demotions;
-   - dependencies;
-   - open obligations;
-   - verifier status.
-4. Ensure every promoted exact certificate is gap-free over its claimed range.
-5. Rerun all required current red teams.
-6. Recompute any live minima/floors/support edges/constants that the authoritative target requires.
-7. Build the next numbered bundle.
-8. Build its sidecar/checksum.
-9. Fresh-unpack the bundle into a clean temporary directory.
-10. Verify its internal manifest.
-11. Run the complete fast verifier suite from the fresh unpack.
-12. Confirm the fresh unpack reproduces the proposed frozen state.
-13. Confirm the current tracked `authoritative/` still matches the snapshot taken at `BASE_HEAD`.
-14. Confirm there are no unexplained tracked changes.
-15. Refresh `CLOSEOUT_STATE.md` so the remaining work is only the atomic Git transition and post-commit checks.
-
-If any step fails, do not promote.
-
----
-
-## 12. Atomic promotion transaction
-
-Only after Section 11 passes may the repository transition to the next RL job.
-
-The promotion must be one coherent Git transaction.
-
-Using the repository's existing convention:
-
-1. Freeze the completed current authoritative session under the appropriate `sessions/RL.../` location.
-2. Replace `authoritative/` with **only** the fully verified next-session authoritative files.
-3. Do not leave a mixture of old and new authoritative generations.
-4. Preserve historical material; do not delete history merely to simplify the tree.
-5. Stage only the intended completed-session + new-authoritative transition and any directly required session-generated files.
-6. Inspect `git diff --cached --stat`.
-7. Inspect the complete staged diff or equivalent file list.
-8. Re-run a lightweight state sanity check against the staged tree if tooling permits.
-9. Create **one atomic commit for that RL transition**, using the repository's established RL commit naming convention.
-10. Push/advance the intended target branch/ref to that commit; where direct Git-object tooling is used, move the ref only after the final tree and commit are complete.
-11. Read back the remote branch/ref and verify that the expected commit is now authoritative.
-12. Verify the frozen session path and the new `authoritative/` entry point from the committed tree.
-13. Do not amend an earlier published RL commit.
-
-The essential invariant is:
-
-> The commit either contains the complete verified transition from current authoritative RL state to next authoritative RL state, or it does not exist.
-
-No half-promoted authoritative state is acceptable, and a local commit that has not reached the intended remote branch/ref is not a completed closeout.
-
----
-
-## 13. Multiple RL jobs in one Codex macro-session
-
-A long Codex run may continue after a successful atomic promotion.
-
-But every transition remains independent:
-
-`RLn → commit → RLn+1 → commit → RLn+2`
-
-Never combine several numbered RL transitions into one giant commit merely because Codex has more context or compute.
-
-After each successful promotion:
-
-1. verify the new commit/worktree/remote-ref state;
-2. treat the newly written `authoritative/` as a fresh incoming session;
-3. reset `BASE_HEAD`;
-4. rerun the ordinary start-of-RL gate;
-5. continue only if compute/context/reliability are healthy and the closeout reserve for another full job remains available.
-
-If the macro-session ends between RL jobs, the repository is already in a valid handoff state.
-
-If it ends during an RL job, Section 7.4 applies and the last committed authoritative state remains valid.
-
----
-
-## 14. Branch/scope discipline
-
-Preserve all scope limitations carried by the authoritative state, including first-Farey/full-phase or other branch qualifications.
-
-Do not restart previously rejected/dead methods unless:
-
-- the live target explicitly reopens them; or
-- genuinely new structure invalidates the old barrier.
-
-When the current target requires support-edge re-optimization, population accounting, physical representative separation, primitivity, reset-family checks, or other named red teams, perform them exactly as required by the authoritative handover.
-
----
-
-## 15. Compute discipline
-
-Use available compute aggressively but reproducibly, while preserving the closeout reserve in Section 5.1.
-
-Prefer:
-
-- bounded parallelism over uncontrolled oversubscription;
-- deterministic exact arithmetic where the proof state requires exactness;
-- chunked scans with explicit ranges;
-- resumable outputs;
-- machine-readable summaries;
-- checksums/manifests;
-- independent aggregation/verifier passes.
-
-If a large parallel run partially fails or times out:
-
-- do not infer completion;
-- retain completed chunks only if individually trustworthy;
-- identify the exact uncovered range;
-- rerun the missing range with safer resource bounds;
-- promote only once coverage is demonstrably gap-free.
-
-Do not launch a new long computation if doing so would consume the reserve needed to close the current RL cleanly.
-
----
-
-## 16. Portability between ChatGPT and Codex
-
-Every close-out must assume the next worker may be a different system with no conversational memory.
-
-Therefore:
-
-- never write “as discussed above” as a load-bearing instruction;
-- put required constants, definitions, scope, obligations, and verifier commands into repository files;
-- make the next target explicit;
-- carry forward correction/demotion state;
-- carry forward verification-economy, sustained-attack, and closeout-lock rules;
-- keep exact provenance for externally inherited certificates;
-- ensure the next worker can discover the authoritative entry point from the repository alone.
-
-Conversation transcripts are optional context, never the state machine. `CLOSEOUT_STATE.md` is the preferred compact context-compression carrier during promotion.
-
----
-
-## 17. Final response requirements for an RL job
-
-When an RL job is fully promoted, report succinctly:
-
-- completed RL number;
-- main mathematical advances;
-- any correction/demotion;
-- exact new frontier/endpoint where relevant;
-- verifier/fresh-unpack status;
-- resulting next RL number/target;
-- promotion commit SHA;
-- confirmation that the intended remote branch/ref points at that commit.
-
-When an RL job is **not** fully promoted, report instead:
-
-- no authoritative transition was committed/pushed;
-- last committed authoritative RL state remains unchanged;
-- last fully verified local checkpoint;
-- incomplete work that remains unpromoted;
-- exact resume instruction if available.
-
-Never describe an uncommitted or unpushed partial result as authoritative.
-
----
-
-## 18. Infrastructure changes
-
-Do not casually modify this protocol, repository architecture, verifier framework, or authoritative/session lifecycle during mathematical research.
-
-If process improvements are useful, record them as proposals in local work and defer them to a dedicated infrastructure/bootstrap task unless the current user explicitly authorises the change.
-
-Mathematical promotion commits should remain focused on one RL state transition.
-
----
-
-## 19. Short operational checklist
-
-Before research:
-
-- verify current authoritative package;
-- capture `BASE_HEAD` and authoritative snapshot;
-- keep tracked authoritative/session state untouched.
-
-During research:
-
-- work under `.rl-work/`;
-- checkpoint often;
-- classify results;
-- preserve exact coverage;
-- repair immediately when a floor/minimum/verifier changes;
-- preserve closeout reserve and prepare `CLOSEOUT_STATE.md` as the result stabilizes.
-
-When closeout is triggered:
-
-- enter `CLOSEOUT_LOCK` immediately;
-- stop new mathematics and historical exploration;
-- compress to `CLOSEOUT_STATE.md` + candidate + current snapshot;
-- stay locked through verification, packaging, commit/ref update, and post-commit checks.
-
-Before commit:
-
-- complete close-out;
-- build next package locally;
-- fresh-unpack verify;
-- confirm incoming authoritative state is unchanged.
-
-Commit/push:
-
-- move completed current session to `sessions/`;
-- replace `authoritative/` with verified next state;
-- inspect staged/final tree transition;
-- one atomic RL commit;
-- push/move the intended remote ref;
-- read back the remote commit and authoritative/session paths.
-
-If interrupted:
-
-- no partial commit/promotion;
-- no half-promotion;
-- last committed authoritative state remains the truth.
+Linked phase documents elaborate this binding contract and are required when their phase begins; they may not weaken it.

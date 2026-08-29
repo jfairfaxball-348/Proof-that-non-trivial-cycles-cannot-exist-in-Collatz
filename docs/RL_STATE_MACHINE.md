@@ -1,27 +1,81 @@
 # RL state machine
 
+`AGENTS.md` is the binding contract. This document defines repository-state transitions and failure handling.
+
+## Terms
+
+- **Incoming RL**: the job and target identified by `tools/rl_conveyor.py startup`.
+- **Handover generation**: the completed generation currently represented in `authoritative/`.
+- **Successor RL**: the new incoming authority created only after the current job is verified and promoted.
+- **Local checkpoint**: ignored, non-authoritative state under `.rl-work/RL<incoming_rl>/`.
+- **Committed authority**: the remote-ref commit whose `authoritative/` generation has passed post-commit readback.
+
+## State flow
+
 ```text
 Committed authority
-  → start gate (HEAD + snapshot + incoming verification)
+  → start gate (HEAD + authoritative snapshot + incoming verification)
   → ignored local research/checkpoints
-  → closeout reserve reached OR user says finish/close/commit-push
+  → candidate handover under .rl-work/
+  → closeout reserve reached OR user requests finish/handover/commit-push
   → CLOSEOUT_LOCK (no new research)
-  → compact CLOSEOUT_STATE.md + candidate handover in .rl-work/
-  → complete close-out verification
+  → verified candidate + clean fresh unpack
   → one atomic RL transition commit
   → push/advance intended remote branch/ref
   → post-commit readback of sessions/ + authoritative/
-  → new committed authority
+  → successor committed authority
 ```
 
-`CLOSEOUT_LOCK` is one-way for the current RL unless the user explicitly instructs the worker to resume mathematical research. While locked, do not start new mathematics, scans, historical audits, or optional improvements. Use the compact closeout checkpoint and candidate handover instead of rebuilding conversational context. A failure in packaging or verification enters only the minimum necessary stop-and-repair, then returns directly to the closeout path.
+No other path creates mathematical authority.
 
-The worker should preserve a closeout reserve rather than consuming the whole session on exploration. When capacity can be estimated, roughly the final 15–20% is reserved for packaging, verification, Git promotion, remote-ref advancement, and sanity checks. When capacity cannot be estimated, stop conservatively after a meaningful result once continuing could endanger completion.
+## Start transition
 
-An interruption from the local-research or candidate state returns to the prior committed authority: leave `authoritative/` and `sessions/` untouched, refresh the local checkpoint, and make no research-state commit. If closeout had begun, preserve `.rl-work/RL<current>/CLOSEOUT_STATE.md` with the exact remaining operations.
+The start gate is defined in `docs/CODEX_OPERATIONS.md`. A passing gate records `BASE_HEAD` and an authoritative snapshot, verifies the current handover, and creates an ignored checkpoint. Only then may ordinary research begin.
 
-A start-gate or close-out failure enters stop-and-repair. Freeze the last valid dependency, record the demotion or correction, rerun only the necessary checks, and do not promote until the whole gate passes. If the failure occurs during `CLOSEOUT_LOCK`, do not reopen the sustained attack after repair.
+A failing start gate enters repair without mutating `authoritative/`. Freeze the last committed authority and identify whether the failure is:
 
-A local commit alone is not the terminal state. The transition is complete only when the intended remote branch/ref points at that commit and a post-commit read confirms the frozen completed generation under `sessions/` and the new incoming generation under `authoritative/`.
+- **mechanical**: checksum, manifest, packaging, transport, catalogue, path, or tooling integrity; or
+- **mathematical/proof-state**: contradiction, invalid dependency, scope error, failed mathematical verifier/red team, or a recorded claim no longer supported.
 
-After an atomic transition, treat the new `authoritative/` generation as fresh: set a new `BASE_HEAD`, snapshot it, and rerun the ordinary start gate. A long macro-session may repeat this loop, but never combines numbered transitions and should begin another RL only if enough capacity remains to preserve a fresh closeout reserve.
+Repair a mechanical failure as a mechanical defect; do not create a correction/demotion merely because transport or packaging failed. A genuine proof-state failure must identify the first invalid dependency and explicitly record the resulting correction/demotion before any later promotion.
+
+## Research and candidate transitions
+
+All research and candidate construction remain under `.rl-work/`. A checkpoint, candidate theorem, partial scan, generated bundle, or local verifier success does not change committed authority.
+
+An interruption from research or candidate state returns operational control to the last committed authority:
+
+- account for or terminate outstanding processes;
+- refresh the local checkpoint;
+- leave `authoritative/` and `sessions/` untouched;
+- make no research-state commit;
+- report the last fully verified checkpoint and exact unpromoted remainder.
+
+If repository state no longer matches `BASE_HEAD` for an unexplained reason, stop. Do not discard changes blindly; identify their ownership and restore a trustworthy frontier before proceeding.
+
+## Stop-and-repair transition
+
+Stop-and-repair freezes the last unquestionably valid state, identifies the first invalid dependency, and reruns only the checks required to restore trust. It may return to research only when the failure arose before closeout and the repair has restored the start/research frontier.
+
+If repair begins during `CLOSEOUT_LOCK`, the lock remains active. Fix only the invalid dependency or mechanical defect, rebuild/reverify the candidate, and return directly to the closeout gate. Do not use repair as an opportunity to reopen research.
+
+## CLOSEOUT_LOCK transition
+
+`CLOSEOUT_LOCK` is one-way for the incoming RL unless the user explicitly instructs the worker to resume mathematical research. Its triggers and compact state requirements are defined in `docs/CLOSEOUT_LOCK.md`.
+
+While locked, the only permitted path is candidate freeze → required verification → atomic transition → remote-ref advancement → readback, with the minimum repair loop described above. Packaging or hash mismatches do not unlock research.
+
+## Promotion and terminal state
+
+The full gate and atomic transaction are defined in `docs/VERIFICATION_AND_CLOSEOUT.md`. A local commit is an intermediate state, not completion. Promotion becomes terminal only when:
+
+1. the intended remote branch/ref resolves to the new commit;
+2. the committed frozen session path exists and has the expected generation;
+3. the committed `authoritative/` entry point is the verified successor generation;
+4. the worktree and repository sanity checks show no half-transition.
+
+If push or readback fails, remain in closeout. Do not call the job promoted and do not begin the successor RL.
+
+## Macro-session loop
+
+After terminal readback, treat the successor authority as a fresh incoming state. Record a new `BASE_HEAD`, snapshot it, and rerun the start gate. A long worker session may repeat the loop only when enough capacity remains to complete another full transition. Numbered RL jobs are never combined into one commit.

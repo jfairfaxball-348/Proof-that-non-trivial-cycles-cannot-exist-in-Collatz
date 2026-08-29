@@ -1,0 +1,17 @@
+# High-signal default search surface. Historical evidence remains available by
+# exact index-directed path or with `rg --no-ignore` for an exceptional audit.
+/sessions/
+/Archive/
+/.rl-work/
+/knowledge/*.jsonl
+/knowledge/index_metadata.json
+
+# Packaged/generated copies and certificate payloads are not default prose
+# search inputs, including inside the current handover.
+*.zip
+*.zip.sha256
+*.b64.part*
+**/SHA256SUMS.txt
+**/*_BUNDLE_TRANSPORT/
+**/*_CERTIFICATES/
+**/verification/
