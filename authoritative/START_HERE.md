@@ -1,10 +1,5 @@
-# RL174 start here
+# RL175 start here
 
-RL174 is a stop-and-repair plus quantitative physical-gap session.
+Read `RL175_CORRECTED_P_SHIFT_FLOW_CONSUMER_2026-08-29.md`, then run `python3 verify_rl175_report.py .` and `python3 RL175_CERTIFICATES/verify_corrected_p_shift_consumer.py`.
 
-1. Read `RL174_CORRECTION_DEMOTION_LEDGER.md` first.
-2. Read `RL174_CORRECTION_AND_PHYSICAL_P_SHIFT_GAP_FLOOR_2026-08-29.md`.
-3. Run `python3 verify_rl174_report.py .`.
-4. Continue with `RL175_CORRECTED_P_SHIFT_FLOW_CONSUMER_TARGET.md`.
-
-Global non-trivial-cycle exclusion remains open.
+After both pass, begin `RL176_INTEGER_P_GAP_AND_MULTI_SUPPORT_TARGET.md`.
