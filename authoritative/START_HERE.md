@@ -1,3 +1,5 @@
-# RL166 authoritative handover
+# RL167 start here
 
-Read the RL166 report, run `python3 verify_rl166_report.py .`, then start `RL167_FULL_AFFINE_PHASE_DISTRIBUTION_TARGET.md`.
+Read `RL167_FULL_AFFINE_PHASE_CLOSURE_RANK_ONE_BARRIER_2026-08-28.md`, run
+`python3 verify_rl167_report.py .`, then begin
+`RL168_LEAST_STATE_PHASE_VALUE_CORRELATION_TARGET.md`.
