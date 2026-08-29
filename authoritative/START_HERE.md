@@ -1,7 +1,7 @@
-# RL177 start here
+# RL178 start here
 
-Read `RL177_EARLY_P_SHIFT_MISMATCH_COMPENSATION_2026-08-29.md`, then run
-`python3 verify_rl177_report.py .` and
-`python3 verification/verify_rl177_early_mismatch.py`.
+Read `RL178_NEGATIVE_COMPENSATION_AND_HEIGHT_RETURN_2026-08-29.md`, then run
+`python3 verify_rl178_report.py .` and
+`python3 verification/verify_rl178_second_transition.py`.
 
-After both pass, begin `RL178_NEGATIVE_COMPENSATION_AND_HEIGHT_RETURN_TARGET.md`.
+After both pass, begin `RL179_V37_NEGATIVE_RETURN_AND_ZERO_HEIGHT_TRANSITION_TARGET.md`.
