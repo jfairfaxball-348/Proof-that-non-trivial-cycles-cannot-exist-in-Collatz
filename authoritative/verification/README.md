@@ -1,11 +1,11 @@
-# RL183 fast verification
+# RL184 verification
 
-Run:
+Portable fast suite:
 
-```sh
-bash run_fast_rl183_verifiers.sh
+```bash
+bash verification/run_fast_rl184_verifiers.sh
 ```
 
-The verifier uses Python integer/Fraction arithmetic only. It checks the successor-corridor counts, ternary ownership-depth ladder, mechanical rank split, local necessary-template and affine-map vocabulary, repeated-map pigeonhole floors, and mechanical phase-location population arithmetic.
+The exact verifier uses Python integer/Fraction arithmetic. It checks the global one-state phase-overlap refinement, exact three-step mechanical-factor vocabulary, restricted height/template/map counts, zero-intercept rigidity, repeated-map floors, 39-zero extremal arithmetic, clean 40-edge corridor floor, and distinct nonzero-defect incidence.
 
-It does not treat a necessary local template or affine map as a physical existence certificate.
+The signed affine-intercept identity and zero-run recurrence are analytic identities recorded in the RL184 report; the verifier certifies the finite and numerical comparisons consumed by them.
