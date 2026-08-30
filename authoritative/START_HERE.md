@@ -1,21 +1,25 @@
-# START HERE — authoritative RL189 handover
+# START HERE — authoritative RL190 handover
 
-Current authoritative session: **RL189 — N35 Crossover Early-Defect Charging and Boundary Consumer**.
+Current authoritative session: **RL190 — Phase-43 Boundary Seam, Phase-46 Exception Reduction, and H21 Core**.
 
-RL189 status: **no branch closure**, but the extremal triple spacing and `N_35` crossover are substantially strengthened.
+RL190 status: **no branch closure**, but the extremal triple spacing and both live boundary objects are substantially sharpened.
 
 Key new facts:
 
-- extremal `{35,36,37}` triple terminals are separated by at least 43 chronological phases;
-- `N_35<=9594979905`;
-- at least `480194594` clean starts have `tau<=34`;
-- the natural monotone two-level `tau<=34` / `tau=35` reweighting cannot beat the inherited RL187 flat short charge because of the height-21 `{33,34,35}` co-ownership budget;
-- ordinary absolute corrected-flow remains `>443`.
+- separation 43 is excluded by a six-transition physical common-mechanical affine seam;
+- separations 44 and 45 are rank-forbidden;
+- extremal `{35,36,37}` triple terminals are separated by at least 46 chronological phases;
+- exact separation 46 is reduced to terminal ranks `{90789138715,101129528126}`;
+- `N_35<=9168536354`;
+- at least `906638145` clean starts have `tau<=34`;
+- the dangerous H21 `{33,34,35}` co-owner is confined to
+  `D=[23369453298,41775866136]` and has exact block span 36;
+- the monotone two-level charging plateau remains binding, so ordinary absolute corrected-flow remains inherited `>443`.
 
-The isolated triple and sole high branch remain open.
+The isolated triple, two phase-46 exceptional ranks, dangerous H21 incidence problem, and sole high branch remain open.
 
-Next authoritative task: `RL190_PHASE43_BOUNDARY_SEAM_AND_PHASE_RESOLVED_EARLY_DEFECT_CHARGING_TARGET.md`.
+Next authoritative task: `RL191_PHASE46_EXCEPTIONAL_TRANSITION_AND_H21_EARLY_CORE_CAPACITY_TARGET.md`.
 
-Fast verifier: `verification/verify_rl189_phase41_42_and_n35_charging.py`.
+Fast verifier: `verification/verify_rl190_phase43_46_and_h21_core.py`.
 
 Knowledge catalogues may be stale/deferred; use this authoritative directory, not generated catalogues, as mathematical truth.
