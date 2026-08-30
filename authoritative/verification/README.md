@@ -1,11 +1,9 @@
-# RL180 verification
+# RL181 verification
 
 Run:
 
 ```sh
-bash verification/run_fast_rl180_verifiers.sh
+bash verification/run_fast_rl181_verifiers.sh
 ```
 
-The phase-support certificate reconstructs the RL179 high-branch necessary automaton and certifies the phase-31 budget and delayed-support ladder with exact `Fraction` arithmetic.
-
-The global-height certificate uses rational atanh logarithm enclosures and rational Taylor exponential enclosures. It certifies the RL180 support band, mechanical-loss splice, internal least-state band, and shallow-population floors without external computational minima.
+`verify_rl181_pair_gap_occupancy.py` uses exact integer/Fraction arithmetic plus rigorous rational log/exp enclosures. It consumes only explicitly frozen RL180 certified bounds and checks the new uniform K corridor, shallow p-shift adjacency counts, repeated ordered-height-type multiplicities, and the four normalized-width occupancy fractions.
