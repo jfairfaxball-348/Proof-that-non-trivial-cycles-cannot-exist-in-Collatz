@@ -1,9 +1,11 @@
-# RL188 fast verification
+# RL189 verification
 
 Run:
 
-`python3 verification/verify_rl188_extremal_triple_spacing_n35_crossover.py`
+```bash
+bash verification/run_fast_rl189_verifiers.sh
+```
 
-The verifier reconstructs the RL187 extremal triple rows, derives the exact necessary terminal-rank core from the actual 37-step mechanical factor and strict gap corridor, checks the 38/40 rank displacements, checks the 39-step affine mismatch, and certifies the `3/41` `N_35` crossover.
+The verifier uses exact Python integer/Fraction arithmetic only. It certifies the separation-41 affine exclusion, separation-42 rank exclusion, spacing `>=43`, the `3/43` `N_35` cap, and the height-21 two-level charging obstruction.
 
-Enumerated rows/ranks remain necessary conditions only; no candidate is promoted as a physical realization.
+It does not certify physical realization of the terminal-rank core and does not claim branch or global closure.
