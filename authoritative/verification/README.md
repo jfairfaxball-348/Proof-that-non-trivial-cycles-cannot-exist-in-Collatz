@@ -1,13 +1,23 @@
-# RL190 verification
+# RL191 fast verification
 
 Run:
 
 ```bash
-bash verification/run_fast_rl190_verifiers.sh
+python3 verification/verify_rl191_universal_gap_spacing_and_charging.py
 ```
 
-The verifier uses exact Python integer/Fraction arithmetic only.
+or:
 
-It certifies the phase-43 affine exclusion, rank-empty separations 44/45, spacing `>=46`, the two-point separation-46 exceptional seam, the exact `1/15` `N_35` density and crossover, the phase-resolved dangerous H21 `{33,34,35}` core, and persistence of the two-level charging plateau.
+```bash
+sh verification/run_fast_rl191_verifiers.sh
+```
 
-It does not certify physical realization of any rank and does not claim separation-46, branch, or global closure.
+The verifier uses exact integer/Fraction arithmetic and checks:
+
+- universal-gap exclusion of the two RL190 phase-46 exceptional ranks;
+- all necessary separations 46..1000 on exact constant-mechanical-word atoms;
+- spacing-1001 `N35` density arithmetic;
+- inherited RL187 low/high charging-family safety under the RL191 weights;
+- exact >480 ordinary-flow and >80 directional-`K` consequences.
+
+The finite separation certificate is deliberately bounded at 1000.  It does not claim an unbounded resonance theorem.
