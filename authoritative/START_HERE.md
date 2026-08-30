@@ -1,28 +1,23 @@
-# START HERE — authoritative RL191 handover
+# START HERE — authoritative RL192 handover
 
-Current authoritative session: **RL191 — Universal Carry-Completed Gap Transport, Spacing 1001, and Flow 480**.
+Current authoritative session: **RL192 — Full-Period Phase Lock and Universal-Ball Barrier**.
 
-RL191 status: **no branch closure**, but the phase-46 seam is removed and the extremal-triple density/flow state is substantially strengthened.
+RL192 status: **no branch closure**.  It proves the exact natural endpoint of the universal-gap resonance route and records a precise method barrier.
 
 Key new facts:
 
-- exact universal carry-completed transport
-  `2^{c_i}Delta_{i+1}=3Delta_i+epsilon_i`, with `|epsilon_i|<2`;
-- both RL190 phase-46 exceptional ranks are excluded;
-- every necessary extremal-triple terminal separation 46 through 1000 is excluded;
-- extremal `{35,36,37}` triple terminals are separated by at least 1001 chronological phases;
-- `N35<=7559400754`;
-- at least `2515773745` clean starts have `tau<=34`;
-- safe ordinary absolute corrected flow is
-  `>24171310097/50331648 >480`;
-- each directional `K` variation is
-  `>24171310097/301989888 >80`;
-- the dangerous H21 core `D=[23369453298,41775866136]` remains open and its `{33,34,35}` charge family remains binding.
+- mechanical exponent sum `sum c_j=floor((r+nA)/L)`;
+- at `s=L`, necessary overlap is all of `E` and splits at `Q=88514772733`;
+- zero-error centres are `2^38 exp(-Delta)` and `2^37 exp(-Delta)`;
+- exact certificate `0<Delta=A ln2-L ln3<2^-40`;
+- target misses are `<1/4` and `<1/8`;
+- the universal `|epsilon|<2` relaxation admits both targets via a single final `|epsilon|<1`;
+- this is a method barrier, **not physical realization**.
 
-The sole high branch, extremal/isolated triples, H21 physical-incidence problem, and a chronological consumer of the strengthened flow remain open.
+RL191's spacing/population/flow bounds and the binding H21 core remain certified.  Physical epsilon correlation, chronological flow consumption, H21 incidence, the sole high branch, and all global gates remain open.
 
-Next authoritative task: `RL192_UNIVERSAL_GAP_RESONANCE_AND_POST_N35_FLOW_CONSUMER_TARGET.md`.
+Next authoritative task: `RL193_PHYSICAL_EPSILON_CORRELATION_AND_RESONANCE_DEBT_TARGET.md`.
 
-Fast verifier: `verification/verify_rl191_universal_gap_spacing_and_charging.py`.
+Fast verifier: `verification/verify_rl192_full_period_phase_lock.py`.
 
 Knowledge catalogues may be stale/deferred; use this authoritative directory, not generated catalogues, as mathematical truth.
