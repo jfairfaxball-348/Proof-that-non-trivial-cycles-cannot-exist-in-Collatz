@@ -1,23 +1,33 @@
-# START HERE — authoritative RL192 handover
+# START HERE — authoritative RL193 handover
 
-Current authoritative session: **RL192 — Full-Period Phase Lock and Universal-Ball Barrier**.
+Current authoritative session: **RL193 — Physical Debt Telescope, Valuation,
+and Phase Incidence**.  Incoming work is **RL194**.
 
-RL192 status: **no branch closure**.  It proves the exact natural endpoint of the universal-gap resonance route and records a precise method barrier.
+RL193 does not close either extremal atom, the sole high branch, or any global
+gate.  It proves conditional physical identities and finite necessary-state
+refinements:
 
-Key new facts:
+- both full-period atoms have weighted tail numerator `(2^A-3^L)/2^21`;
+- the physical weighted debt telescopes to K monodromy;
+- its valuation -21 is locally automatic;
+- the carry oversupplies the signed net and forces ordinary cancellation;
+- 24 extremal and 14 H21 necessary ranks are excluded;
+- canonical terminals begin no earlier than phases 71 and 67 respectively;
+- the `2^38` and `2^37` atoms require strictly positive and strictly negative
+  canonical K-prefix signs respectively.
 
-- mechanical exponent sum `sum c_j=floor((r+nA)/L)`;
-- at `s=L`, necessary overlap is all of `E` and splits at `Q=88514772733`;
-- zero-error centres are `2^38 exp(-Delta)` and `2^37 exp(-Delta)`;
-- exact certificate `0<Delta=A ln2-L ln3<2^-40`;
-- target misses are `<1/4` and `<1/8`;
-- the universal `|epsilon|<2` relaxation admits both targets via a single final `|epsilon|<1`;
-- this is a method barrier, **not physical realization**.
+Read `RL193_PHYSICAL_DEBT_TELESCOPE_VALUATION_AND_PHASE_INCIDENCE_2026-08-31.md`,
+`RL193_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`,
+`RL193_CORRECTION_DEMOTION_LEDGER.md`, and
+`RL193_RED_TEAM_REPORT_2026-08-31.md`.
 
-RL191's spacing/population/flow bounds and the binding H21 core remain certified.  Physical epsilon correlation, chronological flow consumption, H21 incidence, the sole high branch, and all global gates remain open.
+Next authoritative task:
+`RL194_SIGN_WEIGHT_ORDERING_AND_OWNED_PREFIX_CONGRUENCE_TARGET.md`.
 
-Next authoritative task: `RL193_PHYSICAL_EPSILON_CORRELATION_AND_RESONANCE_DEBT_TARGET.md`.
+Run `python3 verification/verify_rl193_physical_debt.py` and
+`python3 verification/verify_rl178_inherited_early_window.py`, or use
+`verification/run_fast_rl193_verifiers.sh`.
 
-Fast verifier: `verification/verify_rl192_full_period_phase_lock.py`.
-
-Knowledge catalogues may be stale/deferred; use this authoritative directory, not generated catalogues, as mathematical truth.
+Necessary ranks are not physical realizations; total variation is not
+excursion.  The RL191 bounds and H21 binding budget remain unchanged.
+Knowledge catalogues are stale/deferred and are not mathematical authority.
