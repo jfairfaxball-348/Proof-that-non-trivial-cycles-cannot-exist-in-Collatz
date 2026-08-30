@@ -1,11 +1,11 @@
-# RL186 verification
+# RL187 fast verification
 
 Run:
 
-```bash
-bash verification/run_fast_rl186_verifiers.sh
+```sh
+bash verification/run_fast_rl187_verifiers.sh
 ```
 
-The verifier uses exact Python integer/Fraction arithmetic. It checks the late first-defect numerator enumeration for offsets 28 through 39, the refined first-defect coverage table, the uniform `2^(24-H)` charging bound, the numerical `tau>=37` tail consumer, the amplified `>354` flow floor, and a rational enclosure `0<F2<1/2`.
+The exact Python verifier checks the inherited RL186 late-tail vocabulary, RL187 joint terminal offset families, the `N_28` through `N_39` survival staircase, all joint weighted-charging inequalities, the `>443` ordinary absolute-flow floor, and an independent exact rational enclosure `0<F2<1/2`.
 
-The first-defect numerator identity and zero-block density argument are analytic statements recorded in the RL186 report; the verifier certifies their finite/numerical consumers.
+It is a finite integer/rational certificate. Necessary enumerated candidates are not treated as physical realizations.

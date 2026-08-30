@@ -1,19 +1,25 @@
-# Authoritative start here
+# START HERE — authoritative RL187 handover
 
-Current authoritative session: **RL186 — First-Defect Tail Rigidity and Weighted-Flow Amplification**.
+Date: 2026-08-30
 
-Next target: `RL187_MULTISCALE_ZERO_PREFIX_CAPACITY_AND_WEIGHTED_FLOW_ESCALATION_TARGET.md`.
+Current frozen research generation: **RL187**.
+
+Next authoritative job: **RL188**, defined in
+
+`RL188_EXTREMAL_TRIPLE_START_FAMILY_AND_N35_CROSSOVER_TARGET.md`.
 
 Read in this order:
 
-1. `RL187_MULTISCALE_ZERO_PREFIX_CAPACITY_AND_WEIGHTED_FLOW_ESCALATION_TARGET.md`
-2. `RL186_SESSION_STATE_AND_RL187_KICKOFF_2026-08-30.md`
-3. `RL186_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`
-4. `RL186_CORRECTION_DEMOTION_LEDGER.md`
-5. `RL186_FIRST_DEFECT_TAIL_RIGIDITY_AND_WEIGHTED_FLOW_AMPLIFICATION_2026-08-30.md`
-6. `RL186_RED_TEAM_REPORT_2026-08-30.md`
-7. `verification/README.md`
+1. `RL187_SESSION_STATE_AND_RL188_KICKOFF_2026-08-30.md`
+2. `RL187_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`
+3. `RL187_CORRECTION_DEMOTION_LEDGER.md`
+4. `RL187_JOINT_TERMINAL_OWNERSHIP_AND_MULTISCALE_ZERO_PREFIX_CAPACITY_2026-08-30.md`
+5. `RL188_EXTREMAL_TRIPLE_START_FAMILY_AND_N35_CROSSOVER_TARGET.md`
+6. `RL187_RED_TEAM_REPORT_2026-08-30.md`
+7. `RL187_FRESH_UNPACK_VERIFICATION_2026-08-30.txt`
 
-RL186 status: **no closure**. Exact first-defect numerator arithmetic and late zero-block capacity raise the ordinary absolute corrected-flow floor from `>150` to `>354` and each directional K-variation floor from `>25` to `>59`.
+Key frozen advances: joint terminal numerator/height/mechanical-rank ownership, `N_36<=7,238,318,174`, `N_38<=3,526,360,136`, ordinary absolute corrected flow `>443`, and each direction of K variation `>73.8`.
 
-The next task is a multiscale bound on the survival distribution `#{tau>=n}`, not another raw nonzero-defect count.
+No branch or global gate is closed. The next focused obstruction is the surviving `{35,36,37}` co-owned terminal family at `(C_tau,H)=(3^37,21)`.
+
+Fast verifier: `verification/verify_rl187_joint_terminal_multiscale_capacity.py`.
