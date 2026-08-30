@@ -1,25 +1,21 @@
-# START HERE — authoritative RL187 handover
+# START HERE — authoritative RL188 handover
 
-Date: 2026-08-30
+Current authoritative session: **RL188 — Extremal Triple-Terminal Spacing and N35 Crossover**.
 
-Current frozen research generation: **RL187**.
+RL188 status: **no branch closure**, but a genuine `N_35` crossover is proved.
 
-Next authoritative job: **RL188**, defined in
+Key new facts:
 
-`RL188_EXTREMAL_TRIPLE_START_FAMILY_AND_N35_CROSSOVER_TARGET.md`.
+- every `{35,36,37}` triple terminal lies in the necessary mechanical-rank core
+  `[72797034370,103818202602]`;
+- triple terminals are separated by at least 41 chronological phases;
+- `N_35<=10063027705`;
+- at least `12146794` clean starts have `tau<=34`.
 
-Read in this order:
+The isolated triple remains open.
 
-1. `RL187_SESSION_STATE_AND_RL188_KICKOFF_2026-08-30.md`
-2. `RL187_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`
-3. `RL187_CORRECTION_DEMOTION_LEDGER.md`
-4. `RL187_JOINT_TERMINAL_OWNERSHIP_AND_MULTISCALE_ZERO_PREFIX_CAPACITY_2026-08-30.md`
-5. `RL188_EXTREMAL_TRIPLE_START_FAMILY_AND_N35_CROSSOVER_TARGET.md`
-6. `RL187_RED_TEAM_REPORT_2026-08-30.md`
-7. `RL187_FRESH_UNPACK_VERIFICATION_2026-08-30.txt`
+Next authoritative task: `RL189_N35_CROSSOVER_EARLY_DEFECT_CHARGING_AND_BOUNDARY_CONSUMER_TARGET.md`.
 
-Key frozen advances: joint terminal numerator/height/mechanical-rank ownership, `N_36<=7,238,318,174`, `N_38<=3,526,360,136`, ordinary absolute corrected flow `>443`, and each direction of K variation `>73.8`.
+Fast verifier: `verification/verify_rl188_extremal_triple_spacing_n35_crossover.py`.
 
-No branch or global gate is closed. The next focused obstruction is the surviving `{35,36,37}` co-owned terminal family at `(C_tau,H)=(3^37,21)`.
-
-Fast verifier: `verification/verify_rl187_joint_terminal_multiscale_capacity.py`.
+Knowledge catalogues may be stale/deferred; use this authoritative directory, not generated catalogues, as mathematical truth.

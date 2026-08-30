@@ -1,11 +1,9 @@
-# RL187 fast verification
+# RL188 fast verification
 
 Run:
 
-```sh
-bash verification/run_fast_rl187_verifiers.sh
-```
+`python3 verification/verify_rl188_extremal_triple_spacing_n35_crossover.py`
 
-The exact Python verifier checks the inherited RL186 late-tail vocabulary, RL187 joint terminal offset families, the `N_28` through `N_39` survival staircase, all joint weighted-charging inequalities, the `>443` ordinary absolute-flow floor, and an independent exact rational enclosure `0<F2<1/2`.
+The verifier reconstructs the RL187 extremal triple rows, derives the exact necessary terminal-rank core from the actual 37-step mechanical factor and strict gap corridor, checks the 38/40 rank displacements, checks the 39-step affine mismatch, and certifies the `3/41` `N_35` crossover.
 
-It is a finite integer/rational certificate. Necessary enumerated candidates are not treated as physical realizations.
+Enumerated rows/ranks remain necessary conditions only; no candidate is promoted as a physical realization.
