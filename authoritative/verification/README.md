@@ -1,9 +1,11 @@
-# RL181 verification
+# RL182 verification
 
-Run:
+Portable fast suite:
 
 ```sh
-bash verification/run_fast_rl181_verifiers.sh
+bash verification/run_fast_rl182_verifiers.sh
 ```
 
-`verify_rl181_pair_gap_occupancy.py` uses exact integer/Fraction arithmetic plus rigorous rational log/exp enclosures. It consumes only explicitly frozen RL180 certified bounds and checks the new uniform K corridor, shallow p-shift adjacency counts, repeated ordered-height-type multiplicities, and the four normalized-width occupancy fractions.
+The exact verifier uses Python integer/Fraction arithmetic and rigorous rational logarithm/exponential enclosures. It checks the refined high-branch mass band, universal p-window q-mass/tail floor, ternary ownership-depth size thresholds, fixed-defect repetition floors, and strengthened shallow-width occupancy.
+
+The chronological transport and ternary suffix formulas are analytic identities recorded in the RL182 report; the verifier certifies all numerical comparisons consumed by them.
