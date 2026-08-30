@@ -1,11 +1,11 @@
-# RL182 verification
+# RL183 fast verification
 
-Portable fast suite:
+Run:
 
 ```sh
-bash verification/run_fast_rl182_verifiers.sh
+bash run_fast_rl183_verifiers.sh
 ```
 
-The exact verifier uses Python integer/Fraction arithmetic and rigorous rational logarithm/exponential enclosures. It checks the refined high-branch mass band, universal p-window q-mass/tail floor, ternary ownership-depth size thresholds, fixed-defect repetition floors, and strengthened shallow-width occupancy.
+The verifier uses Python integer/Fraction arithmetic only. It checks the successor-corridor counts, ternary ownership-depth ladder, mechanical rank split, local necessary-template and affine-map vocabulary, repeated-map pigeonhole floors, and mechanical phase-location population arithmetic.
 
-The chronological transport and ternary suffix formulas are analytic identities recorded in the RL182 report; the verifier certifies all numerical comparisons consumed by them.
+It does not treat a necessary local template or affine map as a physical existence certificate.
