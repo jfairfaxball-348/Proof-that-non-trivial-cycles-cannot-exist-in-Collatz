@@ -1,24 +1,39 @@
-# RL193 portable fast verification
+# RL194 portable fast verification
 
-From the package root run:
+From the package root:
 
 ```sh
-sh verification/run_fast_rl193_verifiers.sh
+sh verification/run_fast_rl194_verifiers.sh
 ```
 
-The wrapper runs both complete portable verifiers:
+The wrapper runs two byte-preserved incoming dependencies, then four new
+portable scripts:
 
-1. `verify_rl178_inherited_early_window.py`: byte-for-byte inherited RL178
-   necessary-transition certificate for the canonical early-defect window;
-2. `verify_rl193_physical_debt.py`: exact integer/Fraction checks for the
-   atom mappings, all carry/early-window deletions and boundaries, buffers,
-   valuation constants, logarithm enclosure and cancellation fractions.
+- `verify_rl178_inherited_early_window.py`: inherited canonical signature;
+- `verify_rl193_physical_debt.py`: inherited physical identities/constants
+  and original24/14 phase-incidence deletions;
+- `verify_rl194_rank_order.py`: global-order constants, four rigorous
+  corridor endpoints, retained22 deletions and intermediate corridor-only
+  counts/floors, carry buffers and strengthened prefix sign constants;
+- `verify_rl194_weight_order.py`: positive-window/moment constants,
+  N0 integer bound and256 toy algebraic regression arrays;
+- `verify_rl194_owned_prefix.py`: all42 initial owned pairs and all allowed
+  exponent transitions over the complete depth3 ordinary word212;
+- `verify_rl194_chronological_speed.py`: every start1..1826035, exact coarse
+  rejection, rigorous weighted envelopes, ten survivors and final counts.
 
-Analytic telescoping and the all-offset valuation inequalities are proved in
-the main report.  The finite verifier checks their constants; it is not a
-substitute for those proofs.  No astronomically large `2^A` or `3^L` is built;
-the endpoint congruence is checked with modular exponentiation.
+All decisive arithmetic is integer or Fraction.  The chronological script
+uses96-bit outward-rounded dyadic intervals, not unbounded floating-point
+accumulation.  Its decimal displays are nonbinding diagnostics.  The
+largest finite pass takes seconds and uses constant scan memory.
 
-Neither surviving necessary states nor remaining ranks are physical cycles.
-The internal manifest covers every payload file other than itself.  The ZIP
-and outer sidecar are envelope files and are not included in the payload.
+The scripts check finite constants/coverage; analytic proofs are in the
+four proof notes.  Toy checks are not actual physical-phase certificates.
+Remaining necessary ranks and owned states are not physical realizations.
+Run the whole suite when checking the package; intermediate corridor-only
+outputs do not replace the final combined speed-filter result.
+
+The byte-preserved independent red-team replay is available as
+`python3 reviews/weighted_speed_independent_check.py`.  It is an optional
+replay of the already-completed audit, with its original scratch status text
+retained as provenance, not an additional unpromoted claim.
