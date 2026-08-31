@@ -1,23 +1,23 @@
-# START HERE — authoritative RL202 handover
+# START HERE — RL203 handover
 
-Completed generation: **RL202 — H21 root-anchor speed cone and height collision**.
-Incoming job: **RL203**.
-
-RL202 uses the exact global K root and four inherited zero-height anchors to cut
-3,946,785 additional necessary H21 terminal ranks. The resulting exact necessary
-count is 16,188,727,234. No eta class or state/sign bit is selected.
+Generation: RL203, completed 2026-08-31.
 
 Read in order:
+1. `RL203_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`
+2. `RL203_CORRECTION_DEMOTION_LEDGER.md`
+3. `RL203_INHERITED_INTERFACE_AND_SCOPE.md`
+4. `proofs/RL203_DYADIC_PREFIX_INFORMATION_BOUNDARY.md`
+5. `RL203_SESSION_STATE_AND_RL204_KICKOFF_2026-08-31.md`
+6. `RL204_STRATEGIC_REVIEW_AUDIT_ROADMAP_AND_PROGRESS_TARGET.md`
 
-1. `RL202_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`;
-2. `RL202_CORRECTION_DEMOTION_LEDGER.md`;
-3. `RL202_INHERITED_INTERFACE_AND_SCOPE.md`;
-4. `RL202_H21_ROOT_ANCHOR_SPEED_CONE_AND_HEIGHT_COLLISION_2026-08-31.md`;
-5. `proofs/RL202_ABSOLUTE_ROOT_ANCHOR.md`;
-6. `RL202_RED_TEAM_REPORT_2026-08-31.md`;
-7. `RL202_SESSION_STATE_AND_RL203_KICKOFF_2026-08-31.md`;
-8. `RL203_H21_DYADIC_PREFIX_MOMENT_AFTER_ROOT_ANCHOR_CUT_TARGET.md`.
+Portable fast verifier:
+`python3 verification/verify_rl203_dyadic_prefix_boundary.py`
 
-Run `bash verification/run_fast_rl202_verifiers.sh`.
-A reconstructible deterministic ZIP transport, external SHA256 sidecar, internal
-manifest and deterministic reconstruction script accompany this handover. Frozen history is unchanged.
+RL203 changes no necessary-rank count and selects no eta class/sign. Its new
+result is a precise information boundary for the dyadic joint-prefix route and
+a depth-63 separation theorem for below-p necessary sources.
+
+RL204 is intentionally a strategic review/audit/road-map session. It must retain
+all mathematics as viable future work while deciding whether the current route
+is still the best use of research time or whether a broader tournament should
+follow soon.
