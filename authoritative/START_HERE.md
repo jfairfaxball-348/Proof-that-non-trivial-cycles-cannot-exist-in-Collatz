@@ -1,34 +1,35 @@
-# START HERE — authoritative RL194 handover
+# START HERE — authoritative RL195 handover
 
-Current handover: **RL194 — Rank Order, Weighted Speed, Height Occupation,
-and Owned Prefix**.  Incoming job: **RL195**.
+Current handover: **RL195 — Physical Zero-Edge Incidence and Exact Window
+Ownership**. Incoming job: **RL196**.
 
-No atom, sole-high-branch or global closure is claimed.  New conditional
-results include:
+The user ended this worker session after RL195. RL196 is a prepared future
+handover only; this session does not run its start gate or begin its research.
 
-- final necessary-rank cardinality27057465824 after exact corridor and
-  bounded chronological filters, not a physical terminal count;
-- canonical extremal terminal floors190574 /1826072 for lower/upper atoms;
-- positive moving-window identities and nonpositive rank-initial flow;
-- actual height-zero occupation N0>=43742681439;
-- two owned immediate-zero interfaces and no consecutive zeros at terminal
-  offsets1/2; the depth3 parity filter alone leaves all42 initial pairs.
+The main new physical result is an actual chronological height-zero edge
+count J00>=9719139553, conditional on the sole high branch. A complete
+admissible height word also has an exact denominator boundary: one dyadic
+normalized p-gap forces positive odd-integral reconstruction. No such word
+is constructed, no atom is realized/excluded, and no branch/global gate closes.
 
-Read `RL194_RANK_ORDER_WEIGHTED_SPEED_HEIGHT_OCCUPATION_AND_OWNED_PREFIX_2026-08-31.md`,
-`RL194_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`,
-`RL194_CORRECTION_DEMOTION_LEDGER.md`, and
-`RL194_RED_TEAM_REPORT_2026-08-31.md`.  The main report carries definitions,
-constants, scope and the exact final rank-set membership rule.  Complete
-proofs and bounded audits are in `proofs/` and `reviews/`.
+Read `RL195_PHYSICAL_ZERO_EDGE_INCIDENCE_AND_EXACT_WINDOW_OWNERSHIP_2026-08-31.md`,
+`RL195_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`,
+`RL195_CORRECTION_DEMOTION_LEDGER.md`, and
+`RL195_RED_TEAM_REPORT_2026-08-31.md`.
+The main report carries all operating constants, retained rank-set membership,
+height/exponent definitions, scope, new results and the missing consumer.
 
 Next target:
-`RL195_PHYSICAL_WINDOW_TRANSPORT_AND_ZERO_HEIGHT_INCIDENCE_TARGET.md`.
+`RL196_ZERO_EDGE_PLACEMENT_AND_GLOBAL_P_SHIFT_COMPATIBILITY_TARGET.md`.
 
-Run `verification/run_fast_rl194_verifiers.sh` with sh from any directory,
-or `python3 verification/verify_rl194_chronological_speed.py` from here for
-the largest current finite certificate.  The full suite contains all4 new
-verifiers and both directly used inherited fast verifiers.
+Run `sh verification/run_fast_rl195_verifiers.sh` from this directory or
+with an absolute script path from anywhere. All4 new and6 inherited live
+verifiers are included. Required mathematical reviews and independent
+auxiliary replay scripts are in reviews/. Complete proof notes are in proofs/.
 
-Canonical floors are not pair spacing; rank order is not time order; N0 is
-not an H21 clean-start or terminal count.  H21 budget and RL191 bounds remain
-unchanged.  Knowledge catalogues are stale/deferred and are not authority.
+The full local depth3 graph has34039 final odd-witness paths; they are
+uncoupled local trajectories, not physical p-edges. Height-only witnesses
+omit/fail the exact K0 moment. Do not conflate these relaxations with the
+complete-word denominator equivalence. J00 is not the branch parameter J=23,
+an H21 count or a p-shifted pair count. All inherited budgets remain binding.
+Knowledge catalogues remain stale/deferred and are not authority.
