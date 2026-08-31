@@ -1,35 +1,15 @@
-# START HERE — authoritative RL195 handover
+# START HERE — authoritative RL196 handover
 
-Current handover: **RL195 — Physical Zero-Edge Incidence and Exact Window
-Ownership**. Incoming job: **RL196**.
+Current handover: **RL196 — Zero-Edge Placement and Global p-Shift Compatibility**. Incoming job: **RL197**.
 
-The user ended this worker session after RL195. RL196 is a prepared future
-handover only; this session does not run its start gate or begin its research.
+RL196 proves an exact global p-shift seam theorem: the mechanical digit word is p-shift invariant except at the two consecutive phases `72057431990,72057431991`. The frozen common prefix then copies the first 23 chronological edge-height transitions exactly under p-shift.
 
-The main new physical result is an actual chronological height-zero edge
-count J00>=9719139553, conditional on the sole high branch. A complete
-admissible height word also has an exact denominator boundary: one dyadic
-normalized p-gap forces positive odd-integral reconstruction. No such word
-is constructed, no atom is realized/excluded, and no branch/global gate closes.
+In particular `0->1` and `p->p+1` are an explicit physical p-shifted height-zero edge pair, with source ranks 0 and 1. This is not inferred from J00.
 
-Read `RL195_PHYSICAL_ZERO_EDGE_INCIDENCE_AND_EXACT_WINDOW_OWNERSHIP_2026-08-31.md`,
-`RL195_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`,
-`RL195_CORRECTION_DEMOTION_LEDGER.md`, and
-`RL195_RED_TEAM_REPORT_2026-08-31.md`.
-The main report carries all operating constants, retained rank-set membership,
-height/exponent definitions, scope, new results and the missing consumer.
+RL196 also gives an exact rank-set barrier showing that the frozen N0/J00 floors plus this anchor still do not force a second p-shift pair. Therefore H21 remains unchanged: core minus 14 deletions, floor 67, binding `{33,34,35}` ownership budget.
 
-Next target:
-`RL196_ZERO_EDGE_PLACEMENT_AND_GLOBAL_P_SHIFT_COMPATIBILITY_TARGET.md`.
+Read the RL196 report, certified-facts ledger, correction/demotion ledger, red-team report, and `proofs/RL196_GLOBAL_P_SHIFT_SEAM_AND_ZERO_EDGE_PLACEMENT.md`. Run `sh verification/run_fast_rl196_verifiers.sh`.
 
-Run `sh verification/run_fast_rl195_verifiers.sh` from this directory or
-with an absolute script path from anywhere. All4 new and6 inherited live
-verifiers are included. Required mathematical reviews and independent
-auxiliary replay scripts are in reviews/. Complete proof notes are in proofs/.
+Next target: `RL197_OWNED_P_SHIFT_MULTIPLICITY_AND_H21_CONSUMER_TARGET.md`.
 
-The full local depth3 graph has34039 final odd-witness paths; they are
-uncoupled local trajectories, not physical p-edges. Height-only witnesses
-omit/fail the exact K0 moment. Do not conflate these relaxations with the
-complete-word denominator equivalence. J00 is not the branch parameter J=23,
-an H21 count or a p-shifted pair count. All inherited budgets remain binding.
-Knowledge catalogues remain stale/deferred and are not authority.
+No H21 budget release, atom realization/exclusion, sole-branch closure, nontrivial-cycle closure or global Collatz closure is claimed.
