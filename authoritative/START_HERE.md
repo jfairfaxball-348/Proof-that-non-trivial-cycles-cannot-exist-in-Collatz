@@ -1,15 +1,23 @@
-# START HERE — authoritative RL196 handover
+# START HERE — authoritative RL197 handover
 
-Current handover: **RL196 — Zero-Edge Placement and Global p-Shift Compatibility**. Incoming job: **RL197**.
+Current handover: **RL197 — H21 Height-Scale Selector and Owned p-Shift Zero-Edge Interface**.  
+Incoming job: **RL198**.
 
-RL196 proves an exact global p-shift seam theorem: the mechanical digit word is p-shift invariant except at the two consecutive phases `72057431990,72057431991`. The frozen common prefix then copies the first 23 chronological edge-height transitions exactly under p-shift.
+RL197 reduces the desired second owned p-shift zero-edge bridge to one H21 bit:
+the common height at the `{33,34,35}` co-owner's `tau=34` start.
 
-In particular `0->1` and `p->p+1` are an explicit physical p-shifted height-zero edge pair, with source ranks 0 and 1. This is not inferred from J00.
+Every surviving H21 co-owner has predecessor/start mechanics `1|212`.
+Its three shallow common heights have exactly six possibilities:
+`000,010,011,100,110,111`.
 
-RL196 also gives an exact rank-set barrier showing that the frozen N0/J00 floors plus this anchor still do not force a second p-shift pair. Therefore H21 remains unchanged: core minus 14 deletions, floor 67, binding `{33,34,35}` ownership budget.
+Exactly `000` and `100` supply the canonical H21-owned p-shift-compatible zero edge at the
+middle source. Equivalently the bridge is present iff the `tau=34` common height is zero.
 
-Read the RL196 report, certified-facts ledger, correction/demotion ledger, red-team report, and `proofs/RL196_GLOBAL_P_SHIFT_SEAM_AND_ZERO_EDGE_PLACEMENT.md`. Run `sh verification/run_fast_rl196_verifiers.sh`.
+The inherited H21 normalized gaps and predecessor mod-3 condition are exactly height-scale blind
+and cannot decide that bit. No H21 budget release or branch/global closure is claimed.
 
-Next target: `RL197_OWNED_P_SHIFT_MULTIPLICITY_AND_H21_CONSUMER_TARGET.md`.
+Read the RL197 report, certified-facts ledger, correction/demotion ledger, red-team report and
+`proofs/RL197_H21_HEIGHT_SCALE_SELECTOR.md`.
+Run `sh verification/run_fast_rl197_verifiers.sh`.
 
-No H21 budget release, atom realization/exclusion, sole-branch closure, nontrivial-cycle closure or global Collatz closure is claimed.
+Next target: `RL198_H21_GLOBAL_HEIGHT_SCALE_SELECTOR_TARGET.md`.
