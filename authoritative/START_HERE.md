@@ -1,30 +1,31 @@
-# START HERE — authoritative RL200 handover
+# START HERE — authoritative RL201 handover
 
-Current authoritative session: **RL200 — H21 K-Rank Refinement and Finite Prehistory Barrier**.  
-Incoming job: **RL201**.
+Completed generation: **RL201 — H21 absolute endpoint moment and coupled prehistory**.
+Incoming job: **RL202**.
 
-RL200 did not select one of RL199's four oriented-lift classes.  It instead proved a new global
-terminal-K rank restriction:
+RL201 adds one exact rank-specific lift exclusion, identifies the absolute prefix
+functional that determines eta, and proves that a finite coupled reverse strip
+retains terminal sign/valuation freedom unless an absolute/global constraint is added.
 
-`H21 terminal rank in [25583192106,41775866136]`
+Read in order:
 
-with `16192674019` remaining necessary ranks after inherited deletions, a reduction of
-`2213738806` previously surviving necessary ranks.
+- `RL201_INHERITED_INTERFACE_AND_SCOPE.md`;
+- `RL201_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`;
+- `RL201_CORRECTION_DEMOTION_LEDGER.md`;
+- `RL201_H21_ABSOLUTE_ENDPOINT_MOMENT_AND_COUPLED_PREHISTORY_2026-08-31.md`;
+- `proofs/RL201_SIGNED_SUCCESSOR_CORRIDOR.md`;
+- `proofs/RL201_ABSOLUTE_ENDPOINT_MOMENT.md`;
+- `proofs/RL201_COUPLED_REVERSE_STRIP.md`;
+- `RL201_RED_TEAM_REPORT_2026-08-31.md`;
+- `RL201_SESSION_STATE_AND_RL202_KICKOFF_2026-08-31.md`;
+- `RL202_H21_DYADIC_PREFIX_MOMENT_AND_ABSOLUTE_ANCHOR_TARGET.md`.
 
-RL200 also proves that any finite **uncoupled** reverse prehistory using only local mechanical
-bits, odd-integrality/unit conditions and nonnegative heights is class-blind.  The next attack
-must couple the absolute endpoint `2^34 eta-1` to global rank/phase information.
+Run `bash verification/run_fast_rl201_verifiers.sh`.
+The physical ZIP, external SHA256 sidecar, internal manifest, and deterministic
+reconstruction script are included. Frozen history remains unchanged.
 
-Read:
-
-- `RL200_H21_K_RANK_REFINEMENT_AND_FINITE_PREHISTORY_BARRIER_2026-08-31.md`;
-- `RL200_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`;
-- `RL200_CORRECTION_DEMOTION_LEDGER.md`;
-- `RL200_RED_TEAM_REPORT_2026-08-31.md`;
-- `RL200_SESSION_STATE_AND_RL201_KICKOFF_2026-08-31.md`;
-- `RL201_H21_ORIENTED_ENDPOINT_RANK_MOMENT_TARGET.md`.
-
-Run `sh verification/run_fast_rl200_verifiers.sh`.
-
-Necessary ranks are not physical realizations.  No H21 charge, branch, Gate A/B, non-trivial-cycle
-or global Collatz closure is claimed.  Knowledge catalogues remain stale/deferred.
+All four eta classes remain open; 16192674019 necessary ranks remain. No physical
+population, H21 charge release, branch/Gate/global cycle closure, or Collatz proof
+is claimed. The logarithm-helper contract is explicitly repaired with no inherited
+theorem or certificate-conclusion demotion. Catalogue freshness is non-authoritative;
+see the provenance record for its status at packaging.
