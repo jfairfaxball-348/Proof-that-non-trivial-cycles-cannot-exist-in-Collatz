@@ -26,6 +26,7 @@ ENTRYPOINT_NAMES = {"START_HERE.md", "README_START_HERE.md", "README_HANDOVER.md
 SUPPORT_MARKERS = (
     "inherited", "parent_rl", "baseline_rl", "continuation", "allmd",
     "recovered_bundles", "audit_sources", "_bundle_transport", "unpacked",
+    "provenance", "unfinished",
 )
 ROLE_EXCLUSIONS = {
     "main_report": (
@@ -190,11 +191,25 @@ def _generation_root(container: Path, relative_source: str) -> str:
     return parts[0]
 
 
-def _files_for_roots(container: Path, files: list[Path], roots: list[str]) -> list[Path]:
+def _files_for_roots(
+    container: Path,
+    files: list[Path],
+    roots: list[str],
+    other_generation_roots: set[str] | None = None,
+) -> list[Path]:
+    other_generation_roots = other_generation_roots or set()
     selected = []
     for path in files:
         relative = path.relative_to(container)
-        if "." in roots and len(relative.parts) == 1:
+        # A flat handover still owns its verification/certificate subdirectories.
+        # Do not absorb another explicitly located generation or support package.
+        if "." in roots and (
+            len(relative.parts) == 1
+            or (relative.parts[0] not in other_generation_roots
+                and relative.parts[0].lower() in {"verification", "verifiers", "certificates"}
+                and not _support_penalty(container, path)
+            )
+        ):
             selected.append(path)
             continue
         if relative.parts and relative.parts[0] in roots:
@@ -285,7 +300,14 @@ def _make_generation_entry(
 ) -> dict:
     completed, incoming = pair if pair else (None, None)
     roots = sorted({_generation_root(container, item["source_path"]) for item in pair_records}) if pair_records else ["."]
-    generation_files = _files_for_roots(container, container_files, roots)
+    other_roots = set()
+    if "." in roots and pair_count > 1:
+        other_roots = {
+            _generation_root(container, item["source_path"])
+            for item in _explicit_pairs(container, container_files)
+            if (item["completed_rl"], item["incoming_rl"]) != pair
+        } - set(roots)
+    generation_files = _files_for_roots(container, container_files, roots, other_roots)
     if not generation_files:
         generation_files = container_files
 
@@ -627,8 +649,19 @@ def _parse_markdown_records(root: Path, source: dict) -> list[dict]:
     headings: list[str] = []
     records = []
     index = 0
+    fence: str | None = None
     while index < len(lines):
         raw = lines[index]
+        fence_match = re.match(r"^\s{0,3}(`{3,}|~{3,})", raw)
+        if fence is not None:
+            if re.fullmatch(r"\s{0,3}" + re.escape(fence[0]) + "{" + str(len(fence)) + r",}\s*", raw):
+                fence = None
+            index += 1
+            continue
+        if fence_match:
+            fence = fence_match.group(1)
+            index += 1
+            continue
         heading = re.match(r"^(#{1,6})\s+(.+?)\s*$", raw)
         if heading:
             level = len(heading.group(1))
@@ -693,6 +726,37 @@ def _parse_markdown_records(root: Path, source: dict) -> list[dict]:
             records.append(_record(
                 source, path, index + 1, index + 1, name, raw, explicit.group(1), headings,
             ))
+            index += 1
+            continue
+
+        # Modern canonical ledgers also use ordinary paragraphs. Preserve the
+        # complete paragraph and its recorded heading, including qualifications
+        # and nonpromotion statements; never infer a mathematical classification.
+        if (raw.strip() and not raw.startswith(("    ", "\t"))
+                and not raw.lstrip().startswith(("|", ">"))
+                and not re.fullmatch(r"\s*([-*_])(?:\s*\1){2,}\s*", raw)):
+            start = index
+            block = [raw]
+            index += 1
+            while index < len(lines):
+                continuation = lines[index]
+                if (not continuation.strip()
+                        or continuation.startswith(("    ", "\t"))
+                        or re.match(r"^\s*(?:[-*+]\s+|\d+[.)]\s+|#{1,6}\s+|\||>|`{3,}|~{3,})", continuation)
+                        or re.match(r"^\s*\*\*(?:Class|Classification|Status)\s*:", continuation, re.I)
+                        or re.fullmatch(r"\s*([-*_])(?:\s*\1){2,}\s*", continuation)):
+                    break
+                block.append(continuation)
+                index += 1
+            text = "\n".join(block)
+            bold = re.match(r"^\*\*([^*]{1,160})\*\*", text)
+            identifier = re.search(r"\bRL\d+(?:[.\-][A-Za-z0-9]+)+\b", text, re.I)
+            name = bold.group(1).rstrip(":. ") if bold else (identifier.group(0) if identifier else None)
+            records.append(_record(
+                source, path, start + 1, index, name, text,
+                _classification_heading(headings), headings,
+            ))
+            continue
         index += 1
     return records
 

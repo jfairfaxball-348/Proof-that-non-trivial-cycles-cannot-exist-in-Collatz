@@ -1,8 +1,10 @@
+import hashlib
 import json
 import re
 import sys
 import unittest
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from types import SimpleNamespace
 from unittest.mock import patch
 
@@ -26,9 +28,24 @@ class ConveyorKnowledgeIntegrationTests(unittest.TestCase):
 
     def test_current_rl_comes_from_unique_target(self):
         state = rl_conveyor.state()
-        target_number = int(re.search(r"RL(\d+)", Path(state["target"]).name).group(1))
+        targets = list((ROOT / "authoritative").rglob("*TARGET*.md"))
+        self.assertEqual(len(targets), 1)
+        self.assertEqual(state["target"], targets[0].relative_to(ROOT).as_posix())
+        target_numbers = set(re.findall(r"RL(\d+)", targets[0].name, re.I))
+        self.assertEqual(len(target_numbers), 1)
+        target_number = int(target_numbers.pop())
+        handover_pairs = {
+            (int(match.group(1)), int(match.group(2)))
+            for path in (ROOT / "authoritative").rglob("*.md")
+            for match in [re.search(r"RL(\d+)_SESSION_STATE_AND_RL(\d+)_KICKOFF", path.name, re.I)]
+            if match and int(match.group(2)) == target_number
+        }
+        self.assertEqual(len(handover_pairs), 1)
+        completed, incoming = handover_pairs.pop()
         self.assertEqual(state["current_rl"], target_number)
-        self.assertEqual(state["handover_generation"], 175)
+        self.assertEqual(state["current_rl"], incoming)
+        self.assertEqual(state["handover_generation"], completed)
+        self.assertEqual(incoming, completed + 1)
 
     def test_every_physical_session_container_is_catalogued(self):
         physical = {path.as_posix() for path in (ROOT / "sessions").glob("RL*") if path.is_dir()}
@@ -77,13 +94,28 @@ class ConveyorKnowledgeIntegrationTests(unittest.TestCase):
             for record in result["embedded_locator_records"]
         ))
 
-    def test_named_current_result_has_verbatim_classification_and_source(self):
-        result = rl_catalog.query_results(ROOT, "RL175.4", 5)
-        self.assertEqual(result["match_count"], 1)
-        record = result["matches"][0]
-        self.assertEqual(record["source_scope"], "authoritative")
+    def test_named_historical_result_has_verbatim_classification_and_source(self):
+        source = (
+            "sessions/RL176/RL175_Corrected_P_Shift_Flow_Consumer_2026-08-29/"
+            "RL175_CERTIFIED_FACTS_AND_PROOF_LEDGER.md"
+        )
+        result = rl_catalog.query_results(ROOT, "RL175.4", len(self.results))
+        originals = [
+            record for record in result["matches"]
+            if record["source_path"] == source and record["name"] == "RL175.4"
+        ]
+        self.assertEqual(len(originals), 1)
+        record = originals[0]
+        self.assertEqual(record["source_scope"], "session")
+        self.assertEqual(record["source_kind"], "proof_status_ledger")
+        self.assertEqual((record["completed_rl"], record["incoming_rl"]), (175, 176))
         self.assertEqual(record["recorded_classification"], "New proved analytic mathematics")
-        self.assertTrue(record["source_path"].endswith("RL175_CERTIFIED_FACTS_AND_PROOF_LEDGER.md"))
+        self.assertEqual(
+            record["recorded_text"],
+            "**RL175.4:** in the physical `h_p=0` branch, `R-Q>5/8`.",
+        )
+        self.assertEqual((record["source_line_start"], record["source_line_end"]), (10, 10))
+        self.assertEqual(record["source_sha256"], hashlib.sha256((ROOT / source).read_bytes()).hexdigest())
 
     def test_explicit_correction_is_returned_without_adjudication(self):
         result = rl_catalog.query_results(ROOT, "physical-functional identification", 10)
@@ -131,6 +163,171 @@ class ConveyorKnowledgeIntegrationTests(unittest.TestCase):
     def test_generated_indexes_are_current(self):
         validation = rl_catalog.validate_indexes(ROOT)
         self.assertTrue(validation["current"], json.dumps(validation["mismatches"], indent=2))
+
+
+class CatalogueExtractionRegressionTests(unittest.TestCase):
+    def setUp(self):
+        temporary = TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        self.root = Path(temporary.name)
+
+    def write_fixture(self, relative, text):
+        path = self.root / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+        return path
+
+    def parse_ledger(self, text):
+        path = self.write_fixture("authoritative/FIXTURE_PROOF_LEDGER.md", text)
+        source = {
+            "source_path": path.relative_to(self.root).as_posix(),
+            "source_kind": "proof_status_ledger",
+            "source_scope": "authoritative",
+        }
+        return path, rl_catalog._parse_markdown_records(self.root, source)
+
+    def assert_source_record(self, record, path, start, end, classification, text):
+        self.assertEqual(record["source_path"], path.relative_to(self.root).as_posix())
+        self.assertEqual((record["source_line_start"], record["source_line_end"]), (start, end))
+        self.assertEqual(record["source_sha256"], hashlib.sha256(path.read_bytes()).hexdigest())
+        self.assertEqual(record["recorded_classification"], classification)
+        self.assertEqual(record["recorded_text"], text)
+
+    def test_modern_paragraph_retains_inherited_heading_and_complete_source_span(self):
+        path, records = self.parse_ledger(
+            "# Fixture proof ledger\n\n"
+            "## Inherited proved analytic mathematics\n\n"
+            "**RL206-T1**, unchanged: the cyclic recurrence\n"
+            "retains its inherited additive compatibility scope.\n"
+            "It does not classify owned quotient residues.\n"
+        )
+        matches = [record for record in records if "RL206-T1" in record["aliases"]]
+        self.assertEqual(len(matches), 1)
+        record = matches[0]
+        self.assert_source_record(
+            record, path, 5, 7, "Inherited proved analytic mathematics",
+            "**RL206-T1**, unchanged: the cyclic recurrence retains its inherited "
+            "additive compatibility scope. It does not classify owned quotient residues.",
+        )
+        self.assertEqual(record["source_kind"], "proof_status_ledger")
+        self.assertEqual(record["source_scope"], "authoritative")
+        self.assertEqual(
+            record["section_path"],
+            ["Fixture proof ledger", "Inherited proved analytic mathematics"],
+        )
+
+    def test_no_new_results_and_not_promoted_prose_keep_literal_status(self):
+        path, records = self.parse_ledger(
+            "# Fixture proof ledger\n\n"
+            "## New result and target status\n\n"
+            "**No new RL207 theorem or exact finite certificate is promoted.** The target\n"
+            "remains unfinished.\n\n"
+            "## Unfinished status\n\n"
+            "Both investigations are **NOT PROMOTED** and cannot support a theorem.\n"
+            "Fresh proof and verification remain required.\n\n"
+            "**Status:** NOT PROMOTED\n"
+        )
+        by_start = {record["source_line_start"]: record for record in records}
+        self.assert_source_record(
+            by_start[5], path, 5, 6, "New result and target status",
+            "**No new RL207 theorem or exact finite certificate is promoted.** "
+            "The target remains unfinished.",
+        )
+        self.assert_source_record(
+            by_start[10], path, 10, 11, "Unfinished status",
+            "Both investigations are **NOT PROMOTED** and cannot support a theorem. "
+            "Fresh proof and verification remain required.",
+        )
+        self.assert_source_record(
+            by_start[13], path, 13, 13, "NOT PROMOTED", "**Status:** NOT PROMOTED",
+        )
+
+    def test_fenced_examples_and_ordinary_reports_are_not_designated_results(self):
+        for fence in ("```", "~~~"):
+            with self.subTest(fence=fence):
+                ledger = self.write_fixture(
+                    "authoritative/FIXTURE_PROOF_LEDGER.md",
+                    "# Fixture proof ledger\n\n"
+                    "## Inherited proved analytic mathematics\n\n"
+                    f"{fence}markdown\n"
+                    "## New proved analytic mathematics\n"
+                    "**RL999-EXAMPLE:** quoted template, not a status record.\n"
+                    "**Status:** new theorem\n"
+                    f"{fence}\n\n"
+                    "**RL206-T1**, unchanged: the actual inherited entry.\n",
+                )
+                report = self.write_fixture(
+                    "authoritative/ORDINARY_REPORT.md",
+                    "# Ordinary report\n\n"
+                    "## Proved analytic mathematics\n\n"
+                    "**RL999-REPORT:** ordinary prose is not a designated ledger.\n",
+                )
+                with patch.object(rl_catalog, "_git_files", return_value=[ledger, report]):
+                    records, sources = rl_catalog.build_result_catalog(self.root, [])
+                self.assertEqual(
+                    [source["source_path"] for source in sources],
+                    [ledger.relative_to(self.root).as_posix()],
+                )
+                self.assertEqual(len(records), 1)
+                self.assert_source_record(
+                    records[0], ledger, 11, 11, "Inherited proved analytic mathematics",
+                    "**RL206-T1**, unchanged: the actual inherited entry.",
+                )
+                self.assertFalse(any("RL999" in record["recorded_text"] for record in records))
+
+    def test_flat_session_discovers_nested_checks_without_inactive_generation_pairs(self):
+        prefix = "sessions/RL43"
+        fixtures = {
+            f"{prefix}/RL42_SESSION_STATE_AND_RL43_KICKOFF.md": "# Current handover\n",
+            f"{prefix}/RL42_CERTIFIED_FACTS_AND_PROOF_LEDGER.md": "# Current proof ledger\n",
+            f"{prefix}/verification/units/verify_fixture.py": "# Canonical nested verifier\n",
+            f"{prefix}/certificates/exact/check.json": "{}\n",
+            f"{prefix}/drafts/verify_draft.py": "# Not a canonical verifier\n",
+            f"{prefix}/provenance/RL41_SESSION_STATE_AND_RL42_KICKOFF.md.txt": "# Inactive provenance\n",
+            f"{prefix}/unfinished/RL40_SESSION_STATE_AND_RL41_KICKOFF.md": "# Unfinished checkpoint\n",
+        }
+        files = [self.write_fixture(relative, text) for relative, text in fixtures.items()]
+        with patch.object(rl_catalog, "_git_files", return_value=files):
+            records = rl_catalog.build_session_catalog(self.root)
+        generations = [record for record in records if record["record_type"] == "generation"]
+        self.assertEqual(len(generations), 1)
+        record = generations[0]
+        self.assertEqual((record["completed_rl"], record["incoming_rl"]), (42, 43))
+        self.assertEqual(record["generation_paths"], [prefix])
+        self.assertEqual(
+            record["verifier_paths"], [f"{prefix}/verification/units/verify_fixture.py"],
+        )
+        self.assertEqual(
+            record["certificate_roots"], [f"{prefix}/certificates", f"{prefix}/verification"],
+        )
+        self.assertEqual(
+            record["session_state_handover_paths"],
+            [f"{prefix}/RL42_SESSION_STATE_AND_RL43_KICKOFF.md"],
+        )
+        self.assertEqual(record["source_generation_identity"]["file_count"], 4)
+        self.assertEqual(
+            {item["source_path"] for item in record["relationship_evidence"]},
+            {f"{prefix}/RL42_SESSION_STATE_AND_RL43_KICKOFF.md"},
+        )
+
+    def test_flat_root_does_not_absorb_an_explicit_sibling_generation(self):
+        prefix = "sessions/RL43"
+        relative_files = (
+            f"{prefix}/RL42_SESSION_STATE_AND_RL43_KICKOFF.md",
+            f"{prefix}/certificates/result.json",
+            f"{prefix}/verification/RL39_SESSION_STATE_AND_RL40_KICKOFF.md",
+            f"{prefix}/verification/verify_other_generation.py",
+        )
+        files = [self.write_fixture(relative, "fixture\n") for relative in relative_files]
+        container = self.root / prefix
+        selected = rl_catalog._files_for_roots(
+            container, files, ["."], other_generation_roots={"verification"},
+        )
+        self.assertEqual(set(selected), set(files[:2]))
+        self.assertEqual(
+            set(rl_catalog._files_for_roots(container, files, ["verification"])),
+            set(files[2:]),
+        )
 
 
 if __name__ == "__main__":
