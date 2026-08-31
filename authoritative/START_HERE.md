@@ -1,23 +1,23 @@
-# START HERE — RL204 handover
+# START HERE — RL206 incoming authoritative state
 
-Generation: RL204, completed 2026-08-31.
+The completed authoritative generation is **RL205**. The incoming mathematical job is
+**RL206**.
 
-Read in order:
-1. `RL204_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`
-2. `RL204_CORRECTION_DEMOTION_LEDGER.md`
-3. `RL204_STRATEGIC_REVIEW_AUDIT_AND_ROADMAP_2026-08-31.md`
-4. `RL204_RED_TEAM_REPORT_2026-08-31.md`
-5. `RL204_SESSION_STATE_AND_RL205_KICKOFF_2026-08-31.md`
-6. `RL205_GLOBAL_CLOSURE_ROUTE_TOURNAMENT_AND_INDEPENDENT_INFORMATION_TARGET.md`
+Read, in order:
 
-Portable fast verifier:
-`python3 verification/verify_rl204_strategic_review.py`
+1. `RL205_SESSION_STATE_AND_RL206_KICKOFF_2026-08-31.md`
+2. `RL206_DQ_SENSITIVE_OWNED_GATE_B_QUOTIENT_RESIDUAL_TARGET.md`
+3. `RL205_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`
+4. `RL205_CORRECTION_DEMOTION_LEDGER.md`
+5. `RL205_RED_TEAM_REPORT_2026-08-31.md`
+6. `RL205_GLOBAL_CLOSURE_ROUTE_TOURNAMENT_2026-08-31.md`
 
-RL204 is a strategic review only. It proves no new mathematical theorem, deletes no
-necessary rank, changes no eta/state/sign class, and demotes no inherited result.
-The inherited exact necessary-rank count remains **16,188,727,234**.
+Then run:
 
-Decision: pivot now to RL205, a focused global closure route tournament. The H21
-programme remains fully viable and is explicitly retained as a tournament contender,
-but it should resume only through a consumer that brings genuinely independent
-information beyond the RL203 shallow dyadic/root-anchor boundary.
+`python3 verification/verify_rl205_route_tournament.py`
+
+Frozen state: 16,188,727,234 necessary ranks; eta classes `0,8,9,17 mod18`; no new
+mathematical theorem or rank exclusion in RL205. Gate A and Gate B remain globally open.
+
+RL206 primary: `D|Q`-sensitive quotient-layer owned Gate-B residual / strict-excursion
+bridge. H21 independent-information completion is the first fallback.
