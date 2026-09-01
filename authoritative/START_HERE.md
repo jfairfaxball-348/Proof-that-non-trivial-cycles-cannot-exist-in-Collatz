@@ -1,36 +1,49 @@
-# RL220 incoming authoritative state
+# Authoritative START HERE
 
-Completed predecessor: **RL219**. Incoming job: **RL220**.
+Current completed session: **RL220**  
+Unique incoming session: **RL221**
 
-This directory is intentionally compact. Historical generations are frozen under `sessions/`; they are not normal startup surfaces.
+Authoritative completed bundle directory:
 
-Read in order:
+`RL220_Backward_Pump_Rigidity_and_Bounded_Star_SUnit_NoGo_2026-09-01/`
 
-1. `RL219_Bounded_Blue_Floor_and_Dyadic_Library_NoGo_2026-09-01/RL219_SESSION_STATE_AND_RL220_KICKOFF_2026-09-01.md`
-2. `RL219_Bounded_Blue_Floor_and_Dyadic_Library_NoGo_2026-09-01/RL219_CORRECTION_DEMOTION_LEDGER.md`
-3. `RL219_Bounded_Blue_Floor_and_Dyadic_Library_NoGo_2026-09-01/RL219_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`
-4. `RL219_Bounded_Blue_Floor_and_Dyadic_Library_NoGo_2026-09-01/RL219_REDUCED_H21_INTERFACE.md`
-5. `RL219_Bounded_Blue_Floor_and_Dyadic_Library_NoGo_2026-09-01/proofs/RL219_BOUNDED_BLUE_FLOOR_AND_DYADIC_LIBRARY_NO_GO_THEOREM.md`
-6. `RL219_Bounded_Blue_Floor_and_Dyadic_Library_NoGo_2026-09-01/RL220_UNBOUNDED_CERTIFIED_BLUE_FAMILY_ALIGNMENT_TARGET.md`
+Outer reconstructed-bundle sidecar:
 
-Current necessary terminal rank count: **13,415,865,871**.
+`RL220_Backward_Pump_Rigidity_and_Bounded_Star_SUnit_NoGo_2026-09-01.zip.sha256`
 
-The e=16 phase-51 family remains **139,581,280** arithmetic candidates across **45,045** prefixes. RL219 deletes zero candidates/ranks.
+Lossless successor transport:
 
-New RL219 route locks:
+`RL221_HANDOVER_BUNDLE_TRANSPORT/`
 
-- any physical e=16 H21 realization has all shortcut states strictly above **7,990,444,342,345,556,229,119**;
-- the stable externally verified `[1,2^71]` interval lies below that physical floor;
-- a finite set of certified seeds and finite library of fixed raw backward words remains a finite singleton-probe architecture even after unbounded dyadic seed scaling, because the current root band has multiplicative width <2.
+## Read first
 
-Do not repeat the RL80 LTE-comb screen, seed-1 reverse tree through depth 86, fixed-seed singleton analysis, or finite-library dyadic scaling as if open compression routes.
+1. `RL220_Backward_Pump_Rigidity_and_Bounded_Star_SUnit_NoGo_2026-09-01/RL220_SESSION_STATE_AND_RL221_KICKOFF_2026-09-01.md`
+2. `RL220_Backward_Pump_Rigidity_and_Bounded_Star_SUnit_NoGo_2026-09-01/RL220_CORRECTION_DEMOTION_LEDGER.md`
+3. `RL220_Backward_Pump_Rigidity_and_Bounded_Star_SUnit_NoGo_2026-09-01/RL220_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`
+4. `RL220_Backward_Pump_Rigidity_and_Bounded_Star_SUnit_NoGo_2026-09-01/RL220_REDUCED_H21_INTERFACE.md`
+5. `RL220_Backward_Pump_Rigidity_and_Bounded_Star_SUnit_NoGo_2026-09-01/proofs/RL220_BACKWARD_PUMP_RIGIDITY_AND_BOUNDED_STAR_REDUCTION.md`
+6. `RL220_Backward_Pump_Rigidity_and_Bounded_Star_SUnit_NoGo_2026-09-01/RL221_GLOBAL_CONSTRAINT_INTERSECTION_MINIMAL_CONTRADICTION_CORE_TARGET.md`
 
-Portable closeout checks:
+## Frozen state
 
-`python3 RL219_Bounded_Blue_Floor_and_Dyadic_Library_NoGo_2026-09-01/verification/verify_rl219_bounded_blue_floor.py`
+- necessary terminal-rank frontier: **13,415,865,871**;
+- e=16 phase-51 candidates: **139,581,280** across **45,045** live prefixes;
+- phase-51 selector: **3,132,617** disjoint 2-adic cylinders, max **25 bits**;
+- e=16 terminal rank **34,124,151,203** remains live;
+- RL220 candidate/prefix/rank deletions: **0 / 0 / 0**;
+- Gate A: open globally;
+- Gate B: open globally;
+- global nontrivial-cycle exclusion: open.
 
-`python3 RL219_Bounded_Blue_Floor_and_Dyadic_Library_NoGo_2026-09-01/verification/verify_rl219_proof_state.py`
+## RL220 strategic lock
 
-The successor bundle is stored in the repository-supported reconstructible transport directory `RL220_HANDOVER_BUNDLE_TRANSPORT/`; `python3 tools/rl_conveyor.py verify-incoming` reconstructs and verifies it against the top-level sidecar.
+RL220 proves fixed-block inverse-pump rigidity and closes rectangular
+bounded-star non-dyadic families by reducing the surviving variable dyadic-gap
+families to exact finite exponential/S-unit pullback equations.
 
-Knowledge catalogues: **stale/deferred**.
+By explicit closeout instruction, the prior local-thread RL221 target is not promoted. The unique RL221 task is instead a **Global Constraint Intersection / Minimal Contradiction Core** session: put the currently valid independent restrictions into a common scoped constraint system, prove bridge maps, eliminate duplicates/coboundaries, and actively search the joint system for a minimal contradiction core, a smallest missing bridge set, or an irreducible survivor model.
+
+This successor override changes no RL220 mathematics.
+
+Portable RL220 fast verifiers are inside the completed bundle directory.
+Knowledge catalogues are **stale/deferred**.
