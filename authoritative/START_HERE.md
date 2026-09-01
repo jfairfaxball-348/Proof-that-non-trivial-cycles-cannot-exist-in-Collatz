@@ -2,33 +2,35 @@
 
 Date: 2026-09-01.
 
-Completed session: **RL224 — Candidate-Coupled Height Closure and e=16 Rank Deletion**.
+Completed session: **RL225 — e=4 Exact Root Window and Candidate-Coupled Height Transfer**.
 
-Incoming authoritative target: **RL225 — Remaining Small-Offset Candidate-Coupled Height Transfer / Rank Contraction**.
+Incoming authoritative target: **RL226 — e=4 Dyadic Cylinder Compression and Height Closure**.
 
-RL225 is prepared but **NOT STARTED**: no successor start gate, checkpoint, mathematical scan, or route exploration has occurred.
+RL226 is prepared but **NOT STARTED**: no successor start gate, checkpoint, mathematical scan, or route exploration has occurred.
 
 Read first:
 
-1. `RL224_Candidate_Coupled_Height_Closure_and_E16_Rank_Deletion_2026-09-01/RL224_SESSION_STATE_AND_RL225_KICKOFF_2026-09-01.md`
-2. `RL224_Candidate_Coupled_Height_Closure_and_E16_Rank_Deletion_2026-09-01/RL224_CORRECTION_DEMOTION_LEDGER.md`
-3. `RL224_Candidate_Coupled_Height_Closure_and_E16_Rank_Deletion_2026-09-01/RL224_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`
-4. `RL224_Candidate_Coupled_Height_Closure_and_E16_Rank_Deletion_2026-09-01/RL224_REDUCED_H21_INTERFACE.md`
-5. `RL224_Candidate_Coupled_Height_Closure_and_E16_Rank_Deletion_2026-09-01/RL225_REMAINING_SMALL_OFFSET_CANDIDATE_COUPLED_HEIGHT_TRANSFER_TARGET.md`
+1. `RL225_E4_Exact_Root_Window_and_Candidate_Coupled_Height_Transfer_2026-09-01/RL225_SESSION_STATE_AND_RL226_KICKOFF_2026-09-01.md`
+2. `RL225_E4_Exact_Root_Window_and_Candidate_Coupled_Height_Transfer_2026-09-01/RL225_CORRECTION_DEMOTION_LEDGER.md`
+3. `RL225_E4_Exact_Root_Window_and_Candidate_Coupled_Height_Transfer_2026-09-01/RL225_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`
+4. `RL225_E4_Exact_Root_Window_and_Candidate_Coupled_Height_Transfer_2026-09-01/RL225_REDUCED_H21_INTERFACE.md`
+5. `RL225_E4_Exact_Root_Window_and_Candidate_Coupled_Height_Transfer_2026-09-01/RL226_E4_DYADIC_CYLINDER_COMPRESSION_AND_HEIGHT_CLOSURE_TARGET.md`
 
 Frozen proof state:
 
 - necessary terminal frontier: **13,415,865,870**;
-- e=16 final candidates/prefixes: **0 / 0**;
-- excluded terminal rank: **34,124,151,203**;
-- RL224 candidate/prefix/rank deletions: **139,581,280 / 45,045 / 1**;
+- e=4 terminal rank: **31,435,476,727**, still live;
+- e=4 exact raw candidates: **3,863,379,575**;
+- terminal-Hensel deletions: **1,842**;
+- mandatory-height deletions through transition 41: **1,988,460**;
+- exact combined e=4 remainder: **3,861,389,273**;
 - Gate A: open;
 - Gate B: open;
 - physical H21 incidence/charge: unproved;
 - branch contradiction/global nontrivial-cycle exclusion: open.
 
-RL224's exact reconstructive certificate reruns all **331,927,916** inherited RL216-targeted e=16 candidates, reproduces the RL223 phase-51 count **139,581,280**, leaves **4,242** at transition 200, and proves all residual candidates fail the mandatory nonnegative-height condition by transition index 346 at the latest.
+RL225 converts the inherited `eta=207 mod243` e=4 selector into a gap-free exact finite root family and applies candidate-coupled height propagation through transition 41. It does **not** delete the e=4 rank. RL226 must compress the surviving dyadic cylinders exactly before attempting deeper closure.
 
-Bundle transport is `RL225_HANDOVER_BUNDLE_TRANSPORT/`. It losslessly reconstructs the canonical RL224 ZIP from the completed Git tree. The matching outer `.zip.sha256` sidecar is top-level in this directory.
+Bundle transport is `RL226_HANDOVER_BUNDLE_TRANSPORT/`. It losslessly reconstructs the canonical RL225 ZIP from the completed Git tree. The matching outer `.zip.sha256` sidecar is top-level in this directory.
 
 Knowledge catalogues: **stale/deferred**; not proof-state authority.
