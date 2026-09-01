@@ -1,46 +1,34 @@
-# RL217 incoming authoritative state
+# RL218 incoming authoritative state
 
-Completed predecessor: **RL216**. Incoming job: **RL217**.
+Completed predecessor: **RL217**. Incoming job: **RL218**.
 
 Read in order:
-1. `RL216_SESSION_STATE_AND_RL217_KICKOFF_2026-09-01.md`
-2. `RL216_CORRECTION_DEMOTION_LEDGER.md`
-3. `RL216_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`
-4. `RL216_REDUCED_H21_INTERFACE.md`
-5. `RL215_REDUCED_H21_INTERFACE.md`
-6. `RL214_REDUCED_H21_INTERFACE.md`
-7. `RL213_REDUCED_H21_INTERFACE.md`
-8. `RL212_REDUCED_H21_INTERFACE.md`
-9. `RL211_REDUCED_H21_INTERFACE.md`
-10. `RL210_REDUCED_H21_INTERFACE.md`
-11. `RL206_INHERITED_H21_INTERFACE.md`
-12. `RL216_E16_ROOT_TAIL_HEIGHT_CONE_CERTIFICATE.md`
-13. `proofs/RL216_E16_ROOT_TAIL_HEIGHT_CONE_THEOREM.md`
-14. `RL217_H21_E16_PREFIX_WIDE_MODULAR_HEIGHT_CONE_TARGET.md`
-15. `RL216_RED_TEAM_REPORT_2026-09-01.md`
+1. `RL217_SESSION_STATE_AND_RL218_KICKOFF_2026-09-01.md`
+2. `RL217_CORRECTION_DEMOTION_LEDGER.md`
+3. `RL217_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`
+4. `RL217_REDUCED_H21_INTERFACE.md`
+5. `RL216_REDUCED_H21_INTERFACE.md`
+6. `RL217_PREFIX_WIDE_HEIGHT_AUTOMATON_CERTIFICATE.md`
+7. `proofs/RL217_PREFIX_WIDE_HEIGHT_AUTOMATON_THEOREM.md`
+8. `RL218_CERTIFIED_BLUE_LATTICE_RECOGNITION_EXPLORATION_TARGET.md`
+9. `RL217_RED_TEAM_REPORT_2026-09-01.md`
 
 Current necessary terminal rank count: **13,415,865,871**
 (above p **7,091,831,284**; below p **6,324,034,587**).
 
-RL216 result:
-- the exact phase-16 root tail plus nonnegative height is a new discrete consumer;
-- the unique minimum-Q prefix `Q=43,013,953` has 7,369 RL215/Hensel-surviving lifts;
-- an exact 2-adic residue/range sieve proves every lift makes a height negative by phase 174;
-- exactly one prefix is deleted;
-- the conservative e=16 family is **45,045 prefixes** and **331,927,916 arithmetic candidates**;
+RL217 result:
+- the e=16 phase-16 tail factors through one universal lifted coordinate `x=eta_*+3^17 k`;
+- a shared exact 2-adic height automaton through phase 51 removes **192,346,636** additional arithmetic candidates without enumerating the incoming 331,927,916;
+- **139,581,280** arithmetic candidates remain across all **45,045** prefixes;
+- the survivor family is represented exactly by finite `k` windows plus a union of **3,132,617** disjoint 2-adic cylinders (max 25-bit precision);
 - both states, all four mod18 classes and all 469 eta mod2187 classes survive;
-- terminal rank `34,124,151,203` and the global frontier are unchanged.
+- terminal rank `34,124,151,203` and the global frontier are unchanged;
+- raw deeper cylinder expansion is frozen as a method barrier, not proved mathematically impossible.
 
-Binding route locks:
-- RL216's phase-174 deletion is scoped only to the canonical minimum-Q prefix;
-- do not brute-force the remaining candidate population; use shared modular/range states;
-- do not mistake arithmetic candidate counts for physical populations;
-- `Q modD=0` is not the quotient residue `(Q/D) modD`;
-- terminal valuation alone, collapsed endpoint moment, saturated G56 and flat-K normalized-gap integrality remain inert;
-- RL209 signed-successor scope is not transported without a new anchor.
+RL218 is the user-directed exploratory certified-blue lattice-recognition session. It must inherit RL80/RL81 no-go locks and begin with symbolic legal backward-word algebra, seeking exact congruence/valuation/lattice selectors on the modern RL217 candidate parameter. Density, proximity and arbitrary backward saturation are explicitly insufficient.
 
 Portable checks:
-`python3 verification/verify_rl216_e16_root_tail_cone.py`
-`python3 verification/verify_rl216_proof_state.py`
+`python3 verification/verify_rl217_prefix_wide_height_automaton.py`
+`python3 verification/verify_rl217_proof_state.py`
 
 Knowledge catalogues remain stale/deferred and are not part of the mathematical authority gate.

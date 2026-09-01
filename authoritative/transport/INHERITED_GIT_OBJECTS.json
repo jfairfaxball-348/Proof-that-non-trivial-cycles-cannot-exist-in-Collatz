@@ -1,9 +1,9 @@
 {
-  "base_head": "a6b524ff8b8920ee357db83d59ebb1112a39e1fe",
-  "format": "rl216-connector-lossless-transport-v1",
-  "freeze_session_path": "sessions/RL215",
-  "incoming_authoritative_tree": "69e33054cccd6c18af325d98f48d491b3a28645d",
+  "base_head": "7122546103d4631e79bdd3ffac7289e6aaab2eac",
+  "format": "rl217-connector-lossless-transport-v1",
+  "freeze_session_path": "sessions/RL216",
+  "incoming_authoritative_tree": "aa82e4ce1466ee1649f4117411e6b3b1b37ab806",
   "repository": "jfairfaxball-348/Proof-that-non-trivial-cycles-cannot-exist-in-Collatz",
-  "successor_completed_rl": 216,
-  "successor_incoming_rl": 217
+  "successor_completed_rl": 217,
+  "successor_incoming_rl": 218
 }
