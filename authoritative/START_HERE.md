@@ -1,49 +1,54 @@
 # Authoritative START HERE
 
-Current completed session: **RL220**  
-Unique incoming session: **RL221**
+Current completed session: **RL221**  
+Unique incoming session: **RL222**
 
 Authoritative completed bundle directory:
 
-`RL220_Backward_Pump_Rigidity_and_Bounded_Star_SUnit_NoGo_2026-09-01/`
+`RL221_Global_Constraint_Intersection_Type_Safe_Obstruction_2026-09-01/`
 
 Outer reconstructed-bundle sidecar:
 
-`RL220_Backward_Pump_Rigidity_and_Bounded_Star_SUnit_NoGo_2026-09-01.zip.sha256`
+`RL221_Global_Constraint_Intersection_Type_Safe_Obstruction_2026-09-01.zip.sha256`
 
 Lossless successor transport:
 
-`RL221_HANDOVER_BUNDLE_TRANSPORT/`
+`RL222_HANDOVER_BUNDLE_TRANSPORT/`
 
 ## Read first
 
-1. `RL220_Backward_Pump_Rigidity_and_Bounded_Star_SUnit_NoGo_2026-09-01/RL220_SESSION_STATE_AND_RL221_KICKOFF_2026-09-01.md`
-2. `RL220_Backward_Pump_Rigidity_and_Bounded_Star_SUnit_NoGo_2026-09-01/RL220_CORRECTION_DEMOTION_LEDGER.md`
-3. `RL220_Backward_Pump_Rigidity_and_Bounded_Star_SUnit_NoGo_2026-09-01/RL220_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`
-4. `RL220_Backward_Pump_Rigidity_and_Bounded_Star_SUnit_NoGo_2026-09-01/RL220_REDUCED_H21_INTERFACE.md`
-5. `RL220_Backward_Pump_Rigidity_and_Bounded_Star_SUnit_NoGo_2026-09-01/proofs/RL220_BACKWARD_PUMP_RIGIDITY_AND_BOUNDED_STAR_REDUCTION.md`
-6. `RL220_Backward_Pump_Rigidity_and_Bounded_Star_SUnit_NoGo_2026-09-01/RL221_GLOBAL_CONSTRAINT_INTERSECTION_MINIMAL_CONTRADICTION_CORE_TARGET.md`
+1. `RL221_Global_Constraint_Intersection_Type_Safe_Obstruction_2026-09-01/RL221_SESSION_STATE_AND_RL222_KICKOFF_2026-09-01.md`
+2. `RL221_Global_Constraint_Intersection_Type_Safe_Obstruction_2026-09-01/RL221_CORRECTION_DEMOTION_LEDGER.md`
+3. `RL221_Global_Constraint_Intersection_Type_Safe_Obstruction_2026-09-01/RL221_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`
+4. `RL221_Global_Constraint_Intersection_Type_Safe_Obstruction_2026-09-01/RL221_REDUCED_H21_INTERFACE.md`
+5. `RL221_Global_Constraint_Intersection_Type_Safe_Obstruction_2026-09-01/proofs/RL221_TYPE_SAFE_CONSTRAINT_INTERSECTION_OBSTRUCTION.md`
+6. `RL221_Global_Constraint_Intersection_Type_Safe_Obstruction_2026-09-01/RL222_FULL_PERIOD_QUOTIENT_RESIDUE_CANDIDATE_RETURN_COUPLING_TARGET.md`
 
 ## Frozen state
 
 - necessary terminal-rank frontier: **13,415,865,871**;
 - e=16 phase-51 candidates: **139,581,280** across **45,045** live prefixes;
-- phase-51 selector: **3,132,617** disjoint 2-adic cylinders, max **25 bits**;
 - e=16 terminal rank **34,124,151,203** remains live;
-- RL220 candidate/prefix/rank deletions: **0 / 0 / 0**;
+- RL221 candidate/prefix/rank deletions: **0 / 0 / 0**;
 - Gate A: open globally;
 - Gate B: open globally;
 - global nontrivial-cycle exclusion: open.
 
-## RL220 strategic lock
+## RL221 strategic result
 
-RL220 proves fixed-block inverse-pump rigidity and closes rectangular
-bounded-star non-dyadic families by reducing the surviving variable dyadic-gap
-families to exact finite exponential/S-unit pullback equations.
+RL221 puts five modern necessary arithmetic restrictions onto one exact e=16/H21
+tuple and certifies an explicit common survivor:
+`Q16=43079489`, `k=28821`, `eta=3722043165201`,
+`y0=24921895945404894117887`.
 
-By explicit closeout instruction, the prior local-thread RL221 target is not promoted. The unique RL221 task is instead a **Global Constraint Intersection / Minimal Contradiction Core** session: put the currently valid independent restrictions into a common scoped constraint system, prove bridge maps, eliminate duplicates/coboundaries, and actively search the joint system for a minimal contradiction core, a smallest missing bridge set, or an irreducible survivor model.
+Hence that selected inherited core is nonempty.  RL221 also proves the scope rule
+that RL219/RL220 blue-family and pump no-go theorems are not additional necessary
+candidate predicates without a physical-to-route bridge.
 
-This successor override changes no RL220 mathematics.
+The unique RL222 task is therefore a **Full-Period Quotient-Residue /
+Candidate-Wise Return Coupling** attack: obtain `Qfull(d) modD^2` or an
+equivalent independent return congruence, project it to the finite k-windows,
+and intersect it exactly.
 
-Portable RL220 fast verifiers are inside the completed bundle directory.
+Portable RL221 fast verifiers are inside the completed bundle directory.
 Knowledge catalogues are **stale/deferred**.
