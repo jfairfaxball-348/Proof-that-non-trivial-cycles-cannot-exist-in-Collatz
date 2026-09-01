@@ -1,36 +1,29 @@
-# Authoritative RL state — START HERE
+# Authoritative RL227 handover
 
 Date: 2026-09-01.
 
-Completed session: **RL225 — e=4 Exact Root Window and Candidate-Coupled Height Transfer**.
+The current completed authoritative session is **RL226**. RL227 is prepared but **NOT STARTED**.
 
-Incoming authoritative target: **RL226 — e=4 Dyadic Cylinder Compression and Height Closure**.
+Read the completed package:
 
-RL226 is prepared but **NOT STARTED**: no successor start gate, checkpoint, mathematical scan, or route exploration has occurred.
+`RL226_E4_Lossless_Cylinder_Normal_Form_and_Residue_Barrier_2026-09-01/`
 
-Read first:
+Key frozen state:
 
-1. `RL225_E4_Exact_Root_Window_and_Candidate_Coupled_Height_Transfer_2026-09-01/RL225_SESSION_STATE_AND_RL226_KICKOFF_2026-09-01.md`
-2. `RL225_E4_Exact_Root_Window_and_Candidate_Coupled_Height_Transfer_2026-09-01/RL225_CORRECTION_DEMOTION_LEDGER.md`
-3. `RL225_E4_Exact_Root_Window_and_Candidate_Coupled_Height_Transfer_2026-09-01/RL225_CERTIFIED_FACTS_AND_PROOF_LEDGER.md`
-4. `RL225_E4_Exact_Root_Window_and_Candidate_Coupled_Height_Transfer_2026-09-01/RL225_REDUCED_H21_INTERFACE.md`
-5. `RL225_E4_Exact_Root_Window_and_Candidate_Coupled_Height_Transfer_2026-09-01/RL226_E4_DYADIC_CYLINDER_COMPRESSION_AND_HEIGHT_CLOSURE_TARGET.md`
+- necessary terminal-rank frontier: **13,415,865,870**;
+- e=4 terminal rank **31,435,476,727** remains live;
+- e=4 combined survivors through transition 43: **3,856,660,232**;
+- RL226 proves a lossless reduced cylinder state `(phase,residue,precision,intercept)` with slope/height derived;
+- naive phase/precision-only merging is not exact because residue/intercept remains load-bearing;
+- physical H21 incidence/charge, whole high-branch contradiction, Gate A, Gate B, and global nontrivial-cycle exclusion remain open.
 
-Frozen proof state:
+The unique successor target is:
 
-- necessary terminal frontier: **13,415,865,870**;
-- e=4 terminal rank: **31,435,476,727**, still live;
-- e=4 exact raw candidates: **3,863,379,575**;
-- terminal-Hensel deletions: **1,842**;
-- mandatory-height deletions through transition 41: **1,988,460**;
-- exact combined e=4 remainder: **3,861,389,273**;
-- Gate A: open;
-- Gate B: open;
-- physical H21 incidence/charge: unproved;
-- branch contradiction/global nontrivial-cycle exclusion: open.
+`RL227_REALISTIC_RL_CLOSURE_ROADMAP_AND_EXHAUSTIVE_FALLBACK_ROUTE_TREE_TARGET.md`
 
-RL225 converts the inherited `eta=207 mod243` e=4 selector into a gap-free exact finite root family and applies candidate-coupled height propagation through transition 41. It does **not** delete the e=4 rank. RL226 must compress the surviving dyadic cylinders exactly before attempting deeper closure.
+RL227 must answer what realistically remains to close RL on the current path, build a dependency-aware route tree with explicit continue/pivot/retire fallbacks, and carry the fallback structure all the way to a final `SYNTHESISE NEW SOLUTIONS` stage if all inherited routes are exhausted.
 
-Bundle transport is `RL226_HANDOVER_BUNDLE_TRANSPORT/`. It losslessly reconstructs the canonical RL225 ZIP from the completed Git tree. The matching outer `.zip.sha256` sidecar is top-level in this directory.
+Completed package Git tree: `824219eda86040bd4378bb9a56ebb1965b5f4003`.
+Canonical ZIP SHA256: `b42816c63101736acc20f051c227a17a0cdec8e3424f07772314498a6826eb8c`.
 
-Knowledge catalogues: **stale/deferred**; not proof-state authority.
+Bundle transport is `RL227_HANDOVER_BUNDLE_TRANSPORT/`. Knowledge catalogues remain stale/deferred and are not proof-state authority.
