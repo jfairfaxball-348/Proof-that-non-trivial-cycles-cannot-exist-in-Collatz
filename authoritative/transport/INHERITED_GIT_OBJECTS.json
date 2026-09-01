@@ -1,19 +1,9 @@
 {
-  "base_head": "f0dbcb3fa0aba3d943cf4f1f91d2ff407ba9520e",
-  "format": "rl214-connector-lossless-transport-v1",
-  "freeze_session_path": "sessions/RL213",
-  "incoming_authoritative_tree": "3f568c15ee37b418c4d1113c05460b98c9170098",
-  "inherited_subtrees": {
-    "certificates": "adbfbac5be31d793c0b4f7b7c1f46ead56f11e49",
-    "corrections": "98aeb78b9992878b6cf66adc8cde85b1872d9f32",
-    "interfaces": "74eb67c8bbfadffe6b36bf9ab1c941dd19573ed6",
-    "proofs": "19941795da2afad8393ed1cb88e94ddf6986ce59",
-    "provenance": "b61f3134fe7482a398ad2ce1011875a931656ff6",
-    "reviews": "0686a8b48b81b912b08682d9691819bc2a839076",
-    "transport": "a149f75774403a245107427b40834e0d6f3abdf6",
-    "verification": "c802d162b2f18fcca98b132b04919a913daba1b1"
-  },
+  "base_head": "478e5cace212ed60cfb8cca56ccd3496c8381b68",
+  "format": "rl215-connector-lossless-transport-v1",
+  "freeze_session_path": "sessions/RL214",
+  "incoming_authoritative_tree": "5f0b71bb04c21f2e0654d658a932ca4432ebfaee",
   "repository": "jfairfaxball-348/Proof-that-non-trivial-cycles-cannot-exist-in-Collatz",
-  "successor_completed_rl": 214,
-  "successor_incoming_rl": 215
+  "successor_completed_rl": 215,
+  "successor_incoming_rl": 216
 }
