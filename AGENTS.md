@@ -74,6 +74,35 @@ If interrupted, leave the last remote authority as truth and report the last ver
 
 Research procedure: `docs/RL_RESEARCH_PROTOCOL.md`. State transitions: `docs/RL_STATE_MACHINE.md`.
 
+## Interactive session command convention
+
+For ordinary interactive RL work, the user-facing command surface has three core forms:
+
+1. **Kickoff** — typically `@GitHub continue with the next authoritative session`, optionally with extra instructions or a strategic pivot.
+2. **Continue** — typically the bare message `continue`.
+3. **Finish** — typically `finish up`.
+
+A kickoff starts only the unique incoming authoritative RL after the normal start gate. Any additional kickoff instruction is a direct user instruction and takes priority subject to the mathematical-integrity and stop-and-repair rules.
+
+On the kickoff research turn and on every bare `continue`, work until the next **meaningful mathematical checkpoint**, then stop further mathematics/computation for that turn and report it. A meaningful checkpoint is a theorem-sized advance, exact certificate or material contraction, resolved/repaired claim, decisive route barrier, genuinely useful new invariant, or another coherent result that materially changes the current attack. Do not stop for a trivial algebra step, tiny count change, routine lookup, or other micro-advance merely to manufacture a checkpoint.
+
+At every such checkpoint:
+
+- state clearly what progressed and its proof-state classification;
+- state what remains open or unpromoted;
+- autonomously judge whether the current session has enough mathematical route momentum, context, compute/tool headroom, and closeout safety to continue productively;
+- end the checkpoint recommendation with exactly one of these two sentences:
+  - `it makes sense to continue here`
+  - `it makes sense to finish up here`
+
+Make that judgement yourself; do not ask the user to decide whether enough progress has occurred. The judgement should reflect mathematical leverage, remaining attack surface, context/compute/tool limits, and the risk of losing a clean closeout.
+
+A bare `continue` does **not** enter `CLOSEOUT_LOCK` solely because the recommendation is to finish. Stop at the checkpoint and let the user issue `finish up`, unless an existing rule independently requires immediate `CLOSEOUT_LOCK` because delay risks incomplete closeout or the user has already asked for closeout.
+
+On `finish up`, enter `CLOSEOUT_LOCK` immediately and perform no further research before the verified atomic handover/commit/push/readback sequence.
+
+After a session has been finished and promoted, answer occasional follow-up questions from the committed authoritative state without starting the prepared successor RL. Only a new kickoff starts that successor unless the user explicitly instructs otherwise.
+
 ## Stop-and-repair
 
 Stop on any integrity/verifier failure, inherited contradiction, scope error, failed required red team, certificate range gap, invalidated live bound, incomplete work used as complete, or unexplained `BASE_HEAD` mismatch.
