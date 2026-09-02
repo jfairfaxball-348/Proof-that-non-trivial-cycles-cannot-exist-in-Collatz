@@ -1,23 +1,26 @@
-# Authoritative incoming state — RL237
+# Authoritative start — RL238
 
-Completed incoming generation: **RL236 — Success B after closeout repair**.
+Incoming state: **RL238**.
 
-RL236 certifies exact chronological spacing `>=3032` for H20 `T=5*3^35`, owners `{32,33,34,35}`, giving invariant-specific occurrence cap `45358853`. The repaired charging schedule is safely lifted only to the first distinct uncapped H20 `{32,33,34}` budget boundary, proving ordinary absolute corrected flow `>742`, each signed corrected-flow mass `>371`, and each directional K variation `>123`.
+Completed incoming generation: **RL237 — Success B**.
 
-Mandatory closeout red-team withdrew the later scratch `>763` charge lift because the distinct H20 `T=216803362095665397`, owners `{32,33,34}` cell became uncovered. Scratch H21 `{33,34}` spacing `>=6251` is also NOT PROMOTED.
+RL237 materially advanced the repaired sparse-family charging/chronological-recurrence programme and then froze it as a valid, returnable branch:
 
-The completed RL236 package is:
+- H20 `T=216803362095665397`, owners `{32,33,34}` spacing `>=210`, cap `654895453`;
+- H20 `T=150094635296999121`, owners `{31,...,36}` spacing `>=5597`, cap `24571742`;
+- exhaustive `7531`-cell coupled schedule with ordinary corrected flow `>742.4232`, signed masses `>371.2116`, directional K variation `>123.7372`;
+- exact saturation at H21 `T=550346996088996777`, owners `{34,35}`, core `[109195551555,122224615441]`;
+- further middle-band improvement would need cap `<=6182` / direct spacing `>=22242932`;
+- the same H21 blocker has a promoted returnability certificate spacing `>=3032`, cap `45358853`.
 
-`RL236_H20_Four_Owner_Recurrence_and_Repaired_Charge_Lift_2026-09-02/`
+Completed RL237 package tree: `ad2c60d337a684a02a268a15a88331aab0fd4f6b`.
+Canonical deterministic ZIP SHA256: `6bffd45215f679dbe2780dc227a6ed43479bea1e830ccfd68f7262cf022718c6`.
 
-Canonical ZIP SHA256:
+Unique RL238 target: `RL238_RADIUS4_GATE_B_PIVOT_TARGET.md`.
 
-`6fe21be6a3b7df018b060ba7858956069c632b0cfdc31eba9877285661446175`
+RL238 is **prepared but NOT STARTED**.
 
-The unique next target is:
+Active mission: freeze the RL231–RL237 charging programme by default and pivot to **Gate B / radius 4**. First recover the exact proved radius-3 definition/theorem and its still-open global bridge as inherited authority. Then define and prove the literal radius-4 analogue and investigate whether its global bridge is materially easier. Do not assume a larger radius closes anything automatically.
 
-`RL237_EXACT_H20_323334_INCIDENCE_AND_CHARGE_SATURATION_TARGET.md`
-
-RL237 is prepared but **NOT STARTED**.
-
-First objective: exact H20 `T=216803362095665397`, owners `{32,33,34}` incidence `<=655841741`; chronological spacing `>=210` suffices while `209` does not. Gate A and Gate B remain open. Knowledge catalogues are `stale/deferred`.
+Gate A: open. Gate B: open. Global non-trivial-cycle exclusion: open.
+Knowledge catalogues: stale/deferred.
