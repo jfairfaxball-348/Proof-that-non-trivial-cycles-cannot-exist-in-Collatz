@@ -1,2 +1,10 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Auto-detect text files and keep repository text deterministic across platforms.
+* text=auto eol=lf
+
+# Handover archives are opaque binary artifacts.
+*.zip binary
+
+# Knowledge catalogues are deterministic generated caches, not source documents.
+knowledge/session_catalog.jsonl text eol=lf linguist-generated=true
+knowledge/result_catalog.jsonl text eol=lf linguist-generated=true
+knowledge/index_metadata.json text eol=lf linguist-generated=true

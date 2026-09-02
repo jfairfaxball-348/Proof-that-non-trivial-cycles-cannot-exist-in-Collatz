@@ -3,10 +3,14 @@
 
 import argparse
 import base64
+import binascii
 import hashlib
 import json
+import os
 import re
 import shlex
+import shutil
+import stat
 import subprocess
 import sys
 import tempfile
@@ -25,17 +29,57 @@ from rl_catalog import (
 
 ROOT = Path(__file__).resolve().parents[1]
 AUTH = ROOT / "authoritative"
+GIT_TIMEOUT_SECONDS = 30
+RECONSTRUCTION_TIMEOUT_SECONDS = 60
+VERIFIER_TIMEOUT_SECONDS = 120
+DIRECT_TREE_TRANSPORT = "direct Git tree plus deterministic ZIP reconstruction"
+DIRECT_TREE_MANIFEST_FIELDS = {
+    "canonical_zip",
+    "canonical_zip_sha256",
+    "completed_package_tree_sha",
+    "completed_rl",
+    "incoming_rl",
+    "incoming_rl_started",
+    "reconstruction_script",
+    "transport",
+}
 
 
 class Failure(RuntimeError):
     pass
 
 
-def git(*args):
-    run = subprocess.run(["git", *args], cwd=ROOT, text=True, capture_output=True)
+def git(*args, timeout=GIT_TIMEOUT_SECONDS):
+    try:
+        run = subprocess.run(
+            ["git", *args], cwd=ROOT, text=True, capture_output=True, timeout=timeout
+        )
+    except (OSError, subprocess.TimeoutExpired) as error:
+        raise Failure("git command failed: %s" % error) from error
     if run.returncode:
         raise Failure(run.stderr.strip() or "git command failed")
     return run.stdout
+
+
+def _git_bytes(*args, timeout=GIT_TIMEOUT_SECONDS):
+    try:
+        run = subprocess.run(
+            ["git", *args], cwd=ROOT, stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE, timeout=timeout,
+        )
+    except (OSError, subprocess.TimeoutExpired) as error:
+        raise Failure("git command failed: %s" % error) from error
+    if run.returncode:
+        message = run.stderr.decode("utf-8", errors="replace").strip()
+        raise Failure(message or "git command failed")
+    return run.stdout
+
+
+def _optional_git(*args):
+    try:
+        return git(*args).strip()
+    except Failure:
+        return None
 
 
 def digest(path):
@@ -47,10 +91,22 @@ def digest(path):
 
 
 def safe(name):
+    if not isinstance(name, str) or not name or "\0" in name or "\\" in name:
+        raise Failure("unsafe bundle/manifest path: %r" % name)
+    raw_parts = name.split("/")
+    if any(part in {"", ".", ".."} for part in raw_parts):
+        raise Failure("unsafe bundle/manifest path: %r" % name)
     path = PurePosixPath(name)
-    if not name or path.is_absolute() or ".." in path.parts:
+    if path.is_absolute() or re.fullmatch(r"[A-Za-z]:", raw_parts[0]):
         raise Failure("unsafe bundle/manifest path: %r" % name)
     return Path(*path.parts)
+
+
+def safe_manifest_path(name):
+    """Accept the checksum convention './path' without erasing traversal."""
+    if isinstance(name, str) and name.startswith("./"):
+        name = name[2:]
+    return safe(name)
 
 
 def state():
