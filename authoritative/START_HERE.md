@@ -1,21 +1,21 @@
-# Authoritative incoming state — RL235
+# Authoritative incoming state — RL236
 
-Completed incoming generation: **RL234 — STOP-AND-REPAIR**.
+Completed incoming generation: **RL235 — Success B**.
 
-RL234 found an inherited coverage defect in RL231's sparse-family charging proof. The `>665` corrected-flow theorem and dependent `N17<=1,615` / `85,103,989` scale claims are demoted pending repair. RL232 combined H17 spacing `>=1001` and RL233 finite-modulus decomposition remain preserved.
+RL235 repairs the RL231 sparse-family charging coverage defect with an exhaustive reconstruction of 7,531 retained full-prefix atomic owner cells. The new gap-free theorem proves ordinary absolute corrected flow `>712`, each signed corrected-flow mass `>356`, and each directional K variation `>118`. The historical RL231 proof remains demoted as written; the old H17 `1,615` / `85,103,989` targets remain demoted.
 
-The completed RL234 package is:
+The completed RL235 package is:
 
-`RL234_Stop_and_Repair_RL231_Charging_Coverage_2026-09-02/`
+`RL235_Repaired_Sparse_Family_Charging_and_H20_185_Target_2026-09-02/`
 
 Canonical ZIP SHA256:
 
-`ca4e61c9404e565957f67d4d11d63d9a28fa0de4c1b5af29277dc5b45624435d`
+`94ba303becdc2c7a81db081f7e1968861e230f5cc3df28c8c88ed631440297e2`
 
 The unique next target is:
 
-`RL235_REPAIR_RL231_SPARSE_FAMILY_CHARGING_COVERAGE_AND_REBASE_H17_TARGET.md`
+`RL236_H20_FOUR_OWNER_CHRONOLOGICAL_RECURRENCE_AND_CHARGE_LIFT_TARGET.md`
 
-RL235 is prepared but **NOT STARTED**.
+RL236 is prepared but **NOT STARTED**.
 
-Read the RL234 proof state, correction/demotion ledger, red-team report and RL235 target before starting mathematics. Knowledge catalogues are `stale/deferred`.
+Read the RL235 proof state, correction/demotion ledger, red-team report and RL236 target before starting mathematics. The first objective is the exact H20 `T=5*3^35`, owners `{32,33,34,35}` recurrence/incidence bound; spacing `>=185` suffices while `184` does not. Gate A and Gate B remain open. Knowledge catalogues are `stale/deferred`.
