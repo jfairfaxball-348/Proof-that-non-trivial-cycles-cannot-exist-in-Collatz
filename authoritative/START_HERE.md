@@ -1,35 +1,25 @@
-# Authoritative RL233 handover
+# Authoritative RL234 handover
 
 Date: 2026-09-02.
 
-The current completed authoritative session is **RL232**. RL233 is prepared but **NOT STARTED**.
+Incoming job: **RL234**. RL233 is complete with **Success C**.
 
-Read the completed package:
+Completed RL233 result: bare finite endpoint-modulus escalation is classified completely for the exact owned recurrence. The 2-primary component re-bases after forced divisibility, the 3-primary component has finite explicit source-term memory, and the prime-to-6 component is reversible for fixed legal transition labels. A bare modulus is therefore not the missing long-range H17 reset resource.
 
-`RL232_H17_Cross_Family_State_Barriers_and_Owned_Long_Return_Pivot_2026-09-02/`
+Preserved state:
+- frontier `13,415,865,870`;
+- e=4 rank `31,435,476,727` live with `3,856,660,232` combined survivors through transition 43;
+- combined H17 spacing `>=1001`;
+- H17 incidence `<=1,615` not proved;
+- sole high branch, Gate A, Gate B, and global exclusion remain open.
 
-Key frozen state:
+Unique target:
 
-- RL232 outcome: **Success C** under the H17 cross-family incidence/global-return target;
-- necessary terminal-rank frontier: **13,415,865,870**;
-- e=4 terminal rank `31,435,476,727`: live;
-- e=4 combined arithmetic survivors through transition 43: **3,856,660,232**;
-- inherited K corridor: `128,081,997,553 < K < 146,795,909,391`;
-- H17-A K-compatible terminal core: `[11,443,822,977,28,746,802,249]`, with `K>134,536,495,104`;
-- H17-B K-compatible terminal core: `[72,981,981,437,100,039,806,527]`;
-- combined H17 chronological spacing: `>=1001`;
-- required combined H17 incidence `<=1,615`: **not proved**;
-- scalar K/monodromy, local owned-prefix, and positive moving-window states are certified insufficient at their stated scopes;
-- the missing object is a genuinely long-range owned endpoint/return-defect, higher-owned-modulus state, or equivalent macro reset cost coupling successive H17 terminals;
-- no terminal rank is deleted; the sole high branch, Gate A, Gate B, and global non-trivial-cycle exclusion remain open.
+`RL234_OWNED_MACRO_RESET_COST_AND_LEGAL_TAIL_CONSUMER_TARGET.md`
 
-The unique successor target is:
+RL234 should prioritize a genuinely noncongruential owned macro reset cost. A unit residue is admissible only if an independently proved physical legal-tail restriction turns it into a global consumer.
 
-`RL233_OWNED_LONG_RETURN_DEFECT_AND_HIGHER_MODULUS_TARGET.md`
+Completed package Git tree: `f684a02668a6be4c9ead6105ddb5c699ad5bb518`.
+Canonical ZIP SHA256: `1a6953a1294b2df771721886d799e6683fb56a11c93eefaa8bd6b19f3fc418aa`.
 
-RL233 must attack a long-range owned state that cannot reset independently at each H17 event. It must not merely extend the same recurrence cutoff, deepen the local prefix graph by a few steps, or reuse scalar `(K,C,Y)` positivity alone.
-
-Completed package Git tree: `9117b176964a2f920d093349c984f78c7a36dec9`.
-Canonical ZIP SHA256: `2bba222d14ce0bff85b0d66e87aa67273e5bd3fc41948efa90b2cb588869da10`.
-
-Bundle transport is `RL233_HANDOVER_BUNDLE_TRANSPORT/`. Knowledge catalogues remain `stale/deferred` and are not proof-state authority.
+Bundle transport is `RL234_HANDOVER_BUNDLE_TRANSPORT/`. Knowledge catalogues remain `stale/deferred` and are not proof-state authority.
