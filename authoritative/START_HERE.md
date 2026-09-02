@@ -1,21 +1,23 @@
-# Authoritative incoming state — RL236
+# Authoritative incoming state — RL237
 
-Completed incoming generation: **RL235 — Success B**.
+Completed incoming generation: **RL236 — Success B after closeout repair**.
 
-RL235 repairs the RL231 sparse-family charging coverage defect with an exhaustive reconstruction of 7,531 retained full-prefix atomic owner cells. The new gap-free theorem proves ordinary absolute corrected flow `>712`, each signed corrected-flow mass `>356`, and each directional K variation `>118`. The historical RL231 proof remains demoted as written; the old H17 `1,615` / `85,103,989` targets remain demoted.
+RL236 certifies exact chronological spacing `>=3032` for H20 `T=5*3^35`, owners `{32,33,34,35}`, giving invariant-specific occurrence cap `45358853`. The repaired charging schedule is safely lifted only to the first distinct uncapped H20 `{32,33,34}` budget boundary, proving ordinary absolute corrected flow `>742`, each signed corrected-flow mass `>371`, and each directional K variation `>123`.
 
-The completed RL235 package is:
+Mandatory closeout red-team withdrew the later scratch `>763` charge lift because the distinct H20 `T=216803362095665397`, owners `{32,33,34}` cell became uncovered. Scratch H21 `{33,34}` spacing `>=6251` is also NOT PROMOTED.
 
-`RL235_Repaired_Sparse_Family_Charging_and_H20_185_Target_2026-09-02/`
+The completed RL236 package is:
+
+`RL236_H20_Four_Owner_Recurrence_and_Repaired_Charge_Lift_2026-09-02/`
 
 Canonical ZIP SHA256:
 
-`94ba303becdc2c7a81db081f7e1968861e230f5cc3df28c8c88ed631440297e2`
+`6fe21be6a3b7df018b060ba7858956069c632b0cfdc31eba9877285661446175`
 
 The unique next target is:
 
-`RL236_H20_FOUR_OWNER_CHRONOLOGICAL_RECURRENCE_AND_CHARGE_LIFT_TARGET.md`
+`RL237_EXACT_H20_323334_INCIDENCE_AND_CHARGE_SATURATION_TARGET.md`
 
-RL236 is prepared but **NOT STARTED**.
+RL237 is prepared but **NOT STARTED**.
 
-Read the RL235 proof state, correction/demotion ledger, red-team report and RL236 target before starting mathematics. The first objective is the exact H20 `T=5*3^35`, owners `{32,33,34,35}` recurrence/incidence bound; spacing `>=185` suffices while `184` does not. Gate A and Gate B remain open. Knowledge catalogues are `stale/deferred`.
+First objective: exact H20 `T=216803362095665397`, owners `{32,33,34}` incidence `<=655841741`; chronological spacing `>=210` suffices while `209` does not. Gate A and Gate B remain open. Knowledge catalogues are `stale/deferred`.
