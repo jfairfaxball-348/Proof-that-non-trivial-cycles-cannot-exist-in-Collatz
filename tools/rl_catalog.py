@@ -8,9 +8,11 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 import subprocess
-from pathlib import Path
+import tempfile
+from pathlib import Path, PurePosixPath
 
 
 SESSION_FORMAT = "rl-session-catalog-v1"
@@ -41,12 +43,118 @@ class CatalogError(RuntimeError):
     pass
 
 
+class _BuildContext:
+    """Invocation-local file facts; never survives one catalogue render."""
+
+    def __init__(self, root: Path):
+        self.root = root.resolve()
+        self.resolved_paths: dict[Path, Path] = {}
+        self.repo_paths: dict[Path, str] = {}
+        self.contents: dict[Path, bytes] = {}
+        self.digests: dict[Path, str] = {}
+        self.fingerprints: dict[Path, tuple[int, int, int, int, int]] = {}
+        self.file_lists: dict[str, tuple[str, ...]] = {}
+
+    @staticmethod
+    def _fingerprint(path: Path) -> tuple[int, int, int, int, int]:
+        details = path.stat()
+        return (
+            details.st_dev,
+            details.st_ino,
+            details.st_mode,
+            details.st_size,
+            details.st_mtime_ns,
+        )
+
+    def resolve(self, path: Path) -> Path:
+        resolved = self.resolved_paths.get(path)
+        if resolved is None:
+            resolved = path.resolve()
+            self.resolved_paths[path] = resolved
+            self.resolved_paths[resolved] = resolved
+        return resolved
+
+    def observe(self, path: Path) -> Path:
+        path = self.resolve(path)
+        if path not in self.fingerprints:
+            try:
+                path.relative_to(self.root)
+                self.fingerprints[path] = self._fingerprint(path)
+            except (ValueError, OSError) as error:
+                raise CatalogError("catalogue input is missing or escapes repository: %s" % path) from error
+        return path
+
+    def read_bytes(self, path: Path) -> bytes:
+        path = self.observe(path)
+        if path not in self.contents:
+            try:
+                self.contents[path] = path.read_bytes()
+            except OSError as error:
+                raise CatalogError("cannot read catalogue input %s: %s" % (path, error)) from error
+        return self.contents[path]
+
+    def digest(self, path: Path) -> str:
+        path = self.observe(path)
+        if path not in self.digests:
+            self.digests[path] = hashlib.sha256(self.read_bytes(path)).hexdigest()
+        return self.digests[path]
+
+    def size(self, path: Path) -> int:
+        path = self.observe(path)
+        return self.fingerprints[path][3]
+
+    def repo_path(self, path: Path) -> str:
+        cached = self.repo_paths.get(path)
+        if cached is not None:
+            return cached
+        resolved = self.resolve(path)
+        cached = self.repo_paths.get(resolved)
+        if cached is None:
+            try:
+                cached = resolved.relative_to(self.root).as_posix()
+            except ValueError as error:
+                raise CatalogError("path escapes repository: %s" % path) from error
+            self.repo_paths[resolved] = cached
+        self.repo_paths[path] = cached
+        return cached
+
+    def assert_unchanged(self):
+        for path, expected in self.fingerprints.items():
+            try:
+                actual = self._fingerprint(path)
+            except OSError as error:
+                raise CatalogError("catalogue input changed during generation: %s" % path) from error
+            if actual != expected:
+                raise CatalogError("catalogue input changed during generation: %s" % path)
+        for prefix, expected in self.file_lists.items():
+            actual = tuple(_git_file_names(self.root, prefix))
+            if actual != expected:
+                raise CatalogError("catalogue input set changed during generation: %s" % prefix)
+
+
+_ACTIVE_CONTEXT: _BuildContext | None = None
+
+
 def sha256_path(path: Path) -> str:
+    if _ACTIVE_CONTEXT is not None:
+        return _ACTIVE_CONTEXT.digest(path)
     value = hashlib.sha256()
     with path.open("rb") as source:
         for block in iter(lambda: source.read(1024 * 1024), b""):
             value.update(block)
     return value.hexdigest()
+
+
+def _read_text(path: Path, errors="strict") -> str:
+    if _ACTIVE_CONTEXT is not None:
+        try:
+            return _ACTIVE_CONTEXT.read_bytes(path).decode("utf-8", errors=errors)
+        except UnicodeError as error:
+            raise CatalogError("cannot decode catalogue input %s: %s" % (path, error)) from error
+    try:
+        return path.read_text(encoding="utf-8", errors=errors)
+    except (OSError, UnicodeError) as error:
+        raise CatalogError("cannot read catalogue input %s: %s" % (path, error)) from error
 
 
 def parse_rl_identifier(value: str) -> int:
@@ -56,7 +164,7 @@ def parse_rl_identifier(value: str) -> int:
     return int(match.group(1))
 
 
-def _git_files(root: Path, prefix: str) -> list[Path]:
+def _git_file_names(root: Path, prefix: str) -> list[str]:
     run = subprocess.run(
         ["git", "ls-files", "-z", "--cached", "--others", "--exclude-standard", "--", prefix],
         cwd=root,
@@ -68,13 +176,23 @@ def _git_files(root: Path, prefix: str) -> list[Path]:
     for raw in run.stdout.split(b"\0"):
         if not raw:
             continue
-        path = root / raw.decode("utf-8", "surrogateescape")
+        relative = raw.decode("utf-8", "surrogateescape")
+        path = root / relative
         if path.is_file():
-            paths.append(path)
-    return sorted(paths, key=lambda item: item.relative_to(root).as_posix())
+            paths.append(relative)
+    return sorted(paths)
+
+
+def _git_files(root: Path, prefix: str) -> list[Path]:
+    names = _git_file_names(root, prefix)
+    if _ACTIVE_CONTEXT is not None:
+        _ACTIVE_CONTEXT.file_lists[prefix] = tuple(names)
+    return [root / name for name in names]
 
 
 def _repo_path(root: Path, path: Path) -> str:
+    if _ACTIVE_CONTEXT is not None:
+        return _ACTIVE_CONTEXT.repo_path(path)
     try:
         return path.resolve().relative_to(root.resolve()).as_posix()
     except ValueError as error:
@@ -87,7 +205,7 @@ def _content_identity(root: Path, files: list[Path]) -> dict:
     unique = sorted(set(files), key=lambda item: _repo_path(root, item))
     for path in unique:
         relative = _repo_path(root, path)
-        size = path.stat().st_size
+        size = _ACTIVE_CONTEXT.size(path) if _ACTIVE_CONTEXT is not None else path.stat().st_size
         total += size
         digest.update(relative.encode("utf-8", "surrogateescape"))
         digest.update(b"\0")
@@ -162,7 +280,7 @@ def _explicit_pairs(container: Path, files: list[Path]) -> list[dict]:
                     })
                     seen.add(key)
         if path.name in ENTRYPOINT_NAMES and path.suffix.lower() == ".md":
-            text = path.read_text(encoding="utf-8", errors="replace")
+            text = _read_text(path, errors="replace")
             pattern = re.compile(
                 r"freezes\s+(?:the\s+)?completed\s+RL0*(\d+).*?launch(?:es|ing)\s+RL0*(\d+)",
                 re.I | re.S,
@@ -220,7 +338,7 @@ def _files_for_roots(
 def _extract_references(root: Path, entrypoints: list[Path]) -> list[Path]:
     found = []
     for entrypoint in entrypoints:
-        text = entrypoint.read_text(encoding="utf-8", errors="replace")
+        text = _read_text(entrypoint, errors="replace")
         tokens = re.findall(r"`([^`]+)`", text)
         tokens += re.findall(r"\[[^\]]+\]\(([^)]+)\)", text)
         for token in tokens:
@@ -231,7 +349,12 @@ def _extract_references(root: Path, entrypoints: list[Path]) -> list[Path]:
                 or not re.fullmatch(r"[A-Za-z0-9_./+()\- ]+\.[A-Za-z0-9]+", token)
             ):
                 continue
-            candidate = (entrypoint.parent / token.lstrip("./")).resolve()
+            if token.startswith("./"):
+                token = token[2:]
+            relative = PurePosixPath(token)
+            if relative.is_absolute() or ".." in relative.parts or "\\" in token:
+                continue
+            candidate = (entrypoint.parent / Path(*relative.parts)).resolve()
             try:
                 candidate.relative_to(root.resolve())
             except ValueError:
@@ -244,7 +367,7 @@ def _extract_references(root: Path, entrypoints: list[Path]) -> list[Path]:
 def _archive_references(root: Path, source_bundle_paths: list[Path]) -> list[str]:
     found = set()
     for source in source_bundle_paths:
-        text = source.read_text(encoding="utf-8", errors="replace")
+        text = _read_text(source, errors="replace")
         for match in re.finditer(r"`?(Archive/[^`\s)]+)`?", text):
             candidate = match.group(1).rstrip(".,")
             if (root / candidate).exists():
@@ -645,7 +768,7 @@ def _split_markdown_row(line: str) -> list[str]:
 
 def _parse_markdown_records(root: Path, source: dict) -> list[dict]:
     path = root / source["source_path"]
-    lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
+    lines = _read_text(path, errors="replace").splitlines()
     headings: list[str] = []
     records = []
     index = 0
@@ -835,7 +958,7 @@ def _jsonl_bytes(records: list[dict]) -> bytes:
     )
 
 
-def build_index_bytes(root: Path) -> dict[str, bytes]:
+def _build_index_bytes(root: Path) -> dict[str, bytes]:
     sessions = build_session_catalog(root)
     results, sources = build_result_catalog(root, sessions)
     session_bytes = _jsonl_bytes(sessions)
@@ -871,12 +994,67 @@ def build_index_bytes(root: Path) -> dict[str, bytes]:
     }
 
 
+def _render_index_bytes(root: Path) -> tuple[dict[str, bytes], tuple[str, ...]]:
+    global _ACTIVE_CONTEXT
+    if _ACTIVE_CONTEXT is not None:
+        raise CatalogError("nested catalogue generation is not supported")
+    context = _BuildContext(root)
+    _ACTIVE_CONTEXT = context
+    try:
+        rendered = _build_index_bytes(root)
+        context.assert_unchanged()
+        inputs = tuple(sorted(context.repo_path(path) for path in context.fingerprints))
+        return rendered, inputs
+    finally:
+        _ACTIVE_CONTEXT = None
+
+
+def build_index_bytes(root: Path) -> dict[str, bytes]:
+    return _render_index_bytes(root)[0]
+
+
+def _atomic_write(path: Path, content: bytes):
+    descriptor = None
+    temporary = None
+    try:
+        descriptor, raw_temporary = tempfile.mkstemp(
+            prefix=".%s." % path.name, suffix=".tmp", dir=str(path.parent)
+        )
+        temporary = Path(raw_temporary)
+        with os.fdopen(descriptor, "wb") as target:
+            descriptor = None
+            target.write(content)
+            target.flush()
+            os.fsync(target.fileno())
+        os.replace(str(temporary), str(path))
+        temporary = None
+    except OSError as error:
+        raise CatalogError("cannot atomically publish %s: %s" % (path, error)) from error
+    finally:
+        if descriptor is not None:
+            os.close(descriptor)
+        if temporary is not None:
+            try:
+                temporary.unlink()
+            except FileNotFoundError:
+                pass
+
+
 def write_indexes(root: Path) -> dict:
     knowledge = root / "knowledge"
     knowledge.mkdir(parents=True, exist_ok=True)
     rendered = build_index_bytes(root)
-    for name, content in rendered.items():
-        (knowledge / name).write_bytes(content)
+    # Publish the catalogues first and their hash/count metadata last. Each
+    # replacement is atomic, and byte-identical outputs retain their mtimes.
+    for name in ("session_catalog.jsonl", "result_catalog.jsonl", "index_metadata.json"):
+        path = knowledge / name
+        content = rendered[name]
+        try:
+            unchanged = path.is_file() and path.read_bytes() == content
+        except OSError as error:
+            raise CatalogError("cannot compare generated index %s: %s" % (path, error)) from error
+        if not unchanged:
+            _atomic_write(path, content)
     metadata = json.loads(rendered["index_metadata.json"])
     return metadata
 
@@ -885,7 +1063,7 @@ def root_start_contract_issues(root: Path) -> list[str]:
     path = root / "START_HERE.md"
     if not path.is_file():
         return ["root START_HERE.md is missing"]
-    text = path.read_text(encoding="utf-8", errors="replace")
+    text = _read_text(path, errors="replace")
     issues = []
     if re.search(r"\bRL\d+\b", text):
         issues.append("root START_HERE.md contains a hard-coded live RL number")
@@ -895,9 +1073,45 @@ def root_start_contract_issues(root: Path) -> list[str]:
     return issues
 
 
-def validate_indexes(root: Path) -> dict:
+def _git_names(root: Path, *args: str) -> set[str]:
+    run = subprocess.run(["git", *args], cwd=root, capture_output=True)
+    if run.returncode:
+        raise CatalogError(run.stderr.decode("utf-8", "replace").strip() or "git command failed")
+    return {
+        raw.decode("utf-8", "surrogateescape")
+        for raw in run.stdout.split(b"\0") if raw
+    }
+
+
+def _staged_tree_issues(root: Path, inputs: tuple[str, ...]) -> list[dict]:
+    generated = {
+        "knowledge/session_catalog.jsonl",
+        "knowledge/result_catalog.jsonl",
+        "knowledge/index_metadata.json",
+    }
+    required = set(inputs) | generated | {"START_HERE.md"}
+    prefixes = ("sessions", "authoritative", "START_HERE.md", *sorted(generated))
+    cached = _git_names(root, "ls-files", "-z", "--cached", "--", *prefixes)
+    issues = []
+    missing = sorted(required - cached)
+    if missing:
+        issues.append({
+            "path": "git-index",
+            "reason": "catalogue inputs or outputs are not staged/tracked: " + ", ".join(missing[:10]),
+        })
+    unstaged = sorted(_git_names(root, "diff", "--name-only", "-z", "--", *prefixes))
+    if unstaged:
+        issues.append({
+            "path": "git-index",
+            "reason": "catalogue inputs or outputs differ between index and worktree: "
+            + ", ".join(unstaged[:10]),
+        })
+    return issues
+
+
+def validate_indexes(root: Path, staged: bool = False) -> dict:
     knowledge = root / "knowledge"
-    rendered = build_index_bytes(root)
+    rendered, inputs = _render_index_bytes(root)
     mismatches = []
     for name, expected in rendered.items():
         path = knowledge / name
@@ -907,6 +1121,8 @@ def validate_indexes(root: Path) -> dict:
             mismatches.append({"path": _repo_path(root, path), "reason": "stale or modified"})
     for issue in root_start_contract_issues(root):
         mismatches.append({"path": "START_HERE.md", "reason": issue})
+    if staged:
+        mismatches.extend(_staged_tree_issues(root, inputs))
     metadata = json.loads(rendered["index_metadata.json"])
     metadata["current"] = not mismatches
     metadata["mismatches"] = mismatches
@@ -916,21 +1132,29 @@ def validate_indexes(root: Path) -> dict:
     return metadata
 
 
-def load_jsonl(path: Path, expected_format: str) -> list[dict]:
+def iter_jsonl(path: Path, expected_format: str):
     if not path.is_file():
         raise CatalogError("knowledge index is missing; run index-build")
-    records = []
-    for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
-        if not line:
-            continue
-        try:
-            record = json.loads(line)
-        except json.JSONDecodeError as error:
-            raise CatalogError("invalid JSONL at %s:%d" % (path, line_number)) from error
-        if record.get("format") != expected_format:
-            raise CatalogError("unexpected index format at %s:%d" % (path, line_number))
-        records.append(record)
-    return records
+    try:
+        with path.open("r", encoding="utf-8") as source:
+            for line_number, line in enumerate(source, 1):
+                if not line.strip():
+                    continue
+                try:
+                    record = json.loads(line)
+                except json.JSONDecodeError as error:
+                    raise CatalogError("invalid JSONL at %s:%d" % (path, line_number)) from error
+                if not isinstance(record, dict) or record.get("format") != expected_format:
+                    raise CatalogError("unexpected index format at %s:%d" % (path, line_number))
+                yield record
+    except UnicodeError as error:
+        raise CatalogError("invalid UTF-8 in knowledge index: %s" % path) from error
+    except OSError as error:
+        raise CatalogError("cannot read knowledge index %s: %s" % (path, error)) from error
+
+
+def load_jsonl(path: Path, expected_format: str) -> list[dict]:
+    return list(iter_jsonl(path, expected_format))
 
 
 def query_sessions(root: Path, rl: int) -> dict:
@@ -957,22 +1181,25 @@ def query_results(root: Path, query: str, limit: int = 20) -> dict:
         raise CatalogError("result query must not be empty")
     if limit < 1:
         raise CatalogError("result limit must be positive")
-    records = load_jsonl(root / "knowledge" / "result_catalog.jsonl", RESULT_FORMAT)
     needle = normalise_query(query)
     if not needle:
         raise CatalogError("result query must contain a letter or number")
     matches = []
-    for record in records:
+    for record in iter_jsonl(root / "knowledge" / "result_catalog.jsonl", RESULT_FORMAT):
+        identity_values = [record.get("name") or "", *(record.get("aliases") or [])]
         fields = [record.get("name") or "", record.get("recorded_text") or "", *(record.get("aliases") or [])]
         haystack = normalise_query(" ".join(fields))
         if needle in haystack:
-            matches.append(record)
-    exact = [item for item in matches if needle in {normalise_query(value) for value in [item.get("name") or "", *(item.get("aliases") or [])]}]
-    corrections = [item for item in matches if item["is_correction_or_demotion_record"]]
-    ordered = exact + [item for item in matches if item not in exact]
+            exact = needle in {normalise_query(value) for value in identity_values}
+            matches.append((record, exact, normalise_query(record.get("name") or "")))
+    exact_records = [record for record, exact, _ in matches if exact]
+    nonexact_records = [record for record, exact, _ in matches if not exact]
+    corrections = [
+        record for record, _, _ in matches if record["is_correction_or_demotion_record"]
+    ]
+    ordered = exact_records + nonexact_records
     grouped: dict[str, list[dict]] = {}
-    for item in matches:
-        key = normalise_query(item.get("name") or "")
+    for item, _, key in matches:
         if key:
             grouped.setdefault(key, []).append(item)
     conflicts = []

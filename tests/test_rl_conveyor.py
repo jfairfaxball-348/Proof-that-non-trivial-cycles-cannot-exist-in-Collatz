@@ -27,13 +27,13 @@ class ConveyorKnowledgeIntegrationTests(unittest.TestCase):
         )
 
     def test_current_rl_comes_from_unique_target(self):
-        state = rl_conveyor.state()
+        state = rl_conveyor.state(require_remote=False)
         targets = list((ROOT / "authoritative").rglob("*TARGET*.md"))
         self.assertEqual(len(targets), 1)
         self.assertEqual(state["target"], targets[0].relative_to(ROOT).as_posix())
-        target_numbers = set(re.findall(r"RL(\d+)", targets[0].name, re.I))
-        self.assertEqual(len(target_numbers), 1)
-        target_number = int(target_numbers.pop())
+        target_match = re.match(r"RL0*(\d+)(?:_|\b)", targets[0].name, re.I)
+        self.assertIsNotNone(target_match)
+        target_number = int(target_match.group(1))
         handover_pairs = {
             (int(match.group(1)), int(match.group(2)))
             for path in (ROOT / "authoritative").rglob("*.md")
@@ -145,14 +145,32 @@ class ConveyorKnowledgeIntegrationTests(unittest.TestCase):
         self.assertIsNone(re.search(r"\bRL\d+\b", text))
 
     def test_startup_reads_no_historical_surface(self):
-        startup = rl_conveyor.startup_state()
+        head = rl_conveyor.git("rev-parse", "HEAD").strip()
+        identity = {
+            "base_remote": "origin",
+            "base_ref": "refs/heads/main",
+            "base_head": head,
+            "base_head_live": True,
+            "local_head": head,
+            "head_matches_base": True,
+        }
+        with patch.object(rl_conveyor, "_remote_identity", return_value=identity):
+            startup = rl_conveyor.startup_state()
         self.assertTrue(startup["target"].startswith("authoritative/"))
+        self.assertIn(startup["target"], startup["minimal_read_order"])
+        self.assertTrue(startup["current_status_paths"])
+        self.assertTrue(startup["required_red_team_paths"])
+        self.assertTrue(startup["required_verifier_paths"])
         self.assertFalse(any(
             path.startswith(("sessions/", "Archive/")) for path in startup["minimal_read_order"]
         ))
         for command in startup["required_commands"][2:]:
             script = command.split()[1]
             self.assertTrue((ROOT / script).is_file(), command)
+        self.assertEqual(
+            startup["required_commands"][-1],
+            "python3 tools/rl_conveyor.py init-checkpoint",
+        )
 
     def test_checkpoint_initialization_refuses_dirty_repository(self):
         dirty_state = {"current_rl": 176, "working_tree_clean": False}
