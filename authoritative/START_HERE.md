@@ -1,27 +1,34 @@
-# Authoritative start — RL239
+# Authoritative start — RL240
 
-Incoming state: **RL239**.
+Incoming state: **RL240**.
 
-Completed incoming generation: **RL238 — USER-DIRECTED PARTIAL TARGET CLOSEOUT / LOCAL-THEOREM SUCCESS**.
+Completed incoming generation: **RL239 — DECISION SESSION / VERIFIED ROUTE SELECTION**.
 
-RL238 proved the literal inherited **exact Radius-4 local theorem** for primitive full-`D` self-rotations. The exhaustive exact-distance-4 flow topologies are all closed: height-two `(1,2,1)`, `[4]`, `[3,1]`, `[2,2]`, `[2,1,1]`, and `[1,1,1,1]`. The closeout red team repaired the reduced-denominator continued-fraction multiple issue before promotion; exact repair certificates have zero survivors. No demotion is recorded.
+RL239 completed all three ordered decision goals:
 
-RL238 did **not** complete its original Phase 3/4 global-bridge comparison because the user explicitly requested closeout and assigned that strategic decision to RL239. Therefore do **not** label RL238 Success A/B/C.
+1. Radius 4 survived independent adversarial audit: `R4_AUDIT_PASS`.
+2. Radius 5 was assessed as `MODERATE_NEW_PROJECT`; **no Radius-5 theorem is
+   claimed**.
+3. Mandatory route decision:
+   **`ROUTE_DECISION = R4_GLOBAL_BRIDGE`**.
 
-Canonical RL238 ZIP SHA256: `52c46b7c1249f597ca52d210f50d78f9900edfb4412270eed38482ebaec6ee51`.
-Lossless transport: `RL238_RADIUS4_LOCAL_THEOREM_TRANSPORT/`.
+The strategic reason is that the historical bottleneck is global selection /
+same-root return structure, not insufficient local radius. Bare cyclic words
+can avoid several successive exact-radius shells, and the inherited exact
+`(65,41)` countermodel blocks the naive absolute-resultant bridge. RL240 must
+therefore use the full selected-root/phase information (or an equivalent
+physical return mechanism) to force an eligible exact Radius-4 encounter.
 
-Unique RL239 target: `RL239_HANDOVER_BUNDLE_TRANSPORT/RL239_RADIUS4_AUDIT_RADIUS5_VIABILITY_AND_ROUTE_DECISION_TARGET.md`.
+Canonical RL239 ZIP SHA256:
+`28fd81440e44ac888f21e25da9cdad8fef5e5603aea9c8036c9084c27828893f`.
+Lossless transport: `RL239_ROUTE_DECISION_TRANSPORT/`.
 
-RL239 is **prepared but NOT STARTED**.
+Unique RL240 target:
+`RL240_HANDOVER_BUNDLE_TRANSPORT/RL240_RADIUS4_GLOBAL_BRIDGE_SAME_ROOT_TARGET.md`.
 
-RL239 must execute three ordered goals:
+RL240 is **prepared but NOT STARTED**.
 
-1. vigorously and concretely audit/red-team Radius 4 with independent reconstruction and verifier overlap;
-2. after audit pass, assess Radius-5 viability and how smoothly Radius-3/4 mechanics translate;
-3. compare a new global bridge to proved Radius 4 against proving Radius 5, and issue the route decision that determines RL240.
-
-If Goal 1 finds a genuine defect, stop-and-repair takes precedence.
+Do not start Radius 5 in RL240. Attack only the Radius-4 global bridge.
 
 Gate A: open. Gate B: open. Global non-trivial-cycle exclusion: open.
 Knowledge catalogues: stale/deferred.
