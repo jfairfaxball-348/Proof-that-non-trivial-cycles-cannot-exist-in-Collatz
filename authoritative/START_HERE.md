@@ -1,31 +1,36 @@
-# Authoritative start — RL241
+# Authoritative start — RL242
 
-Incoming state: **RL241**.
+Incoming state: **RL242**.
 
-Completed incoming generation: **RL240 — Radius-4 global bridge selected-counterflow reduction**.
+Completed incoming generation: **RL241 — Radius-4 bridge full-phase nine-lift reduction**.
 
-RL240 classification: **`R4_BRIDGE_REDUCED`**.
+RL241 classification: **`R4_BRIDGE_REDUCED`**.
 
-Promoted RL240 advances:
+Principal inherited result:
 
-1. the canonical Bezout-selected same root is expressed by genuine physical rotation flows;
-2. the two determinant-one selected flows differ exactly by the inherited half-period flow;
-3. RL49's half-period distance yields the analytic linear counterflow bound `B(G)+B(Ghat) >= a-t-5+H >= ell+H-5`;
-4. negative selected flow has a genuine owned physical-scale consequence;
-5. RL76/RL77 show why reciprocal packing, generic product growth, generic continued fractions, and high-state existence alone do not consume concentrated deep physical scale.
+- for the canonical first-half parity residue `R_u`, define its canonical integer endpoint `S_u` and base drift `Delta_u=S_u-R_u-4`;
+- genuine `X-Y` full phase is equivalent to
+  `Delta_u=c(2^a-3^ell)` with `c in {0,1,2,3,4,5,6,7,8}`;
+- equivalently the genuine state is one of only nine dyadic lifts
+  `N=R_u+c*2^a`;
+- every physical state of the full `N -> N+4 -> N` return is an explicit affine function of this one carry;
+- the `(65,41)` proper-factor stress model is rejected by the new integer selector because its canonical base drift is negative;
+- pure logarithmic/physical-scale anti-concentration is a recorded method barrier and must not be revived as the closure mechanism.
 
-The remaining theorem is full-phase selected-counterflow anti-concentration (or an equivalent direct exact-Radius-4 encounter theorem).
+Canonical RL241 ZIP SHA256:
+`98697aae2b112202b27bb334cbe21126d181182ea8e9f839f703a1b8422017b8`.
 
-Canonical RL240 ZIP SHA256:
-`eba20702838128f09f0afec763103b58c9b7a2f1f37cf6f7dcc60d253b691ae9`.
-Lossless transport: `RL240_ROUTE_REDUCTION_TRANSPORT/`.
+Lossless transport:
+`RL241_ROUTE_REDUCTION_TRANSPORT/`.
 
-Unique RL241 target:
-`RL241_HANDOVER_BUNDLE_TRANSPORT/RL241_FULL_PHASE_SELECTED_COUNTERFLOW_ANTICONCENTRATION_TARGET.md`.
+Unique RL242 target:
+`RL242_HANDOVER_BUNDLE_TRANSPORT/RL242_NINE_LIFT_CANONICAL_DRIFT_RADIUS4_ENCOUNTER_TARGET.md`.
 
-RL241 is **prepared but NOT STARTED**.
+RL242 is **prepared but NOT STARTED**.
 
-Do not start Radius 5. Do not apply Radius 4 globally until an eligible exact-distance-4 encounter is proved.
+Do not start Radius 5. Do not apply Radius 4 globally until an eligible exact-distance-4 encounter satisfying the audited local theorem hypotheses is proved.
 
-Gate A: open. Gate B: open. Global non-trivial-cycle exclusion: open.
+Gate A: open/separate.
+Gate B: open.
+Global non-trivial-cycle exclusion: open.
 Knowledge catalogues: stale/deferred.
