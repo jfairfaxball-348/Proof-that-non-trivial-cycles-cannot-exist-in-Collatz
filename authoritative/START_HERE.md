@@ -1,34 +1,31 @@
-# Authoritative start — RL240
+# Authoritative start — RL241
 
-Incoming state: **RL240**.
+Incoming state: **RL241**.
 
-Completed incoming generation: **RL239 — DECISION SESSION / VERIFIED ROUTE SELECTION**.
+Completed incoming generation: **RL240 — Radius-4 global bridge selected-counterflow reduction**.
 
-RL239 completed all three ordered decision goals:
+RL240 classification: **`R4_BRIDGE_REDUCED`**.
 
-1. Radius 4 survived independent adversarial audit: `R4_AUDIT_PASS`.
-2. Radius 5 was assessed as `MODERATE_NEW_PROJECT`; **no Radius-5 theorem is
-   claimed**.
-3. Mandatory route decision:
-   **`ROUTE_DECISION = R4_GLOBAL_BRIDGE`**.
+Promoted RL240 advances:
 
-The strategic reason is that the historical bottleneck is global selection /
-same-root return structure, not insufficient local radius. Bare cyclic words
-can avoid several successive exact-radius shells, and the inherited exact
-`(65,41)` countermodel blocks the naive absolute-resultant bridge. RL240 must
-therefore use the full selected-root/phase information (or an equivalent
-physical return mechanism) to force an eligible exact Radius-4 encounter.
+1. the canonical Bezout-selected same root is expressed by genuine physical rotation flows;
+2. the two determinant-one selected flows differ exactly by the inherited half-period flow;
+3. RL49's half-period distance yields the analytic linear counterflow bound `B(G)+B(Ghat) >= a-t-5+H >= ell+H-5`;
+4. negative selected flow has a genuine owned physical-scale consequence;
+5. RL76/RL77 show why reciprocal packing, generic product growth, generic continued fractions, and high-state existence alone do not consume concentrated deep physical scale.
 
-Canonical RL239 ZIP SHA256:
-`28fd81440e44ac888f21e25da9cdad8fef5e5603aea9c8036c9084c27828893f`.
-Lossless transport: `RL239_ROUTE_DECISION_TRANSPORT/`.
+The remaining theorem is full-phase selected-counterflow anti-concentration (or an equivalent direct exact-Radius-4 encounter theorem).
 
-Unique RL240 target:
-`RL240_HANDOVER_BUNDLE_TRANSPORT/RL240_RADIUS4_GLOBAL_BRIDGE_SAME_ROOT_TARGET.md`.
+Canonical RL240 ZIP SHA256:
+`eba20702838128f09f0afec763103b58c9b7a2f1f37cf6f7dcc60d253b691ae9`.
+Lossless transport: `RL240_ROUTE_REDUCTION_TRANSPORT/`.
 
-RL240 is **prepared but NOT STARTED**.
+Unique RL241 target:
+`RL241_HANDOVER_BUNDLE_TRANSPORT/RL241_FULL_PHASE_SELECTED_COUNTERFLOW_ANTICONCENTRATION_TARGET.md`.
 
-Do not start Radius 5 in RL240. Attack only the Radius-4 global bridge.
+RL241 is **prepared but NOT STARTED**.
+
+Do not start Radius 5. Do not apply Radius 4 globally until an eligible exact-distance-4 encounter is proved.
 
 Gate A: open. Gate B: open. Global non-trivial-cycle exclusion: open.
 Knowledge catalogues: stale/deferred.
