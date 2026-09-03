@@ -1,34 +1,33 @@
-# Authoritative start — RL243
+# Authoritative start — RL244
 
 Incoming state: **RL243**.
 
-Completed incoming generation: **RL242 — Radius-4 bridge zero-carry and low-counterflow reduction**.
+Completed incoming generation: **RL243 — determinant-2 half-word / owned entry-height counterflow reduction**.
 
-RL242 classification: **`R4_BRIDGE_REDUCED`**.
+RL243 classification: **`R4_BRIDGE_REDUCED`**.
 
-Principal promoted results:
+Promoted RL243 advances:
 
-- all RL241 dyadic half-phase carries are eliminated: every retained genuine full phase has `c=0`;
-- equivalently full phase is exactly zero canonical drift `Delta_u=0`, with `N=R_u` and `S_u=N+4`;
-- the companion wrap also vanishes, so both physical half-orbits are their canonical integer trajectories;
-- every physical state of the complete `2a`-step cycle lies below `2^(2a)`, hence every full-word cyclic root has zero dyadic carry;
-- for either RL240 selected rotation flow of signed mass `2`, negative counterflow mass `beta<=1` forces an eligible exact Radius-4 encounter (`beta=1` at shift `m`, `beta=0` at shift `2m`);
-- therefore every surviving Gate-B object must satisfy simultaneously `beta(G)>=2` and `beta(Ghat)>=2`.
+1. the doubled selected pair reduces to `ar-qell=2` and auxiliary signed-mass-2 half flows `P,Q`;
+2. exact ownership coupling `Q-P=h-h_shift`;
+3. exact envelope of the two genuine signed-mass-4 physical doubled rotations over both half-orbits;
+4. retained resonance gives `19/12<a/ell<8/5`, `ell>=17`, `L>k`, and the determinant-2 shift lies at least eight columns from either half boundary;
+5. inherited full-phase terminal theorem gives odd `k=t+3`;
+6. intrinsic determinant-2 counterflow is unavoidable: `beta(P)+beta(Q)>=min(k,8)-2`;
+7. for the exact entry-height charge `Gamma_q`, each genuine doubled physical flow satisfies `beta>=Gamma_q-2>=min(k,8)-2`;
+8. the earlier minimal nonnegative second-order corridor is eliminated.
 
-Canonical RL242 ZIP SHA256:
-`e59bc4f369d5de0d172696fd9d77c2f2ad795bf1b66c92774f7dd7dccd2e95ef`.
+Canonical RL243 ZIP SHA256:
+`4e7a85402d9af86ec7c0dc3282aafcec18acf97f9c8ca1402849e99cb7afa08f`.
 
-Lossless transport:
-`RL242_ROUTE_REDUCTION_TRANSPORT/`.
+Fresh unpack, internal manifest, transport reconstruction, and portable fast verifier pass.
 
-Unique RL243 target:
-`RL243_HANDOVER_BUNDLE_TRANSPORT/RL243_DOUBLE_DEEP_COUNTERFLOW_RADIUS4_CLOSURE_TARGET.md`.
+Unique RL244 target:
+`RL244_HANDOVER_BUNDLE_TRANSPORT/RL244_DETERMINANT2_INTRINSIC_COUNTERFLOW_OWNED_PREFIX_TARGET.md`.
 
-RL243 is **prepared but NOT STARTED**.
+RL244 is **prepared but NOT STARTED**.
 
-Do not start Radius 5. Do not apply Radius 4 globally until the remaining survivor is eliminated or an eligible exact-distance-4 encounter satisfying the audited local theorem hypotheses is proved.
+Do not start Radius 5. Do not apply Radius 4 globally until an eligible exact-distance-4 encounter is proved.
 
-Gate A: open/separate.
-Gate B: open.
-Global non-trivial-cycle exclusion: open.
+Gate A: open/separate. Gate B: open. Global non-trivial-cycle exclusion: open.
 Knowledge catalogues: stale/deferred.

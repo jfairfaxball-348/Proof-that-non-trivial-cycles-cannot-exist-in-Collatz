@@ -1,0 +1,15 @@
+RL243 FRESH UNPACK VERIFICATION — 2026-09-03
+
+Canonical ZIP SHA256:
+4e7a85402d9af86ec7c0dc3282aafcec18acf97f9c8ca1402849e99cb7afa08f
+
+Fresh unzip: PASS
+Internal SHA256SUMS: PASS
+Portable fast verifier: PASS
+
+Verifier output:
+RL243 determinant-2 reduction verifier: PASS
+cyclic_interval_checks= 1495
+small_word_flow_checks= 1711
+entry_crossing_checks= 5103
+classification=R4_BRIDGE_REDUCED
