@@ -1,21 +1,35 @@
-# Authoritative start — RL248
+# Authoritative start — RL249
 
-Incoming state: **RL248**.
+Incoming state: **RL249**.
 
-Completed incoming generation: **RL247 — R3_R4_SCOPE_AUDIT_PASS**.
+Completed incoming generation: **RL248 — R4_BRIDGE_REDUCED**.
 
-RL247 completed the targeted Radius-3 / Radius-4 sign, domain, cyclic-distance, numerator-holonomy, and dependency audit. The negative integer-cycle regression `d=00011110111`, `A=11`, `L=7`, `D=-139`, `Q=18904`, `n=-136` is genuine and has exact cyclic Radius-4 rotations, but it fails the proved theorem chain at the explicit positive-denominator hypothesis. Radius-3 and Radius-4 remain valid in their inherited positive-domain scope; no proof repair or theorem demotion is required.
+RL248 materially reduced the audited Radius-4 global bridge without invoking Radius 4. In Branch C it promoted internal shifted-singleton multiplicity, exact companion-envelope amplification, an exact run-compressed canonical finite-state theorem/certificate through internal zero budget `m=16`, and the survivor contraction
 
-The audit permanently clarifies that bare `D|Q(d)` over arbitrary signed integer cycles is insufficient; Radius-4 invocation requires the full inherited positive/full-D eligibility, including `D>1`, primitivity, cyclic distance, same-root/full-phase ownership, and all RL238 hypotheses. Rotation covariance is modulo `D`; root crossing carries an exact `D`-multiple.
+`m>=17`, `a-ell>=k+15`, hence `a-ell>=46` for the inherited simultaneous-survivor `k>=31`.
 
-Canonical RL247 ZIP SHA256: `0f7e750190ea1f32854887ac44627d3238114919597535450331fc3c143237cf`.
-Lossless transport: `RL247_SCOPE_AUDIT_TRANSPORT/`.
+RL248 also proved the exact normalized q-orbit prefix-scale cocycle
 
-The verified RL246 mathematical bundle is retained in authoritative state because RL248 resumes that frozen frontier.
+`F_(i+q)/F_i=3^(P_i-2/a)`
 
-Unique RL248 target: `RL248_HANDOVER_BUNDLE_TRANSPORT/RL248_RESUMED_RADIUS4_GLOBAL_BRIDGE_TARGET.md`.
+and the bounded-counterflow absolute prefix-scale floor
 
-RL248 is **PREPARED, NOT STARTED**.
+`S_i>3^(-(beta(P)+2))`.
 
-Resume only the audited Radius-4 global bridge. Gate A remains open. Gate B remains open. Global non-trivial-cycle exclusion remains open. Radius 5 remains inactive.
+Every wholly internal singleton `01` block has phase gain at least `(2/3)S_entry`. Consequently Branch C with `beta(P)=6` has at least three disjoint internal `01` blocks with aggregate gain
+
+`DeltaPhi_selected_01 > 2/6561`.
+
+RL246's historical uniform **single-packet** `>1/4374` scratch claim remains demoted. The new RL248 aggregate theorem is differently scoped and does not revive it. The `m=17` resource wall is non-evidentiary.
+
+Canonical RL248 ZIP SHA256:
+`b151319d108d11f31796bfd5071a309567e9cebafeccd127c234df4e1d4bf32c`.
+The canonical ZIP is carried losslessly by `RL248_CLOSEOUT_BUNDLE_TRANSPORT/` (`base64(xz(zip))`), with the outer ZIP SHA256 sidecar stored alongside it.
+
+Unique RL249 target:
+`RL249_HANDOVER_BUNDLE_TRANSPORT/RL249_BETA6_ABSOLUTE_PHASE_BUDGET_AND_DESCENT_TARGET.md`.
+
+RL249 is **PREPARED, NOT STARTED**.
+
+Attack Branch C `beta(P)=6` first by consuming the now-valid absolute aggregate phase budget against exact full-phase/ordered-state constraints, or classify the compensating canonical descent events. Gate A remains open. Gate B remains open. Branches A/B/C remain open. Radius 5 remains inactive.
 Knowledge catalogues remain stale/deferred.
