@@ -1,35 +1,35 @@
-# Authoritative start — RL249
+# Authoritative start — RL250
 
-Incoming state: **RL249**.
+Incoming state: **RL250**.
 
-Completed incoming generation: **RL248 — R4_BRIDGE_REDUCED**.
+Completed incoming generation: **RL249 — beta=6 profile, q-shift defect support, zero-run propagation, and refined resonance**.
 
-RL248 materially reduced the audited Radius-4 global bridge without invoking Radius 4. In Branch C it promoted internal shifted-singleton multiplicity, exact companion-envelope amplification, an exact run-compressed canonical finite-state theorem/certificate through internal zero budget `m=16`, and the survivor contraction
+RL249 classification: **`R4_BRIDGE_REDUCED`**.
 
-`m>=17`, `a-ell>=k+15`, hence `a-ell>=46` for the inherited simultaneous-survivor `k>=31`.
+Principal promoted RL249 results on Branch C with `beta(P)=6`:
 
-RL248 also proved the exact normalized q-orbit prefix-scale cocycle
+- exactly six isolated `P=-1` roots and total positive `P` mass exactly 8;
+- `P_i in {-1,0,1,2}`, `sum|P_i|=14`, nonzero support at most 14;
+- exact q-shift Hamming defect/variation `12<=M_q<=28`, with equal mismatch orientations;
+- `a>=123`, at least 109 `P=0` roots, and a mandatory disjoint length-7 `u` / q-shift agreement corridor;
+- every ordinary zero run `0^L`, `L>=10`, forces a q-shifted `0^(L-9)` block;
+- refined near-resonant ratio `log_2(3)<a/ell<=65/41`;
+- the current selected phase lower bound `>2/6561` is insufficient for magnitude-only phase closure; exact support/order/ownership is required.
 
-`F_(i+q)/F_i=3^(P_i-2/a)`
+Binding corrections/demotions are frozen in the RL249 closeout: do not inherit the historical/current q identification, explicit desert placements, quadratic desert theorem, or the exploratory q-ordered `B=13/14` covering conclusion.
 
-and the bounded-counterflow absolute prefix-scale floor
+Canonical RL249 ZIP SHA256:
+`86da12a5a25483fd846e7f40b2bed84c71a87db4b7d7af60eeffff05aa998b42`.
 
-`S_i>3^(-(beta(P)+2))`.
+Lossless closeout transport:
+`RL249_CLOSEOUT_BUNDLE_TRANSPORT/`.
 
-Every wholly internal singleton `01` block has phase gain at least `(2/3)S_entry`. Consequently Branch C with `beta(P)=6` has at least three disjoint internal `01` blocks with aggregate gain
+Unique RL250 target:
+`RL250_HANDOVER_BUNDLE_TRANSPORT/RL250_EVENT_RIGID_DEFECT_SUPPORT_TARGET.md`.
 
-`DeltaPhi_selected_01 > 2/6561`.
+RL250 is **prepared but NOT STARTED**.
 
-RL246's historical uniform **single-packet** `>1/4374` scratch claim remains demoted. The new RL248 aggregate theorem is differently scoped and does not revive it. The `m=17` resource wall is non-evidentiary.
-
-Canonical RL248 ZIP SHA256:
-`b151319d108d11f31796bfd5071a309567e9cebafeccd127c234df4e1d4bf32c`.
-The canonical ZIP is carried losslessly by `RL248_CLOSEOUT_BUNDLE_TRANSPORT/` (`base64(xz(zip))`), with the outer ZIP SHA256 sidecar stored alongside it.
-
-Unique RL249 target:
-`RL249_HANDOVER_BUNDLE_TRANSPORT/RL249_BETA6_ABSOLUTE_PHASE_BUDGET_AND_DESCENT_TARGET.md`.
-
-RL249 is **PREPARED, NOT STARTED**.
-
-Attack Branch C `beta(P)=6` first by consuming the now-valid absolute aggregate phase budget against exact full-phase/ordered-state constraints, or classify the compensating canonical descent events. Gate A remains open. Gate B remains open. Branches A/B/C remain open. Radius 5 remains inactive.
-Knowledge catalogues remain stale/deferred.
+Gate A: open/separate.
+Gate B: open.
+Radius 5: inactive.
+Knowledge catalogues: stale/deferred.
