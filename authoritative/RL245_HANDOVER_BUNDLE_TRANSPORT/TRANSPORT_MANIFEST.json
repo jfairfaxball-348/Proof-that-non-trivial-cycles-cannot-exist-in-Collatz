@@ -1,9 +1,0 @@
-{
-  "generation": "RL245",
-  "status": "PREPARED_NOT_STARTED",
-  "incoming_completed_generation": "RL244",
-  "incoming_classification": "R4_BRIDGE_REDUCED",
-  "target_file": "RL245_PAIRED_PHYSICAL_VALLEY_OWNERSHIP_TARGET.md",
-  "incoming_canonical_zip_sha256": "5871e9f24932b7c61e7f3de3dda4f8733df815ed5f274711dd4837404d3f6baf",
-  "incoming_final_reduction": "every simultaneous Gate-A/Gate-B survivor has beta(P)>=6"
-}
