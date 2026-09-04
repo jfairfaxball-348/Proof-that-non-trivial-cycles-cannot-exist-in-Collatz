@@ -1,0 +1,1 @@
+Lossless RL244 connector transport. Concatenate part files in lexical order, base64-decode to canonical.zip.xz, xz-decompress to the canonical RL244 ZIP, and verify canonical_zip_sha256 in TRANSPORT_MANIFEST.json.

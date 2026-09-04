@@ -1,0 +1,1 @@
+RL245 authoritative handover transport. RL245 is PREPARED, NOT STARTED. The unique target is RL245_PAIRED_PHYSICAL_VALLEY_OWNERSHIP_TARGET.md; incoming completed generation is RL244 with beta(P)>=6 simultaneous-survivor floor.
