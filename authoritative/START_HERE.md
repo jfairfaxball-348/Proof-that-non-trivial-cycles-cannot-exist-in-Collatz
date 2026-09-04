@@ -1,36 +1,21 @@
-# Authoritative state — RL247
+# Authoritative start — RL248
 
-Current authoritative generation: **RL247 (PREPARED, NOT STARTED)**.
+Incoming state: **RL248**.
 
-Incoming completed generation: **RL246**, classification `R4_BRIDGE_REDUCED`.
+Completed incoming generation: **RL247 — R3_R4_SCOPE_AUDIT_PASS**.
 
-RL246 frozen result:
+RL247 completed the targeted Radius-3 / Radius-4 sign, domain, cyclic-distance, numerator-holonomy, and dependency audit. The negative integer-cycle regression `d=00011110111`, `A=11`, `L=7`, `D=-139`, `Q=18904`, `n=-136` is genuine and has exact cyclic Radius-4 rotations, but it fails the proved theorem chain at the explicit positive-denominator hypothesis. Radius-3 and Radius-4 remain valid in their inherited positive-domain scope; no proof repair or theorem demotion is required.
 
-- Branch C contains an internal canonical singleton q-shift swap signature;
-- it has an exact factor-three physical prefix-scale notch and a positive RL47 phase packet;
-- at the shifted `10` boundary either an even-J canonical mismatch/descent event occurs or the genuine companion physical envelope is exactly `(-d,-d-1,-d)` with exact J mod-3 height-parity fingerprints;
-- the scratch absolute packet bound `>1/4374` is DEMOTED; only relative packet bounds are retained;
-- no Radius-4 application is promoted from the local `d=1` `(1,2,1)` topology alone.
+The audit permanently clarifies that bare `D|Q(d)` over arbitrary signed integer cycles is insufficient; Radius-4 invocation requires the full inherited positive/full-D eligibility, including `D>1`, primitivity, cyclic distance, same-root/full-phase ownership, and all RL238 hypotheses. Rotation covariance is modulo `D`; root crossing carries an exact `D`-multiple.
 
-User-directed unique RL247 target:
+Canonical RL247 ZIP SHA256: `0f7e750190ea1f32854887ac44627d3238114919597535450331fc3c143237cf`.
+Lossless transport: `RL247_SCOPE_AUDIT_TRANSPORT/`.
 
-`RL247_HANDOVER_BUNDLE_TRANSPORT/RL247_RADIUS3_RADIUS4_SIGN_DOMAIN_CYCLIC_DISTANCE_DEPENDENCY_AUDIT_TARGET.md`
+The verified RL246 mathematical bundle is retained in authoritative state because RL248 resumes that frozen frontier.
 
-This audit is triggered by the exact negative-cycle regression
-`d=00011110111`, `A=11`, `L=7`, `D=-139`, `Q=18904`, `n=-136`, with a nontrivial rotation at exact cyclic adjacent-transposition distance 4.
+Unique RL248 target: `RL248_HANDOVER_BUNDLE_TRANSPORT/RL248_RESUMED_RADIUS4_GLOBAL_BRIDGE_TARGET.md`.
 
-RL247 must finish with exactly one of:
+RL248 is **PREPARED, NOT STARTED**.
 
-- `R3_R4_SCOPE_AUDIT_PASS`
-- `R3_R4_STATEMENT_REPAIR`
-- `R3_R4_PROOF_REPAIR_REQUIRED`
-- `R3_R4_THEOREM_DEMOTED`
-
-The pre-audit mathematical attack is frozen in
-`RL247_HANDOVER_BUNDLE_TRANSPORT/RL246_FROZEN_REOPEN_TARGET.md` and must not be resumed until the audit classification and any required repair/demotion propagation are complete.
-
-RL246 canonical ZIP SHA256:
-`ba43f349111c096fdafacc821b73bc53321af2be7658be71e5e4b314253393ba`.
-
-Gate A remains open uniformly. Gate B remains open. Radius 5 remains inactive.
+Resume only the audited Radius-4 global bridge. Gate A remains open. Gate B remains open. Global non-trivial-cycle exclusion remains open. Radius 5 remains inactive.
 Knowledge catalogues remain stale/deferred.
