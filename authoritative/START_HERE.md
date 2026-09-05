@@ -1,15 +1,21 @@
-# Authoritative start — RL254 general 38-window mass escalation
+# Authoritative start — RL255 high-beta Branch-C parity/capacity
 
-Incoming state: **RL254**.
+Incoming state: **RL255**.
 
-Completed incoming generation: **RL253 — exact 38-window beta=6 obstruction**.
+Completed incoming generation: **RL254 — general 38-window mass escalation**.
 
-RL253 proves that no Branch-C object with `beta(P)=6` survives. The exact identity `Z_38=14+sum P` bounds every beta=6 38-window by 22 zeros, while the canonical terminal/prefix structure forces one with at least 29 zeros.
+RL254 promotes the uniform Branch-C floor
 
-RL254 is **PREPARED, NOT STARTED**.
+`beta(P) >= 260`,
 
-Read `RL254_GENERAL_38_WINDOW_MASS_ESCALATION_TARGET.md` first.
+with the stronger non-halving alternative `beta(P)>=355`. It also re-derives the general resonance sharpening `a/ell<=149/94` and inherits the consequences `z>=287` and `beta(E)>=1032`.
 
-The exploratory `beta(P)>=118` estimate is a candidate lead only, not an inherited theorem.
+The key structural split is now mandatory:
+- `H=19z-7a`, `n=19B-7q` both even: exact 19-window factorisation, beta at least 260;
+- otherwise: 37 disjoint 38-window segments, beta at least 355.
+
+RL255 is **PREPARED, NOT STARTED**.
+
+Read `RL255_HIGH_BETA_BRANCH_C_PARITY_CAPACITY_TARGET.md` first.
 
 Gate A/B remain open. Radius 4 has not been invoked. Radius 5 remains inactive.
