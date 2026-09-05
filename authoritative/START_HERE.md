@@ -1,21 +1,27 @@
-# Authoritative start — RL255 high-beta Branch-C parity/capacity
+# Authoritative start — RL256 exact first halving frontier
 
-Incoming state: **RL255**.
+Incoming state: **RL256**.
 
-Completed incoming generation: **RL254 — general 38-window mass escalation**.
+Completed incoming generation: **RL255 — high-beta Branch-C capacity and parity frontier**.
 
-RL254 promotes the uniform Branch-C floor
+RL255 promotes the Branch-C capacity inequality
 
-`beta(P) >= 260`,
+`beta(P)+2 <= floor((a-3 beta(P)+1)^2/4)`
 
-with the stronger non-halving alternative `beta(P)>=355`. It also re-derives the general resonance sharpening `a/ell<=149/94` and inherits the consequences `z>=287` and `beta(E)>=1032`.
+and contracts the uniform first arithmetic survivor to the unique halving selector
 
-The key structural split is now mandatory:
-- `H=19z-7a`, `n=19B-7q` both even: exact 19-window factorisation, beta at least 260;
-- otherwise: 37 disjoint 38-window segments, beta at least 355.
+`(a,ell,z,q,r,H,n)=(1100,694,406,317,200,14,4)`.
 
-RL255 is **PREPARED, NOT STARTED**.
+At that frontier:
+- `K=7`, `t=2`;
+- `260<=beta(P)<=354`;
+- `31<=k<=150`;
+- exact 19-window factorisation is active.
 
-Read `RL255_HIGH_BETA_BRANCH_C_PARITY_CAPACITY_TARGET.md` first.
+The non-halving branch has been pushed to `a>=1986`.
+
+RL256 is **PREPARED, NOT STARTED**.
+
+Read `RL256_EXACT_FIRST_HALVING_FRONTIER_TARGET.md` first.
 
 Gate A/B remain open. Radius 4 has not been invoked. Radius 5 remains inactive.
