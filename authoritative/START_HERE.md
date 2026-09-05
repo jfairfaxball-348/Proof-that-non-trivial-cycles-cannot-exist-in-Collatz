@@ -1,28 +1,27 @@
-# Authoritative start — RL260 second-selector k=31 low-area middle attack
+# Authoritative start — RL261 third-selector exact contraction
 
-Incoming state: **RL260**.
+Incoming state: **RL261**.
 
-Completed incoming generation: **RL259 — post-first-frontier simultaneous contraction**.
+Completed incoming generation: **RL260 — second-selector k=31 exact minimum-area certificate**.
 
-RL259 promotes:
+RL260 promotes:
 
-- the unique next arithmetic selector beyond the eliminated first frontier,
-  `(1119,706,413,802,506,14,10)`;
-- exact terminal exponent contraction to `k in {31,33}`;
-- exact `k=31` flank contraction from 10,183 budget-feasible pairs to 8,976
-  capacity survivors, all with middle length 1068;
-- exact `k=33` contraction to one Gate-A-dangerous low-area automaton;
-- full-state repeat from depth 143 at depth 154, period 11, with maximum
-  reachable `J=212` versus required predecessor `J=27148435231`;
-- therefore, at this second selector, `k=33 => H_can>=33`.
+- exact terminal ownership on the RL259 8,976-pair `k=31` family;
+- 172,633 owned prefix/suffix realizations;
+- contraction under hypothetical `H_can<=30` to 8,571 exact low-area realizations;
+- reduction to 28 canonical prefix states and 306 start/budget cases;
+- exact unrestricted-time minimum-area closures with zero required terminal-predecessor hits;
+- therefore `k=31 => H_can>=31` at `(1119,706,413,802,506,14,10)`;
+- together with RL259's `k=33` result, removal of the whole second selector;
+- no retained selector for `1120<=a<1287`;
+- unique next selector `(1287,812,475,485,306,16,6)`.
 
-Consequently the branch simultaneously unresolved by Gate A and Gate B at the
-second selector is reduced to the finite `k=31` 8,976-pair family.
+RL261 is **PREPARED, NOT STARTED**.
 
-RL260 is **PREPARED, NOT STARTED**.
+Read `RL261_THIRD_SELECTOR_EXACT_CONTRACTION_TARGET.md` first.
 
-Read `RL260_SECOND_SELECTOR_K31_LOW_AREA_MIDDLE_TARGET.md` first.
-
-Keep `H_sel` distinct from `H_can` and use the corrected endpoint `J=2^k`
-before the omitted terminal `10`.  Gate A remains open uniformly.  Gate B
-remains open.  Radius 4 is not invoked by RL259.  Radius 5 remains inactive.
+Do not inherit RL260 scratch claims about the new selector's terminal range or
+`k=39` unless independently reconstructed.  Keep `H_sel` distinct from `H_can`.
+Use the corrected endpoint `J=2^k` before the omitted terminal `10`.
+Gate A remains open uniformly.  Gate B remains open.  Radius 4 is not invoked
+by RL260.  Radius 5 remains inactive.
