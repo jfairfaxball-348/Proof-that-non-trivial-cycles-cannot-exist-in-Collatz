@@ -1,29 +1,28 @@
-# Authoritative start — RL259 post-first-frontier simultaneous attack
+# Authoritative start — RL260 second-selector k=31 low-area middle attack
 
-Incoming state: **RL259**.
+Incoming state: **RL260**.
 
-Completed incoming generation: **RL258 — k=31 exact low-area canonical middle certificate**.
+Completed incoming generation: **RL259 — post-first-frontier simultaneous contraction**.
 
-RL258 promotes:
+RL259 promotes:
 
-- exact terminal inversion for the RL257 k=31 flank family;
-- 53335 owned prefix/suffix chain realizations before the Gate-A area test;
-- contraction to 667 Gate-A-dangerous low-area realizations, representing
-  348 distinct flank x-pattern pairs;
-- exact exhaustion of 71 low-area middle automata;
-- every automaton dies or exactly repeats by depth 154;
-- maximum reachable middle quotient `J=212`;
-- minimum required terminal-side predecessor `J=9049478310`;
-- therefore at the unique first halving selector,
-  `k=31 => H_can>=31`.
+- the unique next arithmetic selector beyond the eliminated first frontier,
+  `(1119,706,413,802,506,14,10)`;
+- exact terminal exponent contraction to `k in {31,33}`;
+- exact `k=31` flank contraction from 10,183 budget-feasible pairs to 8,976
+  capacity survivors, all with middle length 1068;
+- exact `k=33` contraction to one Gate-A-dangerous low-area automaton;
+- full-state repeat from depth 143 at depth 154, period 11, with maximum
+  reachable `J=212` versus required predecessor `J=27148435231`;
+- therefore, at this second selector, `k=33 => H_can>=33`.
 
-Together with RL257's elimination of `k=33`, the first halving selector
-`(1100,694,406,317,200,14,4)` is removed from the branch simultaneously
-unresolved by Gate A and Gate B.
+Consequently the branch simultaneously unresolved by Gate A and Gate B at the
+second selector is reduced to the finite `k=31` 8,976-pair family.
 
-RL259 is **PREPARED, NOT STARTED**.
+RL260 is **PREPARED, NOT STARTED**.
 
-Read `RL259_POST_FIRST_FRONTIER_SIMULTANEOUS_TARGET.md` first.
+Read `RL260_SECOND_SELECTOR_K31_LOW_AREA_MIDDLE_TARGET.md` first.
 
-Gate A remains open uniformly. Gate B remains open. Radius 4 is not invoked
-by RL258. Radius 5 remains inactive.
+Keep `H_sel` distinct from `H_can` and use the corrected endpoint `J=2^k`
+before the omitted terminal `10`.  Gate A remains open uniformly.  Gate B
+remains open.  Radius 4 is not invoked by RL259.  Radius 5 remains inactive.
