@@ -1,25 +1,29 @@
-# Authoritative start — RL258 k=31 two-flank canonical compatibility
+# Authoritative start — RL259 post-first-frontier simultaneous attack
 
-Incoming state: **RL258**.
+Incoming state: **RL259**.
 
-Completed incoming generation: **RL257 — endpoint repair, k=33 elimination,
-and k=31 flank contraction**.
+Completed incoming generation: **RL258 — k=31 exact low-area canonical middle certificate**.
 
-RL257 promotes:
+RL258 promotes:
 
-- exact historical terminal indexing:
-  `J=2^k` is the internal terminal boundary before the omitted `(1,0)`;
-- binding notation separation `H_sel != H_can` unless separately proved;
-- analytic elimination of `k=33`;
-- therefore the exact first halving frontier is `k=31` only;
-- `k=31` canonical right-flank zero cost `>=11`;
-- left weighted zero budget `<=16`, hence at most five zeros in the final ten
-  internal x-bits;
-- 2719 right/left flank x-pattern pairs survive the exact finite
-  E-budget/capacity certificate.
+- exact terminal inversion for the RL257 k=31 flank family;
+- 53335 owned prefix/suffix chain realizations before the Gate-A area test;
+- contraction to 667 Gate-A-dangerous low-area realizations, representing
+  348 distinct flank x-pattern pairs;
+- exact exhaustion of 71 low-area middle automata;
+- every automaton dies or exactly repeats by depth 154;
+- maximum reachable middle quotient `J=212`;
+- minimum required terminal-side predecessor `J=9049478310`;
+- therefore at the unique first halving selector,
+  `k=31 => H_can>=31`.
 
-RL258 is **PREPARED, NOT STARTED**.
+Together with RL257's elimination of `k=33`, the first halving selector
+`(1100,694,406,317,200,14,4)` is removed from the branch simultaneously
+unresolved by Gate A and Gate B.
 
-Read `RL258_K31_TWO_FLANK_CANONICAL_COMPATIBILITY_TARGET.md` first.
+RL259 is **PREPARED, NOT STARTED**.
 
-Gate A/B remain open. Radius 4 is not invoked. Radius 5 inactive.
+Read `RL259_POST_FIRST_FRONTIER_SIMULTANEOUS_TARGET.md` first.
+
+Gate A remains open uniformly. Gate B remains open. Radius 4 is not invoked
+by RL258. Radius 5 remains inactive.

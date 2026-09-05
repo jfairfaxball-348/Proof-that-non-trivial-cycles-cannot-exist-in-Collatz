@@ -1,6 +1,6 @@
 # RL258 — k=31 two-flank canonical compatibility target
 
-Date prepared: 2026-09-05  
+Date prepared: 2026-09-05
 Status: **PREPARED, NOT STARTED**
 
 ## Incoming exact state
@@ -13,7 +13,7 @@ RL257 eliminates `k=33`.
 
 Therefore the only remaining first-frontier terminal exponent is
 
-`boxed: k=31}`.
+`boxed: k=31`.
 
 Retain:
 
