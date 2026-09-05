@@ -1,23 +1,15 @@
-# Authoritative start — RL253 beta=6 continuation
+# Authoritative start — RL254 general 38-window mass escalation
 
-Incoming state: **RL253**.
+Incoming state: **RL254**.
 
-Completed incoming generation: **RL252 — iterated zero-run packing contraction**.
+Completed incoming generation: **RL253 — exact 38-window beta=6 obstruction**.
 
-RL252 classification: **R4_BRIDGE_REDUCED**.
+RL253 proves that no Branch-C object with `beta(P)=6` survives. The exact identity `Z_38=14+sum P` bounds every beta=6 38-window by 22 zeros, while the canonical terminal/prefix structure forces one with at least 29 zeros.
 
-RL252 promotes an exact contraction at the first unexcluded Branch-C
-`beta(P)=6` scale `(a,ell,z,q,r)=(783,494,289,317,200)`:
+RL254 is **PREPARED, NOT STARTED**.
 
-- fivefold zero-run propagation plus the 149-gap / two-q-window packing
-  excludes `t>=51`;
-- therefore `t<=50`, the canonical selector range tightens to
-  **`31<=k<=53`**, and `m>=238`.
+Read `RL254_GENERAL_38_WINDOW_MASS_ESCALATION_TARGET.md` first.
 
-No Gate closes. Radius 4 is not invoked. Radius 5 remains inactive.
-RL249/RL250 corrections and demotions remain binding; RL251's
-Gabriel's-horn equivalence record remains frozen.
+The exploratory `beta(P)>=118` estimate is a candidate lead only, not an inherited theorem.
 
-Read `RL253_BETA6_EVENT_RIGID_TERMINAL_OWNERSHIP_TARGET.md` first.
-
-RL253 is **PREPARED, NOT STARTED**.
+Gate A/B remain open. Radius 4 has not been invoked. Radius 5 remains inactive.
