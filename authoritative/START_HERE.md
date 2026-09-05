@@ -1,27 +1,24 @@
-# Authoritative start — RL256 exact first halving frontier
+# Authoritative start — RL257 correctly indexed terminal two-case attack
 
-Incoming state: **RL256**.
+Incoming state: **RL257**.
 
-Completed incoming generation: **RL255 — high-beta Branch-C capacity and parity frontier**.
+Completed incoming generation: **RL256 — exact first-halving terminal contraction**.
 
-RL255 promotes the Branch-C capacity inequality
+RL256 promotes, at the unique first halving selector
+`(a,ell,z,q,r,H,n)=(1100,694,406,317,200,14,4)`:
 
-`beta(P)+2 <= floor((a-3 beta(P)+1)^2/4)`
+- `k in {31,33}`;
+- `k=31 => E_31<=27`;
+- `k=33 => beta(P)>=281`;
+- `k=33 => E_33<=5`;
+- `k=33` forces a physical `1^7` run adjacent to the terminal structure.
 
-and contracts the uniform first arithmetic survivor to the unique halving selector
+Important correction: RL256's provisional four-state backward terminal tree
+is demoted. It omitted the final canonical `10` column that lies between the
+end of the internal path and terminal `J=2^k`.
 
-`(a,ell,z,q,r,H,n)=(1100,694,406,317,200,14,4)`.
+RL257 is **PREPARED, NOT STARTED**.
 
-At that frontier:
-- `K=7`, `t=2`;
-- `260<=beta(P)<=354`;
-- `31<=k<=150`;
-- exact 19-window factorisation is active.
+Read `RL257_CORRECTLY_INDEXED_TERMINAL_TWO_CASE_TARGET.md` first.
 
-The non-halving branch has been pushed to `a>=1986`.
-
-RL256 is **PREPARED, NOT STARTED**.
-
-Read `RL256_EXACT_FIRST_HALVING_FRONTIER_TARGET.md` first.
-
-Gate A/B remain open. Radius 4 has not been invoked. Radius 5 remains inactive.
+Gate A/B remain open. Radius 4 is not invoked. Radius 5 remains inactive.
