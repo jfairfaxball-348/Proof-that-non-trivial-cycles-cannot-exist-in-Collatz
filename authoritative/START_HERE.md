@@ -1,42 +1,39 @@
-# Authoritative start — RL268 Radius-5 remaining determinant-one flat families
+# Authoritative start — RL269 Radius-5 final determinant-one flat family
 
-Incoming state: **RL268**.
+Incoming state: **RL269**.
 
-Completed generation: **RL267 — determinant-one `[3,1,1]` and `[2,2,1]` closures**.
+Completed generation: **RL268 — determinant-one `[2,1,1,1]` closure**.
 
-RL267 promotes:
-- the determinant-one cyclic window identity `W_i(m)=q-g_{i-1}`;
-- a three-component support/edge bound and explicit infinite reduction;
-- non-bracketing closure for `A>=609` and audited-LMN bracketing cutoff `A<=261279` for the matching three-component leaves;
-- exact finite certificates with zero full-`D` hits for `[3,1,1]` and both cyclic orders of `[2,2,1]`;
-- independent whole-certificate and `A<=18` red-team agreement;
-- corrections to the scratch determinant-pair label and the initially omitted second `[2,2,1]` cyclic order before promotion.
+RL268 promotes:
+- a new four-component infinite reduction derived from the exact edge identity and determinant-window relation rather than reusing RL267's three-component support bound;
+- exact reduction to 967 determinant pairs, maximum `A=174`;
+- complete four-order finite certificate: 179,403,060 positive-gap configurations, 9,510,691 structural candidates, zero full-`D` hits;
+- independent `A<=18` earth-mover red team: 21,596 raw `|kappa|=1` `[2,1,1,1]` instances, exact 10,798/10,798 orientation split, zero full-`D` hits, zero determinant mismatches and zero cut-correct edge-identity mismatches.
 
-RL267 classification: **RADIUS5_KAPPA1_311_221_CLOSED**.
+RL268 classification: **RADIUS5_KAPPA1_2111_CLOSED**.
 
-Together with RL266, the determinant-one topologies now closed are:
+Together with RL266-RL268, closed determinant-one topologies are:
 - `[3,2]`;
 - `[3,1,1]`;
-- `[2,2,1]`.
+- `[2,2,1]`;
+- `[2,1,1,1]`.
 
-Remaining determinant-one topologies:
-- `[2,1,1,1]`;
-- `[1,1,1,1,1]`.
+Remaining determinant-one topology:
+- `[1,1,1,1,1]` only.
 
-RL268 is **PREPARED, NOT STARTED**.
+RL269 is **PREPARED, NOT STARTED**.
 
-Read `RL268_RADIUS5_KAPPA1_REMAINING_FLAT_FAMILIES_TARGET.md` first.
+Read `RL269_RADIUS5_KAPPA1_11111_TARGET.md` first.
 
-Primary target: remain in `|kappa|=1` and attack `[2,1,1,1]` next.
+Primary target: remain in `|kappa|=1` and attack `[1,1,1,1,1]` only.
 
-Do not assume RL267's three-component support bound transfers to a four-component topology; re-derive any infinite reduction from the exact edge identity and determinant-one window relation.
-
-Do not advance to `|kappa|=3` or `5` while determinant one remains open.
+Important scope: closing `[1,1,1,1,1]` completes determinant one, but does **not** by itself prove the full Radius-5 local theorem. The inherited Radius-5 classification still contains `|kappa|=3` and `|kappa|=5` sectors, which remain frozen until determinant one is complete.
 
 Frozen:
+- `|kappa|=3` and `|kappa|=5` until determinant one closes;
 - Gate A;
 - fifth retained selector;
 - selector enumeration;
 - general Radius-n programme.
 
-Radius 4 remains promoted locally. Gate B remains open. Radius 5 and global non-trivial-cycle exclusion remain open.
+Radius 4 remains promoted locally. Gate B, Radius 5 and global non-trivial-cycle exclusion remain open.
