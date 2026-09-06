@@ -1,27 +1,27 @@
-# Authoritative start — RL261 third-selector exact contraction
+# Authoritative start — RL262 post-third-selector arithmetic frontier
 
-Incoming state: **RL261**.
+Incoming state: **RL262**.
 
-Completed incoming generation: **RL260 — second-selector k=31 exact minimum-area certificate**.
+Completed incoming generation: **RL261 — exact full-phase elimination of the third selector**.
 
-RL260 promotes:
+RL261 promotes:
 
-- exact terminal ownership on the RL259 8,976-pair `k=31` family;
-- 172,633 owned prefix/suffix realizations;
-- contraction under hypothetical `H_can<=30` to 8,571 exact low-area realizations;
-- reduction to 28 canonical prefix states and 306 start/budget cases;
-- exact unrestricted-time minimum-area closures with zero required terminal-predecessor hits;
-- therefore `k=31 => H_can>=31` at `(1119,706,413,802,506,14,10)`;
-- together with RL259's `k=33` result, removal of the whole second selector;
-- no retained selector for `1120<=a<1287`;
-- unique next selector `(1287,812,475,485,306,16,6)`.
+- independent reconstruction of selector `(1287,812,475,485,306,16,6)`;
+- exact eight-block physical geometry and complement capacity;
+- exact pre-phase terminal frontier `k in {31,33,35,37,39}`;
+- exact capacity-family counts `194960, 41814, 6634, 724, 46` for
+  `k=31,33,35,37,39` respectively;
+- promoted RL65 full-phase/rank-defect quotient identity applied with ordered
+  canonical prefix congruences and common internal weight `rho=809`;
+- exact elimination of all full-phase classes for all five terminal exponents;
+- therefore complete removal of the third selector from the branch
+  simultaneously unresolved by Gate A and Gate B.
 
-RL261 is **PREPARED, NOT STARTED**.
+RL262 is **PREPARED, NOT STARTED**.
 
-Read `RL261_THIRD_SELECTOR_EXACT_CONTRACTION_TARGET.md` first.
+Read `RL262_POST_THIRD_SELECTOR_ARITHMETIC_FRONTIER_TARGET.md` first.
 
-Do not inherit RL260 scratch claims about the new selector's terminal range or
-`k=39` unless independently reconstructed.  Keep `H_sel` distinct from `H_can`.
-Use the corrected endpoint `J=2^k` before the omitted terminal `10`.
-Gate A remains open uniformly.  Gate B remains open.  Radius 4 is not invoked
-by RL260.  Radius 5 remains inactive.
+RL262 must recompute the inherited selector predicate strictly beyond `a=1287`;
+RL261 promotes no post-1287 selector value.  Gate A remains open uniformly.
+Gate B remains open.  Radius 4 was not invoked by RL261.  Radius 5 remains
+inactive.
