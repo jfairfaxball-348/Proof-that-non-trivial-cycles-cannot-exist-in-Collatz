@@ -1,27 +1,21 @@
-# Authoritative start — RL262 post-third-selector arithmetic frontier
+# Authoritative start — RL263 uniform ordered-phase weight deficit
 
-Incoming state: **RL262**.
+Incoming state: **RL263**.
 
-Completed incoming generation: **RL261 — exact full-phase elimination of the third selector**.
+Completed incoming generation: **RL262 — fourth-selector elimination and corrected global ordered-phase reduction**.
 
-RL261 promotes:
+RL262 promotes:
 
-- independent reconstruction of selector `(1287,812,475,485,306,16,6)`;
-- exact eight-block physical geometry and complement capacity;
-- exact pre-phase terminal frontier `k in {31,33,35,37,39}`;
-- exact capacity-family counts `194960, 41814, 6634, 724, 46` for
-  `k=31,33,35,37,39` respectively;
-- promoted RL65 full-phase/rank-defect quotient identity applied with ordered
-  canonical prefix congruences and common internal weight `rho=809`;
-- exact elimination of all full-phase classes for all five terminal exponents;
-- therefore complete removal of the third selector from the branch
-  simultaneously unresolved by Gate A and Gate B.
+- no retained inherited selector for `1288<=a<1417`;
+- unique next selector `(1417,894,523,317,200,18,4)`;
+- exact RL65 ordered full-phase elimination of its complete feasible odd terminal range `31<=k<=525`;
+- 248 terminal exponents, 9 canonical `(prefix,N_phase)` classes each, 2,232 exact classes total, zero survivors, maximum death depth 988;
+- selector-independent `N_phase==19 (mod24)` and exact rank-defect carry decomposition
+  `Dcal = 3^rho*(9*N_phase+61)/4 - 2^(m-2)*(4+(N_phase-2)*2^(k+1))/3`;
+- therefore the uniform prefix congruence only modulo `2^(m-2)`, not the overstrong `2^m` scratch version.
 
-RL262 is **PREPARED, NOT STARTED**.
+RL263 is **PREPARED, NOT STARTED**.
 
-Read `RL262_POST_THIRD_SELECTOR_ARITHMETIC_FRONTIER_TARGET.md` first.
+Read `RL263_UNIFORM_ORDERED_PHASE_WEIGHT_DEFICIT_TARGET.md` first.
 
-RL262 must recompute the inherited selector predicate strictly beyond `a=1287`;
-RL261 promotes no post-1287 selector value.  Gate A remains open uniformly.
-Gate B remains open.  Radius 4 was not invoked by RL261.  Radius 5 remains
-inactive.
+RL263 must attack the global ordered-phase mechanism before any further selector scan. Gate A remains open uniformly. Gate B remains open. Radius 4 was not invoked by RL262. Radius 5 remains inactive.
