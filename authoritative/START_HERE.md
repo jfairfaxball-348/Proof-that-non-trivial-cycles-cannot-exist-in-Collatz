@@ -1,33 +1,35 @@
-# Authoritative start — RL269 Radius-5 final determinant-one flat family
+# Authoritative start — RL270 Radius-5 final determinant-one finite certificate
 
-Incoming state: **RL269**.
+Incoming state: **RL270**.
 
-Completed generation: **RL268 — determinant-one `[2,1,1,1]` closure**.
+Completed generation: **RL269 — `[1,1,1,1,1]` reduced to an exact finite certificate**.
 
-RL268 promotes:
-- a new four-component infinite reduction derived from the exact edge identity and determinant-window relation rather than reusing RL267's three-component support bound;
-- exact reduction to 967 determinant pairs, maximum `A=174`;
-- complete four-order finite certificate: 179,403,060 positive-gap configurations, 9,510,691 structural candidates, zero full-`D` hits;
-- independent `A<=18` earth-mover red team: 21,596 raw `|kappa|=1` `[2,1,1,1]` instances, exact 10,798/10,798 orientation split, zero full-`D` hits, zero determinant mismatches and zero cut-correct edge-identity mismatches.
+RL269 promotes:
+- five-component support cut `U5=floor(4A/5)`;
+- mixed full-`D` bound `0<|E|<=5*3^(7+r)*2^(U5-r)`;
+- conservative infinite reduction: non-bracketing `A<=1712`, bracketing `A<=690205`;
+- exact 36-row Stern-Brocot traversal;
+- exact mixed-bound cover of **2,234 determinant pairs**, maximum `A=690`;
+- seven coarse bracketing survivors, ending at `(233,147;84,53)`;
+- independent `A<=18` replay with 8,996 `[1,1,1,1,1]`, `|kappa|=1` instances, exact 4,498/4,498 orientation split, zero full-`D` hits, zero determinant mismatches and zero cut-correct edge-identity mismatches;
+- explicit warning that the raw five-gap space is 618,391,058,390 configurations and has not been exhaustively enumerated.
 
-RL268 classification: **RADIUS5_KAPPA1_2111_CLOSED**.
+RL269 classification: **RADIUS5_KAPPA1_11111_REDUCED_TO_FINITE_CERTIFICATE**.
 
-Together with RL266-RL268, closed determinant-one topologies are:
+Closed determinant-one topologies remain:
 - `[3,2]`;
 - `[3,1,1]`;
 - `[2,2,1]`;
 - `[2,1,1,1]`.
 
-Remaining determinant-one topology:
+Still open:
 - `[1,1,1,1,1]` only.
 
-RL269 is **PREPARED, NOT STARTED**.
+Read `RL270_RADIUS5_KAPPA1_11111_FINITE_CERTIFICATE_TARGET.md` first.
 
-Read `RL269_RADIUS5_KAPPA1_11111_TARGET.md` first.
+Primary target: complete the compressed finite structural certificate for `[1,1,1,1,1]` over the exact 2,234-pair RL269 domain. Prefer the `x_i-x_(i+m)=g_i-g_(i-1)` boundary-event/interlacing compression over raw five-gap enumeration.
 
-Primary target: remain in `|kappa|=1` and attack `[1,1,1,1,1]` only.
-
-Important scope: closing `[1,1,1,1,1]` completes determinant one, but does **not** by itself prove the full Radius-5 local theorem. The inherited Radius-5 classification still contains `|kappa|=3` and `|kappa|=5` sectors, which remain frozen until determinant one is complete.
+Do not begin `|kappa|=3` or `|kappa|=5` until `[1,1,1,1,1]` is actually closed.
 
 Frozen:
 - `|kappa|=3` and `|kappa|=5` until determinant one closes;
