@@ -1,29 +1,35 @@
-# Authoritative start — RL265 Radius-5 upgrade and Radius-n feasibility
+# Authoritative start — RL266 Radius-5 determinant-sector arithmetic
 
-Incoming state: **RL265**.
+Incoming state: **RL266**.
 
-Completed incoming generation: **RL264 — physical-lift affine-ray theorem, ownership-equivalence barrier, and Radius-4 distance barrier**.
+Completed generation: **RL265 — Radius-5 structural barrier and determinant reduction**.
 
-RL264 promotes:
+RL265 promotes:
 
-- every finite legal canonical prefix has infinitely many positive physical `N,N+4` lifts in one residue class `h mod 2^p`;
-- exact affine-ray formulas for `A_p,B_p`, with canonical `T_p,J_p` invariant along the ray;
-- terminal physical ownership reduces exactly to the already-promoted RL65 phase-quotient equality, so no second independent scalar obstruction is created;
-- the full half-word transport profile has exactly `k` zero entries and positive entries equal to canonical heights;
-- under `H<k` and `k<a/2`, `dist_cyc(u,v)=H+k`;
-- the natural genuine cycle self-rotation satisfies `dist_cyc(uv,vu)=2(a-k+H)`, so the physical integer gap `4` does not itself manufacture Radius-4 exact-distance eligibility;
-- the preferred physical-lift Gate-A route is closed as a standalone new mechanism.
+- exact independent reconstruction of the audited Radius-5 cyclic metric;
+- exact reproduction of RL239's positive-domain `A<=18` checksum: 181,542 distance-5 word/shift instances and exactly ten full-`D` hits, all nonprimitive alternating `A=10,L=5,D=781`;
+- exact nine-family Radius-5 transport classification;
+- exact signed-flow determinant lemma
+  `qA-mL=kappa`, with `|kappa| in {1,3,5}`;
+- hence `gcd(A,L) in {1,3,5}`;
+- topology-specific determinant-sector restrictions;
+- explicit primitive positive-domain witnesses in all nine topologies with no Radius-3 or Radius-4 rotation, proving that a topology-only lower-radius shell induction fails;
+- exact identification of the remaining Radius-5 task as a new full-`D` arithmetic exclusion for determinant-constrained five-unit `2,3` transport sums.
 
-User-directed freeze:
+RL265 classification: **RADIUS5_EXACT_BARRIER_FOUND**.
 
-- Gate A is frozen as a future fallback;
-- the fifth retained arithmetic selector is frozen as a future fallback;
-- neither may be resumed in RL265 without explicit future direction.
+Radius 5 is **not** proved.
 
-RL265 is **PREPARED, NOT STARTED**.
+RL266 is **PREPARED, NOT STARTED**.
 
-Read `RL265_RADIUS5_TO_RADIUS_N_PROGRAM_TARGET.md` first.
+Read `RL266_RADIUS5_DETERMINANT_SECTOR_ARITHMETIC_TARGET.md` first.
 
-Primary target: rigorously test and, if possible, prove a literal Radius-5 local theorem by upgrading the audited Radius-4 machinery. Only after Radius 5 is structurally understood, test whether the R3->R4->R5 mechanism supports a genuine uniform Radius-n theorem/programme.
+Primary target: close or finitely reduce only the `|kappa|=1` Radius-5 arithmetic sector. Preserve the RL238/RL239 reduced-denominator/multiple correction exactly.
 
-Gate A remains open/frozen. Gate B remains open. Radius 4 remains locally proved. Radius 5 is active.
+Frozen:
+- Gate A;
+- fifth retained selector;
+- selector enumeration;
+- general Radius-n programme.
+
+Radius 4 remains promoted locally. Gate B remains open.
