@@ -1,39 +1,38 @@
-# Authoritative start — RL277
+# Authoritative start — RL279
 
 Date prepared: 2026-09-07
 
-Incoming completed generation: **RL276 — one-sided absolute ownership reconstruction and common-mode barriers**.
+Incoming completed generation: **RL278 — global six-zero Gate-A contraction and exact finite-reduction engine**.
 
-RL276 classification:
+RL278 classification:
 
-- `GATE_A_EXACT_BARRIER`
-- `ABSOLUTE_QUOTIENT_RECONSTRUCTION_IDENTIFIED`
-- `ZERO_CARRY_PHYSICAL_BOX_INSUFFICIENT_FOR_PUMP_SCALE`
+- `GLOBAL_SIX_ZERO_GATE_A_CONTRACTION_PROVED`
+- `FIXED_ZERO_EXACT_FINITE_REDUCTION_ENGINE_IDENTIFIED`
 
 Promoted exact state:
 
-- the RL65/RL66 ordered phase reconstruction extends to the full modulus `3^ell`;
-- with RL242 zero canonical carry, the genuine full-phase quotient `N` is the unique positive representative of its CRT class inside the canonical dyadic box;
-- mandatory red team shows this is an absolute reconstruction of the existing full-phase equality, not an independent Gate-A contradiction;
-- combining RL77's canonical-pump scale demand with RL242's later full-cycle physical box proves that the coarse zero-carry box is still too weak to price even the maximum pump depth allowed by half-word length;
-- the repaired RL231--RL237 chronological programme remains total-variation rather than one-sided prefix-excursion control.
+- the global zero-rank threshold remains `S_m0=sum 2^(t-1)(2/3)^(u_t)>17/2`;
+- four, five, and six internal zeros are now exactly Gate-A safe;
+- the exact five-zero sub-threshold maximum is `501898/59049`, with gap `37/118098`;
+- that gap plus exact canonical all-one closure gives the non-arbitrary six-zero rank bound `u6<=28`;
+- exact six-zero replay gives 7,081 relaxed tuples, 458 legal canonical prefixes, 170 terminal closures, 47 full-phase scale-box terminals, and zero Gate-A violators;
+- therefore every hypothetical Gate-A violator satisfies `m0>=7`, equivalently `z>=k+5`;
+- RL278 also identifies a reusable fixed-zero exact finite-reduction engine, but not yet a uniform asymptotic Gate-A theorem.
 
 Therefore Gate A remains open with exact uniform target
 
-`H_can>=k=t+3`
+`H_can>=k`
 
-at terminal `d=1, J=2^k`, with inherited odd `k`.
+at terminal `d=1,J=2^k`.
 
 Read:
 
-`RL277_COMMON_MODE_ABSOLUTE_OWNERSHIP_SCALE_TARGET.md`
+`RL279_SCALABLE_ZERO_RANK_STATE_COMPRESSION_AND_HEIGHT_GROWTH_TARGET.md`
 
 first.
 
-RL277 is **prepared but NOT STARTED**.
+RL279 is **prepared but NOT STARTED**.
 
-Priority: prove an independent theorem controlling the common-mode absolute ownership scale itself—one-sided counterflow, ordered absolute rank frontier, or a genuinely boundary-coupled canonical excursion. Do not repeat the completed CRT reconstruction, paired subtraction, coarse physical-box, or chronological-total-variation routes.
+Priority: compress the deterministic runs between zero events and prove a scalable height-growth invariant. A further flat fixed-zero enumeration may be used only as supporting falsification evidence, not as the principal research programme.
 
-The fifth selector is available only as a controlled falsification laboratory. Radius 6+ remains frozen. Gate B remains separate/open. No global non-trivial-cycle exclusion is claimed.
-
-Knowledge catalogues: stale/deferred for connector-worker RL276 transition.
+Gate B remains separate/open and frozen. The fifth selector was not scanned. Radius 6+ remains frozen. No global non-trivial-cycle exclusion is claimed.
