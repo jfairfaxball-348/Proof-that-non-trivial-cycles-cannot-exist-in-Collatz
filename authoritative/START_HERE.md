@@ -1,41 +1,31 @@
-# Authoritative start — RL270 Radius-5 final determinant-one finite certificate
+# Authoritative start — RL271 Radius-5 `|kappa|=3` sector
 
-Incoming state: **RL270**.
+Incoming state: **RL271**.
 
-Completed generation: **RL269 — `[1,1,1,1,1]` reduced to an exact finite certificate**.
+Completed generation: **RL270 — determinant-one `[1,1,1,1,1]` closure**.
 
-RL269 promotes:
-- five-component support cut `U5=floor(4A/5)`;
-- mixed full-`D` bound `0<|E|<=5*3^(7+r)*2^(U5-r)`;
-- conservative infinite reduction: non-bracketing `A<=1712`, bracketing `A<=690205`;
-- exact 36-row Stern-Brocot traversal;
-- exact mixed-bound cover of **2,234 determinant pairs**, maximum `A=690`;
-- seven coarse bracketing survivors, ending at `(233,147;84,53)`;
-- independent `A<=18` replay with 8,996 `[1,1,1,1,1]`, `|kappa|=1` instances, exact 4,498/4,498 orientation split, zero full-`D` hits, zero determinant mismatches and zero cut-correct edge-identity mismatches;
-- explicit warning that the raw five-gap space is 618,391,058,390 configurations and has not been exhaustively enumerated.
+RL270 promotes:
+- exact determinant-one singleton reconstruction by cyclic signed length-`L` windows;
+- exact ten-boundary-event alternation criterion;
+- complete four-family cyclic matching classification;
+- exact structural state count **10,760,234,210** over the inherited 2,234 determinant pairs;
+- exact sparse full-`D` residue reduction;
+- complete meet-in-the-middle certificate with **14,539,631** side-residue entries and **0** full-`D` hits;
+- independent `A<=18` replay with 8,996 instances, exact 4,498/4,498 orientation split, identical 3522/718/204/54 family splits, and zero full-`D` or formula mismatches.
 
-RL269 classification: **RADIUS5_KAPPA1_11111_REDUCED_TO_FINITE_CERTIFICATE**.
+RL270 classification: **RADIUS5_KAPPA1_11111_CLOSED**.
 
-Closed determinant-one topologies remain:
+Therefore every Radius-5 determinant-one `|kappa|=1` topology is closed:
 - `[3,2]`;
 - `[3,1,1]`;
 - `[2,2,1]`;
-- `[2,1,1,1]`.
+- `[2,1,1,1]`;
+- `[1,1,1,1,1]`.
 
-Still open:
-- `[1,1,1,1,1]` only.
+Read `RL271_RADIUS5_KAPPA3_SECTOR_TARGET.md` first.
 
-Read `RL270_RADIUS5_KAPPA1_11111_FINITE_CERTIFICATE_TARGET.md` first.
+Primary target: activate and attack the inherited Radius-5 `|kappa|=3` sector under the RL265 exact classification and full-`D` arithmetic standard. Do not assume determinant-one coprimality or reuse a `|kappa|=1` reduction without proving its `|kappa|=3` analogue.
 
-Primary target: complete the compressed finite structural certificate for `[1,1,1,1,1]` over the exact 2,234-pair RL269 domain. Prefer the `x_i-x_(i+m)=g_i-g_(i-1)` boundary-event/interlacing compression over raw five-gap enumeration.
-
-Do not begin `|kappa|=3` or `|kappa|=5` until `[1,1,1,1,1]` is actually closed.
-
-Frozen:
-- `|kappa|=3` and `|kappa|=5` until determinant one closes;
-- Gate A;
-- fifth retained selector;
-- selector enumeration;
-- general Radius-n programme.
+`|kappa|=5` remains frozen until `|kappa|=3` reaches a promoted checkpoint. Gate A, the fifth retained selector, selector enumeration and general Radius-n remain frozen.
 
 Radius 4 remains promoted locally. Gate B, Radius 5 and global non-trivial-cycle exclusion remain open.
