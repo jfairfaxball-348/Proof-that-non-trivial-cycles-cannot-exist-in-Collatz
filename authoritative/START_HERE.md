@@ -1,21 +1,22 @@
-# Authoritative start — RL276
+# Authoritative start — RL277
 
 Date prepared: 2026-09-07
 
-Incoming completed generation: **RL275 — owned determinant telescope and common-mode barrier**.
+Incoming completed generation: **RL276 — one-sided absolute ownership reconstruction and common-mode barriers**.
 
-RL275 classification:
+RL276 classification:
 
-- `OWNED_DISCREPANCY_COMPRESSION_IDENTIFIED`
 - `GATE_A_EXACT_BARRIER`
+- `ABSOLUTE_QUOTIENT_RECONSTRUCTION_IDENTIFIED`
+- `ZERO_CARRY_PHYSICAL_BOX_INSUFFICIENT_FOR_PUMP_SCALE`
 
-Promoted exact result:
+Promoted exact state:
 
-For the inherited determinant-2 half-word selector `ar-qell=2`, RL274's two determinant/window identities and RL243's owned derivative `Q-P=h-h_shift` give
-
-`Z_(2d)^v(s)-Z_(2d)^u(s)=h_s-h_(s+2d)`.
-
-Mandatory red team proves this is exactly the ordinary bit/height telescope, hence not an independent Gate-A condition. The paired determinant route controls only the differential mode `Q-P`; a shared/common counterflow mode remains invisible.
+- the RL65/RL66 ordered phase reconstruction extends to the full modulus `3^ell`;
+- with RL242 zero canonical carry, the genuine full-phase quotient `N` is the unique positive representative of its CRT class inside the canonical dyadic box;
+- mandatory red team shows this is an absolute reconstruction of the existing full-phase equality, not an independent Gate-A contradiction;
+- combining RL77's canonical-pump scale demand with RL242's later full-cycle physical box proves that the coarse zero-carry box is still too weak to price even the maximum pump depth allowed by half-word length;
+- the repaired RL231--RL237 chronological programme remains total-variation rather than one-sided prefix-excursion control.
 
 Therefore Gate A remains open with exact uniform target
 
@@ -23,12 +24,16 @@ Therefore Gate A remains open with exact uniform target
 
 at terminal `d=1, J=2^k`, with inherited odd `k`.
 
-The next research target is:
+Read:
 
-`RL276_ONE_SIDED_ABSOLUTE_OWNERSHIP_CONSUMER_TARGET.md`.
+`RL277_COMMON_MODE_ABSOLUTE_OWNERSHIP_SCALE_TARGET.md`
 
-RL276 is **prepared but NOT STARTED**.
+first.
 
-Priority: obtain a one-sided absolute consumer using the full-phase quotient / canonical state / chronological ownership, not another subtraction identity. First test the RL65/RL66 ordered phase-digit ladder against RL241's finite quotient-carry decomposition; preserve the RL231--RL237 stop-and-repair ledger if that chronological machinery is reused.
+RL277 is **prepared but NOT STARTED**.
 
-The fifth selector is available only as a controlled test bed, not an automatic scan. Radius 6+ remains frozen. Gate B remains separate/open. No global non-trivial-cycle exclusion is claimed.
+Priority: prove an independent theorem controlling the common-mode absolute ownership scale itself—one-sided counterflow, ordered absolute rank frontier, or a genuinely boundary-coupled canonical excursion. Do not repeat the completed CRT reconstruction, paired subtraction, coarse physical-box, or chronological-total-variation routes.
+
+The fifth selector is available only as a controlled falsification laboratory. Radius 6+ remains frozen. Gate B remains separate/open. No global non-trivial-cycle exclusion is claimed.
+
+Knowledge catalogues: stale/deferred for connector-worker RL276 transition.
