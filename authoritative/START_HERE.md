@@ -1,22 +1,27 @@
-# Authoritative start — RL272 Radius-5 `|kappa|=3` height-two remainder
+# Authoritative start — RL273 Radius-5 `|kappa|=5` sector
 
-Incoming state: **RL272**.
+Incoming state: **RL273**.
 
-Completed generation: **RL271 — all flat `|kappa|=3` Radius-5 topology leaves closed**.
+Completed generation: **RL272 — height-two mass-four-plus-one `|kappa|=3` closure**.
 
-RL271 classification: **RADIUS5_KAPPA3_FLAT_SECTOR_CLOSED_HEIGHT2_MASS4PLUS1_OPEN**.
+RL272 classification: **RADIUS5_KAPPA3_SECTOR_CLOSED**.
 
-RL271 promotes exact full-`D` closures for:
-- `[4,1]`;
-- `[3,1,1]`;
-- `[2,2,1]`;
-- `[2,1,1,1]`;
-- `[1,1,1,1,1]`.
+RL272 promotes:
+- the exact height-two `4+1` normal form after source/target reversal;
+- the exact two-term numerator reduction `D | (15*3^v-2^u)`;
+- its complementary representative and the universal bound `D<=16*3^floor(A/2)`;
+- non-bracketing closure for `A>=45`;
+- the inherited RL266 LMN bracketing cutoff `A<=51389` under the stronger RL272 exponential estimate;
+- an exact integer size reduction leaving no possible `A>27`;
+- a complete 149-state canonical positive-domain certificate with zero full-`D` hits;
+- an independent all-word/all-optimal-median replay through `A<=15` with exact orientation symmetry and zero full-`D` hits.
 
-The only inherited `|kappa|=3` topology still open is **height-two mass-four-plus-one**.
+Together with RL271, the complete Radius-5 `|kappa|=3` sector is closed. RL270 already closes the complete `|kappa|=1` sector.
 
-Read `RL272_RADIUS5_KAPPA3_HEIGHT2_MASS4PLUS1_TARGET.md` first.
+Therefore the only determinant sector still open for Radius 5 is **`|kappa|=5`**.
 
-Do not reopen the five flat leaves except to audit a specific promoted dependency. Do not activate `|kappa|=5` until the remaining height-two `|kappa|=3` leaf is closed or a later authoritative checkpoint explicitly changes scope.
+Read `RL273_RADIUS5_KAPPA5_SECTOR_TARGET.md` first.
+
+Do not reopen the closed `|kappa|=1` or `|kappa|=3` sectors except to audit a specifically named promoted dependency.
 
 Gate A, fifth retained selector, selector enumeration and general Radius-n remain frozen. Radius 4 remains locally promoted. Gate B, Radius 5 and global non-trivial-cycle exclusion remain open.
