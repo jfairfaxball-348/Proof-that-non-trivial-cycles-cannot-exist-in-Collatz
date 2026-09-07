@@ -1,29 +1,34 @@
-# Authoritative start — RL275 scale-growing ownership fallback
+# Authoritative start — RL276
 
-Incoming state: **RL275**.
+Date prepared: 2026-09-07
 
-Completed generation: **RL274 — Radius-5 global encounter bridge discovery**.
+Incoming completed generation: **RL275 — owned determinant telescope and common-mode barrier**.
 
-RL274 classification:
-`RADIUS5_INSUFFICIENT_FOR_IDENTIFIED_BRIDGE + GENERAL_LOCAL_PATTERN_IDENTIFIED + BRIDGE_EXACT_BARRIER`.
+RL275 classification:
 
-Promoted strategy state:
-- Radius 5 remains a completed local theorem.
-- The retained genuine full-phase word has even length and even weight, so every cyclic self-rotation distance is even; direct Radius-5 encounter is therefore unavailable on that representation.
-- The reusable general invariant is determinant/counterflow plus rational-window discrepancy.
-- Existing global window/full-phase machinery predominantly forces counterflow upward rather than manufacturing a bounded-radius encounter.
-- Fixed finite owned zero patterns cannot provide unbounded discrepancy escalation; the missing bridge needs a scale-growing ownership theorem or an owned compression mechanism.
-- Radius 6 / automatic radius climbing is not recommended.
+- `OWNED_DISCREPANCY_COMPRESSION_IDENTIFIED`
+- `GATE_A_EXACT_BARRIER`
 
-Read `RL275_SCALE_GROWING_OWNERSHIP_GATE_A_FALLBACK_TARGET.md` first.
+Promoted exact result:
 
-IMPORTANT: RL264 froze Gate A and the fifth selector pending explicit future direction. RL275 is prepared but NOT STARTED. A future user kickoff explicitly starting RL275 is required to activate this fallback.
+For the inherited determinant-2 half-word selector `ar-qell=2`, RL274's two determinant/window identities and RL243's owned derivative `Q-P=h-h_shift` give
 
-Until that kickoff:
-- Gate A remains open and frozen;
-- fifth selector remains frozen;
-- Gate B remains open;
-- Radius 6+ remains frozen;
-- global non-trivial-cycle exclusion remains open.
+`Z_(2d)^v(s)-Z_(2d)^u(s)=h_s-h_(s+2d)`.
 
-Knowledge catalogues: stale/deferred for connector-worker RL274 transition.
+Mandatory red team proves this is exactly the ordinary bit/height telescope, hence not an independent Gate-A condition. The paired determinant route controls only the differential mode `Q-P`; a shared/common counterflow mode remains invisible.
+
+Therefore Gate A remains open with exact uniform target
+
+`H_can>=k=t+3`
+
+at terminal `d=1, J=2^k`, with inherited odd `k`.
+
+The next research target is:
+
+`RL276_ONE_SIDED_ABSOLUTE_OWNERSHIP_CONSUMER_TARGET.md`.
+
+RL276 is **prepared but NOT STARTED**.
+
+Priority: obtain a one-sided absolute consumer using the full-phase quotient / canonical state / chronological ownership, not another subtraction identity. First test the RL65/RL66 ordered phase-digit ladder against RL241's finite quotient-carry decomposition; preserve the RL231--RL237 stop-and-repair ledger if that chronological machinery is reused.
+
+The fifth selector is available only as a controlled test bed, not an automatic scan. Radius 6+ remains frozen. Gate B remains separate/open. No global non-trivial-cycle exclusion is claimed.
