@@ -1,29 +1,29 @@
-# Authoritative start — RL274 Radius-5 encounter bridge discovery
+# Authoritative start — RL275 scale-growing ownership fallback
 
-Incoming state: **RL274**.
+Incoming state: **RL275**.
 
-Completed generation: **RL273 — complete Radius-5 `|kappa|=5` closure**.
+Completed generation: **RL274 — Radius-5 global encounter bridge discovery**.
 
-RL273 classification: **RADIUS5_LOCAL_THEOREM_CLOSED**.
+RL274 classification:
+`RADIUS5_INSUFFICIENT_FOR_IDENTIFIED_BRIDGE + GENERAL_LOCAL_PATTERN_IDENTIFIED + BRIDGE_EXACT_BARRIER`.
 
-Promoted local state:
-- RL270 closes Radius-5 `|kappa|=1`;
-- RL271–RL272 close Radius-5 `|kappa|=3`;
-- RL273 closes Radius-5 `|kappa|=5` across all nine topology families;
-- therefore the literal audited Radius-5 local theorem is closed under the inherited primitive/full-`D` positive-domain self-rotation hypotheses.
+Promoted strategy state:
+- Radius 5 remains a completed local theorem.
+- The retained genuine full-phase word has even length and even weight, so every cyclic self-rotation distance is even; direct Radius-5 encounter is therefore unavailable on that representation.
+- The reusable general invariant is determinant/counterflow plus rational-window discrepancy.
+- Existing global window/full-phase machinery predominantly forces counterflow upward rather than manufacturing a bounded-radius encounter.
+- Fixed finite owned zero patterns cannot provide unbounded discrepancy escalation; the missing bridge needs a scale-growing ownership theorem or an owned compression mechanism.
+- Radius 6 / automatic radius climbing is not recommended.
 
-This is **not** a global Collatz proof.  The missing issue is the global encounter bridge: why a hypothetical nontrivial cycle must realize a local configuration forbidden by Radius 5.
+Read `RL275_SCALE_GROWING_OWNERSHIP_GATE_A_FALLBACK_TARGET.md` first.
 
-Read `RL274_RADIUS5_GLOBAL_ENCOUNTER_BRIDGE_DISCOVERY_TARGET.md` first.
+IMPORTANT: RL264 froze Gate A and the fifth selector pending explicit future direction. RL275 is prepared but NOT STARTED. A future user kickoff explicitly starting RL275 is required to activate this fallback.
 
-RL274 is deliberately a discovery/strategy session.  Freeze automatic radius climbing.  Do not start Radius 6, Radius 7+, higher-radius brute force, Lean formalisation, selector work, or unrelated pivots unless the bridge analysis itself identifies a compelling dependency.
+Until that kickoff:
+- Gate A remains open and frozen;
+- fifth selector remains frozen;
+- Gate B remains open;
+- Radius 6+ remains frozen;
+- global non-trivial-cycle exclusion remains open.
 
-Primary question:
-
-> What is the weakest encounter theorem sufficient to turn the promoted Radius-5 local obstruction into a contradiction for a hypothetical non-trivial cycle?
-
-The required output is an authoritative strategy document that isolates that exact missing implication, assesses whether Radius 5 is already sufficient, compares Radius 6 against bridge work by expected leverage, and recommends the next mathematical target without overstating global progress.
-
-Gate A: open.  Gate B: open.  Global non-trivial-cycle exclusion: open.  Radius 5: locally closed.
-
-Knowledge catalogues: stale/deferred for the connector-worker RL273 transition.
+Knowledge catalogues: stale/deferred for connector-worker RL274 transition.
