@@ -1,49 +1,39 @@
-# Authoritative start — RL282
+# Authoritative start — RL283
 
 Date prepared: 2026-09-08
 
-Incoming completed generation: **RL281 — two-phase Gate-A compression, gateway rigidity, and odd-k contraction**.
+Incoming completed generation: **RL282 — terminal-backward height-digit pricing and local-tail barrier**.
 
-RL281 primary classification:
+RL282 primary classification:
 
-`TWO_PHASE_GATE_A_COMPRESSION_PROVED`
+`TERMINAL_BACKWARD_HEIGHT_DIGIT_PRICING_AND_LOCAL_TAIL_BARRIER_PROVED`
 
 Promoted subordinate results:
 
-- `SHARP_EXCURSION_ZERO_MASS_ENVELOPE_PROVED`
-- `POSITIVE_BLOCK_FULL_MASS_PRICING_PROVED`
-- `DEPTH_TWO_EQUALITY_ENTRY_SCALE_SUPPRESSION_PROVED`
-- `ONE_ZERO_2ADIC_HEIGHT_RIGIDITY_PROVED`
-- `POSITIVE_BOUNDARY_ZERO_MASS_TELESCOPE_PROVED`
-- `POSITIVE_PHASE_ZERO_MASS_CEILING_PROVED`
-- `NEGATIVE_PHASE_DUAL_POTENTIAL_BUDGET_PROVED`
-- `NEGATIVE_TO_POSITIVE_GATEWAY_DICHOTOMY_PROVED`
-- `MOD3_REACHABILITY_INVARIANT_PROVED`
-- `MINIMUM_POSITIVE_HEIGHT_THREE_PROVED`
-- `K3_GATE_A_CASE_CLOSED_PROVED`
+- `ONE_ZERO_MOD3_OUTPUT_SHELL_PROVED`
+- `ARBITRARY_POSITIVE_BOUNDARY_SUFFIX_AFFINE_COMPRESSION_PROVED`
+- `TERMINAL_ONE_ZERO_HEIGHT_DIGIT_PRICING_PROVED`
+- `BOUNDARY_INVERSE_RUN_RECURRENCE_PROVED`
+- `PURE_ZERO_FINAL_TAIL_LOCAL_REALIZABILITY_FAMILY_PROVED`
+- `POSITIVE_TAIL_MASS_AND_F_BARRIER_PROVED`
+- `UPSTREAM_CHECKPOINT_REACHABILITY_IDENTIFIED_AS_GATE_A_OBSTRUCTION`
 
 Promoted exact state:
 
-- first-return excursion zero mass obeys
-  `S_E >= q[1+(2^z-2)(2/3)^(h-z)]`,
-  with equality exactly in the depth-two family;
-- positive checkpoint blocks satisfy
-  `F_next-F_in > 2S_E+D_E-2q`,
-  so every `z>=2` positive excursion costs more `F` than its entire excursion zero mass;
-- one-zero excursions satisfy
-  `3^h(J_in+4)=2^h(2J_out+3)` and
-  `h=nu_2(J_in+4)` when `J_in!=-4`;
-- all positive-phase zero mass, including zero-height boundary zeros, satisfies
-  `S_positive<15`;
-- the negative dual potential `C=Q(J-1)` gives a `5Q_in/3` excursion-entry charge and total nonpositive-return entry-scale budget `<42/5`;
-- direct `J<0 -> J>0` one-zero crossing is impossible;
-- the unique cheap gateway is
-  `J=0 --011,h=2--> J=3`
-  with scale factor `8/9`;
-- every reachable state satisfies
-  `J mod 3 in {0,(-1)^d}`,
-  so terminal exponent `k` is odd;
-- every positive `d=1` state has height at least `3`, closing the complete `k=3` Gate-A case.
+- every reachable positive one-zero output has `nu_3(J)=1`;
+- any final positive boundary suffix compresses exactly to `(L,r,C_w)` with
+  `2^(k+L)=3^r J_0+C_w`;
+- the preceding one-zero height is bounded by the exact terminal valuation
+  `h<=nu_3(2^(k+L+1)-2C_w+3^(r+1))-r`;
+- the positive boundary inverse block is
+  `R_t(A)=2(2^t A/3^t-1)`;
+- deep inverse undershoot forces available one-zero height `1`;
+- for every odd `k>=3` and every `h>=2`, infinitely many locally legal positive final blocks
+  `J_in --0 1^h--> J_0 --0^q--> 2^k`
+  exist;
+- along that local family, positive zero mass tends to `Q_T` and `F_T-F_in` tends to `4Q_T`;
+- therefore final-tail 3-adic thinning plus the inherited positive mass/`F` budgets cannot by themselves close Gate A;
+- any successful proof must constrain upstream global positive-checkpoint reachability versus accumulated height.
 
 Gate A remains open with exact target
 
@@ -51,18 +41,21 @@ Gate A remains open with exact target
 
 at terminal `d=1,J=2^k`.
 
-Every hypothetical Gate-A violator now satisfies
+Every hypothetical Gate-A violator remains in
 
 `k>=5`, `k` odd, `H_can<k`.
 
 Read
 
-`RL282_ODD_K_HEIGHT_ESCALATION_GATE_A_TARGET.md`
+`RL283_UPSTREAM_2ADIC_CHECKPOINT_REACHABILITY_GATE_A_TARGET.md`
 
 first.
 
-RL282 is **prepared but NOT STARTED**.
+RL283 is **prepared but NOT STARTED**.
 
-Priority: prove a scalable height-escalation law for the residual odd terminal exponents, using the exact power-of-two terminal state, mod-3 invariant, one-zero valuation rigidity, multi-zero mass pricing, and the rigid height-3 sign-change core. Do not restart fixed-zero enumeration or completed excursion classification.
+Priority: prove an upstream global reachability/state-height theorem, preferably
+`nu_2(J)<=H` for reachable positive even `d=1` checkpoints, or identify the minimal additional invariant needed to obtain an equivalent terminal consequence.
+
+Do not restart final-tail 3-adic classification, positive zero-count/mass-only arguments, or raw height-cap enumeration as the principal route.
 
 Gate B remains separate/open/frozen. The fifth selector was not scanned. Radius 6+ remains frozen. No global non-trivial-cycle exclusion is claimed.
