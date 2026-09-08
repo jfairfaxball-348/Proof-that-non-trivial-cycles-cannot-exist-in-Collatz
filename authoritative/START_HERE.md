@@ -1,31 +1,47 @@
-# Authoritative start — RL280
+# Authoritative start — RL281
 
 Date prepared: 2026-09-08
 
-Incoming completed generation: **RL279 — scalable zero-rank/run compression, boundary quotient, and exact seven-zero contraction**.
+Incoming completed generation: **RL280 — sharp positive-excursion state/scale compression and positive-checkpoint Lyapunov law**.
 
-RL279 primary classification:
+RL280 primary classification:
 
-`SCALABLE_ZERO_RANK_RUN_COMPRESSION_PROVED`
+`SHARP_POSITIVE_EXCURSION_STATE_SCALE_LYAPUNOV_PROVED`
 
 Promoted subordinate results:
 
-- `HEIGHT_BUDGET_ZERO_RANK_IDENTITY_PROVED`
-- `UNIFORM_ZERO_MASS_CORRIDOR_PROVED`
-- `BOUNDARY_CYCLE_SCALE_SIGN_THEOREM_PROVED`
-- `ZERO_BUDGET_ONLY_HEIGHT_GROWTH_BARRIER_PROVED`
-- `EXACT_SEVEN_ZERO_GATE_A_CONTRACTION_PROVED`
+- `SHARP_EXCURSION_STATE_VERSUS_HEIGHT_INEQUALITY_PROVED`
+- `EXCURSION_COUPON_DECOMPOSITION_PROVED`
+- `NESTED_ZERO_WEIGHT_AMPLIFICATION_PROVED`
+- `SHARP_EXCURSION_ZERO_COMPLEXITY_HEIGHT_ENVELOPE_PROVED`
+- `EXACT_DEPTH_TWO_EXTREMAL_NORMAL_FORM_PROVED`
+- `SHARP_FIRST_RETURN_STATE_SCALE_THEOREM_PROVED`
+- `EXTREMAL_2ADIC_3ADIC_RIGIDITY_PROVED`
+- `POSITIVE_CHECKPOINT_RETURN_LYAPUNOV_PROVED`
+- `GLOBAL_ENDPOINT_POTENTIAL_DEPENDENCY_IDENTIFIED`
 
 Promoted exact state:
 
-- `K=J+2^d-1` gives an exact four-case affine recurrence and `nu_2(K)` all-one run macros;
-- `P=2^(H+n)/3^r` has exact column multiplier `2^d/3^x` and turns Gate A into a constant-threshold potential problem on retained phase-box terminals;
-- `H_can=sum(v_t-u_t)` gives an exact finite height budget in zero-rank coordinates;
-- the zero mass satisfies `17/2<S<21`, uniformly in the number of zeros;
-- zero-to-zero runs have scalar multiplier `2(2/3)^g`, and terminal scale depends on the final zero weight plus the all-one tail;
-- the neutral `d=1` boundary subsystem is accelerated `3n+1`, but endpoint monotonicities quotient every possible neutral cycle by scale sign: positive cycles expand, negative cycles contract;
-- an infinite exact retained equality family has `H_can=k=3` with unbounded `m0`, so zero-budget-only height growth is impossible;
-- exact seven-zero replay is Gate-A safe, hence every hypothetical Gate-A violator satisfies `m0>=8`, equivalently `z>=k+6`.
+- every first-return excursion has exact `P/Q` factorization and sharp state-versus-height pricing;
+- excursion coupon defect splits exactly and obeys the nested zero law;
+- for `z` excursion zeros and height `h`,
+  `D_E >= c_entry[1+((2^z-4)/3)(2/3)^(h-z)]`;
+- equality is exactly the depth-two family
+  `x=0 1^(h-z) 0^(z-1) 1`,
+  `y=1^(h-z+1) 0^z`;
+- every first-return excursion satisfies
+  `Q_out(K_out-7/2+2^(3-z)) >= Q_in(K_in+3)`,
+  with equality exactly for that depth-two family;
+- equality obeys the exact 2-adic/3-adic relation
+  `3^(s+1)(K_in+3)=2^(s+1)(8+2^(z-1)(2K_out-7))`,
+  `s=h-z`;
+- at positive even-`J` checkpoints,
+  `F=Q(J+3)` satisfies
+  `F_next>F_in+Q_in/3`,
+  and `F_next>F_in+Q_in` for excursions with at least two zeros;
+- retained terminals satisfy `F_T<110/3`, hence every positive checkpoint satisfies
+  `Q(J+3)<110/3`;
+- the aggregate endpoint-potential terminal telescope is dependent on the inherited `2S+D` identity and must not be double-counted.
 
 Gate A remains open with exact target
 
@@ -33,14 +49,18 @@ Gate A remains open with exact target
 
 at terminal `d=1,J=2^k`.
 
-Read:
+Every hypothetical Gate-A violator still satisfies
 
-`RL280_POSITIVE_EXCURSION_SCALE_HEIGHT_TARGET.md`
+`m0>=8`, equivalently `z>=k+6`.
+
+Read
+
+`RL281_POSITIVE_CHECKPOINT_GATE_A_CLOSURE_TARGET.md`
 
 first.
 
-RL280 is **prepared but NOT STARTED**.
+RL281 is **prepared but NOT STARTED**.
 
-Priority: prove a sharp scale/state-versus-height inequality for a positive excursion `d=1 -> d>1 -> d=1`, using the compressed `K`, zero-weight, height-coupon, and terminal-scale structure. Neutral boundary cycles are already quotiented and must not be turned into a separate Collatz-cycle classification problem.
+Priority: combine the positive-checkpoint Lyapunov/state-scale law with `17/2<S<21`, the exact coupon budget, terminal scale, and the rigid depth-two equality congruences. Do not restart internal excursion classification.
 
 Gate B remains separate/open and frozen. The fifth selector was not scanned. Radius 6+ remains frozen. No global non-trivial-cycle exclusion is claimed.
