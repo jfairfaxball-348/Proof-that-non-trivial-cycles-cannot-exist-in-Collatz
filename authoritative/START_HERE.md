@@ -1,47 +1,49 @@
-# Authoritative start — RL281
+# Authoritative start — RL282
 
 Date prepared: 2026-09-08
 
-Incoming completed generation: **RL280 — sharp positive-excursion state/scale compression and positive-checkpoint Lyapunov law**.
+Incoming completed generation: **RL281 — two-phase Gate-A compression, gateway rigidity, and odd-k contraction**.
 
-RL280 primary classification:
+RL281 primary classification:
 
-`SHARP_POSITIVE_EXCURSION_STATE_SCALE_LYAPUNOV_PROVED`
+`TWO_PHASE_GATE_A_COMPRESSION_PROVED`
 
 Promoted subordinate results:
 
-- `SHARP_EXCURSION_STATE_VERSUS_HEIGHT_INEQUALITY_PROVED`
-- `EXCURSION_COUPON_DECOMPOSITION_PROVED`
-- `NESTED_ZERO_WEIGHT_AMPLIFICATION_PROVED`
-- `SHARP_EXCURSION_ZERO_COMPLEXITY_HEIGHT_ENVELOPE_PROVED`
-- `EXACT_DEPTH_TWO_EXTREMAL_NORMAL_FORM_PROVED`
-- `SHARP_FIRST_RETURN_STATE_SCALE_THEOREM_PROVED`
-- `EXTREMAL_2ADIC_3ADIC_RIGIDITY_PROVED`
-- `POSITIVE_CHECKPOINT_RETURN_LYAPUNOV_PROVED`
-- `GLOBAL_ENDPOINT_POTENTIAL_DEPENDENCY_IDENTIFIED`
+- `SHARP_EXCURSION_ZERO_MASS_ENVELOPE_PROVED`
+- `POSITIVE_BLOCK_FULL_MASS_PRICING_PROVED`
+- `DEPTH_TWO_EQUALITY_ENTRY_SCALE_SUPPRESSION_PROVED`
+- `ONE_ZERO_2ADIC_HEIGHT_RIGIDITY_PROVED`
+- `POSITIVE_BOUNDARY_ZERO_MASS_TELESCOPE_PROVED`
+- `POSITIVE_PHASE_ZERO_MASS_CEILING_PROVED`
+- `NEGATIVE_PHASE_DUAL_POTENTIAL_BUDGET_PROVED`
+- `NEGATIVE_TO_POSITIVE_GATEWAY_DICHOTOMY_PROVED`
+- `MOD3_REACHABILITY_INVARIANT_PROVED`
+- `MINIMUM_POSITIVE_HEIGHT_THREE_PROVED`
+- `K3_GATE_A_CASE_CLOSED_PROVED`
 
 Promoted exact state:
 
-- every first-return excursion has exact `P/Q` factorization and sharp state-versus-height pricing;
-- excursion coupon defect splits exactly and obeys the nested zero law;
-- for `z` excursion zeros and height `h`,
-  `D_E >= c_entry[1+((2^z-4)/3)(2/3)^(h-z)]`;
-- equality is exactly the depth-two family
-  `x=0 1^(h-z) 0^(z-1) 1`,
-  `y=1^(h-z+1) 0^z`;
-- every first-return excursion satisfies
-  `Q_out(K_out-7/2+2^(3-z)) >= Q_in(K_in+3)`,
-  with equality exactly for that depth-two family;
-- equality obeys the exact 2-adic/3-adic relation
-  `3^(s+1)(K_in+3)=2^(s+1)(8+2^(z-1)(2K_out-7))`,
-  `s=h-z`;
-- at positive even-`J` checkpoints,
-  `F=Q(J+3)` satisfies
-  `F_next>F_in+Q_in/3`,
-  and `F_next>F_in+Q_in` for excursions with at least two zeros;
-- retained terminals satisfy `F_T<110/3`, hence every positive checkpoint satisfies
-  `Q(J+3)<110/3`;
-- the aggregate endpoint-potential terminal telescope is dependent on the inherited `2S+D` identity and must not be double-counted.
+- first-return excursion zero mass obeys
+  `S_E >= q[1+(2^z-2)(2/3)^(h-z)]`,
+  with equality exactly in the depth-two family;
+- positive checkpoint blocks satisfy
+  `F_next-F_in > 2S_E+D_E-2q`,
+  so every `z>=2` positive excursion costs more `F` than its entire excursion zero mass;
+- one-zero excursions satisfy
+  `3^h(J_in+4)=2^h(2J_out+3)` and
+  `h=nu_2(J_in+4)` when `J_in!=-4`;
+- all positive-phase zero mass, including zero-height boundary zeros, satisfies
+  `S_positive<15`;
+- the negative dual potential `C=Q(J-1)` gives a `5Q_in/3` excursion-entry charge and total nonpositive-return entry-scale budget `<42/5`;
+- direct `J<0 -> J>0` one-zero crossing is impossible;
+- the unique cheap gateway is
+  `J=0 --011,h=2--> J=3`
+  with scale factor `8/9`;
+- every reachable state satisfies
+  `J mod 3 in {0,(-1)^d}`,
+  so terminal exponent `k` is odd;
+- every positive `d=1` state has height at least `3`, closing the complete `k=3` Gate-A case.
 
 Gate A remains open with exact target
 
@@ -49,18 +51,18 @@ Gate A remains open with exact target
 
 at terminal `d=1,J=2^k`.
 
-Every hypothetical Gate-A violator still satisfies
+Every hypothetical Gate-A violator now satisfies
 
-`m0>=8`, equivalently `z>=k+6`.
+`k>=5`, `k` odd, `H_can<k`.
 
 Read
 
-`RL281_POSITIVE_CHECKPOINT_GATE_A_CLOSURE_TARGET.md`
+`RL282_ODD_K_HEIGHT_ESCALATION_GATE_A_TARGET.md`
 
 first.
 
-RL281 is **prepared but NOT STARTED**.
+RL282 is **prepared but NOT STARTED**.
 
-Priority: combine the positive-checkpoint Lyapunov/state-scale law with `17/2<S<21`, the exact coupon budget, terminal scale, and the rigid depth-two equality congruences. Do not restart internal excursion classification.
+Priority: prove a scalable height-escalation law for the residual odd terminal exponents, using the exact power-of-two terminal state, mod-3 invariant, one-zero valuation rigidity, multi-zero mass pricing, and the rigid height-3 sign-change core. Do not restart fixed-zero enumeration or completed excursion classification.
 
-Gate B remains separate/open and frozen. The fifth selector was not scanned. Radius 6+ remains frozen. No global non-trivial-cycle exclusion is claimed.
+Gate B remains separate/open/frozen. The fifth selector was not scanned. Radius 6+ remains frozen. No global non-trivial-cycle exclusion is claimed.
