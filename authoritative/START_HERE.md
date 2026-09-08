@@ -1,65 +1,58 @@
-# Authoritative start — RL284
+# Authoritative start — RL285
 
 Date prepared: 2026-09-08
 
 Incoming completed generation:
 
-**RL283 — upstream 2-adic equivalence and relaxation barriers.**
+**RL284 — labelled accelerated reversibility and local irreversibility barriers.**
 
-RL283 primary classification:
+RL284 primary classification:
 
-`UPSTREAM_2ADIC_EQUIVALENCE_AND_RELAXATION_BARRIERS_PROVED`
+`LABELLED_ACCELERATED_REVERSIBILITY_AND_LOCAL_IRREVERSIBILITY_BARRIERS_PROVED`
 
-Promoted analytic subordinate results:
+Promoted subordinate results:
 
-- `HIGH_DIVISIBILITY_RECONSTRUCTS_PREFIX_LEGALITY_PROVED`
-- `ADJACENT_SWAP_VALUATION_LIPSCHITZ_BARRIER_PROVED`
-- `ZERO_RANK_2ADIC_SCALAR_DEPENDENCY_PROVED`
-- `TWO_SHADOW_AFFINE_REPRESENTATION_PROVED`
-- `TERMINAL_EXTENSION_SINGLE_REVERSED_RANK_REFORMULATION_PROVED`
-- `EXACT_ORDERED_RANK_ENDPOINT_REFORMULATION_EQUIVALENT_TO_GATE_A_PROVED`
-- `NONCROSSING_RANK_RELAXATION_BARRIER_PROVED`
+- `ACCELERATED_ODD_LABELLED_BIJECTION_PROVED`
+- `ADMISSIBLE_PREDECESSOR_RAY_PROVED`
+- `LOCAL_PRIMALITY_BRANCH_INDIFFERENCE_PROVED`
+- `MOD3_ORIENTATION_ACYCLICITY_BARRIER_PROVED`
+- `VALUATION_ONLY_CYCLE_CHARGE_BARRIER_PROVED`
 
-Gate A remains open.
+RL284 was an explicit exploratory pivot. Its main exact theorem is that the accelerated odd Collatz map is bijective after retaining the valuation label `a=nu_2(3n+1)`, with inverse
 
-Exact residual:
+`P_a(m)=(2^a m-1)/3`
+
+on exactly the admissible pairs
+
+`m odd`, `3∤m`, `a>=1`, `m==(-1)^a (mod 3)`.
+
+Admissible predecessors satisfy `P_(a+2)=4P_a+1`.
+
+Consequently the natural local “dissipation loses information” picture is false once the full valuation label is retained. Primality does not change local branch availability. The mod-3 orientation graph is cyclic, and valuation-only additive entropy is already forced neutral on `a=1,2,4` by exact known cycles.
+
+No global cycle exclusion is claimed from RL284.
+
+By the RL284 promotion discipline, the exploratory pivot now ends and RL285 returns to the frozen Gate-A upstream programme.
+
+Gate A remains open with exact residual
 
 `k>=25`, `k` odd, `H_can<k`.
 
-The preferred sufficient theorem remains open and is frozen intact:
+The preferred sufficient theorem remains
 
 `d=1, J>0, J even, globally reachable at accumulated height H
  => nu_2(J)<=H`.
 
-RL283 did not demote this route. It proved that several apparently easier reformulations/relaxations do not actually simplify it.
-
-Important RL283 barriers:
-
-- `J<=2^H` is false;
-- local `nu_2` monotonicity is false;
-- a single displacement can produce a valuation jump from `1` to `13`;
-- the integerized zero-rank scalar is the inherited `B` telescope in disguise;
-- dangerous high-divisibility ordered-rank solutions reconstruct genuine legality, so that algebraic "relaxation" is equivalent to the real problem;
-- strict noncrossing rank order still does not rescue the RL48 separable large-`z` relaxation.
-
-By direct user instruction, RL284 is an **explicit exploratory strategic pivot**, not a silent continuation or replacement of the Gate-A programme.
-
 Read first:
 
-`RL284_SCALE_INDEPENDENT_STRUCTURAL_IRREVERSIBILITY_PIVOT_TARGET.md`
+`RL285_UPSTREAM_2ADIC_CHECKPOINT_REACHABILITY_GATE_A_TARGET.md`
 
-Mission:
+Then use the frozen RL283 structural/barrier report as required provenance:
 
-Investigate exact scale-independent structural/irreversibility contradictions for non-trivial Collatz cycles: cocycles, winding/order invariants, exact Lyapunov increments, irreversible labelled events, parity-dissipation structure, and a critical prime-factor overlay.
+`sessions/RL283/RL283_UPSTREAM_2ADIC_EQUIVALENCE_AND_RELAXATION_BARRIERS_2026-09-08.md`.
 
-"Energy" and "entropy" are analogies only. Any viable candidate must be mathematically defined and have an exact transition law.
+RL285 is **prepared but NOT STARTED**.
 
-If primes add no deterministic leverage beyond parity/valuation/factor structure, record that cleanly and drop the prime overlay.
-
-If the pivot fails to earn a theorem-sized advance, scalable reduction, or decisive barrier, recommend returning to the frozen Gate-A upstream theorem `nu_2(J)<=H`.
-
-Use existing project mathematics to stress-test candidates, especially known neutral loops, RL282 local-tail families, sign-change structure, parity/rank identities, Radius-4 obstruction, and RL283 barriers.
+Priority: find a genuinely global reachability invariant or minimal state augmentation proving `nu_2(J)<=H` (or an equivalent terminal consequence), while preserving the RL283 proof-method barriers and avoiding a continuation of the failed local entropy/prime overlay.
 
 Gate B remains separate/open/frozen. The fifth selector remains unscanned. Radius 6+ remains frozen. No global non-trivial-cycle exclusion is claimed.
-
-RL284 is **prepared but NOT STARTED**.
