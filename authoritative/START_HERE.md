@@ -1,19 +1,19 @@
-# Authoritative start — RL288
+# Authoritative start — RL289
 
-The unique incoming research job is RL288.
+The unique incoming research job is RL289.
 
 Read, in order:
 
 1. `AGENTS.md`;
 2. `docs/RL_RESEARCH_PROTOCOL.md`;
 3. `docs/RL_STATE_MACHINE.md`;
-4. `authoritative/RL288_FIXED_SEED_2ADIC_HIGH_DIVISIBILITY_SIGN_GATE_A_TARGET.md`.
+4. `authoritative/RL289_NORMALIZED_COMMON_SEED_SHADOW_PAIR_GATE_A_TARGET.md`.
 
 ## Incoming classification
 
-RL287 closed as
+RL288 closed as
 
-`STATE_RESERVE_PHASE_TRANSPORT_AND_GLOBAL_REACHABILITY_BARRIERS_PROVED`.
+`FIXED_SEED_FIRST_DEVIATION_SYNCHRONIZATION_AND_LOCAL_PHASE_BARRIERS_PROVED`.
 
 Gate A remains open with exact residual
 
@@ -21,25 +21,15 @@ Gate A remains open with exact residual
 
 ## Core inherited conclusion
 
-RL287 identifies the natural local scalar reserves and then proves decisive barriers:
+RL288 proves a genuinely fixed-seed synchronization theorem for the two common-seed shadows: their first deviation from the seed itinerary `(101)^infinity` occurs at the same position. After quotienting the initial neutral repetitions, every nontrivial canonical trajectory begins from one of exactly three fixed zero-height off-boundary roots.
 
-- the normalized Ferrers reserve is exactly the inherited coupon defect `D`;
-- the unique affine reserve is algebraically dependent;
-- every fixed legal segment is a 2-adic cylinder isometry on higher lift bits;
-- low-height local predecessor shells realize every odd terminal exponent;
-- arbitrarily large zero-height boundary-one surplus can have global boundary hazard `Beta=3`.
+At the same time RL288 proves that the explored local `M/T` phase controls, reverse predecessor sieves, and fixed individual shifted-shadow valuations do not supply the missing global lift selector.
 
-Therefore the successor is **not** another local reserve search.
+## RL289 mission
 
-## RL288 mission
+Work with the normalized odd joint shadow pair after the synchronized common-seed departure and seek a genuinely nonlocal constraint on its higher selected lift that couples to prefix area / accumulated height.
 
-Attack the fixed-seed global 2-adic lift-selection problem directly, preferably by proving
-
-`nu_2(K-1)<=H+d-1`
-
-for every positive globally reachable state, or equivalently the RL285 fixed-seed high-divisibility sign theorem.
-
-The target file contains the required starting representation, adversarial RL287 families, and forbidden repeats.
+The target file contains the exact normalization, inherited barriers, and forbidden repeats.
 
 ## Scope
 
