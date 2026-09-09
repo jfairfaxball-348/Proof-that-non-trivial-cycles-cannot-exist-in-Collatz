@@ -33,7 +33,7 @@ Gate A remains open with exact residual
 
 Read first:
 
-`sessions/RL286/RL287_RETURN_NORMALIZED_DEFECT_RESERVE_GATE_A_TARGET.md`
+`authoritative/RL287_RETURN_NORMALIZED_DEFECT_RESERVE_GATE_A_TARGET.md`
 
 Then use the frozen RL286 report:
 
