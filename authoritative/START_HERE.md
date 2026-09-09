@@ -1,50 +1,61 @@
-# Authoritative start — RL290
+# Authoritative start — RL291
 
-The unique incoming research job is RL290.
+The unique incoming research job is RL291.
 
 Read, in order:
 
 1. `AGENTS.md`;
 2. `docs/RL_RESEARCH_PROTOCOL.md`;
 3. `docs/RL_STATE_MACHINE.md`;
-4. `authoritative/RL290_GAUGE_INVARIANT_FIXED_SEED_SEAM_GATE_A_TARGET.md`.
+4. `authoritative/RL291_PROGRAMME_WIDE_AUDIT_SYNTHESIS_AND_FAST_TRACK_REVIEW_TARGET.md`;
+5. `sessions/RL290/RL290_CLOSEOUT.md`;
+6. `sessions/RL290/RL290_SCRATCH_FREEZE.md`.
 
 ## Incoming classification
 
-RL289 closed as
+RL290 closed as
 
-`FIXED_SEED_BALLOT_BIJECTION_REJECTED_TUBE_AND_SEAM_BARRIERS_PROVED`.
+`GAUGE_INVARIANT_BELLMAN_CHECKPOINT_KERNEL_AND_HEIGHT_ONE_LAUNCHPAD_BARRIERS_PROVED`.
 
 Gate A remains open with exact residual
 
 `k>=25`, `k` odd, `H_can<k`.
 
-## Core inherited conclusion
+## RL291 mission
 
-RL289 gives an exact gauge-invariant combinatorial model for fixed-seed reachability:
+Do NOT simply continue RL290.
 
-canonical prefixes are exactly the ballot-selected parity-cylinder pairs of the fixed affine map
+First perform a broad programme-wide audit and synthesis across the historical research eras.
 
-`A(z)=3z+14`.
+The audit must recover:
 
-At a positive even balanced state, `nu_2(J)` is exactly the depth of the complete formal rejected `d=0` sibling tube adjacent to the legal path, equivalently the agreement depth of
+- all major promoted lemmas and proof objects relevant to the live state;
+- corrections/demotions;
+- overlaps and rediscoveries;
+- older ideas whose significance changes under newer knowledge;
+- permanently dead routes;
+- dormant ingredients;
+- potential shortcuts / fast tracks;
+- the smallest set of genuinely live next directions.
 
-`g_J(u)=3u+1-J`
+The current RL290 Bellman/checkpoint-kernel route has considerable momentum and must be preserved as an important live option, but it is not privileged over alternatives revealed by the audit.
 
-with
+## Special user instruction
 
-`h(u)=3u+1`.
+Explicitly review the amount of opportunistic/unprompted work accumulated across the programme.
 
-RL289 also proves that bounded recent history, rational final-pair invariants, pure `3`-adic endpoint data, absolute signed-defect rank, and cycle-lemma ballot rotations do not provide the missing Gate-A selector.
+Separate useful mathematics from route proliferation and consolidate the authoritative conceptual map.
 
-## RL290 mission
-
-Seek a genuinely gauge-invariant fixed-seed seam/history theorem coupling accumulated legal-path area to adjacent rejected-tube depth / section agreement depth.
-
-The target file contains exact inherited inputs, corrections, barriers, preferred progress forms, and forbidden repeats.
+Unless the audit exposes an immediate correction or nearly mechanical closure, prioritize review/synthesis over fresh exploratory mathematics.
 
 ## Scope
 
-Gate B remains separate/open/frozen. Fifth selector unscanned. Radius 6+ frozen. No global non-trivial-cycle exclusion is claimed.
+Gate B remains separate/open/frozen.
+
+Fifth selector unscanned.
+
+Radius 6+ frozen.
+
+No global non-trivial-cycle exclusion is claimed.
 
 The repository, not conversation history, is authoritative.
