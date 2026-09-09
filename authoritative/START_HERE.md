@@ -1,58 +1,54 @@
-# Authoritative start — RL285
+# Authoritative start — RL286
 
-Date prepared: 2026-09-08
+Date prepared: 2026-09-09
 
 Incoming completed generation:
 
-**RL284 — labelled accelerated reversibility and local irreversibility barriers.**
+**RL285 — global-prefix 2-adic reformulation and first-carry bridges for Gate A.**
 
-RL284 primary classification:
+RL285 primary classification:
 
-`LABELLED_ACCELERATED_REVERSIBILITY_AND_LOCAL_IRREVERSIBILITY_BARRIERS_PROVED`
+`GLOBAL_PREFIX_2ADIC_REFORMULATION_AND_FIRST_CARRY_BRIDGES_PROVED`
 
-Promoted subordinate results:
+Promoted analytic results include:
 
-- `ACCELERATED_ODD_LABELLED_BIJECTION_PROVED`
-- `ADMISSIBLE_PREDECESSOR_RAY_PROVED`
-- `LOCAL_PRIMALITY_BRANCH_INDIFFERENCE_PROVED`
-- `MOD3_ORIENTATION_ACYCLICITY_BARRIER_PROVED`
-- `VALUATION_ONLY_CYCLE_CHARGE_BARRIER_PROVED`
+- post-column area `A=H+d-1` equals prefix-dominance/rank-displacement area;
+- shifted-shadow representation of `2^n(K-1)`;
+- all-depth high-divisibility reconstruction of canonical prefix legality;
+- positive high-divisibility sign reformulation;
+- four first-entrance congruences;
+- shadow/zero-mass coordinate equivalence;
+- Ferrers-cell shifted-shadow identity;
+- first-displacement 2-adic rigidity;
+- first carry reconstructs the first genuine excursion entry;
+- terminal extension signed-area identity `H-k`.
 
-RL284 was an explicit exploratory pivot. Its main exact theorem is that the accelerated odd Collatz map is bijective after retaining the valuation label `a=nu_2(3n+1)`, with inverse
+Promoted exact finite certificate:
 
-`P_a(m)=(2^a m-1)/3`
+`POST_COLUMN_2ADIC_INVARIANT_H22_RAW_CERTIFICATE`.
 
-on exactly the admissible pairs
+It exhaustively covers all normalized reachable raw states with `H<=22`: 3,837,389 total states, 584,154 positive states, maximum positive depth 7, and zero positive violations of
 
-`m odd`, `3∤m`, `a>=1`, `m==(-1)^a (mod 3)`.
+`nu_2(K-1)<=H+d-1`.
 
-Admissible predecessors satisfy `P_(a+2)=4P_a+1`.
+The global inequality remains **CONJECTURAL**.
 
-Consequently the natural local “dissipation loses information” picture is false once the full valuation label is retained. Primality does not change local branch availability. The mod-3 orientation graph is cyclic, and valuation-only additive entropy is already forced neutral on `a=1,2,4` by exact known cycles.
-
-No global cycle exclusion is claimed from RL284.
-
-By the RL284 promotion discipline, the exploratory pivot now ends and RL285 returns to the frozen Gate-A upstream programme.
+A false unpromoted scratch strengthening `nu_2(J)<=H-d+1` was corrected and discarded; no inherited theorem was demoted.
 
 Gate A remains open with exact residual
 
 `k>=25`, `k` odd, `H_can<k`.
 
-The preferred sufficient theorem remains
-
-`d=1, J>0, J even, globally reachable at accumulated height H
- => nu_2(J)<=H`.
-
 Read first:
 
-`RL285_UPSTREAM_2ADIC_CHECKPOINT_REACHABILITY_GATE_A_TARGET.md`
+`RL286_COMPONENTWISE_2ADIC_CARRY_GATE_A_TARGET.md`
 
-Then use the frozen RL283 structural/barrier report as required provenance:
+Then use the frozen RL285 report:
 
-`sessions/RL283/RL283_UPSTREAM_2ADIC_EQUIVALENCE_AND_RELAXATION_BARRIERS_2026-09-08.md`.
+`sessions/RL285/RL285_GLOBAL_PREFIX_2ADIC_REFORMULATION_AND_CARRY_BRIDGES_2026-09-09.md`.
 
-RL285 is **prepared but NOT STARTED**.
+RL286 is **prepared but NOT STARTED**.
 
-Priority: find a genuinely global reachability invariant or minimal state augmentation proving `nu_2(J)<=H` (or an equivalent terminal consequence), while preserving the RL283 proof-method barriers and avoiding a continuation of the failed local entropy/prime overlay.
+Priority: use RL285's first-carry reconstruction to work at the level of whole genuine positive first-return excursions and seek a recursive 2-adic carry budget closed under zero-height boundary retention. Do not assume the global post-column inequality; prove it or an equivalent checkpoint consequence.
 
-Gate B remains separate/open/frozen. The fifth selector remains unscanned. Radius 6+ remains frozen. No global non-trivial-cycle exclusion is claimed.
+Gate B remains separate/open/frozen. Fifth selector unscanned. Radius 6+ frozen. No global non-trivial-cycle exclusion is claimed.
