@@ -4,18 +4,18 @@ Date prepared: 2026-09-09
 
 Incoming completed generation:
 
-**RL286 — component carry/coupon bridge and reserve barrier for Gate A.**
+**RL286 — excursion carry/coupon-defect bridge and state-reserve barrier for Gate A.**
 
 RL286 primary classification:
 
-`COMPONENT_CARRY_COUPON_BRIDGE_AND_RESERVE_BARRIER_PROVED`
+`EXCURSION_CARRY_COUPON_DEFECT_BRIDGE_AND_STATE_RESERVE_BARRIER_PROVED`
 
 Promoted analytic results:
 
 - for every genuine positive first-return excursion, the shifted-shadow/Ferrers carry integer is exactly the RL280/RL281 coupon defect after normalization:
   `C_E/3^r = D_E/Q_in` and `C_E/2^L = D_E/Q_out`;
 - excursion height is exactly the number of displacement/coupon cells;
-- every component carry cell has 2-adic exponent in the height-supported range `0,...,h-1`, with a unique exponent-zero cell;
+- every component carry cell has 2-adic exponent in the height-supported range `0,...,h-1`;
 - the one-zero family has exact carry
   `C_E = 3^h-2^h`,
   so the return-normalized carry is
@@ -37,7 +37,7 @@ Read first:
 
 Then use the frozen RL286 report:
 
-`sessions/RL286/RL286_COMPONENT_CARRY_COUPON_BRIDGE_2026-09-09.md`.
+`sessions/RL286/RL286_EXCURSION_CARRY_COUPON_DEFECT_BRIDGE_2026-09-09.md`.
 
 RL287 is **prepared but NOT STARTED**.
 
