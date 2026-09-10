@@ -1,37 +1,34 @@
-# Authoritative start — RL293
+# Authoritative start — RL294
 
-The unique incoming research job is RL293.
+The unique incoming research job is RL294.
 
 Read, in order:
 
 1. `AGENTS.md`;
 2. `docs/RL_RESEARCH_PROTOCOL.md`;
 3. `docs/RL_STATE_MACHINE.md`;
-4. `authoritative/RL293_FIXED_SEED_BALLOT_STATIC_BOUNDARY_DANGER_TREE_SEPARATION_GATE_A_TARGET.md`;
-5. `sessions/RL292/RL292_CLOSEOUT.md`;
-6. `sessions/RL292/RL292_FIXED_SEED_BELLMAN_STATIC_DANGER_TREE_AND_RESIDUAL_CONTRACTIONS_2026-09-10.md`;
-7. `sessions/RL292/RL292_SCRATCH_FREEZE.md` only when detailed exploratory provenance is needed;
-8. `sessions/RL291/RL291_SYNTHESIS_AND_FAST_TRACK_REPORT.md` for the wider programme audit.
+4. `authoritative/RL294_FIRST_D1_OWNER_AND_TIGHT_P_STATIC_DANGER_TREE_GATE_A_TARGET.md`;
+5. `sessions/RL293/RL293_CLOSEOUT.md`;
+6. `sessions/RL293/RL293_FIXED_SEED_MINPLUS_OWNER_DANGER_TREE_AND_K29_CONTRACTION_2026-09-10.md`;
+7. `sessions/RL293/verification/RL293_RED_TEAM.md`;
+8. `sessions/RL293/RL293_SCRATCH_FREEZE.md` only when exploratory provenance is needed;
+9. `sessions/RL292/RL292_REPORT_PART_01.md` and `RL292_REPORT_PART_02.md` for the inherited five-state Bellman/static-tree definitions.
 
 ## Incoming classification
 
-RL292 closed as
+RL293 closed as
 
-`FIXED_SEED_BELLMAN_FRONT_DOOR_STATIC_BOUNDARY_DANGER_TREE_AND_K25_K27_CONTRACTIONS_PROVED`.
+`FIXED_SEED_MINPLUS_OWNER_DANGER_TREE_REDUCTION_AND_K29_CONTRACTION_PROVED`.
 
 Gate A remains open with exact residual
 
-`k>=29`, `k` odd, `H_can<k`.
+`k>=31`, `k` odd, `H_can<k`.
 
-## RL293 mission
+## RL294 mission
 
-Couple genuine fixed-seed / ballot historical area to RL292's exact static boundary-hazard preimage tree.
+Prove or correctly augment the all-depth first-positive first-d=1 minimum-owner theorem rooted at `P=(2,3)`. Use it to collapse RL292's five-state Bellman front door to the single tight P-source obligation, then attack `Bcal(2,3)<=1` in RL293's principal-representative/high-signed-drift sector of the exact static danger tree.
 
-Primary target: prove that entry into a hazard ball of precision `R+t` around a depth-`t` preimage centre requires at least the corresponding paid historical area, in a normalization strong enough to imply Bellman domination.
-
-The checkpoint-8 excess-one inequality is the sharp local test case, not an inherited theorem and not a universal mandatory gateway.
-
-Do not restart finite affine-template, endpoint-only potential, chosen-history, renewal-list, or raw height-cap programmes as the principal route.
+Do not make a raw k=31/H<=30 expansion the principal programme.
 
 ## Scope
 
