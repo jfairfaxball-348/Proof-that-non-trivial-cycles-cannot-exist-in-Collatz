@@ -1,41 +1,48 @@
-# Authoritative start — RL296
+# Authoritative start — RL297
 
-The unique incoming research job is RL296.
+The unique incoming research job is RL297.
 
 Read, in order:
 
 1. `AGENTS.md`;
 2. `docs/RL_RESEARCH_PROTOCOL.md`;
 3. `docs/RL_STATE_MACHINE.md`;
-4. `authoritative/RL296_FINITE_WALL_SECTOR_CLOSURE_AND_Q17_OWNER_GATE_A_TARGET.md`;
-5. `sessions/RL295/RL295_CLOSEOUT.md`;
-6. `sessions/RL295/RL295_REPORT.md`;
-7. `sessions/RL295/verification/RL295_RED_TEAM.md`;
-8. `sessions/RL295/RL295_SCRATCH_FREEZE.md` for deliberately unpromoted finite owner-search leads;
-9. `sessions/RL294/RL294_REPORT.md` for the canonical cascade algebra;
-10. `sessions/RL293/RL293_REPORT_PART_02.md` and RL292 reports for the inherited Bellman front door.
+4. `authoritative/RL297_P_BOTTLENECK_RISK_FIRST_GATE_A_AUDIT_TARGET.md`;
+5. `sessions/RL296/RL296_CLOSEOUT.md`;
+6. `sessions/RL296/RL296_REPORT.md`;
+7. `sessions/RL296/verification/RL296_RED_TEAM.md`;
+8. `sessions/RL296/RL296_SCRATCH_FREEZE.md` only for deliberately unpromoted engineering diagnostics;
+9. `sessions/RL295/RL295_REPORT.md`, RL294, RL293, and RL292 reports for inherited Bellman/cascade/Q-tail structure.
 
 ## Incoming classification
 
-RL295 closed as
+RL296 closed as
 
-`ZERO_DEPTH_WALL_NORMALIZATION_4_39_CUT_AND_Q17_OWNER_TAIL_PROVED`.
+`FINITE_5191_FRONTIER_RECONSTRUCTED_5264_5351_6898_6807_CLOSED_5206_THREE_WALL_RESIDUAL_PROVED`.
 
-Gate A remains open with exact residual
+Gate A remains open with exact inherited residual
 
 `k>=31`, `k` odd, `H_can<k`.
 
-## RL296 mission
+## RL297 mission
 
-Finish the finite wall-sector closure behind the unique `(4,39)->(5,191)` residual. Reconstruct every RL295 scratch owner claim with explicit replayable witnesses. Use the promoted Q17 theorem to kill the `(6,807)` infinite tail if that branch is recovered.
+Perform a focused, adversarial risk-first audit of
 
-Then apply the same wall calculus to the other non-P RL292 front-door states. Only after the non-P front door closes should `Bcal(P)<=1` become primary.
+`Bcal(P)<=1`, `P=(2,3)`.
+
+Begin by trying to falsify it with an exact legal P future of Bellman score at least 2.
+
+For research prioritisation only, remaining finite front-door engineering may be provisionally assumed completable. That assumption is **not proof** and must never be promoted.
+
+Do not make general front-door cleanup the primary task unless it becomes directly necessary for the P analysis.
 
 ## Scope
 
 Gate B remains separate/open/frozen.
 Fifth selector remains unscanned.
 Radius 6+ remains frozen.
+RO/divergent-orbit work is out of scope.
+The Lean formalisation project is separate and out of scope.
 No global non-trivial-cycle exclusion is claimed.
 
 The repository, not conversation history, is authoritative.
