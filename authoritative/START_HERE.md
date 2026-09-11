@@ -1,45 +1,42 @@
-# Authoritative start — RL297
+# Authoritative start — RL298
 
-The unique incoming research job is RL297.
+The unique incoming research job is RL298.
 
 Read, in order:
 
 1. `AGENTS.md`;
 2. `docs/RL_RESEARCH_PROTOCOL.md`;
 3. `docs/RL_STATE_MACHINE.md`;
-4. `authoritative/RL297_P_BOTTLENECK_RISK_FIRST_GATE_A_AUDIT_TARGET.md`;
-5. `sessions/RL296/RL296_CLOSEOUT.md`;
-6. `sessions/RL296/RL296_REPORT.md`;
-7. `sessions/RL296/verification/RL296_RED_TEAM.md`;
-8. `sessions/RL296/RL296_SCRATCH_FREEZE.md` only for deliberately unpromoted engineering diagnostics;
-9. `sessions/RL295/RL295_REPORT.md`, RL294, RL293, and RL292 reports for inherited Bellman/cascade/Q-tail structure.
+4. `authoritative/RL298_FIFTH_SELECTOR_BRANCH_RETURN_TARGET.md`;
+5. `sessions/RL297/RL297_CLOSEOUT.md`;
+6. `sessions/RL297/RL297_REPORT.md`;
+7. RL262 closeout/report/verifier material for the exact fourth-selector elimination and inherited selector predicate;
+8. RL261, RL260, RL259, RL258, RL257, RL256 and RL255 only as needed to reconstruct the exact selector/branch machinery.
 
 ## Incoming classification
 
-RL296 closed as
+RL297 closed as
 
-`FINITE_5191_FRONTIER_RECONSTRUCTED_5264_5351_6898_6807_CLOSED_5206_THREE_WALL_RESIDUAL_PROVED`.
+`P_BOTTLENECK_RISK_AUDIT_WEAK_GREEN_SHARED_ENDPOINT_STRUCTURE_IDENTIFIED`.
 
-Gate A remains open with exact inherited residual
+Gate A remains open with inherited residual
 
 `k>=31`, `k` odd, `H_can<k`.
 
-## RL297 mission
+The P-bottleneck route survived the risk audit but is not proved. It is parked as weak-green background.
 
-Perform a focused, adversarial risk-first audit of
+## RL298 mission
 
-`Bcal(P)<=1`, `P=(2,3)`.
+Return to the previously frozen selector/branch programme.
 
-Begin by trying to falsify it with an exact legal P future of Bellman score at least 2.
+Recover the exact promoted selector predicate from repository authority, resume strictly beyond the fourth selector eliminated by RL262, identify the fifth retained selector, and attack that exact branch.
 
-For research prioritisation only, remaining finite front-door engineering may be provisionally assumed completable. That assumption is **not proof** and must never be promoted.
-
-Do not make general front-door cleanup the primary task unless it becomes directly necessary for the P analysis.
+RL297 performed no fifth-selector mathematics; it only recovered enough historical authority at closeout to confirm that this is the correct frozen continuation point.
 
 ## Scope
 
-Gate B remains separate/open/frozen.
-Fifth selector remains unscanned.
+Gate A remains parked unless selector work materially changes its risk assessment.
+Gate B remains separate/open except where the exact selector branch couples them.
 Radius 6+ remains frozen.
 RO/divergent-orbit work is out of scope.
 The Lean formalisation project is separate and out of scope.
