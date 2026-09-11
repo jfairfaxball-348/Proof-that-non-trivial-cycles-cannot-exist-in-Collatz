@@ -35,29 +35,40 @@ def comp(A,B):
     a,KA=A; b,KB=B
     return (a+b, 3**b*KA+KB)
 
+# 1. Exact wall normalization identities.
 wall_checks=0
 for a in range(1,7):
     for A in range(-20,21):
         for b in range(1,7):
             for B in range(-20,21):
                 for u in range(-5,6):
-                    assert comp((0,u),(b,B))==(b,B+3**b*u)
-                    assert comp((a,A),(0,u))==(a,A+u)
+                    lhs=comp((0,u),(b,B))
+                    rhs=(b,B+3**b*u)
+                    assert lhs==rhs
+                    lhs2=comp((a,A),(0,u))
+                    rhs2=(a,A+u)
+                    assert lhs2==rhs2
                     wall_checks += 2
+
+# Identity wall and adjacent wall merger.
 for u in range(-20,21):
     assert comp((0,0),(0,u))==(0,u)
     assert comp((0,u),(0,0))==(0,u)
     for v in range(-20,21):
         assert comp((0,u),(0,v))==(0,u+v)
 
+# 2. Formal E-wall transducer used by the double-E refactorization.
+# E=(d=1,K=1) => J=0; Z=(1,K=0)=>J=-1; P=(2,K=6)=>J=3; I=(0,K=0).
 E=(1,Jof(1,1))
-for x in (0,1):
-    d2,J2,_=step(*E,x,allow_depth0=True)
+Z=(1,Jof(1,0))
+for x, expected in [(0,(2,3)), (1,(0,0))]:
+    d2,J2,_,=step(*E,x,allow_depth0=True)
     assert (d2,Kof(d2,J2)) == ((2,6) if x==0 else (0,0))
 
+# 3. (4,39) cut.
 S=(4,39)
 assert replay(*S,"00")[:3] == (5,191,6)
-assert replay(*S,"01")[:3] == (3,26,6)
+assert replay(*S,"01")[:3] == (3,26,6)  # L_3, K=33
 sector_checks=0
 for d in range(2,61):
     Cs=(d*d+5*d+2)//2
@@ -68,18 +79,26 @@ for d in range(2,61):
         Ks=Kof(ds,Js)
         if d%2==1:
             if eps==0:
-                D=d+2; Kexp=(5*3**D-3)//4
-                wp="1"+"0"*(D-2)+"10"; Hp=(D*D+D-2)//2
+                D=d+2
+                Kexp=(5*3**D-3)//4
+                wp="1"+"0"*(D-2)+"10"
+                Hp=(D*D+D-2)//2
             else:
-                D=d; Kexp=(9*3**D-3)//4
-                wp="1"+"0"*(D-1)+"11"; Hp=(D*D+3*D)//2
+                D=d
+                Kexp=(9*3**D-3)//4
+                wp="1"+"0"*(D-1)+"11"
+                Hp=(D*D+3*D)//2
         else:
             if eps==0:
-                D=d+1; Kexp=(5*3**D-3)//4
-                wp="1"+"0"*(D-2)+"10"; Hp=(D*D+D-2)//2
+                D=d+1
+                Kexp=(5*3**D-3)//4
+                wp="1"+"0"*(D-2)+"10"
+                Hp=(D*D+D-2)//2
             else:
-                D=d+1; Kexp=(9*3**D-3)//4
-                wp="1"+"0"*(D-1)+"11"; Hp=(D*D+3*D)//2
+                D=d+1
+                Kexp=(9*3**D-3)//4
+                wp="1"+"0"*(D-1)+"11"
+                Hp=(D*D+3*D)//2
         assert (ds,Ks)==(D,Kexp)
         dp,Jp,Hpr,_=replay(2,3,wp)
         assert (dp,Jp)==(ds,Js)
@@ -87,6 +106,7 @@ for d in range(2,61):
         assert Hpr <= Hs+1
         sector_checks += 1
 
+# 4. Full frozen P -> O_17^(7) -> B_17^(7) -> Q_17 certificate.
 P_TO_O17 = (
 "1111011010111111011011110111011101111010011101101111110011111010110101011110111101111010110111111011"
 "1010011110000010111110110111001101111101001011010111001001111111001111001101010010111100110000111101"
@@ -95,6 +115,8 @@ P_TO_O17 = (
 assert len(P_TO_O17)==262
 d,J,H,_=replay(2,3,P_TO_O17)
 assert (d,J,H)==(1,458753,29)
+
+# complementary zero-height exit
 d,J,c=step(d,J,1)
 assert (d,J,c)==(1,688130,0)
 
@@ -104,10 +126,12 @@ d2,J2,H2,mindepth=replay(d,J,B17_TO_Q17)
 Q17_K=2*3**17
 Q17_J=Jof(17,Q17_K)
 assert (d2,J2,H2)==(17,Q17_J,154)
+# after the forced launch, no intermediate return to d=1:
 dd,jj=1,688130
 depths=[]
 for ch in B17_TO_Q17:
-    dd,jj,_=step(dd,jj,int(ch)); depths.append(dd)
+    dd,jj,_=step(dd,jj,int(ch))
+    depths.append(dd)
 assert depths[0]==2
 assert min(depths[:-1])>=2
 
@@ -116,21 +140,29 @@ assert len(FULL)==303
 d,J,H,_=replay(2,3,FULL)
 assert (d,J,H)==(17,Q17_J,183)
 
+# 5. Exact Q_d propagation and constant owner lag versus the (6,807) spine.
 spine="1000000101000101"
 dS,JS,HS,_=replay(6,807,spine)
 assert (dS,Kof(dS,JS),HS)==(17,Q17_K,169)
+
 side_expected=[
 (6,736,5),(5,621,10),(6,1462,16),(7,3801,23),
 (8,10558,31),(9,30471,40),(10,89737,50),(12,530626,61),
 (11,401454,72),(13,1792803,84),(12,1501654,96),
 (13,3446175,109),(14,8752393,123),(16,45372670,138),
-(15,35839500,153),(17,150532452,169)]
+(15,35839500,153),(17,150532452,169)
+]
 dd,jj,hh=6,807,0
 side=[]
 for bit in spine:
-    oa=step(dd,jj,1-int(bit)); assert oa is not None
-    da,ja,ca=oa; side.append((da,ja,hh+ca))
-    dd,jj,c=step(dd,jj,int(bit)); hh+=c
+    alt=str(1-int(bit))
+    oa=step(dd,jj,int(alt))
+    assert oa is not None
+    da,ja,ca=oa
+    side.append((da,ja,hh+ca))
+    o=step(dd,jj,int(bit))
+    dd,jj,c=o
+    hh+=c
 assert side==side_expected
 
 tower_checks=0
@@ -138,7 +170,8 @@ for D in range(17,81):
     suffix="10"*(D-17)
     do,jo,Ho,_=replay(17,Q17_J,suffix)
     assert do==D and Kof(do,jo)==2*3**D
-    owner=183+Ho; source=169+Ho
+    owner=183+Ho
+    source=169+Ho
     assert owner==D*D-3*D-55
     assert source==D*D-3*D-69
     assert owner-source==14
