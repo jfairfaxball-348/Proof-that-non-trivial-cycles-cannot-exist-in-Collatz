@@ -1,48 +1,53 @@
-# Authoritative start — RL300
+# Authoritative start — RL301
 
-The unique incoming research job is RL300.
+The unique incoming research job is RL301.
 
 Read, in order:
 
 1. `AGENTS.md`;
 2. `docs/RL_RESEARCH_PROTOCOL.md`;
 3. `docs/RL_STATE_MACHINE.md`;
-4. `authoritative/RL300_PHYSICAL_IMBALANCE_RECORD_SPIKE_TARGET.md`;
-5. `sessions/RL299/RL299_CLOSEOUT.md`;
-6. `sessions/RL299/RL299_REPORT.md`;
-7. `sessions/RL299/RL299_PROOF_AND_BARRIERS.md`;
-8. `sessions/RL299/verification/verify_rl299_fast.py`;
-9. `sessions/RL299/verification/verify_rl299_physical_full.c` as needed;
-10. RL298/RL263 quotient/physical-gap sources as needed;
-11. RL297 report only if comparing against the parked Bellman/P route.
+4. `authoritative/RL301_EXTERNAL_DELAY_LADDER_ANCESTRY_BOUNDARY_TARGET.md`;
+5. `sessions/RL300/RL300_CLOSEOUT.md`;
+6. `sessions/RL300/RL300_REPORT.md`;
+7. `sessions/RL300/RL300_PROOF_AND_SCOPE.md`;
+8. `sessions/RL300/RL300_EXTERNAL_DELAY_CERTIFICATE.md`;
+9. `sessions/RL300/RL300_RESONANCE_RECORD_CERTIFICATE.txt`;
+10. `sessions/RL300/verification/verify_rl300_fast.py`;
+11. RL299 proof/barrier material for inherited J and B-ancestry theorems;
+12. RL297 report only if comparing against the parked Bellman/P route.
 
 ## Incoming classification
 
-RL299 closes as
+RL300 closes as
 
-`RESONANCE_RECORD_REDUCTION_PLUS_EXACT_PHYSICAL_FRONTIER_TO_A630138896_WITH_J_IMBALANCE_BARRIER`.
+`EXTERNAL_DELAY_RECORD_CERTIFICATE_PLUS_EXACT_RESONANCE_FRONTIER_TO_A206745572560704146_WITH_DIRECT_START_BOUNDARY`.
 
-Every retained selector is unconditionally eliminated through `a=630138896`.
+The promoted external-certificate selector frontier is
+
+`a=206745572560704146`.
+
+The internally self-contained RL299 frontier remains separately recorded as
+
+`a=630138896`.
 
 This is not Gate-A closure and not global cycle exclusion.
 
-## RL300 mission
+## RL301 mission
 
-Do not return to bulk selector enumeration. The selector-envelope problem has been compressed to sparse one-sided resonance records.
+The first unresolved direct-start resonance record is
 
-The first internally unresolved record is
+`(206745572560704147,130441933147714940)`.
 
-`U5=(630138897,397573379)`.
+First test whether inherited B-family ancestry or coupled physical compression crosses this boundary using the already-frozen quantitative delay certificate. Only then consider importing a larger external delay-record interval, under the exact RL300 provenance standard.
 
-The primary target is a compact physical bound on the half-step imbalance `J=O-E`, or an equivalent coupled A/B invariant, strong enough to eliminate U5 without billions of direct trajectories.
-
-External Collatz computations may be used only with exact frozen provenance and quantitative scope. Convergence alone is insufficient.
+If this remains merely a finite ladder, compare the burden against the parked RL297 Bellman/P shared-endpoint route.
 
 ## Scope
 
 Gate A OPEN.
 Gate B OPEN.
-RL297 P work parked weak-green background.
+RL297 P work parked weak-green.
 Radius 6+ frozen.
 RO/divergent-orbit work out of scope.
 Lean formalisation separate.
