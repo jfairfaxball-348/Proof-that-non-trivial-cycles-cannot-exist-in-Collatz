@@ -1,45 +1,48 @@
-# Authoritative start — RL298
+# Authoritative start — RL299
 
-The unique incoming research job is RL298.
+The unique incoming research job is RL299.
 
 Read, in order:
 
 1. `AGENTS.md`;
 2. `docs/RL_RESEARCH_PROTOCOL.md`;
 3. `docs/RL_STATE_MACHINE.md`;
-4. `authoritative/RL298_FIFTH_SELECTOR_BRANCH_RETURN_TARGET.md`;
-5. `sessions/RL297/RL297_CLOSEOUT.md`;
-6. `sessions/RL297/RL297_REPORT.md`;
-7. RL262 closeout/report/verifier material for the exact fourth-selector elimination and inherited selector predicate;
-8. RL261, RL260, RL259, RL258, RL257, RL256 and RL255 only as needed to reconstruct the exact selector/branch machinery.
+4. `authoritative/RL299_RESONANCE_SPIKE_PHYSICAL_QUOTIENT_TARGET.md`;
+5. `sessions/RL298/RL298_CLOSEOUT.md`;
+6. `sessions/RL298/RL298_REPORT.md`;
+7. `sessions/RL298/RL298_CORRECTION_AND_DEMOTION.md`;
+8. `sessions/RL298/verification/verify_rl298_selector_physical_frontier.py`;
+9. RL263 physical-gap / modulus-correction material;
+10. RL264 selector-fallback justification;
+11. RL262 selector predicate and full-phase quotient material as needed.
 
 ## Incoming classification
 
-RL297 closed as
+RL298 closes as
 
-`P_BOTTLENECK_RISK_AUDIT_WEAK_GREEN_SHARED_ENDPOINT_STRUCTURE_IDENTIFIED`.
+`SELECTOR_FRONTIER_EXACT_FINITE_PHYSICAL_CERTIFICATE_TO_A301994_WITH_RESONANCE_COORDINATES`.
 
-Gate A remains open with inherited residual
+The exact finite selector frontier is eliminated through `a=301994`, covering 8,057 retained selectors.
 
-`k>=31`, `k` odd, `H_can<k`.
+This is not Gate-A closure and is not global cycle exclusion.
 
-The P-bottleneck route survived the risk audit but is not proved. It is parked as weak-green background.
+## RL299 mission
 
-## RL298 mission
+Continue from the certified resonance frontier, not from conversation history.
 
-Return to the previously frozen selector/branch programme.
+The primary goal is to understand and certify the next exceptional resonance spikes and determine whether the RL298 physical quotient certificate continues to outrun the required internal one-count.
 
-Recover the exact promoted selector predicate from repository authority, resume strictly beyond the fourth selector eliminated by RL262, identify the fifth retained selector, and attack that exact branch.
+Do not blindly extend a cutoff before replaying the frozen arithmetic verifier.
 
-RL297 performed no fifth-selector mathematics; it only recovered enough historical authority at closeout to confirm that this is the correct frozen continuation point.
+Do not revive the RL298 ordered-prefix corridor interpretation; RL263 proves that route is tautological on genuine physical pairs.
 
 ## Scope
 
-Gate A remains parked unless selector work materially changes its risk assessment.
-Gate B remains separate/open except where the exact selector branch couples them.
+Gate A remains open.
+Gate B remains open.
+RL297 P work remains parked weak-green background.
 Radius 6+ remains frozen.
 RO/divergent-orbit work is out of scope.
-The Lean formalisation project is separate and out of scope.
-No global non-trivial-cycle exclusion is claimed.
+The Lean formalisation project is separate.
 
 The repository, not conversation history, is authoritative.
