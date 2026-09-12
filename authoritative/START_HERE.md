@@ -1,54 +1,55 @@
-# Authoritative start — RL304
+# Authoritative start — RL305
 
-The unique incoming research job is RL304.
+The unique incoming research job is RL305.
+
+This is a **whole-project Gate-A strategic convergence audit**, not an automatic continuation of the P/Q commutation attack.
 
 Read, in order:
 
 1. `AGENTS.md`;
 2. `docs/RL_RESEARCH_PROTOCOL.md`;
 3. `docs/RL_STATE_MACHINE.md`;
-4. `authoritative/RL304_PQ_COMMUTATION_O1_TARGET.md`;
-5. `sessions/RL303/RL303_CLOSEOUT.md`;
-6. `sessions/RL303/RL303_REPORT.md`;
-7. `sessions/RL303/RL303_PROOF_AND_SCOPE.md`;
-8. `sessions/RL303/RL303_RED_TEAM.md`;
-9. `sessions/RL303/verification/verify_rl303_structural.py`;
-10. `sessions/RL303/RL303_SCRATCH_FREEZE.md` for non-authoritative derivational leads;
-11. `sessions/RL302/RL302_REPORT.md` for the inherited O1/O2 Bellman reduction and original tight-wall credits;
-12. `sessions/RL295/RL295_REPORT.md` and `sessions/RL294/RL294_REPORT.md` for authoritative wall normalization and cascade algebra;
-13. RL296 material for the still-open non-P front-door residuals after any future P/8 closure.
+4. `authoritative/RL305_GATE_A_STRATEGIC_CONVERGENCE_AUDIT.md`;
+5. `sessions/RL304/RL304_CLOSEOUT.md`;
+6. `sessions/RL304/RL304_REPORT.md`;
+7. `sessions/RL304/RL304_PROOF_AND_SCOPE.md`;
+8. `sessions/RL304/RL304_RED_TEAM.md`;
+9. `sessions/RL304/RL304_SCRATCH_FREEZE.md`;
+10. recent RL300–RL303 reports for the immediate Bellman/resonance context;
+11. exact older sessions selected by the audit to reconstruct the project eras and major frozen routes.
 
 ## Incoming classification
 
-RL303 closes as
+RL304 closes as
 
-`DYADIC_WALL_LATTICE_TRANSLATION_NORMAL_FORM_P_FIRST_WALL_REDUCTION_AND_GENERIC_LINEAR_DEBT_BARRIER_WITH_PQ_COMMUTATION_PROVED`.
+`FIXED_96_PQ_STACK_CONTRACTION_AND_TWELVE_FACTOR_SIX_COLUMN_RESIDUAL_GRAMMAR_PROVED`.
 
-RL303 does not prove O1. It generalizes the wall normal form to the full dyadic lattice, proves several exact `D -> D-2` merger families, reduces every leading-P sibling to positive reserve plus normalized integer wall debt, proves a quadratic physical counterfamily that rules out generic linear-credit wall-debt amortisation, and isolates the exact P/Q commutation route on the fixed-Q right-wall factorisation.
+RL304 strictly contracts the local P/Q problem but does not prove O1, Gate A, or a well-founded all-depth P/Q closure. By direct user instruction, this is insufficient to give P/Q automatic priority.
 
-## RL304 mission
+## RL305 mission
 
-Primary target remains
+Audit the complete Gate-A research programme after more than 300 RL sessions.
 
-`m_R3(E)>=m_8(E)`
+Determine:
 
-for every positive even checkpoint E.
+- which eras genuinely reduced Gate-A logical complexity;
+- which obstructions recur under different coordinates;
+- whether O1 or the full P/8 identity are stronger than Gate A requires;
+- whether late exact algebra unlocks older geometry/packing/rejected-tube/local-obstruction routes;
+- which plausible route is actually converging under a falsifiable measure;
+- and what exact target should receive priority afterward.
 
-Prioritize a complete physical commutation/refactorisation grammar for moving a leading P factor through
-
-`RW_D=Q^n o U`
-
-using RL303's exact one-cell P/Q swap and Q-return family. Do not revert to generic integer wall-debt amortisation.
-
-If O1 closes, immediately finish RL302's contracted O2 residual before claiming the P/8 identity.
+The P/Q fixed-96/twelve-factor route remains frozen and resumable, but must compete on equal terms with older and hybrid routes.
 
 ## Scope
 
 Gate A OPEN.
 Gate B OPEN.
-Physical/resonance branch frozen at externally certified selector frontier `a=7354673373747273032`.
+O1 OPEN.
+P/8 OPEN.
+Physical/resonance frontier frozen at `a=7354673373747273032`.
 Radius 6+ frozen.
-RO/divergent-orbit work out of scope.
 Lean formalisation separate.
+No global non-trivial-cycle exclusion is claimed.
 
 The repository, not conversation history, is authoritative.
