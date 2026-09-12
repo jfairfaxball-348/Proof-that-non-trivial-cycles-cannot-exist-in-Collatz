@@ -1,57 +1,47 @@
-# Authoritative start — RL302
+# Authoritative start — RL303
 
-The unique incoming research job is RL302.
+The unique incoming research job is RL303.
 
 Read, in order:
 
 1. `AGENTS.md`;
 2. `docs/RL_RESEARCH_PROTOCOL.md`;
 3. `docs/RL_STATE_MACHINE.md`;
-4. `authoritative/RL302_BELLMAN_P_SHARED_ENDPOINT_TARGET.md`;
-5. `sessions/RL301/RL301_CLOSEOUT.md`;
-6. `sessions/RL301/RL301_REPORT.md`;
-7. `sessions/RL301/RL301_PROOF_AND_SCOPE.md`;
-8. `sessions/RL301/RL301_EXTERNAL_CLASS_RECORD_CERTIFICATE.md`;
-9. `sessions/RL301/RL301_RESONANCE_ANCESTRY_CERTIFICATE.txt`;
-10. `sessions/RL301/verification/verify_rl301_fast.py`;
-11. `sessions/RL297/RL297_REPORT.md` for the resumed P/8 shared-endpoint route;
-12. RL294 and RL296 reports for inherited all-depth endpoint/cascade machinery and remaining front-door obligations.
+4. `authoritative/RL303_BELLMAN_O1_TIGHT_WALL_TARGET.md`;
+5. `sessions/RL302/RL302_CLOSEOUT.md`;
+6. `sessions/RL302/RL302_REPORT.md`;
+7. `sessions/RL302/RL302_PROOF_AND_SCOPE.md`;
+8. `sessions/RL302/RL302_RED_TEAM.md`;
+9. `sessions/RL302/verification/verify_rl302_structural.py`;
+10. `sessions/RL302/RL302_SCRATCH_FREEZE.md` for non-authoritative derivational leads;
+11. `sessions/RL297/RL297_REPORT.md` and `sessions/RL294/RL294_REPORT.md` for inherited shared-endpoint/cascade authority;
+12. RL296 material for the still-open non-P front-door residuals.
 
 ## Incoming classification
 
-RL301 closes as
+RL302 closes as
 
-`EXTERNAL_CLASS_RECORD_CERTIFICATE_PLUS_B_ANCESTRY_FRONTIER_TO_A7354673373747273032_WITH_FINITE_LADDER_BARRIER_AND_BELLMAN_P_RETURN`.
+`P8_TWO_OBLIGATION_REDUCTION_TIGHT_WALL_CASCADE_NORMAL_FORMS_AND_CONDITIONAL_SECOND_OBLIGATION_COLLAPSE_PROVED`.
 
-The externally certified selector frontier is
+RL302 did not prove the P/8 identity or `Bcal(P)<=1`. It reduced the identity exactly to two fixed-source obligations and showed that, conditional on the first, most of the second collapses back into the first via an exact index-shift splice.
 
-`a=7354673373747273032`.
+## RL303 mission
 
-The internally self-contained RL299 frontier remains separately recorded as
+Primary target:
 
-`a=630138896`.
+`m_R3(E)>=m_8(E)`
 
-This is not Gate-A closure and not global cycle exclusion.
+for every positive even checkpoint E.
 
-## RL302 mission
+Use the exact R-tower zipper, tight-wall credits, cascade identification, and run-length merger/leading-P normal form frozen in RL302. Avoid the circular unrestricted wall grammar and the disproved generic P-insertion monotonicity shortcuts.
 
-Return to the parked RL297 Bellman/P shared-endpoint route.
-
-Primary target: prove or refute the all-depth checkpoint relation
-
-`m_P(E)=m_8(E)+2` for every positive even checkpoint `E != 2`,
-
-using the exact shared endpoint `N(P)=T(8)=7`; or prove `Bcal(P)<=1` directly.
-
-Do not resume the external physical-delay ladder by default. RL301 froze it as a finite accelerator with a sharp next boundary, not a structural Gate-A closure mechanism.
-
-If the P theorem is proved, do not silently declare Gate A: return to the exact RL296 front-door residual obligations and close them with the recorded allowances.
+If O1 closes, immediately finish the contracted O2 residual (even trailing-P and `A_d=F_d o Z`) and recover the all-depth P/8 identity before moving to checkpoint-8 excess-one.
 
 ## Scope
 
 Gate A OPEN.
 Gate B OPEN.
-Physical frontier frozen at `a=7354673373747273032` with external dependency.
+Physical/resonance branch frozen at externally certified selector frontier `a=7354673373747273032`.
 Radius 6+ frozen.
 RO/divergent-orbit work out of scope.
 Lean formalisation separate.
