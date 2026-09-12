@@ -1,72 +1,60 @@
-# Authoritative start — RL306
+# Authoritative start — RL307
 
-The unique incoming research job is RL306.
+The unique incoming research job is RL307.
 
-RL306 is a **scalar max-plus Bellman wall/transducer attack**, not an automatic continuation of the unweighted P/Q/O1 programme.
+RL307 is a **checkpoint-8 shell-owner / affine-ballot Gate-A attack**. The fixed-96 P/Q route is frozen after RL306 satisfied its hard-pivot criterion.
 
 Read, in order:
 
 1. `AGENTS.md`;
 2. `docs/RL_RESEARCH_PROTOCOL.md`;
 3. `docs/RL_STATE_MACHINE.md`;
-4. `authoritative/RL306_SCALAR_MAXPLUS_WALL_TRANSDUCER_GATE_A_TARGET.md`;
-5. `sessions/RL305/RL305_CLOSEOUT.md`;
-6. `sessions/RL305/RL305_REPORT.md`;
-7. `sessions/RL305/RL305_PROOF_AND_SCOPE.md`;
-8. `sessions/RL305/RL305_RED_TEAM.md`;
-9. `sessions/RL305/RL305_SCRATCH_FREEZE.md`;
-10. RL302–RL304 exact wall/PQ reports as required;
-11. RL289/RL292/RL293 only when the direct static-danger fallback or ancestry constraints are needed.
+4. `authoritative/RL307_CHECKPOINT8_SHELL_OWNER_AFFINE_BALLOT_GATE_A_TARGET.md`;
+5. `sessions/RL306/RL306_CLOSEOUT.md`;
+6. `sessions/RL306/RL306_REPORT.md`;
+7. `sessions/RL306/RL306_PROOF_AND_SCOPE.md`;
+8. `sessions/RL306/RL306_RED_TEAM.md`;
+9. `sessions/RL306/RL306_SCRATCH_FREEZE.md`;
+10. RL292/RL305 for the exact fixed-seed front door and seven-scalar dependency graph;
+11. RL302–RL304 only when an inherited exact wall/cascade identity is specifically needed.
 
 ## Incoming classification
 
-RL305 closes as
+RL306 closes as
 
-`GATE_A_MINIMAL_SCALAR_DEPENDENCY_AUDIT_AND_MAXPLUS_WALL_FAST_TRACK_IDENTIFIED`.
+`SCALAR_WALL_HARD_PIVOT_AND_AFFINE_SHELL_OWNER_REDUCTION_PROVED`.
 
-The audit materially changed the proof architecture:
+## RL307 mission
 
-- Gate A's P-source bottleneck is exactly scalar:
-  `Bcal(P)=max(Bcal(R3_tower),Bcal(8),Bcal(D0))-2`;
-- O1, O2, and universal P/8 are stronger sufficient routes, not required dependencies;
-- the literal minimal checkpoint-8 target is `Bcal(8)<=3`, not the stronger excess-one conjecture;
-- RL302–RL304 should now be tested as a weighted max-plus system.
+Prove or falsify
 
-## RL306 mission
+`M_seed(k)=3+M_8(k)`
 
-Construct a complete normalized weighted transducer for the P-source wall/D0 families.
+for every relevant shell, or only in the dangerous region sufficient for Gate A.
 
-Success requires actual convergence: complete coverage plus a decreasing potential, negative-cycle certificate, safe sinks, or another strict scalar contraction.
+The hard direction is `M_seed(k)>=3+M_8(k)`; the opposite direction is the genuine height-three seed-to-8 prefix.
 
-If a legally repeatable nonnegative normalized cycle or irreducible infinite state parameter survives, freeze the route and pivot as instructed. Do not respond with another unweighted commutation layer.
+Use the common-right-shadow identity
 
-## Exact Gate-A dependency state
+`g_seed(u)=g_8(u+7)`
 
-Gate A is equivalent to the seven scalar obligations:
+as the preferred structural route. Same-endpoint ownership is not required.
 
-- `Bcal(R3_tower)<=3`;
-- `Bcal(8)<=3`;
-- `Bcal(D0)<=3`;
-- `Bcal(4,39)<=3`;
-- `Bcal(2,-17)<=1`;
-- `Bcal(2,-84)<=2`;
-- `Bcal(3,-28)<=3`.
+If checkpoint-8 shell ownership closes, Gate A reduces exactly to
 
-RL306's primary target is the first three, equivalently `Bcal(P)<=1`.
+`M_8(k)>=k-3`, equivalently `Bcal(8)<=3`.
+
+Do not replace this by the stronger historical excess-one conjecture unless independently proved.
 
 ## Scope
 
 Gate A OPEN.
 Gate B OPEN/frozen.
-O1 OPEN.
-O2 OPEN.
-P/8 OPEN.
-`Bcal(P)<=1` OPEN.
 `Bcal(8)<=3` OPEN.
+`Bcal(P)<=1` OPEN.
 Checkpoint-8 excess-one OPEN.
-Physical/resonance frontier frozen at `a=7354673373747273032`.
+O1/O2/P8 OPEN.
+Fixed-96 P/Q frozen.
+Physical/resonance frozen at `a=7354673373747273032`.
 Radius 6+ frozen.
 Lean formalisation separate.
-No global non-trivial-cycle exclusion is claimed.
-
-The repository, not conversation history, is authoritative.
