@@ -1,50 +1,61 @@
-# Authoritative start — RL307
+# Authoritative start — RL308
 
-The unique incoming research job is RL307.
+The unique incoming research job is RL308.
 
-RL307 is a **checkpoint-8 shell-owner / affine-ballot Gate-A attack**. The fixed-96 P/Q route is frozen after RL306 satisfied its hard-pivot criterion.
+RL308 is a **negative-front-door fixed-residue scalar Gate-A attack**. It inherits RL307's shell contractions but does not resume universal shell ownership, O1, or fixed-96 P/Q by default.
 
 Read, in order:
 
 1. `AGENTS.md`;
 2. `docs/RL_RESEARCH_PROTOCOL.md`;
 3. `docs/RL_STATE_MACHINE.md`;
-4. `authoritative/RL307_CHECKPOINT8_SHELL_OWNER_AFFINE_BALLOT_GATE_A_TARGET.md`;
-5. `sessions/RL306/RL306_CLOSEOUT.md`;
-6. `sessions/RL306/RL306_REPORT.md`;
-7. `sessions/RL306/RL306_PROOF_AND_SCOPE.md`;
-8. `sessions/RL306/RL306_RED_TEAM.md`;
-9. `sessions/RL306/RL306_SCRATCH_FREEZE.md`;
-10. RL292/RL305 for the exact fixed-seed front door and seven-scalar dependency graph;
+4. `authoritative/RL308_NEGATIVE_FRONTDOOR_FIXED_RESIDUE_SCALAR_GATE_A_TARGET.md`;
+5. `sessions/RL307/RL307_CLOSEOUT.md`;
+6. `sessions/RL307/RL307_REPORT.md`;
+7. `sessions/RL307/RL307_PROOF_AND_SCOPE.md`;
+8. `sessions/RL307/RL307_RED_TEAM.md`;
+9. `sessions/RL307/RL307_SCRATCH_FREEZE.md`;
+10. RL305 for the exact seven-scalar Gate-A dependency graph;
 11. RL302–RL304 only when an inherited exact wall/cascade identity is specifically needed.
 
 ## Incoming classification
 
-RL306 closes as
+RL307 closes as
 
-`SCALAR_WALL_HARD_PIVOT_AND_AFFINE_SHELL_OWNER_REDUCTION_PROVED`.
+`R3_SHELL_THREE_UNIT_BOUND_D0_ODD_COLLAPSE_AND_NEGATIVE_FRONTDOOR_DEPENDENCY_REDUCTION_PROVED`.
 
-## RL307 mission
+## RL308 mission
 
-Prove or falsify
+Let
 
-`M_seed(k)=3+M_8(k)`
+`X=(4,43)=(4,39)oW_4`,
+`Y=(6,504)=P o R_4`.
 
-for every relevant shell, or only in the dangerous region sufficient for Gate A.
+RL307 proves
 
-The hard direction is `M_seed(k)>=3+M_8(k)`; the opposite direction is the genuine height-three seed-to-8 prefix.
+`Bcal(3,-28) <= max(`
+` Bcal(2,-17)+2,`
+` Bcal(4,39)-6,`
+` Bcal(X)-8,`
+` Bcal(Y)-9 )`.
 
-Use the common-right-shadow identity
+Therefore, under the already-required Gate-A ceilings `Bcal(2,-17)<=1` and `Bcal(4,39)<=3`, prove
 
-`g_seed(u)=g_8(u+7)`
+`Bcal(X)<=11`,
+`Bcal(Y)<=12`
 
-as the preferred structural route. Same-endpoint ownership is not required.
+or replace these by a strictly smaller exact dependency reduction.
 
-If checkpoint-8 shell ownership closes, Gate A reduces exactly to
+If both close, `(3,-28)` ceases to be an independent active Gate-A node conditional on the existing `(-17)` and `(4,39)` obligations.
 
-`M_8(k)>=k-3`, equivalently `Bcal(8)<=3`.
+Do not default to a large unweighted leading-P grammar. Use the loose scalar allowances.
 
-Do not replace this by the stronger historical excess-one conjecture unless independently proved.
+## Inherited shell facts
+
+`M_R3(k)>=M_8(k)-3`,
+`M_2(k)>=M_8(k)-2`.
+
+Large promoted D0 F/S families are already shell-safe, but D0 remains open on the A-family and even trailing-P sectors.
 
 ## Scope
 
@@ -52,7 +63,10 @@ Gate A OPEN.
 Gate B OPEN/frozen.
 `Bcal(8)<=3` OPEN.
 `Bcal(P)<=1` OPEN.
-Checkpoint-8 excess-one OPEN.
+`Bcal(4,39)<=3` OPEN.
+`Bcal(2,-17)<=1` OPEN.
+`Bcal(2,-84)<=2` OPEN.
+`Bcal(3,-28)<=3` OPEN, reduced as above.
 O1/O2/P8 OPEN.
 Fixed-96 P/Q frozen.
 Physical/resonance frozen at `a=7354673373747273032`.
