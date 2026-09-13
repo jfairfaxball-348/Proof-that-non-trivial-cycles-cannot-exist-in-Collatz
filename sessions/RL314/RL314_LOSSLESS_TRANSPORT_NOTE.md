@@ -2,8 +2,15 @@
 
 Date: 2026-09-13
 
-RL314 is promoted using one atomic Git-object transition from incoming HEAD
-`e443671d71b2320d42ba3d420bda33df55d7fb44`.
+The semantic RL314 closeout tree was first promoted from incoming HEAD
+`e443671d71b2320d42ba3d420bda33df55d7fb44` as commit
+`51a14d452cf011b3b1fb1ad7f4098178dc26a49a`.
+
+Post-push readback then showed that the repository's current
+`verify-incoming-authority` workflow additionally requires the legacy conveyor
+wrapper: one handover ZIP, its outer SHA-256 sidecar, and a predecessor-state
+marker.  A second mechanical-only repair commit adds exactly that wrapper.  No
+research result, route ranking, or RL315 target is changed by the repair.
 
 The exact incoming authoritative files are archived by reusing their immutable
 Git blob identities:
@@ -13,12 +20,12 @@ Git blob identities:
 - incoming `authoritative/RL314_FULL_STRATEGIC_AUDIT_TARGET.md` blob:
   `851805aca90e030dfb16060c3966ec7bdfa788b0`.
 
-No ZIP or lossy reconstruction is used.
+The mechanical handover wrapper is:
 
-The closeout transition must:
+- `authoritative/RL314_SESSION_STATE_AND_RL315_KICKOFF.md`;
+- `authoritative/RL314_to_RL315_Handover.zip`;
+- `authoritative/RL314_to_RL315_Handover.zip.sha256`.
 
-1. preserve those blobs under `sessions/RL314/`;
-2. add the audit report, correction/splice ledger, and closeout;
-3. remove the old RL314 target from `authoritative/`;
-4. install exactly one RL315 target plus `authoritative/START_HERE.md`;
-5. move `main` by one fast-forward commit only after the complete tree exists.
+The ZIP contains a SHA256 manifest and portable fast verifier and is intended
+only to satisfy fresh-unpack conveyor validation.  The canonical research state
+remains the frozen `sessions/RL314/` audit plus the single RL315 target.
