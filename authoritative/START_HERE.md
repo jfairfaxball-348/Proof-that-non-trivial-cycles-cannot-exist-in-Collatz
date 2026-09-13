@@ -1,41 +1,51 @@
-# Authoritative start — RL309
+# Authoritative start — RL310
 
-The unique incoming research job is RL309.
+The unique incoming research job is RL310.
 
-RL309 is a **planning-only global mechanics review, proof-architecture reset, and roadmap rework**.
+RL310 is the first mathematical execution session under the RL309 global architecture reset.
 
 Its top-level objective is the actual theorem:
 
 > Prove that a positive non-trivial Collatz cycle cannot exist.
 
-RL309 must not automatically continue the RL308 Bellman/fixed-residue/Gate-A attack and must not execute a new mathematical attack. It must reconstruct the end-to-end proof mechanics, audit global leverage, re-audit Gate A/Gate B from first principles, identify depth traps, rank a small number of credible global proof architectures, and prepare RL310 as the first execution session under the redesigned roadmap.
+Its primary target is a **universal full-D ownership coercivity / global extraction theorem**: from every hypothetical primitive positive cycle, force either a direct contradiction or a universally bounded owned witness already excluded by established machinery.
+
+Do not automatically resume Gate A/Bellman, fixed-96 P/Q, H21, Radius 6+, or any other mature local frontier.
 
 Read, in order:
 
 1. `AGENTS.md`;
 2. `docs/RL_RESEARCH_PROTOCOL.md`;
 3. `docs/RL_STATE_MACHINE.md`;
-4. `authoritative/RL309_GLOBAL_MECHANICS_REVIEW_PROOF_ARCHITECTURE_RESET_ROADMAP_REWORK_TARGET.md`;
-5. `sessions/RL308/RL308_CLOSEOUT.md`;
-6. `sessions/RL308/RL308_REPORT.md`;
-7. `sessions/RL308/RL308_PROOF_AND_SCOPE.md`;
-8. `sessions/RL308/RL308_RED_TEAM.md`;
-9. `sessions/RL308/RL308_SCRATCH_FREEZE.md`;
-10. the project-wide historical reports and proof-state ledgers as required by the review.
+4. `authoritative/RL310_UNIVERSAL_FULL_D_OWNERSHIP_COERCIVITY_GLOBAL_EXTRACTION_TARGET.md`;
+5. `sessions/RL309/RL309_CLOSEOUT.md`;
+6. `sessions/RL309/RL309_DEPENDENCY_MAP.md`;
+7. `sessions/RL309/RL309_REPORT.md`;
+8. `sessions/RL309/RL309_LEVERAGE_AUDIT.md`;
+9. `sessions/RL309/RL309_RED_TEAM.md`;
+10. exact canonical historical sources named by the dependency map only as needed.
 
-## Frozen local frontier
+## Binding methodology
 
-RL308 proved a conditional exact finite dependency reduction for `X=(4,43)` but did not continue to its two residual states and did not attack `Y=(6,504)`.
+Work backwards from global exclusion.
 
-That frontier is preserved under `sessions/RL308/` and is resumable after the architecture review if the redesigned roadmap gives it priority.
+Every meaningful checkpoint must name the parent global dependency affected and classify:
 
-## Binding review discipline
+`PARENT_DIFFICULTY_DELTA = EASIER | LATERAL | HARDER`.
 
-Do not let the existence of a sophisticated local frontier determine the next mathematical route automatically.
+A downstream technical result has no automatic priority unless it makes the parent global theorem materially easier.
 
-RL309 must stop after producing and auditing the redesigned plan and RL310 target.
+## Repository navigation
+
+The generated knowledge catalogue is currently `stale/deferred`. Use `sessions/RL309/RL309_DEPENDENCY_MAP.md` as the immediate compact navigation layer and avoid broad historical searching.
+
+A separate non-RL infrastructure pass is recommended to refresh the generated catalogue and establish a maintained live proof ledger. Do not mix infrastructure changes into RL310 mathematical promotion.
+
+## Frozen programmes
+
+The RL308 Bellman/scalar frontier, fixed-96 P/Q programme, Radius-3/4/5 local theorems, H21 material, physical/resonance work, Radius 6+, and all exact historical certificates remain preserved and resumable as tools/fallbacks.
 
 Gate A remains open.
-Gate B remains open/frozen.
+Gate B remains open.
 No global non-trivial-cycle exclusion is claimed.
-Lean formalisation remains a separate project.
+Lean formalisation remains separate.
