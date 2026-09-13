@@ -1,80 +1,75 @@
-# Authoritative start — RL311
+# Authoritative start — RL312
 
-The unique incoming research job is RL311.
+The unique incoming research job is RL312.
 
-RL311 continues the parent-near global route discovered and frozen in RL310. It must not reset automatically to an older local attack.
+RL312 continues the parent-near global compression route frozen in RL311. It must not reset automatically to an older local attack.
 
-Its top-level objective remains the actual theorem:
+Its top-level objective remains:
 
 > Prove that a positive non-trivial Collatz cycle cannot exist.
 
-Its primary target is the new **canonical extremal one-sided transport closure problem**.
+Its primary target is the **short owned balanced-return consumer / controlled-multiplicity closure problem**.
 
-RL310 proved, for every hypothetical primitive positive cycle, a canonical physical minimum-to-maximum low arc and a canonical extremal cross-determinant. In the sufficient near-resonant branch it further proved that the corresponding self-rotation admits a nonnegative owned transport profile
+RL311 proves, in the active `lambda<3` one-sided extremal sector, that the historical gcd-block geometry is globally controlled by the physical extremal height
 
-`P_i = o-W_i(d) >= 0`,
+`h=ceil(log_3((4M+1)/(4R+1)))`.
 
-with
+Most importantly:
 
-`sum_i P_i = Ao-dL`,
+`g<=h+1`
 
-and an exact physical lower bound on its height and total mass.
+or there is a proper pair of genuine full-D owned rotations at equal canonical block level, separated by at most `h+1` reduced blocks, whose physical states satisfy
 
-The next task is to make that entrance exhaustive and convert the profile into either an incompatible independent upper budget or a bounded owned full-D witness already excluded by established machinery.
+`1/lambda < (4x_k+1)/(4x_j+1) < lambda < 3`.
+
+The next task is to consume that exhaustive dichotomy with genuinely independent full-D / quotient / weighted-difference information.
 
 Read, in order:
 
 1. `AGENTS.md`;
 2. `docs/RL_RESEARCH_PROTOCOL.md`;
 3. `docs/RL_STATE_MACHINE.md`;
-4. `authoritative/RL311_CANONICAL_EXTREMAL_ONE_SIDED_TRANSPORT_CLOSURE_TARGET.md`;
-5. `sessions/RL310/RL310_CLOSEOUT.md`;
-6. `sessions/RL310/verify_rl310_extremal_and_farey.py`;
-7. exact historical sources named by those files only as needed.
+4. `authoritative/RL312_SHORT_OWNED_BALANCED_RETURN_CONSUMER_TARGET.md`;
+5. `sessions/RL311/RL311_CLOSEOUT.md`;
+6. `sessions/RL311/verify_rl311_closeout.py`;
+7. exact historical sources named there only as needed.
 
-## Binding methodology
+## Binding corrections carried from RL311
 
-Work backwards from global exclusion.
+Do not use any of the following as promoted facts:
 
-At every meaningful checkpoint state:
+- the demoted canonical-block strip-width lower bound that assumed every block contains a `1`;
+- `E_j<=floor(kappa_ext/A)`;
+- the proposed above-average `R->M` logarithmic mass inequality;
+- proper-prefix ownership modulo a local segment denominator.
+
+The valid one-sided block bound used by the balanced-return extractor is
+
+`0<=E_j<=h`.
+
+## Methodology
+
+Work backwards from global exclusion. At every meaningful checkpoint state
 
 `PARENT_DIFFICULTY_DELTA = EASIER | LATERAL | HARDER`.
 
-The live parent obstruction is no longer merely “find a useful discrepancy.” RL310 already supplies a canonical physical extremal discrepancy. The missing implication is now specifically:
+The live obstruction is now a consumer problem, not the discovery of another discrepancy lower bound.
 
-- exhaustive one-sidedness or closure of its complementary branch;
-- then an independent upper budget, owned compression, or owned replication theorem for the extremal profile/cross-determinant.
+If two consecutive meaningful checkpoints fail to make the parent arrow easier, freeze this route and step back rather than extending a local grammar.
 
-Do not mistake a further lower bound on counterflow for closure unless an independent resource is shown to be exceeded.
+## Frozen routes
 
-## Frozen negative controls
+Do not automatically resume fixed-96 P/Q, H21, Radius 6+, raw Gate-A Bellman/Y ancestry, selector scans, finite Farey enumeration, quotient gcd/content, recurrence-linear/coboundary forcing, or fixed local pattern escalation.
 
-Do not automatically resume:
-
-- fixed-96 P/Q commutation;
-- H21 grammar/incidence work;
-- Radius 6+;
-- finite Farey enumeration;
-- quotient gcd/content/residue attacks;
-- recurrence-linear/coboundary forcing;
-- proper-prefix ownership inferred from factor divisibility;
-- fixed-local-pattern escalation;
-- Gate A/B local machinery without an exact splice to the new extremal object.
-
-The Radius-3/4/5 theorems, Gate A/B machinery, RL19 packing, RL274 discrepancy identities, and full-D ownership remain available as consumers/tools when their hypotheses match exactly.
-
-## Repository navigation
-
-The generated knowledge catalogue remains `stale/deferred`. Use the RL310 closeout and RL309 dependency map as compact navigation layers before broad historical search.
+Radius-3/4/5, RL19, RL20, RL274, full-D ownership and the quotient layer remain available as exact consumers/tools when hypotheses match.
 
 ## Current proof status
 
-RL310 is closed and frozen.
-
-Its new exact verifier is repository-resident and its theorem/barrier chain is preserved in `sessions/RL310/RL310_CLOSEOUT.md`.
-
+RL311 is closed and frozen.
 Gate A remains open.
 Gate B remains open.
 Global non-trivial-cycle exclusion remains open.
 No Collatz conjecture claim is made.
 Lean formalisation remains separate.
+
+Knowledge catalogues are `stale/deferred`; use exact authoritative and frozen session files for navigation.
