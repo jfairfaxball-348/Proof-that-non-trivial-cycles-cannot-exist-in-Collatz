@@ -1,5 +1,5 @@
 {
-  "container_count": 304,
+  "container_count": 305,
   "explicit_completed_rls": [
     22,
     26,
@@ -198,7 +198,8 @@
     316,
     317,
     318,
-    319
+    319,
+    320
   ],
   "explicit_incoming_rls": [
     23,
@@ -398,10 +399,11 @@
     317,
     318,
     319,
-    320
+    320,
+    321
   ],
   "format": "rl-knowledge-index-v1",
-  "generation_record_count": 358,
+  "generation_record_count": 359,
   "generator": "tools/rl_conveyor.py index-build",
   "located_rls": [
     0,
@@ -723,12 +725,13 @@
     317,
     318,
     319,
-    320
+    320,
+    321
   ],
-  "result_catalog_sha256": "096c6872510bdfc9ba78550622f6d9c530d1ac9bda56fc88b35b3bfcde22f713",
-  "result_record_count": 9357,
-  "result_source_count": 398,
-  "session_catalog_sha256": "64565234d0c7b65cbe9eeffe2a7b4dd0c9b7f86da14661d384ea2f1482c7edc5",
+  "result_catalog_sha256": "fb4766baeab4568937f4399d62cb418564bbef5ab223e80a2fecbedfa4b7b736",
+  "result_record_count": 9393,
+  "result_source_count": 400,
+  "session_catalog_sha256": "dac1e55f1631e91948c043d0070af506949e843b0541a66912b2310a7283d12d",
   "unlocated_rls": [
     1
   ],
