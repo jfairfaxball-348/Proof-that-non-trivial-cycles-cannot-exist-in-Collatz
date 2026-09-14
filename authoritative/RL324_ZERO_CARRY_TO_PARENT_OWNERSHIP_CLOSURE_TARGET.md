@@ -58,6 +58,18 @@ The full aligned ownership identities remain
 `A_t+3^(c_t)B_t=D0(3^(c_t)U_t+V_t)`,
 `3^(c_t)B_t-A_t=H D_t`.
 
+## Preserved late carryover scratch
+
+A concurrent RL323 closeout landed while the connector session was still finishing. One later derivation was therefore preserved without changing the closed RL323 proof state:
+
+`sessions/RL323/RL323_LATE_SCRATCH_NOT_PROMOTED.md`.
+
+That file proposes that the zero-carry matched rank is not the final odd rank and that the **very next matched rank** has Euclidean quotient exactly one below its genuine physical late-row state, with a small complementary residual.
+
+This is **not** frozen RL323 mathematics. Before using it, RL324 must rederive and red-team the state alignment, interior-rank prerequisite, equality case, quotient orientation, and external-scope sign statement listed in that scratch file.
+
+If the checks pass, this adjacent zero-carry -> unit-minus-one pair should become the first RL324 structural lemma and should be consumed immediately at the parent level rather than developed as a new local grammar.
+
 ## Primary theorem target
 
 Prove a parent-level closure theorem for every surviving ordered `g=2` configuration:
@@ -73,9 +85,9 @@ A proof of any one alternative uniformly in the original support is the intended
 
 ## First attack to prioritize
 
-Use the *global position* of the unique `H`-carry crossing relative to the least-root canonical rank.
+First, rederive/validate the preserved adjacent-rank scratch. If valid, consume the **paired adjacent interfaces** directly: zero carry / bottom-third residual at rank `j`, followed by unit-minus-one / small complementary residual at rank `j+1`. The same physical odd-to-odd step links the two genuine ordinary/full-`D0/H` ownership pairs.
 
-At the least-root phase the aligned carry specializes to `D=-K`. The crossing is unique. Combine that sign ordering with:
+In parallel, retain the global-position attack selected at RL323 closeout. At the least-root phase the aligned carry specializes to `D=-K`. The crossing is unique. Combine that sign ordering with:
 
 - the surviving RL322 positive canonical branch;
 - the RL321 canonical quotient/residual and matched-rank localization;
@@ -83,7 +95,7 @@ At the least-root phase the aligned carry specializes to `D=-K`. The crossing is
 - the two genuine complementary `ell`-odd `D0/H` identities;
 - least-root minimality and actual physical order.
 
-The desired outcome is a bridge from the extracted crossing back to the canonical least-root interface, or a second genuine reduced return that is strictly smaller.
+The desired outcome is a bridge from the extracted crossing back to the canonical least-root interface, a second genuine reduced return that is strictly smaller, or an ordinary-owned numerator forced into an already forbidden interval.
 
 If that bridge fails for a structural reason, prove the exact barrier and immediately test whether the zero-carry prefix window itself supplies an owned descent/full-`D` factor obstruction.
 
