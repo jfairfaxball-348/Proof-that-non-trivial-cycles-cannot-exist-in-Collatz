@@ -713,9 +713,9 @@
     315,
     316
   ],
-  "result_catalog_sha256": "9414f81e95a50c5465b9433a9390abd2789b63e63aa6e8520d55a5d5dc7214e7",
-  "result_record_count": 9191,
-  "result_source_count": 390,
+  "result_catalog_sha256": "831a567cec04c8ca994c20afd57e708159a4327b52b35067c8dee1cff3a5ca64",
+  "result_record_count": 9234,
+  "result_source_count": 391,
   "session_catalog_sha256": "d1eb802f4bac09bf8e0b0d35a8e64d25ccdf034f47f14ca7d1424f888dad4ae0",
   "unlocated_rls": [
     1
