@@ -1,60 +1,52 @@
 # Authoritative research entry point
 
 Date: 2026-09-14
-Incoming RL: RL319
-Session type: FIRST REVERSE-MISMATCH CROSS-CONTENT ATTACK
+Incoming RL: RL320
+Session type: LATE-ROW HEIGHT + ROOT-ALIGNED CARRY CONSUMER
 
 ## Read first
 
 1. `AGENTS.md`
 2. `docs/RL_RESEARCH_PROTOCOL.md`
 3. `docs/RL_STATE_MACHINE.md`
-4. `sessions/RL318/RL318_CLOSEOUT.md`
-5. `RL318_SESSION_STATE_AND_RL319_KICKOFF.md`
-6. `RL319_FIRST_REVERSE_MISMATCH_CROSSING_TARGET.md`
-7. `RL317_PROOF_LEDGER.md` only when exact inherited dual-shadow details are needed
+4. `RL319_CLOSEOUT.md`
+5. `RL319_PROOF_LEDGER.md`
+6. `RL319_RED_TEAM_REPORT.md`
+7. `RL319_SESSION_STATE_AND_RL320_KICKOFF.md`
+8. `RL320_LATE_ROW_HEIGHT_AND_ROOT_ALIGNED_CARRY_TARGET.md`
 
 The repository is authoritative. Conversation memory is not.
 
-## Why RL319 has priority
+## Why RL320 has priority
 
-RL318 conditionally moves the `g>1` reduced frontier from the internal-only
+RL319 proves that the first reverse crossing obeys
 
-`ell>=190537`
+`3^B q<=2^n E`.
 
-to
+It also splits the ordered branch into a late-row-root alternative and a
+least-rooted balanced return. Root alignment gives
 
-`ell>=49,547,666,544`
+`G<2^35`, `v2(G)<=34`, `kappa<2^34`.
 
-when the frozen external `2^71` convergence certificate is admitted.
+The remaining unbounded object is the late-row interface height `s`, with
 
-The first above-resonance external-conditional survivor is
+`y=3^s m+K`, `0<|K|<3^s2^35`, `3` not dividing `K`.
 
-`(a,ell)=(217,976,794,617,137,528,045,312)`.
+RL320 should first seek an ordinary-owned bound or contradiction in `s`.
 
-At this scale, generic RL310 packing does not close `g=2`. The live nonzero-residue RL317 branch instead gives a content-`h` physical trajectory and coprime-content shadow whose signed separation changes from `+E` to `-E` over one balanced row. The first mismatch cannot cross; a later reverse mismatch must.
+## Frozen barriers
 
-RL319 should attack that first reverse mismatch directly. If it fails cleanly, the secondary target is the `epsilon=0` ordered-row branch using genuine `D0` ownership plus inherited first-survivor nonnegative-defect geometry.
+Do not restart local crossing congruences, homogeneous `T_h` invariants,
+generic fixed-depth prefix scans, or contact-polynomial arguments without
+their interface hypotheses. Re-cutting does not preserve `epsilon=0`.
 
-## Frozen alternatives / barriers
+## Scope
 
-Do not restart:
-
-- standalone homogeneous `T_h` invariants (RL79 barrier);
-- broad continued-fraction/product or fixed-depth residue-prefix work;
-- generic RL310 packing at this survivor without a new ordinary-owned input;
-- support-by-support grammar;
-- the RL316 `a<=22` scan;
-- RL140--RL142 contact-polynomial arguments without first proving their interface hypotheses.
-
-Keep internal and external-conditional frontiers separate. Keep `g=1` separate.
-
-## Binding scope
-
-Gate A: OPEN.
-Gate B: OPEN.
-Global positive non-trivial-cycle exclusion: OPEN.
-No Collatz conjecture claim is made.
-Lean formalisation is a separate project.
+- Internal-only frontier: `ell>=190537`.
+- External-certificate-conditional frontier: `ell>=49,547,666,544`.
+- Gate A: OPEN.
+- Gate B: OPEN.
+- Global positive non-trivial-cycle exclusion: OPEN.
+- `g=1` remains separate.
 
 `PARENT_DIFFICULTY_DELTA = EASIER`

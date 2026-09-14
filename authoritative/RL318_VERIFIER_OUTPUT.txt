@@ -1,4 +1,0 @@
-RL318->RL319 portable handover verifier: PASS
-RL318 red-team extraction: PASS
-internal SHA256SUMS: PASS
-outer SHA-256: PASS
