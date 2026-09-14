@@ -9,9 +9,14 @@ Session type: REDUCED-SHADOW INTERFACE FULL-D OWNERSHIP ATTACK
 1. `AGENTS.md`
 2. `docs/RL_RESEARCH_PROTOCOL.md`
 3. `docs/RL_STATE_MACHINE.md`
-4. `sessions/RL315/RL315_CLOSEOUT.md`
-5. `sessions/RL315/RL315_RESEARCH_LEDGER.md`
-6. `authoritative/RL316_REDUCED_SHADOW_INTERFACE_FULL_OWNERSHIP_TARGET.md`
+4. `RL315_PROOF_LEDGER.md`
+5. `RL315_RED_TEAM_REPORT.md`
+6. `RL316_REDUCED_SHADOW_INTERFACE_FULL_OWNERSHIP_TARGET.md`
+7. `sessions/RL315/RL315_CLOSEOUT.md` only when full frozen provenance is needed
+
+Portable incoming regression:
+
+`python3 verification/verify_rl315_interface.py`
 
 The repository is authoritative. Conversation memory is not.
 
