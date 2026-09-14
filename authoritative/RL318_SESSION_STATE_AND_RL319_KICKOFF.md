@@ -1,46 +1,37 @@
-# RL318 session state and RL319 kickoff
+# RL318 session state and RL319 handover
 
 Date: 2026-09-14
 RL318 status: CLOSED AND FROZEN
 Successor: RL319
 
-## Authoritative RL318 result
+## State summary
 
-RL318 conditionally relocates the `g>1` reduced frontier by freezing the peer-reviewed external convergence certificate through `2^71` and consuming it through the inherited RL131/RL315 machinery.
+RL318 materially contracted the conditional `g>1` frontier by reconnecting the peer-reviewed external `R>=2^71` certificate to the already-promoted RL131 continued-fraction consumer and RL315 reduced-shadow extraction.
 
-Keep both frontiers explicit:
+Conditional external frontier:
 
-- internal-only: `ell>=190537`;
-- conditional on the external certificate: `ell>=49,547,666,544`.
+`ell>=49,547,666,544`.
 
-The first above-resonance external-conditional survivor is
+First above-side survivor:
 
 `(a,ell)=(217,976,794,617,137,528,045,312)`.
 
-At this pair, generic RL310 packing does not exclude `g=2`. Historical RL134--RL137 first-survivor structure is available, and RL317 supplies the exact ordered-row / cross-content dichotomy.
+Internal-only frontier remains:
 
-## New local frontier
+`ell>=190537`.
 
-In the RL317 nonzero-residue branch, the content-`h` physical trajectory and coprime-content shadow trajectory have signed boundary gap `+E` at the start of a balanced row and `-E` at the end. Equality is impossible because one trajectory is divisible by `h` and the other is coprime to `h`.
+At the first external survivor, generic RL310 packing does not exclude `g=2`. Historical RL134--RL137 give nonnegative defect and `m<2^75` for `g=2`, while RL140--RL142 do not automatically apply strongly enough to close multiplicity two.
 
-The first parity disagreement cannot create the required sign crossing. Therefore a later reverse mismatch (physical even / shadow odd) is mandatory. This is structure, not yet a contradiction.
+The live RL317 nonzero-residue branch now has an exact forced-crossing formulation: the coupled content-`h` physical and coprime shadow `T_h` trajectories have signed gap `+E` at the start of a balanced row and `-E` at the end; equality is impossible modulo `h`; the first mismatch leaves the gap positive; hence a later reverse mismatch must perform the first crossing.
 
-## RL319 target
+## RL319 instruction
 
-Continue from
+Start directly from the first reverse mismatch. Do not repeat historical survey work. Seek an exact divisibility, carry, remainder, or support-independent contradiction from
 
-`RL319_FIRST_REVERSE_MISMATCH_CROSSING_TARGET.md`.
+`delta'=(delta-2S-h)/2<0`
 
-Attack the first reverse mismatch directly using the additive `T_h` step, content/coprime-content arithmetic, complementary full-`D` remainders, and boundary symmetry. If that route fails cleanly, use the ordered-row `epsilon=0` branch with genuine `D0` ownership and inherited first-survivor nonnegative-defect geometry.
+at the first physical-even / shadow-odd crossing, together with content/coprime residue structure and the RL317 complementary full-D remainders.
 
-Do not restart broad historical survey work, standalone homogeneous `T_h` invariants, generic packing, support grammar, or the old small-`a` scan.
+If that route gives a clean barrier, switch once to the `epsilon=0` ordered-row branch and combine true `D0` ownership with first-survivor nonnegative-defect geometry.
 
-## Binding scope
-
-Gate A: OPEN.
-Gate B: OPEN.
-Global positive non-trivial-cycle exclusion: OPEN.
-No Collatz conjecture claim is made.
-`g=1` remains separate.
-
-`PARENT_DIFFICULTY_DELTA = EASIER`
+Gate A/B remain open. No global Collatz claim.

@@ -1,0 +1,3 @@
+RL318->RL319 portable handover verifier: PASS
+internal SHA256SUMS: PASS
+outer SHA-256: PASS
