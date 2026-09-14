@@ -1,16 +1,10 @@
-# RL322 fresh-unpack verification
-
-Date: 2026-09-14
-Status: PASS
-
-Candidate: `RL322_to_RL323_Handover.zip`.
-
-Verified:
-
-1. outer SHA-256 matches the separately frozen `.zip.sha256` sidecar;
-2. every internal `SHA256SUMS.txt` entry matches;
-3. `verification/verify_rl322_negative_branch_and_positive_barrier.py` passes from a clean unpack;
-4. clean verifier output is exactly the frozen verifier output;
-5. the unpack contains the incoming target, proof ledger, Branch-A barrier, red-team report, RL305-to-RL322 strategic assessment, closeout, session handover, successor target, START_HERE, manifest, verifier, verifier output, and this verification record.
-
-The 480-case Branch-B certificate is exact and gap-free. The Branch-A construction is a method countermodel, not a physical cycle. Scope remains exactly as stated in the proof ledger.
+RL322 verifier: PASS
+branch_B_prefix_ones=66
+branch_B_h_cases=480
+branch_B_worst_h=430
+branch_B_unit_interval_index=28512881031
+branch_B_min_certified_margin_gt=0.000775775058363
+branch_B_conclusion=negative canonical branch excluded at conditional first external survivor
+branch_A_geometry_barrier=PASS
+branch_A_conclusion=positive canonical geometry does not imply ordinary balanced ownership
+parent_difficulty_delta=LATERAL

@@ -1,40 +1,36 @@
-# RL322 red-team report
+# RL322 session state and RL323 kickoff
 
 Date: 2026-09-14
-Status: PASS WITH EXPLICIT SCOPE LIMITS
+Status: RL322 CLOSED; RL323 PREPARED
+BASE_HEAD: `5473c663f2891909c3cece93c4263b4e24715536`
 
-## RT1 — prefix rigidity ownership
+## Frozen RL322 state
 
-PASS. The `1^66` conclusion is applied only to the genuine ordinary-owned prefix `alpha` in the RL321 negative canonical branch. No affine surrogate is relabelled as a parity word.
+RL322 closes with two theorem-sized outcomes:
 
-## RT2 — 480-case certificate completeness
+1. `Z0<0` is eliminated at the conditional first external survivor by an ordinary-owned 66-prefix theorem plus an exact gap-free 480-case Beatty interval certificate. This contradiction is uniform over all remaining support/height within that sign branch.
+2. `Z0>0` does not acquire ordinary balanced ownership from the currently used geometry: an exact first-survivor ordered/nonnegative-defect/matched-rank/canonical-tail countermodel gives `0<Zgeom<Y-2^ell`.
 
-PASS. `2^71<=m<2^75` and `m==-1 (mod 2^66)` give exactly `33<=h<=512`, inclusive: 480 values. Every value is checked with exact rational outer bounds for `delta=D0/X`. There are no skipped ranges or floating-point proof steps.
+No Gate A/B/global claim follows. `g=1` remains separate.
 
-## RT3 — logarithm/exponential enclosure
+`PARENT_DIFFICULTY_DELTA = LATERAL`.
 
-PASS. `log 2` and `log 3` are enclosed by finite rational atanh series with a rigorous rational tail. `1-exp(-Delta)` is enclosed by alternating Taylor inequalities on `0<Delta<2^-40`. The verifier uses `Fraction` throughout the certificate.
+## Strategic handover
 
-## RT4 — branch scope
+RL315–RL322 have made the counterexample architecture substantially more canonical, but the project-level all-scale ordinary/full-`D` ownership consumer remains missing. RL322's Branch-A barrier is the stop signal against further automatic local refinement.
 
-PASS. The Branch-B contradiction is stated only at the conditional first external survivor and inherits the external least-state floor. It is uniform in the remaining support within that branch, but is not promoted as a global Gate-A/Gate-B theorem.
+RL323 therefore targets the all-scale theorem directly. Read:
 
-## RT5 — positive-branch relabelling
+1. `RL322_CLOSEOUT.md`;
+2. `RL322_PROOF_LEDGER.md`;
+3. `RL322_RED_TEAM_REPORT.md`;
+4. `RL322_STRATEGIC_ASSESSMENT_RL305_TO_RL322.md`;
+5. `RL323_ALL_SCALE_ORDINARY_OWNERSHIP_CONSUMER_TARGET.md`.
 
-PASS. The session explicitly rejects the inference `Z0>0 => Z0 is an ordinary balanced-row numerator`. The exact `u,v,W` countermodel satisfies the listed geometry and canonical-tail properties while producing `0<Zgeom<Y-2^ell`, below the universal balanced numerator minimum.
+The repository is authoritative. Conversation memory is not.
 
-## RT6 — countermodel physical status
+## Frozen alternatives
 
-PASS. The Branch-A construction is labelled a combinatorial/method countermodel, not a physical cycle and not a counterexample to Collatz.
+The root-aligned `kappa=0` / actual-crossing obligation remains valid but loses automatic priority. It should be resumed only if it supplies or exposes a support-uniform ordinary-owned consumer.
 
-## RT7 — strategic overclaim
-
-PASS. The closeout uses `PARENT_DIFFICULTY_DELTA = LATERAL`. One sign branch is genuinely removed, but the project-level all-scale ordinary/full-`D` ownership consumer remains absent.
-
-## RT8 — frozen barriers
-
-PASS. No fixed-depth generic scan, support-by-support grammar, bare modulus escalation, recurrence-only reformulation, RL147 independent-layer ownership assumption, demoted RL321 height-38 claim, or root-aligned `G<2^35` scope transfer is revived.
-
-## Final red-team result
-
-PASS for promotion with the scope and strategic classification recorded above.
+Do not restart fixed-depth scans, support-by-support grammar, bare modulus escalation, recurrence-only reformulation, or any frozen barrier route.

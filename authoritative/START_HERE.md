@@ -1,68 +1,36 @@
-# RL323 — all-scale ordinary/full-D ownership consumer target
+# Authoritative research entry point
 
-Date prepared: 2026-09-14
-Status: PREPARED, NOT STARTED
+Date: 2026-09-14
+Incoming RL: RL323
+Session type: ALL-SCALE ORDINARY/FULL-D OWNERSHIP CONSUMER
 
-## Absolute objective
+## Read first
 
-Attack the remaining project-level all-scale ordinary-ownership obstruction directly. Do not continue RL322's local positive-branch parameter refinement by default.
+1. `AGENTS.md`
+2. `docs/RL_RESEARCH_PROTOCOL.md`
+3. `docs/RL_STATE_MACHINE.md`
+4. `RL322_CLOSEOUT.md`
+5. `RL322_PROOF_LEDGER.md`
+6. `RL322_RED_TEAM_REPORT.md`
+7. `RL322_STRATEGIC_ASSESSMENT_RL305_TO_RL322.md`
+8. `RL322_SESSION_STATE_AND_RL323_KICKOFF.md`
+9. `RL323_ALL_SCALE_ORDINARY_OWNERSHIP_CONSUMER_TARGET.md`
 
-## Primary theorem target
+The repository is authoritative. Conversation memory is not.
 
-Work from the strongest genuinely owned canonical interface now available:
+## Why RL323 has priority
 
-- a genuine reduced balanced return from the RL315 architecture;
-- in the `g=2` ordered late-row setting, genuine physical rows and matched ranks;
-- actual prefix/tail split `w=alpha beta` with `wt(alpha)=ell`, `wt(beta)=s`;
-- canonical quotient/residual
-  `z=2^r M+eta`, `0<eta<2^r`,
-  `2^r J=3^s eta+B`, `0<J<3^s`;
-- genuine complementary `ell`-odd segment and the RL321 full-`D0/H` proper-factor identities;
-- matched-rank localization `r=u_j-v_j`;
-- all frozen ownership and scope barriers.
+RL322 excludes the entire canonical negative branch at the conditional first external survivor, uniformly over its unbounded support. The surviving positive branch has an exact geometry-only ownership countermodel, so further local parameter refinement no longer has automatic priority.
 
-Seek a theorem uniform in the unbounded interface height/support that forces at least one of:
+The project-level missing resource remains an all-scale theorem using genuine ordinary/full-`D` ownership to force contradiction, strict owned descent, an absolute support-independent bound, an already-covered bounded witness, or a complete support-independent finite certificate.
 
-1. contradiction;
-2. a genuinely owned smaller/descent reduced return;
-3. an absolute support-independent bound;
-4. a bounded owned witness already covered by an existing obstruction;
-5. a complete finite certificate whose size does not grow with interface height/support.
-
-## Smallest concrete statement to try first
-
-Prove an **owned positive-interface extraction lemma**:
-
-> For every genuinely owned canonical configuration of the above form with `Z0=XM-Ym>0`, either the matched-rank displacement/interface height is bounded by an explicit absolute constant independent of `r,s,beta`, or the actual physical trajectory contains a strictly smaller genuinely owned reduced balanced return.
-
-The constant need not be sharp. The descent object must be constructed from actual ordinary/full-`D` ownership. Positive affine factors such as `Z0`/`W0` may not be relabelled as rows.
-
-A proof of either side uniformly in support counts as parent-level progress. A sharper carry, residue class, lower bound on `r` or `s`, or finite-looking support catalogue does not.
-
-## Why this target is now concrete
-
-Compared with RL305/RL309, the all-scale theorem now has a canonical owned object: exact physical prefix/tail junction, shared-tail residual, matched-rank location, complementary ordinary segment, and full-`D0/H` identities. RL322 also removed `Z0<0` at the conditional first survivor and supplied an exact countermodel showing exactly why geometry-only positivity is insufficient.
-
-Use those facts to isolate the additional full-ownership mechanism, not to deepen local grammar.
-
-## Stop rule
-
-If the session cannot obtain a support-uniform coercive statement or one/two demonstrably necessary structural lemmas toward it, freeze the route. Do not restart:
-
-- fixed-depth prefix scans;
-- support `3,4,5,...` grammar;
-- bare modulus escalation;
-- recurrence-only/homogeneous-invariant reformulations;
-- tail-residue-only or corner-smallness-only attacks;
-- independent ownership of RL147 mixed-height layers;
-- the demoted RL321 height-38 scope transfer;
-- geometry-only promotion of positive affine factors.
-
-The root-aligned `kappa=0` / three-path crossing branch remains frozen as a legitimate alternative, but it is not automatic priority unless it exposes an all-scale owned consumer.
+RL323 attacks that theorem directly from the genuine canonical interface assembled by RL315–RL322.
 
 ## Scope
 
 Internal-only frontier: `ell>=190537`.
 External-certificate-conditional frontier: `ell>=49,547,666,544`.
-The external `2^71` least-state floor remains conditional.
-Gate A OPEN. Gate B OPEN. Global positive non-trivial-cycle exclusion OPEN. `g=1` remains separate.
+External `2^71` least-state floor remains conditional.
+Gate A OPEN. Gate B OPEN. Global positive non-trivial-cycle exclusion OPEN. `g=1` separate.
+
+`PARENT_DIFFICULTY_DELTA = LATERAL`
