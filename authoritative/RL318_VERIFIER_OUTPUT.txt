@@ -1,0 +1,9 @@
+RL318 external-floor consumer verifier: PASS
+external_floor=2^71=2361183241434822606848
+rl317_first_fibre_state_ceiling=1311372708449
+reduced_qmax=49547666543
+conditional_reduced_ell_frontier=49547666544
+first_above_resonance_survivor=(217976794617,137528045312)
+generic_RL310_packing_margin_gt_21.6x=PASS
+scope=consumer arithmetic only; Barina exhaustive computation not rerun
+script_sha256=5185ca1e15382550cf195d14fc2ab86c2ecba7a26059bd4160538621fb208b2e
