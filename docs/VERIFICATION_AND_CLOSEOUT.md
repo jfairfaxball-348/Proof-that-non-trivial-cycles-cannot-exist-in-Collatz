@@ -75,6 +75,32 @@ The invariant is:
 
 > The remote commit contains the complete verified numbered transition, or the numbered transition does not exist.
 
+## GLOBAL PROOF ROADMAP closeout requirement
+
+`docs/GLOBAL_PROOF_ROADMAP.md` is the permanent high-level logical navigation protocol for the research programme.
+
+Every authoritative numbered closeout must include a section headed exactly:
+
+`GLOBAL PROOF ROADMAP STATUS`
+
+and must carry all nine required fields defined there:
+
+- `CURRENT_STAGE`;
+- `CURRENT_STAGE_NAME`;
+- `CURRENT_STAGE_PROGRESS`;
+- `THIS_SESSION_ADVANCE`;
+- `CURRENT_STAGE_BLOCKER`;
+- `ADVANCE_CRITERION`;
+- `REMAINING_STAGES`;
+- `ROADMAP_DELTA`;
+- `GLOBAL_PROOF_STATUS`.
+
+Progress is obligation-based, never session-count- or effort-based. Stage transitions require the theorem-level advance criterion, not merely substantial local progress.
+
+Every successor handover must preserve the current roadmap state and instruct the successor to work on the smallest theorem that advances the current stage, unless a strategic audit explicitly identifies an upstream dependency elsewhere.
+
+A correction/demotion may reduce the percentage or produce `REGRESSION/CORRECTION`. `GLOBAL_PROOF_STATUS` remains `OPEN` unless the complete R7 end-to-end proof has actually been assembled and audited.
+
 ## Post-commit result
 
 Report:
@@ -84,6 +110,7 @@ Report:
 - successor authoritative target/path;
 - bundle/fresh-unpack/verifier status;
 - catalogue status (`current` or `stale/deferred`);
-- post-commit readback result.
+- post-commit readback result;
+- the committed `GLOBAL PROOF ROADMAP STATUS`.
 
 Catalogue staleness must be transparent but does not make a mathematically valid atomic RL transition incomplete.
