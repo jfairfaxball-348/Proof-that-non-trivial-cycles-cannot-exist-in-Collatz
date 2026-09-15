@@ -60,6 +60,20 @@ python3 tools/rl_conveyor.py verify-incoming
 python3 tools/rl_conveyor.py init-checkpoint
 ```
 
+### Connector-produced flat Git-tree compatibility
+
+A connector closeout may leave the successor as a committed **flat Git-tree authority** rather than a locally reconstructed ZIP/sidecar layout. This is a mechanical transport representation, not a mathematical-integrity failure. In that exact case only, the legacy `rl_conveyor.py` package-discovery commands may reject a valid handover because historical `*_TARGET.md` provenance remains in `authoritative/` or because no top-level ZIP sidecar exists.
+
+If `rl_conveyor.py startup` fails **solely** for that packaging-schema reason, do **not** mutate, rename, delete, or repackage authoritative mathematical files merely to satisfy the legacy scanner. Instead run:
+
+```sh
+python3 tools/rl_flat_authority_preflight.py
+```
+
+A green flat-authority preflight is the shell-worker equivalent of the three ordinary startup commands for that incoming session. It must fail closed unless all of the following hold: `authoritative/START_HERE.md` explicitly declares one incoming RL and names exactly one target for that RL; the predecessor kickoff, closeout-verification record, and frozen `sessions/RL<predecessor>/` exist; the local HEAD equals the live remote/default-branch HEAD; `authoritative/` exactly matches its committed Git tree; no ZIP/sidecar/bundle transport is present; and the current portable verifier **and** red-team commands explicitly listed by `START_HERE.md` pass in isolated Python. The helper records the committed authoritative tree identity and initializes/reuses the ordinary ignored `.rl-work/RL<incoming>/` checkpoint.
+
+This fallback is not permission to bypass a genuine checksum, verifier, red-team, scope, mathematical, concurrency, or authority failure. If a packaged transport is present, use `rl_conveyor.py`; if the flat preflight fails, enter stop-and-repair.
+
 Connector workers may establish the same gate through GitHub reads plus local/sandbox verification. Their scratch/checkpoint state may live in the current sandbox/conversation artifacts and need not be committed.
 
 If the mathematical/incoming-integrity gate fails, do not begin ordinary research or mutate authority merely to make it pass. Follow stop-and-repair.
