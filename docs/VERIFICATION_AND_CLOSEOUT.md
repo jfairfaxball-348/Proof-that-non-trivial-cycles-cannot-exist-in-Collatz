@@ -7,12 +7,14 @@
 Preserve the established handover convention:
 
 - authoritative ZIP or documented lossless transport;
-- outer `.zip.sha256` sidecar;
-- internal `SHA256SUMS.txt`;
+- outer `.zip.sha256` sidecar for ZIP/reconstructible-bundle transports;
+- internal `SHA256SUMS.txt` for ZIP/reconstructible-bundle transports;
 - portable fast verifier scripts;
 - current report, proof/correction ledgers, session state, successor target, certificates, and required provenance.
 
 Follow the actual current naming/layout.
+
+A connector worker may also promote a **committed flat Git-tree authority** when its available Git-object interface makes the committed tree itself the lossless transport. In that representation the cryptographic Git tree/blob identities plus the atomic commit/readback replace the ZIP outer-sidecar/internal-manifest transport checks. The successor `authoritative/START_HERE.md` must explicitly declare the incoming RL and name exactly one target for that RL, the predecessor closeout-verification record must describe the connector packaging/readback, and the current portable verifier and independent red team must be present in `authoritative/verification/`. A subsequent shell worker verifies this form with `python3 tools/rl_flat_authority_preflight.py`; it must not rename/delete mathematical authority merely to make the legacy ZIP scanner pass.
 
 ## Candidate gate
 
@@ -24,12 +26,12 @@ Before changing remote authority:
 4. Prove promoted finite certificates are gap-free over their exact claimed ranges where applicable.
 5. Run required current red teams and target-specific verifiers.
 6. Recompute target-required live constants/minima/floors/support edges as applicable.
-7. Build the complete handover/bundle.
-8. Compute/check the outer sidecar.
-9. Fresh-unpack/reconstruct in clean temporary storage.
-10. Verify the internal manifest.
-11. Run the complete portable fast verifier suite from the clean unpack.
-12. Confirm the unpack reproduces the frozen candidate state.
+7. Build the complete handover/bundle or committed flat Git-tree transport.
+8. Compute/check the outer sidecar when the transport uses one; otherwise record the committed tree/blob identities.
+9. Fresh-unpack/reconstruct ZIP-based transports in clean temporary storage; for flat Git-tree transport, read back the committed authority tree into a clean worker context.
+10. Verify the internal manifest when the transport uses one; for flat Git-tree transport, verify the committed tree/blob identity and exact promoted path set.
+11. Run the complete portable fast verifier suite from the clean unpack/reconstructed/committed authority.
+12. Confirm the verified transport reproduces the frozen candidate state.
 13. Confirm the incoming `authoritative/` still matches `BASE_HEAD`/the recorded snapshot.
 14. Confirm the proposed successor is exactly one RL number ahead and authority will not mix generations.
 
@@ -66,7 +68,7 @@ Only after the candidate gate passes:
 8. Advance/push the intended remote branch/ref once.
 9. Read the remote ref back and require its SHA to equal the new commit.
 10. Read back the committed frozen session and successor `authoritative/START_HERE.md`.
-11. Confirm the new authoritative state uniquely resolves the successor target.
+11. Confirm the new authoritative state uniquely resolves the successor target from `START_HERE.md` (historical target provenance may remain only when explicitly inherited and must not be mistaken for the live target).
 12. Confirm no half-transition remains.
 
 With local Git, staging plus `git diff --cached` is the inspection mechanism. With GitHub Git-object tooling, the explicit tree entries/base tree and resulting commit are the equivalent inspection mechanism.
@@ -108,7 +110,7 @@ Report:
 - commit SHA and remote ref;
 - frozen session path;
 - successor authoritative target/path;
-- bundle/fresh-unpack/verifier status;
+- bundle/fresh-unpack/verifier status, or committed-flat-tree identity/readback status;
 - catalogue status (`current` or `stale/deferred`);
 - post-commit readback result;
 - the committed `GLOBAL PROOF ROADMAP STATUS`.
