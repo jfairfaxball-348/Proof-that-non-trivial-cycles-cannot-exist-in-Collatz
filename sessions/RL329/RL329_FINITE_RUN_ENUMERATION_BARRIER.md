@@ -1,12 +1,12 @@
 # RL329 finite positive-run enumeration barrier
 
 Date: 2026-09-15
-Status: ACTIVE-SESSION ANALYTIC METHOD BARRIER / NOT PROMOTED
+Status: FROZEN PROVED ANALYTIC METHOD BARRIER
 Incoming authoritative HEAD: `828db8a17863a676e35df61168741e31fd721c63`
 
 ## Purpose
 
-RL329 has already shown by exact physical reconstruction that the specific RL328 unrestricted three-positive `N(49)->N(49)` edge has no high-carry physical realization. That reopens long-positive-run ownership, but it also raises an immediate strategic question: should one now enumerate run lengths `p=4,5,6,...` one at a time?
+RL329 has shown by exact physical reconstruction that the specific RL328 unrestricted three-positive `N(49)->N(49)` edge has no high-carry physical realization. That reopens long-positive-run ownership, but it also raises an immediate strategic question: should one now enumerate run lengths `p=4,5,6,...` one at a time?
 
 The answer is no as a default closure programme.
 
