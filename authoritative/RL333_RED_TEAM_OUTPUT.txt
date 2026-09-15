@@ -1,0 +1,3 @@
+RL333_RED_TEAM_GREEN
+Independent graph traversal, phase certificate and all-rho consumer agree with the primary verifier.
+cap 32548554424
