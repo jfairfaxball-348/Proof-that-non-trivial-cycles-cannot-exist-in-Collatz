@@ -292,6 +292,7 @@ def main():
         snap = snapshot(base_head, current_rl, target)
         value = {
             "incoming_rl": current_rl,
+            "current_rl": current_rl,
             "handover_generation": current_rl - 1,
             "target": target.relative_to(ROOT).as_posix(),
             "transport_kind": "committed_flat_git_tree",
