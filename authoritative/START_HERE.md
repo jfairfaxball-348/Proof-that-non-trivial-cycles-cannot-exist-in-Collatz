@@ -1,39 +1,40 @@
-# Authoritative start — RL342
+# Authoritative start — RL343
 
-Status: RL341 CLOSED/FROZEN; RL342 is the unique incoming research session and has not started.
+Status: RL342 CLOSED/FROZEN; RL343 is the unique incoming research session and has not started.
 
 Repository authority is the committed flat Git tree. Historical ZIPs/sidecars, older targets, and frozen sessions are provenance only.
 
 ## Current roadmap position
 
-R1 — Parent Bridge remains OPEN at approximately 90% obligation-level progress. RL341 converted exact shared physical identity into a genuine recurrence/descent theorem but did not close the ordered parent branch.
+R1 — Parent Bridge remains OPEN at approximately 90% obligation-level progress. RL342 introduced an exact mixed 2/3-adic CRT carrier interface and phase-adjusted potential reduction: a closed canonical recurrence must contain a nondecreasing carrier, so only that subclass needs to be eliminated.
 
-## Promoted RL341 result
+## Promoted RL342 results
 
 Under the inherited ordered genuine `g=2`, `Z0>0`, `K<0` parent assumptions and external floor `m>=2^71`:
 
-- exact physical overlap/escape certification through `sigma<=25` proves that no three consecutive complete returns can all have defect at most 25;
-- the all-length consequence is `26K <= 3S42 + 57`;
-- genuine physical recurrence first appears algebraically at defect 15, but every certified recurrence carrier through defect 25 descends below the least-state floor.
+- fixed predecessor/middle/successor compatibility is an exact truncated CRT progression problem (power-of-two predecessor condition plus power-of-three successor condition);
+- the canonical decorated-state potential `V=x 2^(-U/ell)` obeys an exact multiplicative step identity;
+- any closed walk on a single-valued canonical `V` has a phase-potential nondecreasing carrier;
+- the exact nondecreasing chain family `(15,1)->(1,16)->(16,1)` has 238,329 physical members and every member descends below `2^71`, maximum 188 odd steps.
 
-R1 is not closed.
+The complete `sigma=26` layer remains UNPROMOTED. R1 is not closed.
 
-## Unique RL342 target
+## Unique RL343 target
 
 Read and execute only:
 
-`authoritative/RL342_UNIFORM_RECURRENCE_DESCENT_TARGET.md`
+`authoritative/RL343_R1_CRT_PHASE_CLOSURE_TARGET.md`
 
-The target is to make the recurrence-carrier descent mechanism uniform/absolute, preferably by a fixed-depth canonical physical interface. The generated sigma=26 family is diagnostic fallback, not an instruction to resume threshold-by-threshold enumeration.
+The absolute objective is aggressive R1 closure by a fixed-depth all-length theorem eliminating every phase-potential nondecreasing canonical CRT carrier. Do not resume defect-threshold enumeration as the main programme.
 
 ## Required inherited context
 
-Use `authoritative/inherited/` plus the frozen RL341 ledgers/certificate. Do not consult or modify the separate Lean formalisation project.
+Use `authoritative/inherited/` plus the RL342 proof/certificate/scratch ledgers. Do not consult or modify the separate Lean formalisation project.
 
 ## Verification
 
-Current portable verifier: `authoritative/verification/verify_rl341_fast.py`
+Current portable verifier: `authoritative/verification/verify_rl342_fast.py`
 
-Independent red team: `authoritative/verification/red_team_rl341.py`
+Independent red team: `authoritative/verification/red_team_rl342.py`
 
-Both were GREEN at RL341 closeout.
+Both are GREEN at RL342 closeout.
