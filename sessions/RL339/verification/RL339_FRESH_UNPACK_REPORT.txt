@@ -1,0 +1,7 @@
+RL339_FRESH_UNPACK_GREEN
+outer_sha256 9758922130022138ad016b29d0e838f4a7cbaa1bcfd461728c0068c3d668d798
+internal_manifest_entries 67
+source_unpacked_identity MATCH
+unique_target 1
+verify_rl339_fast.py: RL339_PROMOTED
+red_team_rl339.py: PHASE42_RED_TEAM_GREEN zero_edges 29 h 24281914 floor 32537248343
