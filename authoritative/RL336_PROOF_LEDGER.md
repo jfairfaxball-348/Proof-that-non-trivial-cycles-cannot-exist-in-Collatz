@@ -1,6 +1,6 @@
 # RL336 proof ledger — prefix obstruction, q=32 charge, and zero-run contraction
 
-Date: 2026-09-16. Status: candidate for verified atomic promotion. Incoming BASE_HEAD: `496325dd80bf220c99ef9292d14ce66ec2b954d1`. Successor: RL337.
+Date: 2026-09-16. Status: FROZEN AND VERIFIED. Incoming BASE_HEAD: `496325dd80bf220c99ef9292d14ce66ec2b954d1`. Successor: RL337.
 
 ## Exact scope
 

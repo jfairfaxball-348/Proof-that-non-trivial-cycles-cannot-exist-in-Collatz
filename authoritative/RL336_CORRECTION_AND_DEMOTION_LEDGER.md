@@ -1,6 +1,6 @@
 # RL336 correction and demotion ledger
 
-Date: 2026-09-16. Status: candidate for freeze.
+Date: 2026-09-16. Status: FROZEN.
 
 No inherited authoritative mathematical claim is corrected or demoted. RL335's q=28 theorem, cap, and `z<=37` certificate remain valid; RL336 strengthens them within the same conditional branch.
 
