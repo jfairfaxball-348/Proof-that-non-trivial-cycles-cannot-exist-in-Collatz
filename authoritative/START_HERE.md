@@ -1,18 +1,39 @@
-# Authoritative start
+# Authoritative start — RL342
 
-RL340 is CLOSED AND FROZEN. RL341 is the **unique incoming** research session and has not been started. Current stage R1 Parent Bridge; global proof OPEN. Scope remains the ordered genuine `g=2`, `Z0>0`, `K<0` parent `(a,ell)=(217976794617,137528045312)` under the external least-state-floor condition `m>=2^71`.
+Status: RL341 CLOSED/FROZEN; RL342 is the unique incoming research session and has not started.
 
-Unique live target for RL341: `RL341_ABSOLUTE_PHYSICAL_IDENTITY_TARGET.md`.
+Repository authority is the committed flat Git tree. Historical ZIPs/sidecars, older targets, and frozen sessions are provenance only.
 
-Read `RL340_SESSION_STATE_AND_RL341_KICKOFF.md`, `RL341_ABSOLUTE_PHYSICAL_IDENTITY_TARGET.md`, `RL340_PROOF_LEDGER.md`, `RL340_EXACT_CERTIFICATE.md`, `RL340_CORRECTION_AND_DEMOTION_LEDGER.md`, `RL340_GLOBAL_PROOF_ROADMAP_STATUS.md`, and `RL340_CLOSEOUT_VERIFICATION.md` in that order. Relevant prior ledgers/verifiers are copied under `inherited/`.
+## Current roadmap position
 
-Portable fast verifier: `python3 -I authoritative/verification/verify_rl340_fast.py`.
-Independent red team: `python3 -I authoritative/verification/red_team_rl340.py`.
+R1 — Parent Bridge remains OPEN at approximately 90% obligation-level progress. RL341 converted exact shared physical identity into a genuine recurrence/descent theorem but did not close the ordered parent branch.
 
-This successor is a committed **flat Git-tree authority**. There is no current ZIP/sidecar transport. Git tree/blob identities plus the atomic commit/readback are the lossless transport.
+## Promoted RL341 result
 
-Promoted RL340 result: the exact q=0 `(23,23,p=6)` interface has 684 admissible templates and exactly 10 candidate rows / 10 distinct sources in the inherited q=0 band; every source escapes below `2^71`, with maximum escape 29 odd steps. The direct linear residue/telescope route also has a quantified barrier: the remaining carry gap is `12,146,996,285` and would require more than `145e9` additional weighted-support units at the inherited endpoint.
+Under the inherited ordered genuine `g=2`, `Z0>0`, `K<0` parent assumptions and external floor `m>=2^71`:
 
-The stronger `92/91` q=35 inequality developed during RL340 is **frozen but UNPROMOTED** pending replay of its complete finite edge-potential/interface certificate. Do not use it as authoritative mathematics until RL341 verifies and promotes it or replaces it.
+- exact physical overlap/escape certification through `sigma<=25` proves that no three consecutive complete returns can all have defect at most 25;
+- the all-length consequence is `26K <= 3S42 + 57`;
+- genuine physical recurrence first appears algebraically at defect 15, but every certified recurrence carrier through defect 25 descends below the least-state floor.
 
-R1 remains OPEN. Do not start RL341 without a new kickoff. Do not mix this research branch with the separate Lean formalisation project.
+R1 is not closed.
+
+## Unique RL342 target
+
+Read and execute only:
+
+`authoritative/RL342_UNIFORM_RECURRENCE_DESCENT_TARGET.md`
+
+The target is to make the recurrence-carrier descent mechanism uniform/absolute, preferably by a fixed-depth canonical physical interface. The generated sigma=26 family is diagnostic fallback, not an instruction to resume threshold-by-threshold enumeration.
+
+## Required inherited context
+
+Use `authoritative/inherited/` plus the frozen RL341 ledgers/certificate. Do not consult or modify the separate Lean formalisation project.
+
+## Verification
+
+Current portable verifier: `authoritative/verification/verify_rl341_fast.py`
+
+Independent red team: `authoritative/verification/red_team_rl341.py`
+
+Both were GREEN at RL341 closeout.
