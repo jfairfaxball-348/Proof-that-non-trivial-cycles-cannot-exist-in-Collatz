@@ -1,27 +1,34 @@
 # Authoritative start
 
-RL337 is CLOSED AND FROZEN. RL338 is the unique incoming research session and is not started.
+RL338 is CLOSED AND FROZEN. RL339 is the unique incoming research session and is not started.
 
 Current stage: R1 Parent Bridge. Global proof status: OPEN. Scope remains the ordered genuine `g=2`, `Z0>0`, `K<0` parent at `(a,ell)=(217976794617,137528045312)`. The least-state floor `m>=2^71` remains externally conditional.
 
-Unique live target: `RL338_PARENT_BRIDGE_PHYSICAL_IDENTITY_TARGET.md`.
+Unique live target: `RL339_PARENT_BRIDGE_Q35_CLOSURE_TARGET.md`.
 
 Read in this order:
 
-1. `RL337_SESSION_STATE_AND_RL338_KICKOFF.md`
-2. `RL338_PARENT_BRIDGE_PHYSICAL_IDENTITY_TARGET.md`
-3. `RL337_PROOF_LEDGER.md`
-4. `RL337_CORRECTION_AND_DEMOTION_LEDGER.md`
-5. `RL337_GLOBAL_PROOF_ROADMAP_STATUS.md`
-6. `RL337_CLOSEOUT_VERIFICATION.md`
-7. inherited `RL336_PROOF_LEDGER.md` and RL336 verification only for dependencies
+1. `RL338_SESSION_STATE_AND_RL339_KICKOFF.md`
+2. `RL339_PARENT_BRIDGE_Q35_CLOSURE_TARGET.md`
+3. `RL338_PROOF_LEDGER.md`
+4. `RL338_EXACT_CERTIFICATE.md`
+5. `RL338_CORRECTION_AND_DEMOTION_LEDGER.md`
+6. `RL338_GLOBAL_PROOF_ROADMAP_STATUS.md`
+7. `RL338_CLOSEOUT_VERIFICATION.md`
+8. inherited RL337/RL336 ledgers only for named dependencies
 
-Portable RL337 verifier:
+Portable startup verifier:
 
-- `python3 -I verification/verify_rl337_affine_profile_and_identity.py`
+- `python3 -I verification/verify_rl338_q35_fast.py`
 
-Key sign warning: for the RL337 affine comparison at fixed terminal state, a nonzero positive profile has a SMALLER source than its zero-profile mechanical reference. Earlier scratch commentary stating the reverse is demoted and must not be reused.
+Independent red team:
 
-RL337's exact p=5 shared-state result is a finite diagnostic, not an all-length closure theorem. The RL338 programme is physical shared-state ownership for the arbitrary-positive fallback layer, not a blind p-by-p census.
+- `python3 -I verification/red_team_rl338_q35.py`
 
-RL336's frozen ZIP/sidecar remains the inherited packaged base. RL337 is a text-plus-portable-verifier closeout layered on that base; no new binary handover bundle is claimed. Do not mix this research branch with the separate Lean formalisation project.
+Heavy finite-certificate reproduction is available as `verification/verify_rl338_q35_exhaustive.py`; it is not required for routine startup after the committed flat-tree identity and fast checks pass.
+
+Key correction warning: the q=35 exceptional successor layer has 24 exact p=1..4 continuations in addition to five p=7 continuations. All are strongly negative. Do not reuse the earlier scratch phrase that “only five continuations exist.”
+
+The live theorem is `35(K-2H)-S<=43`; the conditional carry cap is `n<=32546271999`. R1 is still OPEN. RL339 should try to consume these directly into parent closure before considering q=36.
+
+Do not mix this research branch with the separate Lean formalisation project.
