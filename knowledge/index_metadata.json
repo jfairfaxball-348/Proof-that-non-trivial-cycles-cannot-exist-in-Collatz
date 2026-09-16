@@ -1,5 +1,5 @@
 {
-  "container_count": 316,
+  "container_count": 323,
   "explicit_completed_rls": [
     22,
     26,
@@ -211,7 +211,14 @@
     328,
     329,
     330,
-    331
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338
   ],
   "explicit_incoming_rls": [
     23,
@@ -423,10 +430,17 @@
     329,
     330,
     331,
-    332
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339
   ],
   "format": "rl-knowledge-index-v1",
-  "generation_record_count": 372,
+  "generation_record_count": 391,
   "generator": "tools/rl_conveyor.py index-build",
   "located_rls": [
     0,
@@ -760,12 +774,19 @@
     329,
     330,
     331,
-    332
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339
   ],
-  "result_catalog_sha256": "d9b7c2832fc7af120406770fe88a0de9bcf278084d6be2b2b34ac10b2d3699f2",
-  "result_record_count": 10637,
-  "result_source_count": 433,
-  "session_catalog_sha256": "e0f4cdfe164808f3739631002b160fb8d8688243cacef040de7bf4b3ed1cd6fe",
+  "result_catalog_sha256": "9c035f8ba477604e2d88af8487b93530094367536bc04d1f3d2e360a4fab8305",
+  "result_record_count": 11066,
+  "result_source_count": 456,
+  "session_catalog_sha256": "26b5135c6f8b05f5e6779e7593dbdf02fe28b9c99893d6b7e549058faa189bfe",
   "unlocated_rls": [
     1
   ],

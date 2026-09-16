@@ -74,10 +74,20 @@ def parse_start_here():
     if not entrypoint.is_file():
         raise Failure("authoritative/START_HERE.md is missing")
     text = entrypoint.read_text(encoding="utf-8")
-    match = re.search(r"(?mi)^#\s+RL0*(\d+)\s+authoritative\s+start\s*$", text)
-    if not match:
-        raise Failure("START_HERE.md does not declare one incoming RL in its title")
-    current_rl = int(match.group(1))
+    declarations = [
+        int(value) for value in re.findall(
+            r"(?mi)^#\s+RL0*(\d+)\s+authoritative\s+start\s*$", text
+        )
+    ]
+    declarations.extend(
+        int(value) for value in re.findall(
+            r"(?i)\bRL0*(\d+)\s+is\s+the\s+unique\s+incoming\s+research\s+session\b",
+            text,
+        )
+    )
+    if not declarations or len(set(declarations)) != 1:
+        raise Failure("START_HERE.md must unambiguously declare one incoming RL")
+    current_rl = declarations[0]
 
     target_tokens = []
     referenced_files = []
@@ -102,6 +112,12 @@ def parse_start_here():
     target = AUTH / target_tokens[0]
     if not target.is_file():
         raise Failure("declared incoming target is missing: " + target_tokens[0])
+    for candidate in AUTH.rglob("*TARGET*.md"):
+        number = re.match(r"(?i)^RL0*(\d+)(?:_|\b)", candidate.name)
+        if not number:
+            raise Failure("unnumbered target in authoritative/: " + candidate.name)
+        if int(number.group(1)) >= current_rl and candidate != target:
+            raise Failure("ambiguous current or future target: " + candidate.name)
 
     for relative in dict.fromkeys(referenced_files):
         candidate = AUTH / relative
@@ -125,11 +141,26 @@ def parse_start_here():
     return current_rl, target, commands
 
 
-def require_flat_transport():
-    if list(AUTH.glob("*.zip.sha256")) or list(AUTH.glob("*.zip")):
-        raise Failure("packaged authority is present; use tools/rl_conveyor.py instead")
+def require_flat_transport(current_rl):
+    """Allow only paired, hash-checked packages older than the handover generation."""
     if list(AUTH.glob("*_BUNDLE_TRANSPORT")):
         raise Failure("bundle transport is present; use tools/rl_conveyor.py instead")
+    bundles = {path.name: path for path in AUTH.glob("*.zip")}
+    sidecars = {path.name[:-7]: path for path in AUTH.glob("*.zip.sha256")}
+    if set(bundles) != set(sidecars):
+        raise Failure("historical ZIP/sidecar pair is incomplete")
+    for name, bundle in bundles.items():
+        match = re.fullmatch(r"RL0*(\d+)_HANDOVER_BUNDLE\.zip", name, re.I)
+        if not match or int(match.group(1)) >= current_rl - 1:
+            raise Failure("current or unrecognized packaged authority is present")
+        records = sidecars[name].read_text(encoding="utf-8").splitlines()
+        if len(records) != 1:
+            raise Failure("historical ZIP sidecar must contain one checksum")
+        checksum = re.fullmatch(r"([0-9a-fA-F]{64})  ([A-Za-z0-9_.-]+)", records[0])
+        if not checksum or checksum.group(2) != name:
+            raise Failure("historical ZIP sidecar names the wrong bundle")
+        if digest(bundle) != checksum.group(1).lower():
+            raise Failure("historical ZIP checksum mismatch: " + name)
 
 
 def declared_verifier_commands(commands):
@@ -284,8 +315,8 @@ def init_checkpoint(value):
 
 def main():
     try:
-        require_flat_transport()
         current_rl, target, commands = parse_start_here()
+        require_flat_transport(current_rl)
         remote, base_ref, base_head = remote_identity()
         scripts = declared_verifier_commands(commands)
         verifier_outputs = run_verifiers(scripts)

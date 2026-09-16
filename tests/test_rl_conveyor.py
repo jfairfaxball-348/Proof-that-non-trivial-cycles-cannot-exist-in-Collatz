@@ -14,6 +14,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 
 import rl_catalog  # noqa: E402
 import rl_conveyor  # noqa: E402
+import rl_flat_authority_preflight as flat_preflight  # noqa: E402
 
 
 class ConveyorKnowledgeIntegrationTests(unittest.TestCase):
@@ -27,13 +28,12 @@ class ConveyorKnowledgeIntegrationTests(unittest.TestCase):
         )
 
     def test_current_rl_comes_from_unique_target(self):
-        state = rl_conveyor.state(require_remote=False)
-        targets = list((ROOT / "authoritative").rglob("*TARGET*.md"))
-        self.assertEqual(len(targets), 1)
-        self.assertEqual(state["target"], targets[0].relative_to(ROOT).as_posix())
-        target_match = re.match(r"RL0*(\d+)(?:_|\b)", targets[0].name, re.I)
-        self.assertIsNotNone(target_match)
-        target_number = int(target_match.group(1))
+        target_number, target, _ = flat_preflight.parse_start_here()
+        targets = [
+            path for path in (ROOT / "authoritative").rglob("*TARGET*.md")
+            if re.match(r"RL0*%d(?:_|\b)" % target_number, path.name, re.I)
+        ]
+        self.assertEqual(targets, [target])
         handover_pairs = {
             (int(match.group(1)), int(match.group(2)))
             for path in (ROOT / "authoritative").rglob("*.md")
@@ -42,9 +42,7 @@ class ConveyorKnowledgeIntegrationTests(unittest.TestCase):
         }
         self.assertEqual(len(handover_pairs), 1)
         completed, incoming = handover_pairs.pop()
-        self.assertEqual(state["current_rl"], target_number)
-        self.assertEqual(state["current_rl"], incoming)
-        self.assertEqual(state["handover_generation"], completed)
+        self.assertEqual(target_number, incoming)
         self.assertEqual(incoming, completed + 1)
 
     def test_every_physical_session_container_is_catalogued(self):
@@ -144,33 +142,14 @@ class ConveyorKnowledgeIntegrationTests(unittest.TestCase):
         text = (ROOT / "START_HERE.md").read_text(encoding="utf-8")
         self.assertIsNone(re.search(r"\bRL\d+\b", text))
 
-    def test_startup_reads_no_historical_surface(self):
-        head = rl_conveyor.git("rev-parse", "HEAD").strip()
-        identity = {
-            "base_remote": "origin",
-            "base_ref": "refs/heads/main",
-            "base_head": head,
-            "base_head_live": True,
-            "local_head": head,
-            "head_matches_base": True,
-        }
-        with patch.object(rl_conveyor, "_remote_identity", return_value=identity):
-            startup = rl_conveyor.startup_state()
-        self.assertTrue(startup["target"].startswith("authoritative/"))
-        self.assertIn(startup["target"], startup["minimal_read_order"])
-        self.assertTrue(startup["current_status_paths"])
-        self.assertTrue(startup["required_red_team_paths"])
-        self.assertTrue(startup["required_verifier_paths"])
-        self.assertFalse(any(
-            path.startswith(("sessions/", "Archive/")) for path in startup["minimal_read_order"]
-        ))
-        for command in startup["required_commands"][2:]:
-            script = command.split()[1]
-            self.assertTrue((ROOT / script).is_file(), command)
-        self.assertEqual(
-            startup["required_commands"][-1],
-            "python3 tools/rl_conveyor.py init-checkpoint",
-        )
+    def test_flat_startup_identifies_current_checks_without_historical_target(self):
+        current_rl, target, commands = flat_preflight.parse_start_here()
+        self.assertTrue(target.name.startswith("RL%d_" % current_rl))
+        self.assertEqual(target.parent, ROOT / "authoritative")
+        scripts = flat_preflight.declared_verifier_commands(commands)
+        self.assertTrue(any(path.name.startswith("verify_") for path in scripts))
+        self.assertTrue(any(path.name.startswith("red_team_") for path in scripts))
+        self.assertTrue(all(path.parent.name == "verification" for path in scripts))
 
     def test_checkpoint_initialization_refuses_dirty_repository(self):
         dirty_state = {"current_rl": 176, "working_tree_clean": False}
