@@ -1,12 +1,18 @@
 # Authoritative start
 
-RL339 is CLOSED AND FROZEN. RL340 is the **unique incoming** research session and has not been started. Current stage R1 Parent Bridge; global proof OPEN. Scope is the ordered genuine `g=2`, `Z0>0`, `K<0` parent `(a,ell)=(217976794617,137528045312)` under the external least-state-floor condition `m>=2^71`.
+RL340 is CLOSED AND FROZEN. RL341 is the **unique incoming** research session and has not been started. Current stage R1 Parent Bridge; global proof OPEN. Scope remains the ordered genuine `g=2`, `Z0>0`, `K<0` parent `(a,ell)=(217976794617,137528045312)` under the external least-state-floor condition `m>=2^71`.
 
-Unique live target for RL340: `RL339_HANDOVER/RL340_PARENT_BRIDGE_NEGATIVE_RETURN_IDENTITY_TARGET.md`.
+Unique live target for RL341: `RL341_ABSOLUTE_PHYSICAL_IDENTITY_TARGET.md`.
 
-Read `RL339_HANDOVER/README.md`, `RL339_HANDOVER/RL339_SESSION_STATE_AND_RL340_KICKOFF.md`, `RL339_HANDOVER/RL340_PARENT_BRIDGE_NEGATIVE_RETURN_IDENTITY_TARGET.md`, `RL339_HANDOVER/RL339_PROOF_LEDGER.md`, `RL339_HANDOVER/RL339_EXACT_CERTIFICATE.md`, `RL339_HANDOVER/RL339_CORRECTION_AND_DEMOTION_LEDGER.md`, `RL339_HANDOVER/RL339_GLOBAL_PROOF_ROADMAP_STATUS.md`, and `RL339_HANDOVER/RL339_CLOSEOUT_VERIFICATION.md`.
+Read `RL340_SESSION_STATE_AND_RL341_KICKOFF.md`, `RL341_ABSOLUTE_PHYSICAL_IDENTITY_TARGET.md`, `RL340_PROOF_LEDGER.md`, `RL340_EXACT_CERTIFICATE.md`, `RL340_CORRECTION_AND_DEMOTION_LEDGER.md`, `RL340_GLOBAL_PROOF_ROADMAP_STATUS.md`, and `RL340_CLOSEOUT_VERIFICATION.md` in that order. Relevant prior ledgers/verifiers are copied under `inherited/`.
 
-Portable fast verifier: `python3 -I authoritative/RL339_HANDOVER/verification/verify_rl339_fast.py`.
-Independent red team: `python3 -I authoritative/RL339_HANDOVER/verification/red_team_rl339.py`.
+Portable fast verifier: `python3 -I authoritative/verification/verify_rl340_fast.py`.
+Independent red team: `python3 -I authoritative/verification/red_team_rl340.py`.
 
-The exact finite reproductions are in `RL339_HANDOVER/verification/` and are not required at routine startup after the bundle checksum, internal manifest, fresh unpack, and fast suite pass. The new cap is `n<=32537248343`, conditional on the external floor; R1 remains OPEN. The next attack should use exact physical identity across remaining negative-charge returns. Do not start RL340 without a new kickoff.
+This successor is a committed **flat Git-tree authority**. There is no current ZIP/sidecar transport. Git tree/blob identities plus the atomic commit/readback are the lossless transport.
+
+Promoted RL340 result: the exact q=0 `(23,23,p=6)` interface has 684 admissible templates and exactly 10 candidate rows / 10 distinct sources in the inherited q=0 band; every source escapes below `2^71`, with maximum escape 29 odd steps. The direct linear residue/telescope route also has a quantified barrier: the remaining carry gap is `12,146,996,285` and would require more than `145e9` additional weighted-support units at the inherited endpoint.
+
+The stronger `92/91` q=35 inequality developed during RL340 is **frozen but UNPROMOTED** pending replay of its complete finite edge-potential/interface certificate. Do not use it as authoritative mathematics until RL341 verifies and promotes it or replaces it.
+
+R1 remains OPEN. Do not start RL341 without a new kickoff. Do not mix this research branch with the separate Lean formalisation project.
