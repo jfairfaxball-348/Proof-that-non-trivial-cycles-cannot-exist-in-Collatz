@@ -1,32 +1,28 @@
-# RL345 authoritative start
+# RL346 authoritative start
 
-Status: RL344 CLOSED/FROZEN; RL345 is the unique incoming research session and has not started.
+Status: RL345 CLOSED/FROZEN; RL346 is the unique incoming research session and has not started.
 
-Transport is the committed flat Git-tree authority. Git tree/blob identities and the RL344 atomic commit/readback are the current lossless transport checks. Historical ZIP/sidecar pairs and older target files are provenance only.
+Transport is the committed flat Git-tree authority. Git tree/blob identities and the RL345 atomic commit/readback are the current lossless transport checks. Historical ZIP/sidecar pairs and older target files are provenance only.
 
-## Unique RL345 target
+## Unique RL346 target
 
-Read and execute only `RL345_R1_METHODICAL_COMPLETION_TARGET.md` after the start gate.
+Read and execute only `RL346_R1_CRT_COMPLETION_TARGET.md` after the start gate.
 
 ## Current proof state
 
-R1 Parent Bridge is OPEN at 92% obligation-level progress.
+R1 Parent Bridge is OPEN at 94% obligation-level progress.
 
-RL344 closed methodological Phases 1–3 of the residual-return programme. Its main promoted Phase-4 theorem proves every phase-nondecreasing complete return satisfies
+RL345 strengthened Phase 4 to an exact 23-source/72-endpoint singleton interface. A fixed 23-gap source prefix is unique inside the RL344 `<2^37` phase window after odd parity is included, and a fixed 72-gap suffix has at most one viable endpoint. The only low-modulus 72-gap cases were exhaustively eliminated by a 135,356-endpoint escape certificate with an independent red team.
 
-`0 < P - 3^L E/2^H < 2^37`,
+Phase 4 remains OPEN: the singleton interfaces still require complete predecessor/successor CRT, ownership, row-contact/wrap, phase-sign, and least-state-descent intersection. Phase 5 remains scratch-only and must not resume until Phase 4 closes. Phase 6 is conditional.
 
-so 24 source-side inverse gaps are the first uniform power-of-three prefix depth that makes the source unique once endpoint/separation/decorated tags are fixed. Together with RL343's final-75-gap endpoint uniqueness, every fixed decorated 24/75 two-ended interface has at most one physical middle lift.
-
-Phase 4 is the active first priority and is close to closure. Phase 5 has scratch only and must not resume until Phase 4 closes. Phase 6 is conditional.
-
-Read `RL344_PROOF_LEDGER.md`, `RL344_CORRECTION_AND_DEMOTION_LEDGER.md`, `RL344_SCRATCH_FRONTIER.md`, `RL344_GLOBAL_PROOF_ROADMAP_STATUS.md`, and `RL344_SESSION_STATE_AND_RL345_KICKOFF.md`.
+Read `RL345_PROOF_LEDGER.md`, `RL345_EXACT_CERTIFICATE.md`, `RL345_CORRECTION_AND_DEMOTION_LEDGER.md`, `RL345_GLOBAL_PROOF_ROADMAP_STATUS.md`, and `RL345_SESSION_STATE_AND_RL346_KICKOFF.md`.
 
 ## Current portable verification
 
 Run:
-- `python3 -I verification/verify_rl344_fast.py`
-- `python3 -I verification/red_team_rl344.py`
+- `python3 -I verification/verify_rl345_fast.py`
+- `python3 -I verification/red_team_rl345.py`
 
 Both must be GREEN.
 
