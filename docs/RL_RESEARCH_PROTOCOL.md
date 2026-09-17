@@ -12,6 +12,8 @@ The single incoming state is `authoritative/`. Frozen sessions and `Archive/` ar
 
 Complete the start gate in `docs/CODEX_OPERATIONS.md` before mathematics. Record `BASE_HEAD`, the generated authoritative snapshot, incoming RL, exact target, named proof/correction ledgers, red teams, and verifier commands. Once the incoming integrity and fast checks pass, apply verification economy: do not replay expensive history unless a live dependency, verifier failure, contradiction, repair event, or explicit handover instruction requires it.
 
+Connector workers additionally follow `docs/CONNECTOR_WORKFLOW.md`: after the gate passes, cache the validated authority identity and exact live frontier so later bare `continue` turns can resume without replaying startup.
+
 ## Research working area
 
 Work only under:
@@ -27,7 +29,7 @@ The standard checkpoint created by `tools/rl_conveyor.py init-checkpoint` contai
 - `artifacts/`;
 - `CLOSEOUT_STATE.md` when closing.
 
-These files are ignored, non-authoritative, and only as durable as the environment that stores them. If guaranteed cross-machine survival of unfinished work is needed, use a separate user-approved non-authoritative branch or external artifact/issue store. Never weaken the no-partial-promotion rule to preserve scratch work.
+These files are ignored, non-authoritative, and only as durable as the environment that stores them. Connector workers may keep an equivalent compact structured state in sandbox storage. If guaranteed cross-machine survival of unfinished work is needed, use a separate user-approved non-authoritative branch or external artifact/issue store. Never weaken the no-partial-promotion rule to preserve scratch work.
 
 ## Checkpoint discipline
 
@@ -41,12 +43,13 @@ Refresh the checkpoint after any materially useful event, including:
 - a verifier milestone;
 - before and after a long computation;
 - before a route switch;
+- before a second expensive branch or long connector sequence;
 - before a likely context, credit, or environment boundary;
 - immediately before or on entry to `CLOSEOUT_LOCK`.
 
 At minimum record:
 
-- `BASE_HEAD`, incoming RL, authoritative target, and timestamp;
+- `BASE_HEAD`, authoritative tree/snapshot identity, incoming RL, authoritative target, and timestamp;
 - last fully verified mathematical checkpoint;
 - new results with their recorded classification and exact scope;
 - completed finite certificates with gap-free ranges;
@@ -54,11 +57,23 @@ At minimum record:
 - current live constants, minima, floors, or endpoints when relevant;
 - verifier commands run and results;
 - failed commands, counterexamples, and abandoned routes;
-- files produced under `.rl-work/`;
-- next intended command or mathematical step;
+- files/artifacts produced under scratch storage plus hashes for large outputs;
+- exact live attack files already loaded/validated;
+- things explicitly not to recompute;
+- next exact command or mathematical step;
 - whether stop-and-repair is active.
 
 A successful local milestone is a checkpoint, not automatically a promotion trigger. Continue through adjacent productive work while the route remains useful, exact verification is reliable, scope remains controlled, and closeout capacity is safe.
+
+## Bounded continuation work units
+
+A kickoff research turn and every bare `continue` executes one coherent work unit. The preferred endpoint is a meaningful theorem-sized/material checkpoint, not a trivial microstep.
+
+However, a worker must not keep one interactive turn open indefinitely merely because the theorem-sized endpoint has not yet arrived. If one coherent attack branch has already produced substantial durable information and reaching the next theorem-sized result would require another expensive branch, long computation, or long connector chain, write a **durable frontier checkpoint** and return control.
+
+A durable frontier checkpoint must materially narrow or structure the attack and must state the exact next operation. It is not a licence for superficial progress reports. The objective is a smaller failure domain: after interruption, the next `continue` resumes from verified work rather than reconstructing or recomputing it.
+
+Before opening an expensive branch, checkpoint its exact inputs and expected outputs. After a material intermediate result, persist that result and any digest/identity before starting another expensive branch.
 
 ## Proof-state and scope discipline
 
@@ -83,7 +98,7 @@ Before a long run, checkpoint its command, input range, expected outputs, resour
 
 ## Sustained attack and closeout reserve
 
-An RL job should remain auditable, but a successful theorem, scan chunk, endpoint elimination, support change, or local milestone does not by itself require closing. Continue adjacent productive steps while correctness and capacity remain healthy.
+An RL job should remain auditable, but a successful theorem, scan chunk, endpoint elimination, support change, or local milestone does not by itself require closing. Continue adjacent productive steps while correctness and capacity remain healthy, subject to the bounded-work-unit rule above.
 
 Reserve sufficient context, compute, and tool capacity for classification, packaging, fresh-unpack verification, atomic promotion, remote-ref advancement, and post-commit readback. When capacity can be estimated, approximately the final 15–20% is reserved for closeout. Otherwise act conservatively after a meaningful result or verifier milestone. A marginal extra result is lower priority than a complete transition.
 

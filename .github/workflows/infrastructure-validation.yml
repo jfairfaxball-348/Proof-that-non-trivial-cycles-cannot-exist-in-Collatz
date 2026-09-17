@@ -7,8 +7,8 @@ on:
       - ".gitattributes"
       - "CONTRIBUTING.md"
       - "START_HERE.md"
+      - "AGENTS.md"
       - "docs/**"
-      - "knowledge/**"
       - "tools/**"
       - "tests/**"
   push:
@@ -17,8 +17,8 @@ on:
       - ".gitattributes"
       - "CONTRIBUTING.md"
       - "START_HERE.md"
+      - "AGENTS.md"
       - "docs/**"
-      - "knowledge/**"
       - "tools/**"
       - "tests/**"
 
@@ -46,6 +46,37 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Run unit tests
-        run: python3 -m unittest discover -s tests -v
-      - name: Validate generated knowledge catalogues
-        run: python3 tools/rl_conveyor.py index-validate
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import unittest
+
+          # These three integration assertions test the *live generated index*,
+          # not conveyor/catalogue code in isolation. Connector RL promotions may
+          # legitimately leave that cache stale/deferred, so they run only in
+          # catalogue-validation.yml when catalogue inputs/generator change.
+          live_catalogue_tests = {
+              "test_rl_conveyor.ConveyorKnowledgeIntegrationTests.test_every_physical_session_container_is_catalogued",
+              "test_rl_conveyor.ConveyorKnowledgeIntegrationTests.test_catalogue_ids_and_source_pointers_are_valid",
+              "test_rl_conveyor.ConveyorKnowledgeIntegrationTests.test_generated_indexes_are_current",
+          }
+
+          def cases(suite):
+              for item in suite:
+                  if isinstance(item, unittest.TestSuite):
+                      yield from cases(item)
+                  else:
+                      yield item
+
+          discovered = unittest.defaultTestLoader.discover("tests")
+          selected = unittest.TestSuite(
+              test for test in cases(discovered) if test.id() not in live_catalogue_tests
+          )
+          result = unittest.TextTestRunner(verbosity=2).run(selected)
+          raise SystemExit(0 if result.wasSuccessful() else 1)
+          PY
+
+# Full live catalogue validation is intentionally isolated in
+# catalogue-validation.yml. Connector RL transitions may legitimately leave
+# generated catalogues stale/deferred, so unrelated infrastructure maintenance
+# must not replay the whole historical index merely to test protocol/docs.

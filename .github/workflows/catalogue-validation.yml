@@ -1,0 +1,44 @@
+name: Catalogue validation
+
+on:
+  pull_request:
+    paths:
+      - "knowledge/**"
+      - "tools/rl_catalog.py"
+      - "tests/test_rl_catalog_infrastructure.py"
+  push:
+    paths:
+      - "knowledge/**"
+      - "tools/rl_catalog.py"
+      - "tests/test_rl_catalog_infrastructure.py"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: catalogue-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-catalogue:
+    name: Validate generated catalogue
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Run catalogue infrastructure tests
+        run: python3 -m unittest discover -s tests -p 'test_rl_catalog_infrastructure.py' -v
+      - name: Run live catalogue integration assertions
+        shell: bash
+        run: |
+          PYTHONPATH=tests python3 -m unittest -v \
+            test_rl_conveyor.ConveyorKnowledgeIntegrationTests.test_every_physical_session_container_is_catalogued \
+            test_rl_conveyor.ConveyorKnowledgeIntegrationTests.test_catalogue_ids_and_source_pointers_are_valid \
+            test_rl_conveyor.ConveyorKnowledgeIntegrationTests.test_generated_indexes_are_current
+      - name: Validate generated knowledge catalogues
+        run: python3 tools/rl_conveyor.py index-validate

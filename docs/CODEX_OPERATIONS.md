@@ -55,19 +55,38 @@ The referenced paths must exist in that candidate layout. The `bundle` field may
 
 ## Connector/cloud worker
 
-A cloud ChatGPT worker with GitHub access may complete the same numbered RL lifecycle without a checked-out repository shell.
+A cloud ChatGPT worker with GitHub access may complete the same numbered RL lifecycle without a checked-out repository shell. The detailed connector runbook is [CONNECTOR_WORKFLOW.md](CONNECTOR_WORKFLOW.md).
 
-It should:
+### Connector startup
 
-- read `AGENTS.md`, root `START_HERE.md`, `authoritative/START_HERE.md`, and the exact current authority files;
-- record remote HEAD and authoritative file/blob identities;
-- verify incoming/candidate bundles and portable verifiers in local sandbox storage;
-- use targeted GitHub reads for provenance;
-- construct one atomic final Git tree/commit through Git-object tooling;
-- advance the branch ref only after the complete tree is ready;
-- read the ref/session/authority back after promotion.
+A connector should:
 
-It must not claim shell commands ran when they did not. Equivalent direct checks are acceptable.
+- fetch the live default-branch identity once and record `BASE_HEAD` plus the incoming root/`authoritative/` tree identity when available;
+- read `AGENTS.md`, `authoritative/START_HERE.md`, and only the exact current authority files explicitly named by that entry point;
+- read the unique current target after the gate;
+- verify incoming/candidate bundles and portable verifiers in local sandbox storage as required;
+- use targeted exact GitHub reads for provenance;
+- persist a compact non-authoritative resume state keyed by `BASE_HEAD` + authoritative tree identity.
+
+It should **not** recursively enumerate the repository, fetch full generated catalogue JSONL files, reread validated inherited authority on every user turn, or repeatedly rediscover exact paths already supplied by `START_HERE.md`.
+
+On a later bare `continue`, compare the live branch HEAD to `BASE_HEAD`. If unchanged and the cached authority identity still matches, resume from the exact recorded frontier. Startup verification is not a per-turn ritual.
+
+### Connector closeout
+
+A connector closeout should:
+
+- prepare candidate contents/hashes in scratch before remote mutation;
+- enter `CLOSEOUT_LOCK` immediately on `finish up`;
+- maintain compact idempotent `CLOSEOUT_STATE` with candidate path hashes and created blob/tree/commit IDs;
+- construct one final tree from the incoming base tree plus only changed/deleted path entries rather than recreating unchanged blobs;
+- perform the final concurrency check by comparing the live default-branch HEAD with `BASE_HEAD` at the latest safe point;
+- create/reuse one candidate commit and advance the branch ref once;
+- read back only the remote ref and exact critical session/successor-authority paths needed to prove the transition completed.
+
+If an interruption occurs after immutable Git objects were created, reuse their recorded IDs. If the remote ref already equals the candidate commit, perform missing readback only; do not create a duplicate closeout commit.
+
+A connector must not claim shell commands ran when they did not. Equivalent direct checks are acceptable.
 
 ## Historical lookup
 
@@ -78,7 +97,7 @@ python3 tools/rl_conveyor.py session RL231
 python3 tools/rl_conveyor.py result H17
 ```
 
-A connector worker may read these files directly if their generation is sufficient for the requested history, but must treat them as possibly stale after a cloud promotion. If a needed record is newer than the catalogue, use a narrow exact GitHub lookup rather than a recursive archive search.
+A connector worker should treat the catalogues as **cold historical lookup**, not startup context. Do not fetch `knowledge/session_catalog.jsonl` or `knowledge/result_catalog.jsonl` in full. If a needed record is within known catalogue coverage, use the narrowest available lookup; if it is newer than the catalogue, use a narrow exact GitHub lookup rather than a recursive archive search.
 
 Never infer that a mathematical result is absent merely because a catalogue has no entry.
 
@@ -107,11 +126,11 @@ python3 tools/rl_conveyor.py index-validate --staged
 
 The ordinary form validates the working tree; `--staged` validates the Git index and fails if an indexed input is missing from or differs in that staged tree. Normal cloud RL promotion does not require either form and may leave catalogues stale. Never hand-edit them to imitate generation. A later infrastructure refresh is sufficient.
 
-A catalogue status written inside a frozen handover is an as-of-freeze historical statement. It does not determine the status of the present checkout. For live status, run `index-validate` against the working tree or `index-validate --staged` against an intended commit; do not infer freshness from prose or metadata alone.
+A catalogue status written inside a frozen handover is an as-of-freeze historical statement. It does not determine the status of the present checkout. For live status, run `index-validate` against the working tree or `index-validate --staged` against an intended catalogue-maintenance commit; do not infer freshness from prose or metadata alone.
 
 ## Continuous integration
 
-Infrastructure changes run the complete unit suite and live catalogue validation on Python 3.9 and a current Python release. Changes to incoming authority run `verify-incoming` in a separate read-only workflow. That authority workflow intentionally does not validate catalogue freshness, because stale/deferred catalogues are permitted for an otherwise complete numbered transition.
+Infrastructure changes run the complete unit suite on Python 3.9 and a current Python release. Full live catalogue validation is isolated to catalogue/index changes so ordinary protocol or documentation maintenance does not replay the entire historical index, especially when connector RL transitions have legitimately left the catalogues stale/deferred. Changes to incoming authority run `verify-incoming` in a separate read-only workflow.
 
 ## Default search exclusions
 
@@ -121,8 +140,9 @@ Ordinary startup/provenance lookup should not recursively search all of:
 - ZIP contents or transports;
 - duplicated bundle payloads;
 - generated certificate payloads;
+- full generated knowledge catalogue JSONL files;
 - unrelated legacy material.
 
 Use the smallest exact source population necessary.
 
-For research procedure see `docs/RL_RESEARCH_PROTOCOL.md`. On closeout read `docs/CLOSEOUT_LOCK.md` and `docs/VERIFICATION_AND_CLOSEOUT.md`.
+For research procedure see `docs/RL_RESEARCH_PROTOCOL.md`. Connector workers also read `docs/CONNECTOR_WORKFLOW.md` on demand. On closeout read `docs/CLOSEOUT_LOCK.md` and `docs/VERIFICATION_AND_CLOSEOUT.md`.
