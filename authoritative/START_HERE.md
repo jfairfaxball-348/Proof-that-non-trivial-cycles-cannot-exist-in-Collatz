@@ -1,40 +1,17 @@
-# Authoritative start — RL343
+# RL344 authoritative start
 
-Status: RL342 CLOSED/FROZEN; RL343 is the unique incoming research session and has not started.
+Status: RL343 CLOSED/FROZEN; RL344 is the unique incoming research session and has not started.
 
-Repository authority is the committed flat Git tree. Historical ZIPs/sidecars, older targets, and frozen sessions are provenance only.
+Transport is the committed flat Git-tree authority, preserving the inherited RL342 flat layout. The committed tree/blob identities and atomic commit/readback are its lossless transport checks. Historical ZIP/sidecar pairs and older target files are provenance only; no current ZIP bundle or sidecar is present.
 
-## Current roadmap position
+## Unique RL344 target
 
-R1 — Parent Bridge remains OPEN at approximately 90% obligation-level progress. RL342 introduced an exact mixed 2/3-adic CRT carrier interface and phase-adjusted potential reduction: a closed canonical recurrence must contain a nondecreasing carrier, so only that subclass needs to be eliminated.
+Read and execute only `RL344_R1_RESIDUAL_CRT_RETURN_TARGET.md` after the start gate. The exact obstruction `O_75` there is the sole live R1 target.
 
-## Promoted RL342 results
+## Current proof state
 
-Under the inherited ordered genuine `g=2`, `Z0>0`, `K<0` parent assumptions and external floor `m>=2^71`:
+R1 Parent Bridge is OPEN at 90% obligation-level progress. The full two-row closed canonical walk forces a phase-nondecreasing complete return. The terminal 60-unit inverse suffix class is excluded by an exact finite certificate; a surviving long return has a unique possible band endpoint for each fixed 75-gap suffix. The arbitrary-prefix mixed-adic lift and ownership/descent obstruction remains open. Read `RL343_PROOF_LEDGER.md`, `RL343_CORRECTION_AND_DEMOTION_LEDGER.md`, `RL343_EXACT_CERTIFICATE.md`, `RL343_GLOBAL_PROOF_ROADMAP_STATUS.md`, and `RL343_SESSION_STATE_AND_RL344_KICKOFF.md`. Preserve the external `m>=2^71` floor and inherited scope; R2–R7 remain OPEN.
 
-- fixed predecessor/middle/successor compatibility is an exact truncated CRT progression problem (power-of-two predecessor condition plus power-of-three successor condition);
-- the canonical decorated-state potential `V=x 2^(-U/ell)` obeys an exact multiplicative step identity;
-- any closed walk on a single-valued canonical `V` has a phase-potential nondecreasing carrier;
-- the exact nondecreasing chain family `(15,1)->(1,16)->(16,1)` has 238,329 physical members and every member descends below `2^71`, maximum 188 odd steps.
+## Current portable verification
 
-The complete `sigma=26` layer remains UNPROMOTED. R1 is not closed.
-
-## Unique RL343 target
-
-Read and execute only:
-
-`authoritative/RL343_R1_CRT_PHASE_CLOSURE_TARGET.md`
-
-The absolute objective is aggressive R1 closure by a fixed-depth all-length theorem eliminating every phase-potential nondecreasing canonical CRT carrier. Do not resume defect-threshold enumeration as the main programme.
-
-## Required inherited context
-
-Use `authoritative/inherited/` plus the RL342 proof/certificate/scratch ledgers. Do not consult or modify the separate Lean formalisation project.
-
-## Verification
-
-Current portable verifier: `authoritative/verification/verify_rl342_fast.py`
-
-Independent red team: `authoritative/verification/red_team_rl342.py`
-
-Both are GREEN at RL342 closeout.
+Run `python3 -I verification/verify_rl343_fast.py` and `python3 -I verification/red_team_rl343.py` from the authority directory. Both must be GREEN. Historical verifiers remain under `verification/` and `inherited/` as provenance. The committed authority tree is the incoming snapshot for concurrency checks.
