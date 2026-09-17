@@ -1,52 +1,67 @@
-# RL347 authoritative start
+# RL348 authoritative start
 
-Status: RL346 CLOSED/FROZEN; RL347 is the unique incoming research session and has not started.
+Status: RL347 CLOSED/FROZEN; RL348 is the unique incoming research session and has not started.
 
-Transport is the committed flat Git-tree authority. Git tree/blob identities and the RL346 atomic
-commit/readback are the current lossless transport checks. Historical ZIP/sidecar pairs and older
-target files are provenance only.
+Transport is the committed flat Git-tree authority. Git tree/blob identities and the RL347 atomic
+commit/readback are the current lossless transport checks. Historical target files are provenance
+only.
 
-## Unique RL347 target
+## Unique RL348 target
 
-Read and execute only `RL347_R1_CYCLIC_SIGNATURE_DECODER_TARGET.md` after the start gate.
+Read and execute only `RL348_PHASE4_CLOSURE_ONLY_TARGET.md` after the start gate.
+
+## Explicit sole mathematical goal
+
+RL348 exists for one purpose only:
+
+**CLOSE PHASE 4 by proving `O_75=empty`.**
+
+Do not work on Phase 5 in RL348. If Phase 4 closes, stop research and enter closeout immediately.
+Phase 5, R1 post-Phase-4 assembly, Gate A, Gate B, R2, and later stages belong to later sessions.
 
 ## Current proof state
 
-R1 Parent Bridge is OPEN. Phase 4 remains OPEN.
+R1 Parent Bridge: OPEN.
+Phase 4: OPEN.
+Phase 5: NOT STARTED as authoritative work.
 
-RL346 replaced the apparent suffix-total ladder by an exact all-length cyclic-signature interface:
+RL347 promoted these contractions:
+- exact phase tag plus row identity determines one absolute physical rank and therefore one directed
+  return length for fixed decorated endpoints;
+- every complete `L>ell` return has strict late-row endpoints and all q=0 vertices on its short
+  complement;
+- in the inherited live high-carry scope, `R=2ell-L>=23135982579`, so
+  `L<=251920108045`;
+- after the H-carry crossing, the matched half-cycle quotient satisfies `1/lambda<h_i<1`; strict
+  matched ranks decrease it and contacts increase it;
+- a nondecreasing `L=ell` return is a matched contact pair with even physical endpoint difference
+  `2<=E-S<=2^36`.
 
-- every surviving long return has `76<=G_72<=114` and terminal height `1<=q_(L-72)<=39`;
-- every q=0 source/end state has bounded incoming predecessor data;
-- exact decorated phase tags leave at most two return-length representatives in one full two-row
-  traversal and force total gap `H` for each;
-- fixed physical endpoints plus `(L,H)` admit at most one complete inverse gap word by exact
-  backward carry decoding.
+The RL347 correction ledger is mandatory reading. It withdraws:
+- the live scratch claim that `L=ell` was impossible;
+- the right-endpoint source-defect skip estimate with wrong inverse orientation;
+- the transient one-unit-too-strong over-half integer bound.
 
-The remaining Phase-4 burden is to reject/certify that deterministic decoded middle uniformly in
-its potentially enormous length while retaining predecessor/successor CRT, q-profile, exact
-row/contact/wrap decoration, ownership/pruning, phase sign and least-state descent.
+## Read first
 
-The attempted RL346 `G_72=76` numerical enumeration is explicitly non-authoritative because its
-terminal-60 positional filter had the wrong orientation. Do not use it.
+- `RL347_PROOF_LEDGER.md`;
+- `RL347_EXACT_CERTIFICATE.md`;
+- `RL347_CORRECTION_AND_DEMOTION_LEDGER.md`;
+- `RL347_SCRATCH_FRONTIER.md`;
+- `RL347_GLOBAL_PROOF_ROADMAP_STATUS.md`;
+- `RL347_SESSION_STATE_AND_RL348_KICKOFF.md`;
+- `RL348_PHASE4_CLOSURE_ONLY_TARGET.md`.
 
-Phase 5 remains scratch-only and must not resume before Phase 4 closes. Phase 6 remains conditional.
-
-Read:
-
-- `RL346_PROOF_LEDGER.md`;
-- `RL346_EXACT_CERTIFICATE.md`;
-- `RL346_CORRECTION_AND_DEMOTION_LEDGER.md`;
-- `RL346_GLOBAL_PROOF_ROADMAP_STATUS.md`;
-- `RL346_SESSION_STATE_AND_RL347_KICKOFF.md`.
+Use inherited RL346/RL345/RL344/RL343 material only as needed by the target.
 
 ## Current portable verification
 
-RL346 adds no load-bearing finite search. The inherited RL345 portable checks remain:
+Run:
 
-- `python3 -I verification/verify_rl345_fast.py`
-- `python3 -I verification/red_team_rl345.py`
+- `python3 -I verification/verify_rl347_fast.py`
+- `python3 -I verification/red_team_rl347.py`
 
-RL346's promoted additions are analytic and are summarized exactly in `RL346_EXACT_CERTIFICATE.md`.
+These check RL347's exact constants and integer-boundary arithmetic. The written analytic proofs in
+`RL347_PROOF_LEDGER.md` remain load-bearing for the structural theorems.
 
 Knowledge catalogues are stale/deferred.
