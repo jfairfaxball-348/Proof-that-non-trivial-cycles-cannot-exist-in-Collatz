@@ -1,29 +1,52 @@
-# RL346 authoritative start
+# RL347 authoritative start
 
-Status: RL345 CLOSED/FROZEN; RL346 is the unique incoming research session and has not started.
+Status: RL346 CLOSED/FROZEN; RL347 is the unique incoming research session and has not started.
 
-Transport is the committed flat Git-tree authority. Git tree/blob identities and the RL345 atomic commit/readback are the current lossless transport checks. Historical ZIP/sidecar pairs and older target files are provenance only.
+Transport is the committed flat Git-tree authority. Git tree/blob identities and the RL346 atomic
+commit/readback are the current lossless transport checks. Historical ZIP/sidecar pairs and older
+target files are provenance only.
 
-## Unique RL346 target
+## Unique RL347 target
 
-Read and execute only `RL346_R1_CRT_COMPLETION_TARGET.md` after the start gate.
+Read and execute only `RL347_R1_CYCLIC_SIGNATURE_DECODER_TARGET.md` after the start gate.
 
 ## Current proof state
 
-R1 Parent Bridge is OPEN at 94% obligation-level progress.
+R1 Parent Bridge is OPEN. Phase 4 remains OPEN.
 
-RL345 strengthened Phase 4 to an exact 23-source/72-endpoint singleton interface. A fixed 23-gap source prefix is unique inside the RL344 `<2^37` phase window after odd parity is included, and a fixed 72-gap suffix has at most one viable endpoint. The only low-modulus 72-gap cases were exhaustively eliminated by a 135,356-endpoint escape certificate with an independent red team.
+RL346 replaced the apparent suffix-total ladder by an exact all-length cyclic-signature interface:
 
-Phase 4 remains OPEN: the singleton interfaces still require complete predecessor/successor CRT, ownership, row-contact/wrap, phase-sign, and least-state-descent intersection. Phase 5 remains scratch-only and must not resume until Phase 4 closes. Phase 6 is conditional.
+- every surviving long return has `76<=G_72<=114` and terminal height `1<=q_(L-72)<=39`;
+- every q=0 source/end state has bounded incoming predecessor data;
+- exact decorated phase tags leave at most two return-length representatives in one full two-row
+  traversal and force total gap `H` for each;
+- fixed physical endpoints plus `(L,H)` admit at most one complete inverse gap word by exact
+  backward carry decoding.
 
-Read `RL345_PROOF_LEDGER.md`, `RL345_EXACT_CERTIFICATE.md`, `RL345_CORRECTION_AND_DEMOTION_LEDGER.md`, `RL345_GLOBAL_PROOF_ROADMAP_STATUS.md`, and `RL345_SESSION_STATE_AND_RL346_KICKOFF.md`.
+The remaining Phase-4 burden is to reject/certify that deterministic decoded middle uniformly in
+its potentially enormous length while retaining predecessor/successor CRT, q-profile, exact
+row/contact/wrap decoration, ownership/pruning, phase sign and least-state descent.
+
+The attempted RL346 `G_72=76` numerical enumeration is explicitly non-authoritative because its
+terminal-60 positional filter had the wrong orientation. Do not use it.
+
+Phase 5 remains scratch-only and must not resume before Phase 4 closes. Phase 6 remains conditional.
+
+Read:
+
+- `RL346_PROOF_LEDGER.md`;
+- `RL346_EXACT_CERTIFICATE.md`;
+- `RL346_CORRECTION_AND_DEMOTION_LEDGER.md`;
+- `RL346_GLOBAL_PROOF_ROADMAP_STATUS.md`;
+- `RL346_SESSION_STATE_AND_RL347_KICKOFF.md`.
 
 ## Current portable verification
 
-Run:
+RL346 adds no load-bearing finite search. The inherited RL345 portable checks remain:
+
 - `python3 -I verification/verify_rl345_fast.py`
 - `python3 -I verification/red_team_rl345.py`
 
-Both must be GREEN.
+RL346's promoted additions are analytic and are summarized exactly in `RL346_EXACT_CERTIFICATE.md`.
 
 Knowledge catalogues are stale/deferred.
