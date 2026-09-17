@@ -1,20 +1,13 @@
 name: Knowledge catalogue validation
 
 on:
+  workflow_dispatch:
   pull_request:
     paths:
       - "knowledge/**"
-      - "tools/rl_catalog.py"
-      - "tools/rl_conveyor.py"
-      - "tests/test_rl_catalog_infrastructure.py"
-      - ".github/workflows/knowledge-catalogue-validation.yml"
   push:
     paths:
       - "knowledge/**"
-      - "tools/rl_catalog.py"
-      - "tools/rl_conveyor.py"
-      - "tests/test_rl_catalog_infrastructure.py"
-      - ".github/workflows/knowledge-catalogue-validation.yml"
 
 permissions:
   contents: read
@@ -38,6 +31,6 @@ jobs:
         with:
           python-version: "3.13"
       - name: Run catalogue infrastructure tests
-        run: python3 -m unittest tests.test_rl_catalog_infrastructure -v
+        run: python3 -m unittest discover -s tests -p 'test_rl_catalog_infrastructure.py' -v
       - name: Validate generated knowledge catalogues
         run: python3 tools/rl_conveyor.py index-validate

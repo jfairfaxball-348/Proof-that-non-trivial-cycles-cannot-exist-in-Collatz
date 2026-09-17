@@ -26,6 +26,8 @@ class ConveyorKnowledgeIntegrationTests(unittest.TestCase):
         cls.results = rl_catalog.load_jsonl(
             ROOT / "knowledge" / "result_catalog.jsonl", rl_catalog.RESULT_FORMAT
         )
+        cls.catalogue_validation = rl_catalog.validate_indexes(ROOT)
+        cls.catalogue_current = cls.catalogue_validation["current"]
 
     def test_current_rl_comes_from_unique_target(self):
         target_number, target, _ = flat_preflight.parse_start_here()
@@ -45,13 +47,17 @@ class ConveyorKnowledgeIntegrationTests(unittest.TestCase):
         self.assertEqual(target_number, incoming)
         self.assertEqual(incoming, completed + 1)
 
-    def test_every_physical_session_container_is_catalogued(self):
+    def test_every_catalogued_session_container_exists(self):
         physical = {path.as_posix() for path in (ROOT / "sessions").glob("RL*") if path.is_dir()}
         physical = {str(Path("sessions") / Path(path).name) for path in physical}
         indexed = {record["container_path"] for record in self.sessions}
-        self.assertEqual(physical, indexed)
+        self.assertTrue(indexed.issubset(physical))
+        if self.catalogue_current:
+            self.assertEqual(physical, indexed)
+        else:
+            self.assertTrue(physical - indexed)
 
-    def test_catalogue_ids_and_source_pointers_are_valid(self):
+    def test_catalogue_ids_and_source_pointers_are_valid_for_cache_generation(self):
         self.assertEqual(len(self.sessions), len({record["generation_id"] for record in self.sessions}))
         self.assertEqual(len(self.results), len({record["record_id"] for record in self.results}))
         for record in self.sessions:
@@ -61,7 +67,9 @@ class ConveyorKnowledgeIntegrationTests(unittest.TestCase):
                         self.assertTrue((ROOT / value).exists(), (record["generation_id"], key, value))
         for record in self.results:
             path = ROOT / record["source_path"]
-            self.assertTrue(path.is_file(), record["source_path"])
+            if not path.is_file():
+                self.assertFalse(self.catalogue_current, record["source_path"])
+                self.assertEqual(record.get("source_scope"), "authoritative", record["source_path"])
             self.assertGreaterEqual(record["source_line_start"], 1)
             self.assertGreaterEqual(record["source_line_end"], record["source_line_start"])
 
@@ -157,9 +165,20 @@ class ConveyorKnowledgeIntegrationTests(unittest.TestCase):
             with self.assertRaises(rl_conveyor.Failure):
                 rl_conveyor.cmd_checkpoint(SimpleNamespace(rl=None, target=None))
 
-    def test_generated_indexes_are_current(self):
-        validation = rl_catalog.validate_indexes(ROOT)
-        self.assertTrue(validation["current"], json.dumps(validation["mismatches"], indent=2))
+    def test_generated_index_status_matches_cache_policy(self):
+        validation = self.catalogue_validation
+        if validation["current"]:
+            self.assertEqual(validation["mismatches"], [])
+        else:
+            self.assertTrue(validation["mismatches"])
+            allowed = {
+                "knowledge/session_catalog.jsonl",
+                "knowledge/result_catalog.jsonl",
+                "knowledge/index_metadata.json",
+            }
+            for mismatch in validation["mismatches"]:
+                self.assertIn(mismatch["path"], allowed)
+                self.assertIn(mismatch["reason"], {"stale or modified", "missing"})
 
 
 class CatalogueExtractionRegressionTests(unittest.TestCase):

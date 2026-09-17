@@ -110,13 +110,13 @@ python3 tools/rl_conveyor.py index-validate --staged
 
 The ordinary form validates the working tree; `--staged` validates the Git index and fails if an indexed input is missing from or differs in that staged tree. Normal cloud RL promotion does not require either form and may leave catalogues stale. Never hand-edit them to imitate generation. A later infrastructure refresh is sufficient.
 
-Catalogue validation in CI is separated from the ordinary infrastructure unit suite. The expensive full historical catalogue validation runs when catalogue/generator surfaces change, not for every documentation/protocol-only infrastructure commit.
+Catalogue validation in CI is separated from the ordinary infrastructure unit suite. The expensive full historical catalogue validation runs when generated `knowledge/` files are deliberately refreshed, or by explicit manual dispatch; ordinary protocol/tooling changes do not replay it.
 
 A catalogue status written inside a frozen handover is an as-of-freeze historical statement. It does not determine the status of the present checkout. For live status, run `index-validate` against the working tree or `index-validate --staged` against an intended commit; do not infer freshness from prose or metadata alone.
 
 ## Continuous integration
 
-Infrastructure changes run the complete unit suite on Python 3.9 and a current Python release. Catalogue/generator changes additionally run live catalogue validation. Changes to incoming authority run `verify-incoming` in a separate read-only workflow. The authority workflow intentionally does not validate catalogue freshness, because stale/deferred catalogues are permitted for an otherwise complete numbered transition.
+Infrastructure changes run the complete unit suite on Python 3.9 and a current Python release. Published catalogue refreshes additionally run live catalogue validation. Changes to incoming authority run `verify-incoming` in a separate read-only workflow. The authority workflow intentionally does not validate catalogue freshness, because stale/deferred catalogues are permitted for an otherwise complete numbered transition.
 
 ## Default search exclusions
 
