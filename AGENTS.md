@@ -76,6 +76,12 @@ This fallback is not permission to bypass a genuine checksum, verifier, red-team
 
 Connector workers may establish the same gate through GitHub reads plus local/sandbox verification. Their scratch/checkpoint state may live in the current sandbox/conversation artifacts and need not be committed.
 
+### Connector hot-state rule
+
+For a connector worker, normal startup and continuation are **exact-path operations**, not repository-discovery exercises. After `BASE_HEAD` and the committed `authoritative/` tree identity are pinned, read `authoritative/START_HERE.md`, its explicitly named current files, and the unique target. Do not recursively enumerate the repository, `sessions/`, `Archive/`, `authoritative/`, or `knowledge/` merely to rediscover paths that the current entry point already names.
+
+After the startup gate has passed, persist a compact non-authoritative resume state as described in `docs/CONNECTOR_WORKFLOW.md`. On a later bare `continue`, first compare the live remote/default-branch HEAD with the recorded `BASE_HEAD`. If it is unchanged and the resume state still identifies the same authoritative tree, **reuse the validated incoming authority**. Do not reread inherited ledgers, rerun startup verifiers, reload catalogues, or repeat completed computations unless the live attack, a contradiction, a verifier failure, or a direct user instruction requires it.
+
 If the mathematical/incoming-integrity gate fails, do not begin ordinary research or mutate authority merely to make it pass. Follow stop-and-repair.
 
 ## Research, Git, and interruption
@@ -86,7 +92,7 @@ During research, do not create a partial research-state commit, move authority i
 
 If interrupted, leave the last remote authority as truth and report the last verified checkpoint plus unpromoted remainder.
 
-Research procedure: `docs/RL_RESEARCH_PROTOCOL.md`. State transitions: `docs/RL_STATE_MACHINE.md`.
+Research procedure: `docs/RL_RESEARCH_PROTOCOL.md`. Connector resumability/efficiency procedure: `docs/CONNECTOR_WORKFLOW.md`. State transitions: `docs/RL_STATE_MACHINE.md`.
 
 ## Interactive session command convention
 
@@ -98,12 +104,17 @@ For ordinary interactive RL work, the user-facing command surface has three core
 
 A kickoff starts only the unique incoming authoritative RL after the normal start gate. Any additional kickoff instruction is a direct user instruction and takes priority subject to the mathematical-integrity and stop-and-repair rules.
 
-On the kickoff research turn and on every bare `continue`, work until the next **meaningful mathematical checkpoint**, then stop further mathematics/computation for that turn and report it. A meaningful checkpoint is a theorem-sized advance, exact certificate or material contraction, resolved/repaired claim, decisive route barrier, genuinely useful new invariant, or another coherent result that materially changes the current attack. Do not stop for a trivial algebra step, tiny count change, routine lookup, or other micro-advance merely to manufacture a checkpoint.
+On the kickoff research turn and on every bare `continue`, execute one **bounded continuation work unit**. A work unit pursues one coherent attack far enough to obtain meaningful information, and it should normally end at a meaningful mathematical checkpoint. A meaningful checkpoint is a theorem-sized advance, exact certificate or material contraction, resolved/repaired claim, decisive route barrier, genuinely useful new invariant, or another coherent result that materially changes the current attack. Do not stop for a trivial algebra step, tiny count change, routine lookup, or other micro-advance merely to manufacture a checkpoint.
 
-At every such checkpoint:
+The theorem-sized checkpoint remains the preferred endpoint, but it is **not** permission for one interactive turn to continue indefinitely. If substantial useful work has been completed, a durable frontier has been established, and the theorem-sized endpoint is still materially beyond the current coherent attack branch—or another expensive branch, long computation, or long connector chain would be required—checkpoint the durable frontier and return control. That checkpoint must be strong enough that the next bare `continue` resumes exactly from it without reconstructing the session or recomputing completed work. This is a failure-domain bound, not a licence for meaningless micro-checkpoints.
+
+Before an expensive computation, multi-branch exploration, or long connector sequence, record the exact inputs, completed work, expected artifact/result, and next operation. After a material intermediate result, update the resume state before starting another expensive branch. Prefer several resumable coherent work units over one turn that risks losing all progress to an execution/client stop.
+
+At every user-facing checkpoint:
 
 - state clearly what progressed and its proof-state classification;
 - state what remains open or unpromoted;
+- state the exact durable resume frontier when the theorem-sized endpoint was not reached;
 - autonomously judge whether the current session has enough mathematical route momentum, context, compute/tool headroom, and closeout safety to continue productively;
 - end the checkpoint recommendation with exactly one of these two sentences:
   - `it makes sense to continue here`
@@ -142,6 +153,8 @@ Promotion is one coherent transaction:
 
 With ordinary Git, stage/inspect/commit/push. With connector Git-object tooling, build blobs/tree/commit and move the ref once. Both are equally valid when the same atomic invariant is preserved.
 
+For connector closeout, use the idempotent procedure in `docs/CONNECTOR_WORKFLOW.md`: record completed blob/tree/commit object IDs in compact `CLOSEOUT_STATE`, construct the candidate tree from the recorded base tree plus only changed path entries, perform the final `BASE_HEAD` concurrency check immediately before the ref move, and reuse already-created immutable Git objects after interruption. Do not re-enumerate the full repository tree or recreate unchanged blobs merely to resume closeout.
+
 A partial/local-only commit is not completion. Never combine numbered transitions; start another only after readback and a fresh start gate.
 
 Read `docs/CLOSEOUT_LOCK.md`, then `docs/VERIFICATION_AND_CLOSEOUT.md`.
@@ -152,6 +165,7 @@ Read `docs/CLOSEOUT_LOCK.md`, then `docs/VERIFICATION_AND_CLOSEOUT.md`.
 
 - Shell workers should refresh and validate them during closeout when practical.
 - Connector workers are **not required** to regenerate them.
+- Connector workers must not fetch or load the full catalogue JSONL files during ordinary startup/continuation. Use exact current-authority paths first; use narrow catalogue queries or targeted historical lookup only for a live provenance need.
 - A numbered RL transition may be promoted with stale catalogues if all mathematical, packaging, authority-snapshot, atomic-commit, push, and readback gates pass.
 - A worker must not claim a stale catalogue is current.
 - Catalogue freshness may be restored in any later shell-capable session or dedicated infrastructure pass without consuming an RL number.

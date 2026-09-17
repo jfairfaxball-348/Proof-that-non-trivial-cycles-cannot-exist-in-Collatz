@@ -1,0 +1,43 @@
+name: Knowledge catalogue validation
+
+on:
+  pull_request:
+    paths:
+      - "knowledge/**"
+      - "tools/rl_catalog.py"
+      - "tools/rl_conveyor.py"
+      - "tests/test_rl_catalog_infrastructure.py"
+      - ".github/workflows/knowledge-catalogue-validation.yml"
+  push:
+    paths:
+      - "knowledge/**"
+      - "tools/rl_catalog.py"
+      - "tools/rl_conveyor.py"
+      - "tests/test_rl_catalog_infrastructure.py"
+      - ".github/workflows/knowledge-catalogue-validation.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: knowledge-catalogue-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate generated catalogues
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Run catalogue infrastructure tests
+        run: python3 -m unittest tests.test_rl_catalog_infrastructure -v
+      - name: Validate generated knowledge catalogues
+        run: python3 tools/rl_conveyor.py index-validate

@@ -5,6 +5,7 @@ on:
     paths:
       - ".github/workflows/**"
       - ".gitattributes"
+      - "AGENTS.md"
       - "CONTRIBUTING.md"
       - "START_HERE.md"
       - "docs/**"
@@ -15,6 +16,7 @@ on:
     paths:
       - ".github/workflows/**"
       - ".gitattributes"
+      - "AGENTS.md"
       - "CONTRIBUTING.md"
       - "START_HERE.md"
       - "docs/**"
@@ -47,5 +49,6 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Run unit tests
         run: python3 -m unittest discover -s tests -v
-      - name: Validate generated knowledge catalogues
-        run: python3 tools/rl_conveyor.py index-validate
+
+# Full generated-catalogue replay is intentionally not part of every infrastructure
+# run. It has its own workflow, triggered only by catalogue/generator surfaces.
