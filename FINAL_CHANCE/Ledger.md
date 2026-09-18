@@ -1012,3 +1012,206 @@ corrections, recorded here without reopening Session 3:
 These corrections do not alter the Session 3 theorem, outcome, strike, or
 carry-forward.  Session 4 is now open under the mandated uniform
 height-independent `(X-1)P_h` attack.
+
+
+## Session 4 — 2026-09-18
+
+**Bridge Theorem attempted:**
+Uniform collapsed-Parseval bridge.  For every legal nonnegative first-survivor
+`g=1` defect excursion with `sum_j h_j >= 3`, let `H=max h_j`, let
+`P_h(X)=sum_(j<L) 2^(H-h_j) X^(Aj mod L)`, and form the exact collapsed
+ownership polynomial
+
+```
+E_h(X) = 2^(H-1)
+         + sum_(ell=1)^H 2^(H-ell) (X-1) F_ell(X),
+F_ell(X) = sum_(j: h_j>=ell) X^(Aj mod L).
+```
+
+Reduce any `X^L` term with `2X^L-1` to the canonical degree-`<L`
+representative, clear only the forced power-of-two denominator, and divide by
+integer content.  Write the resulting primitive polynomial as
+```
+Etilde_h(X)=sum_(k=0)^m e_k X^k,
+```
+and put `alpha=2^(-1/L)` and
+```
+V(Etilde_h)=sum_(k=0)^m e_k^2 alpha^(2k).
+```
+The attempted universal statement was
+```
+m < L
+and
+2^m V(Etilde_h)^(L/2) < D,
+D=2^A-3^L.
+```
+If true, ownership would give `D | Res(2X^L-1,Etilde_h) != 0`, while
+Parseval/AM-GM would give absolute resultant strictly below `D`, eliminating
+all surviving profiles at once.
+
+**Attack attempted:**
+The general collapse was derived rather than guessed.  With
+`w_j=2^(H-h_j)`, `r_j=Aj mod L`, `P=A^(-1) mod L), and
+`sigma(r)=Pr mod L`, write the coefficient of `X^r` in `P_h` as
+`a_r=w_(sigma(r))`.  Then
+```
+(X-1)P_h
+ = a_(L-1) X^L - a_0
+   + sum_(r=1)^(L-1) (a_(r-1)-a_r) X^r.
+```
+Thus `X-1` differentiates in residue/exponent order, not chronological
+phase order.  Consecutive exponents compare phases separated by
+`P=A^(-1) mod L`.
+
+Using
+```
+2^(H-h_j) = 2^H - sum_(ell=1)^(h_j) 2^(H-ell)
+```
+and `2 rho^L=1 mod D`, ownership gives exactly
+```
+E_h(rho)=0 mod D,
+E_h(X)=2^(H-1)+sum_(ell=1)^H 2^(H-ell)(X-1)F_ell(X).
+```
+Equivalently, with
+`d_j=2^H-2^(H-h_j)` and
+`G_h=sum_(j<L)d_j X^(r_j)`, one has
+```
+E_h(X)=2^(H-1)+(X-1)G_h(X).
+```
+If `g_r=d_(sigma(r))`, the coefficients are
+`e_0=2^(H-1)`, `e_r=g_(r-1)-g_r` for `1<=r<L`, and
+`e_L=g_(L-1)`.  The collapse is therefore a weighted boundary measure in
+permuted residue order.
+
+Two structural countermodel families then break the attempted uniform
+consequence.
+
+First, at the actual survivor
+```
+P=A^(-1) mod L = 65470613321,
+T=L-P = 72057431991,
+c_1=2.
+```
+For every `3<=N<=P-1`, the single connected height-one excursion
+```
+h_j=1 for 2<=j<=N+1,
+h_j=0 otherwise
+```
+is legal and has defect area `N`.  If two of its defect residues were
+adjacent, their phase separation would be congruent to `+/-P mod L`; but
+all positive separations in the interval are at most `N-1<=P-2<P<T`.
+Hence every defect residue is isolated in exponent order.  Since the unique
+phase of residue `L-1` is `T>P`, no endpoint wrap occurs.  Therefore
+```
+E_h(X)=1+(X-1) sum_(j=2)^(N+1) X^(r_j)
+```
+has exactly `2N+1` nonzero coefficients.  At `N=P-1` this is
+`130941226641` terms.  So one connected chronological excursion already
+produces residue-order complexity growing linearly with defect area.
+
+The first member, `N=3`, has
+```
+(r_2,r_3,r_4)
+=(23369453298,103818202603,46738906596),
+```
+so
+```
+deg E_h = 103818202604 > M = 80448749305.
+```
+Thus the Session 3 `deg E<=M` window fails immediately for a legal connected
+area-three profile.
+
+Second, coefficient size is not height-uniform.  The ramp
+```
+d_j^ramp = floor(Aj/L)-j
+```
+has increments `c_j-1 in {0,1}`, starts at zero, and reaches `M-1` at
+`j=L-1`.  Hence every height `1<=H<=M-1` occurs.  Following the ramp to the
+first phase at height `H` and then dropping to zero is legal.  Its primitive
+collapse retains constant coefficient `2^(H-1)`: the unique maximum has
+weight deficit `2^H-1`, which is odd, while all lower-level deficits are
+even, so the power-of-two constant cannot be removed as content.
+
+An explicit height-three member is
+```
+(h_0,...,h_7)=(0,0,1,1,2,2,3,0),
+```
+with area nine.  Its five positive-phase deficit weights are
+`4,4,6,6,7`, its collapsed polynomial is primitive, has degree below `L`,
+and has constant coefficient `4`.  Therefore its Parseval quantity satisfies
+`V>=16`, so the exact Session-3-style sufficient upper bound satisfies
+```
+2^m V^(L/2) >= 16^(L/2) = 2^(2L).
+```
+But
+```
+2L=275056090624 > A=217976794617
+```
+and `D<2^A`.  Hence this Parseval upper bound is already greater than `D`
+from the constant term alone.  The attempted universal inequality is false.
+
+These countermodels do not assert full ownership; they disprove the claimed
+structural/norm/degree implication from the already-proved excursion grammar,
+which is exactly the permitted Session 4 countermodel use.  The exact collapse
+identity survives.  What is killed is the promotion of the Session 3
+sparse-collapse/degree/Parseval mechanism to a height-independent ownership
+contradiction using the presently known defect grammar alone.
+
+The detailed proof is committed at
+`FINAL_CHANCE/session4_uniform_collapse_obstruction.md` and the exact arithmetic
+artifact is
+`FINAL_CHANCE/verifiers/verify_session4_uniform_collapse_obstruction.py`.
+
+Literal verifier stdout:
+
+```
+FINAL_CHANCE Session 4 uniform-collapse obstruction verifier: PASS
+A,L,M = (217976794617, 137528045312, 80448749305)
+inverse phase P,U = (65470613321, 103768467013)
+complement T = 72057431991
+connected height-one family N range = [3, 65470613320 ]
+support count formula = 2N+1
+maximum certified family support = 130941226641
+area-3 residues = (23369453298, 103818202603, 46738906596)
+area-3 collapsed degree = 103818202604
+Session-3 degree window M = 80448749305
+degree window violated = True
+height-3 ramp h[0:8] = (0, 0, 1, 1, 2, 2, 3, 0)
+height-3 defect area = 9
+height-3 primitive collapsed constant = 4
+height-3 collapsed support = 11
+2L>A = True
+Parseval sufficient bound already > D from e0 alone = True
+legal ramp heights include every H in [1, 80448749304 ]
+scope=structural grammar countermodels; ownership not asserted
+```
+
+**Outcome:** KILLED
+
+The attempted uniform collapsed-Parseval Bridge Theorem is false.  More
+structurally, the Session 3 `(X-1)P_h` sparse-support, `M`-degree, and
+Parseval-norm mechanism cannot be made height/area independent from the
+currently known defect excursion grammar.  The reason is the mismatch between
+chronological locality and residue-order differentiation.
+
+**Strike this session:** N — Session 4 stated an exact universal bridge,
+derived its general collapse, and attacked it directly with parametric and
+explicit legal countermodels.  The negative result is the mandated Outcome C,
+not a substitute local computation.
+
+**Cumulative strikes:** 1/3
+
+**Local work done and connection to Bridge Problem:**
+No unrelated local work.  The committed verifier checks only the exact
+arithmetic and grammar facts needed for the direct structural countermodels.
+It does not enumerate area-three owners and does not test ownership.
+
+**Carry-forward:**
+Do not open Session 5 until this result is independently audited.  If verified,
+do not retry the Session 3 sparse/degree/Parseval argument from excursion
+grammar alone and do not start area-by-area enumeration.  Any future bridge
+using `E_h` must import genuinely new ownership-specific information coupling
+phases separated by `P=A^(-1) mod L`, or a genuinely global complementary-lift
+mechanism not reducible to the failed residue-order norm/degree bound.
+
+Verification status: **ATTEMPTED, PENDING INDEPENDENT VERIFICATION**.
