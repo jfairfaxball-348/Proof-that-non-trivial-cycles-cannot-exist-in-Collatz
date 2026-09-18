@@ -9,7 +9,7 @@ cannot by itself control either residue-order support or defect height.
 No ownership/integrality is asserted for the countermodels below.
 """
 
-from FINAL_CHANCE.verifiers.verify_session1_interval import (
+from verify_session1_interval import (
     A, L, Interval, rat_interval, fraction_interval, floor_sum_F,
     ln_integer_bounds, expm1_bounds, iadd, isub, imul, idiv,
 )
