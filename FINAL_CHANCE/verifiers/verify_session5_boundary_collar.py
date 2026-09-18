@@ -225,6 +225,18 @@ def main():
     assert len(distinct_candidates) == 1_370_780
     assert max_failure_step == 194
 
+    residual_signatures = [
+        (p, n, parity)
+        for p in first_positions
+        for n in range(1, 49)
+        if p + n <= 37
+        for parity in (0, 1)
+    ]
+    residual_first_positions = sorted({p for p, _, _ in residual_signatures})
+    assert len(residual_signatures) == 744
+    assert len(residual_first_positions) == 21
+    assert residual_first_positions[-1] == 36
+
     print("FINAL_CHANCE Session 5 ownership boundary-collar verifier: PASS")
     print("A,L =", (A, L))
     print("least-state window = [2^71, 2^75)")
@@ -238,6 +250,8 @@ def main():
     print("distinct state candidates checked =", len(distinct_candidates))
     print("latest rejection phase =", max_failure_step)
     print("surviving owner must satisfy p+(L-q) <= 37 = True")
+    print("residual boundary signatures =", len(residual_signatures))
+    print("residual first-defect positions =", len(residual_first_positions))
     print("scope=full-owner boundary reduction; no defect-area/height enumeration")
 
 
