@@ -21,8 +21,11 @@ Do not work on Phase 5 in RL349. If Phase 4 closes, stop research and enter clos
 ## Current proof state
 
 R1 Parent Bridge: OPEN.
+R1 roadmap progress: approximately 94% by theorem-level obligations.
 Phase 4: OPEN.
 Phase 5: NOT STARTED as authoritative work.
+
+The roadmap percentage was corrected on 2026-09-18 after audit: RL345 recorded 94%, RL346 explicitly asserted no percentage decrease, and RL347/RL348 advanced the proof state without any theorem demotion. The later 75% entries were bookkeeping errors, not mathematical regressions. See `ROADMAP_PROGRESS_BOOKKEEPING_CORRECTION_2026-09-18.md`.
 
 RL348 promoted:
 - universal Phase-4 terminal law `g_1=1`, `q_(L-1)=1`,
@@ -42,6 +45,7 @@ The RL348 correction ledger is mandatory reading. It prevents promotion of stron
 - `RL348_CORRECTION_AND_DEMOTION_LEDGER.md`;
 - `RL348_SCRATCH_FRONTIER.md`;
 - `RL348_GLOBAL_PROOF_ROADMAP_STATUS.md`;
+- `ROADMAP_PROGRESS_BOOKKEEPING_CORRECTION_2026-09-18.md`;
 - `RL348_SESSION_STATE_AND_RL349_KICKOFF.md`;
 - `RL349_PHASE4_ONE_SESSION_AGGRESSIVE_CLOSURE_TARGET.md`.
 
