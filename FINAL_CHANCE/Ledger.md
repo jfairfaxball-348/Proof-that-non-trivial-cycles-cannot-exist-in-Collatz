@@ -534,3 +534,455 @@ not count as independently verified evidence in FINAL_CHANCE.
 - The repaired numerical ownership artifacts are ready for independent
   re-verification.
 - Session 3 is not opened.
+
+
+## Verification acceptance note — 2026-09-18
+
+The user reports that the repaired Session 1 and Session 2 verifier artifacts
+have both passed independent verification.  Their previous
+`ATTEMPTED, PENDING THIRD-PARTY RE-VERIFICATION` flags are therefore cleared.
+Their recorded mathematical outcomes and strikes are unchanged:
+
+- Session 1: `SURVIVED`, strike `Y`;
+- Session 2: `SURVIVED`, strike `N`;
+- cumulative strikes entering Session 3: `1/3`.
+
+The separately downgraded radius-5 wording remains scoped exactly as recorded:
+it is not needed for the Session 3 attack below.
+
+## Session 3 — 2026-09-18
+
+**Bridge Theorem attempted:**
+First-survivor `g=1` area-collapse bridge.  Let a hypothetical primitive
+positive ordinary Collatz cycle have full counts
+
+[
+(A,L)=(217976794617,137528045312),
+]
+
+be rooted at its least odd state, satisfy full ordinary ownership
+`D=2^A-3^L | Q_h`, and have the inherited nonnegative defect excursion
+
+[
+h_j=lfloor Aj/Lfloor-S_j.
+]
+
+Then
+
+[
+sum_{j=0}^{L} h_j le 1.
+]
+
+Together with the inherited zero-defect and area-one radius obstructions,
+this would eliminate the entire first-survivor `g=1` branch.
+
+**Attack attempted:**
+The carry-forward required a global attack on area two rather than another
+bounded pair screen.  Session 3 eliminates the entire defect-area-two layer.
+
+By the Session 2 excursion classification, area two is exactly
+
+[
+h_p=h_q=1,qquad 0<p<q<L,
+]
+
+with all other defects zero.
+
+Put
+
+[
+M=A-L=80448749305,qquad
+r_j=Ajmod L.
+]
+
+Use the corrected RL157 phase normalization.  For height one,
+
+[
+P_h(T)=2(1+T+cdots+T^{L-1})-T^{r_p}-T^{r_q},
+]
+
+and ownership is equivalent to
+
+[
+P_h(ho)=0pmod D,
+]
+
+where (ho) also satisfies
+
+[
+2ho^L=1pmod D.
+]
+
+Multiplying by (ho-1) collapses the dense geometric part.  Every owned
+two-spike profile must therefore satisfy
+
+[
+E_{r,s}(ho)=0pmod D,
+]
+
+where (r=r_p), (s=r_q), and
+
+[
+E_{r,s}(T)=1+(T-1)(T^r+T^s).
+]
+
+This is the new global lever: the (L)-term ownership polynomial has become
+a five-term polynomial without losing the necessary full-(D) condition.
+
+### 3A. Non-adjacent spikes: global resultant contradiction
+
+If the two spikes are non-adjacent, each is entered from defect zero.  The
+excursion grammar therefore requires
+
+[
+c_{p-1}=c_{q-1}=2,
+qquad
+c_j=lfloor A(j+1)/Lfloor-lfloor Aj/Lfloor.
+]
+
+Because (A=L+M), the exact residue update shows
+
+[
+c_{j-1}=2 iff 1le r_j<M
+]
+
+for every proper phase.  Hence for a non-adjacent area-two profile,
+
+[
+1le r,s<M.
+]
+
+Let
+
+[
+B(T)=2T^L-1.
+]
+
+The reciprocal of (B) is, up to a unit, the Eisenstein polynomial
+(T^L-2); hence (B) is irreducible over (mathbb Q).  Since
+(deg E_{r,s}le M<L) and (E_{r,s}
+e0),
+
+[
+R_{r,s}:=operatorname{Res}(B,E_{r,s})
+e0.
+]
+
+The simultaneous congruences (B(ho)=E_{r,s}(ho)=0pmod D) imply
+
+[
+Dmid R_{r,s}.
+]
+
+Now put (alpha=2^{-1/L}) and (m=deg E_{r,s}le M).
+The roots of (B) are (alphazeta), (zeta^L=1).  Discrete Parseval
+and AM-GM give
+
+[
+|R_{r,s}|
+le
+2^m V_m^{L/2},
+]
+
+with
+
+[
+V_m
+=
+1+alpha^2+alpha^4+alpha^{2m-2}+alpha^{2m}.
+]
+
+If coefficient cancellation occurs, this only decreases the right-hand side.
+For real (x), the logarithmic derivative of
+(2^xV_x^{L/2}) is
+
+[
+(log 2),
+rac{1+alpha^2+alpha^4}{V_x}>0,
+]
+
+so the bound is increasing in (m) and is maximal at (m=M).
+
+Since (D>0),
+
+[
+2^M>(3/2)^L,
+]
+
+hence (alpha^{2M}<4/9).  Also (L>14) gives
+(alpha^{-2}=2^{2/L}<10/9).  Therefore
+
+[
+V_M<3+rac{4}{9}left(1+rac{10}{9}ight)
+=rac{319}{81}.
+]
+
+Thus
+
+[
+|R_{r,s}|
+<
+2^M(319/81)^{L/2}
+=
+2^A(319/324)^{L/2}.
+]
+
+The exact finite inequality
+
+[
+(319/324)^{1828}<2^{-41},
+]
+
+together with (L/2>1828), gives
+
+[
+|R_{r,s}|<2^{A-41}.
+]
+
+Finally, with
+
+[
+Delta=Alog2-Llog3,
+]
+
+the exact rational log enclosure in the Session 3 verifier proves
+
+[
+Delta>rac1{2^{41}-1}.
+]
+
+Since (1-e^{-Delta}>Delta/(1+Delta)),
+
+[
+D=2^A(1-e^{-Delta})>2^{A-41}.
+]
+
+Therefore
+
+[
+0<|R_{r,s}|<D,
+]
+
+contradicting (Dmid R_{r,s}).  **No non-adjacent defect-area-two owner
+exists.**
+
+### 3B. Adjacent spikes: two global size lifts plus a 52-case residual
+
+It remains to take (q=p+1).
+
+Choose the exact Bezout data
+
+[
+P=65470613321,qquad U=103768467013,
+]
+
+with
+
+[
+AP-UL=1.
+]
+
+Put
+
+[
+T=L-P=72057431991,qquad
+S=A-U=114208327604,
+]
+
+so
+
+[
+AT-SL=-1.
+]
+
+The distinguished phase can be represented both as
+
+[
+ho=2^U3^{-P}=3^T2^{-S}pmod D.
+]
+
+Also
+
+[
+ho^{r_j}=2^{b_j}3^{-j}pmod D,
+qquad b_j=lfloor Aj/Lfloor.
+]
+
+Clearing powers of (3) in
+(1+(ho-1)(ho^{r_p}+ho^{r_q})=0) gives the necessary integer
+congruence
+
+[
+Dmid N_3,
+]
+
+where
+
+[
+N_3=
+3^{P+q}
++
+(2^U-3^P)
+left(2^{b_p}3^{q-p}+2^{b_q}ight).
+]
+
+The inherited floor lock gives (0<2^{b_j}/3^j<1), while
+(1/2<2^U/3^P<1).  Hence
+
+[
+0<N_3<3^{P+q}.
+]
+
+The same exact log lower bound gives
+(D>3^{L-26}).  Therefore every adjacent owner with
+
+[
+qle T-26
+]
+
+is impossible.
+
+Using the complementary representation and clearing powers of (2) gives
+
+[
+Dmid N_2,
+]
+
+where
+
+[
+N_2=
+2^{S+A-b_p}
++
+(3^T-2^S)
+left(3^{L-p}+3^{L-q}2^{b_q-b_p}ight).
+]
+
+Here the complementary normalized phase terms are strictly between zero and
+one and (1/2<3^T/2^S<1), so
+
+[
+0<N_2<2^{S+A-b_p}.
+]
+
+Exact floor arithmetic gives
+
+[
+b_{T+26}=S+41.
+]
+
+Since (D>2^{A-41}), every adjacent owner with
+
+[
+pge T+26
+]
+
+is impossible.
+
+Thus only
+
+[
+T-26le ple T+25,qquad q=p+1,
+]
+
+survive the two analytic size arguments: exactly 52 adjacent pairs.
+
+These 52 are checked by the committed artifact
+
+`FINAL_CHANCE/verifiers/verify_session3_area2_global.py`.
+
+It evaluates the necessary ratio (N_3/D) with the repaired directed
+interval machinery.  No interval meets an integer.  The closest residual
+pair is
+
+[
+(p,q)=(72057432000,72057432001)=(T+9,T+10),
+]
+
+for which the reproduced enclosure is
+
+[
+65708206692263066.001828087723486399337183400623097221704182119314116522218285438960636764365133134387734154319193925510487833781568851505377
+<
+N_3/D
+]
+
+and
+
+[
+N_3/D
+<
+65708206692263066.001828087723486399337183400623097221704182119314116522218285438960636764365133134387734154319193925510487833781568851505380.
+]
+
+Its interval width is at most (3	imes10^{-123}), and its distance from
+the nearest integer is greater than
+
+[
+0.0018280877234863993371834006230972.
+]
+
+Therefore none of the 52 residual adjacent profiles can satisfy (Dmid N_3).
+
+Combining 3A and 3B:
+
+> **Session 3 theorem:** there is no fully owned `g=1` first-survivor
+> defect profile of total defect area exactly 2.
+
+This is global over the complete area-two family; it is not a bounded
+`p,q` screen.
+
+The verifier also checks all finite constants used by the resultant/size
+bounds and the 52 residual intervals.  Its headline output is:
+
+```
+FINAL_CHANCE Session 3 global area-2 verifier: PASS
+A,L,M = (217976794617, 137528045312, 80448749305)
+Bezout P,U = (65470613321, 103768467013)
+complement T,S = (72057431991, 114208327604)
+Delta lower > 1/(2^41-1) = True
+non-adjacent resultant cutoff exponent = 1828
+(319/324)^1828 < 2^-41 = True
+non-adjacent area-2 owner possible = False
+adjacent low exclusion: q <= 72057431965
+adjacent high exclusion: p >= 72057432017
+residual adjacent pairs checked = 52
+residual integer hit = False
+closest residual pair = (72057432000, 72057432001)
+offsets from T = (9, 10)
+N3/D lower = 65708206692263066.001828087723486399337183400623097221704182119314116522218285438960636764365133134387734154319193925510487833781568851505377
+N3/D upper = 65708206692263066.001828087723486399337183400623097221704182119314116522218285438960636764365133134387734154319193925510487833781568851505380
+interval width <= 3E-123
+nearest integer = 65708206692263066
+closest miss distance lower = 0.001828087723486399337183400623097221704182119314116522218285438960636764365133134387734154319193925510487833781568851505377
+closest miss distance upper = 0.001828087723486399337183400623097221704182119314116522218285438960636764365133134387734154319193925510487833781568851505380
+GLOBAL defect-area-2 owner possible = False
+```
+
+**Outcome:** SURVIVED
+
+The Bridge Theorem was not proved: a surviving owned profile could still have
+defect area at least 3.  But the attack removes the entire area-two layer,
+globally, rather than merely extending the Session 2 finite search.
+
+**Strike this session:** N — the current Bridge Theorem was stated and
+attacked directly, and one complete global residual class (all area-two
+profiles) was removed.  No new local-to-global bridge was substituted for the
+open theorem.
+
+**Cumulative strikes:** 1/3
+
+**Local work done (if any) and its stated connection to the Bridge Problem:**
+none.  The resultant collapse, global size bounds, and 52-case residual are
+all parts of the direct attack on the stated area-collapse Bridge Theorem.
+
+**Carry-forward for next session:**
+Do not continue by merely screening defect area 3, 4, 5, ... one layer at a
+time.  The next attack must test whether the ((T-1)P_h) sparse-collapse
+mechanism admits a **uniform area>=3/height-independent bound**, or else give
+a structural reason it cannot.  The surviving owner class is now exactly
+(sum h_jge3).
+
+Session 3 is **ATTEMPTED, PENDING INDEPENDENT VERIFICATION** of the new
+analytic argument and `verify_session3_area2_global.py`.  Do not open
+Session 4 until that verification state is resolved.
