@@ -9,9 +9,16 @@ Status: CLOSED/FROZEN
 
 **CURRENT_STAGE_NAME:** Parent Bridge
 
-**CURRENT_STAGE_PROGRESS:** approximately 75% by theorem-level obligations. Phases 1--3 remain
+**CURRENT_STAGE_PROGRESS:** approximately 94% by theorem-level obligations. Phases 1--3 remain
 closed. Phase 4 remains open but is more sharply localized. Phase 5 remains non-authoritative and
 was not resumed.
+
+**BOOKKEEPING CORRECTION (2026-09-18):** the originally written 75% figure was inconsistent with the
+committed roadmap history. RL345 recorded 94%; RL346 explicitly asserted no percentage decrease;
+RL347 and RL348 both recorded `ROADMAP_DELTA: ADVANCE` and demoted no inherited theorem or certificate.
+Therefore the current obligation-based R1 estimate remains approximately 94%. This correction changes
+no mathematical theorem, proof ledger conclusion, target, certificate, or proof status. The frozen
+historical session copies retain their original wording as provenance.
 
 **THIS_SESSION_ADVANCE:** RL348 proved a universal terminal gap/tag law for every long Phase-4
 return, bounded the half-cycle physical mismatch interface to 36 binary phases, and proved that
