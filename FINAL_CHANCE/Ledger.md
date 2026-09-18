@@ -117,3 +117,72 @@ Do not begin Session 2 here.  The surviving point of attack is exact ordinary
 ownership in g=1 defect-area>=2 profiles: either force D not to divide Q_h
 uniformly, or construct a full-D-owned radius>=4 profile.  The area-1 class is
 now removed from that search.
+
+
+## Session 1 — 2026-09-18
+
+**Bridge Theorem attempted:**
+Every hypothetical positive non-trivial ordinary Collatz cycle can be reduced, without losing
+ordinary +1 ownership, primitivity, least-state ordering, or the inherited least-state floor, to
+the exact ordered genuine g=2, Z0>0, K<0 parent
+(a,ell)=(217976794617,137528045312). Therefore a contradiction for that parent (in particular
+O_75=empty together with its inherited bridge) would contradict an arbitrary hypothetical cycle.
+
+**Attack attempted:**
+The attack was reopened and aimed first at the explicit outside-parent branch g=1, where
+g=gcd(A,L). For the first reduced survivor the exact coprime counts are
+
+A=217976794617,  L=137528045312,  gcd(A,L)=1,
+D=2^A-3^L>0.
+
+A primitive positive exponent/parity word with full ordinary ownership D|N_0 is not merely a
+formal model: the cyclic numerator identity
+2^(a_j) N_(j+1)=3N_j+D
+propagates D-divisibility to every phase, and y_j=N_j/D are then positive integers satisfying
+3y_j+1=2^(a_j)y_(j+1). Thus an explicit g=1 object satisfying the requested encoding,
+ownership and positivity conditions would be an actual positive ordinary non-trivial cycle.
+
+I then attempted the alternative structural exclusion of g=1 using the strongest inherited exact
+constraints. Rooted at the least state, every proper prefix has nonnegative defect
+h_j=floor(Aj/L)-S_j>=0; h identically zero is already excluded. Full ownership for every remaining
+nonzero excursion is exactly one dense distinguished-root congruence
+P_h(rho)=0 (mod D), where
+P_h(T)=sum_(j<L) 2^(H-h_j) T^(Aj mod L)
+and every residue 0,...,L-1 occurs exactly once.
+
+Three natural closure attempts fail for specific proved reasons:
+(1) splitting the height layers gives only one combined ownership relation, not independently
+owned layer congruences;
+(2) the scalar carry-order proof for g>1 loses its block factor at g=1 (F_1=1), and mixed heights
+admit an exact local order-collapse counterexample;
+(3) replacing the distinguished-root condition by a resultant is insufficient: the exact
+(A,L)=(13,8) positive-excursion example has Res(2T^8-1,P_h)=D while P_h(rho)!=0 mod D.
+All rotated affine integrality conditions are also rank-one consequences of the same single
+D|N_0 condition, so they supply no additional independent closure equation.
+
+A two-sided finite construction was also checked at depth 75. It is not presently finite under the
+proved constraints: there are exactly
+15,537,359,898,820,273,235,593,329,305,889
+legal nonnegative positive-exponent prefixes of length 75, while the terminal defect can be as
+large as 80,448,749,261. No proved global modulus/ordering theorem reduces those quantities to a
+tractable exhaustive set.
+
+Therefore neither an explicit fully owned outside-g=2 witness nor an impossibility proof was
+obtained. The precise surviving obstruction is the dense distinguished-root congruence coupled to
+least-state ordering in the coprime g=1 branch; every attempted decomposition used above is
+provably non-discriminating or loses ownership.
+
+**Outcome:** INCONCLUSIVE
+
+**Strike this session:** Y — the original submitted Session 1 did not complete the mandatory
+construction/impossibility attack and merely restated a pre-existing scope obligation. Reopening
+and completing the attack does not erase that session-level failure.
+
+**Cumulative strikes:** 1/3
+
+**Local work done (if any) and its stated connection to the Bridge Problem:**
+none
+
+**Carry-forward for next session:**
+Do not return to O_75. Any continuation must attack the remaining g=1 distinguished-root/least-state
+condition itself, or produce an explicit ordinary-owned object in another outside-parent branch.
