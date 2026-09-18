@@ -986,3 +986,29 @@ a structural reason it cannot.  The surviving owner class is now exactly
 Session 3 is **ATTEMPTED, PENDING INDEPENDENT VERIFICATION** of the new
 analytic argument and `verify_session3_area2_global.py`.  Do not open
 Session 4 until that verification state is resolved.
+
+
+## Session 3 independent verification acceptance — 2026-09-18
+
+The user reports that Session 3 has passed independent verification with verdict
+**VERIFIED WITH NON-MATERIAL CORRECTIONS**.  The verified theorem is unchanged:
+there is no fully owned `g=1` first-survivor defect profile of total defect area
+exactly 2 at
+`A=217976794617`, `L=137528045312`.  This is global over the complete
+area-two family.  The Session 3 Bridge Theorem itself remains unproved, so the
+surviving `g=1` owner class is `sum_j h_j >= 3`.
+
+The independent audit identified three non-material verification-integrity
+corrections, recorded here without reopening Session 3:
+
+1. the Session 3 quoted verifier stdout was abridged rather than literally
+   complete;
+2. the global floor-lock premise is true but was not asserted in the committed
+   verifier; the useful exact check is essentially `delta_hi * L < l2_lo`;
+3. the Parseval prose should say that coefficient cancellation decreases the
+   **Parseval sum / left-hand side**.  The degree `m` and the quantity `V_m`
+   remain unchanged because the leading term does not cancel.
+
+These corrections do not alter the Session 3 theorem, outcome, strike, or
+carry-forward.  Session 4 is now open under the mandated uniform
+height-independent `(X-1)P_h` attack.
