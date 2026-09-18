@@ -25,6 +25,13 @@ Corrections/non-promotions are recorded in `RL348_CORRECTION_AND_DEMOTION_LEDGER
 
 Phase 4 remains OPEN. Phase 5 was not touched.
 
+## Roadmap bookkeeping correction
+
+R1 roadmap progress is approximately **94% by theorem-level obligations**. The 75% figure written in
+RL347/RL348 roadmap status was a reporting error: RL345 had recorded 94%, RL346 explicitly asserted
+no percentage decrease, and neither RL347 nor RL348 demoted any inherited theorem or certificate.
+This changes no mathematics or target; RL349 still has the sole objective `O_75=empty`.
+
 ## RL349 kickoff — aggressive one-session closure mandate
 
 RL349 is the unique next authoritative research session.
