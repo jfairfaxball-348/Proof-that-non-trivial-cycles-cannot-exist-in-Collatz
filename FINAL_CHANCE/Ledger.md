@@ -1502,3 +1502,196 @@ Programme-level interpretation of Session 5 is therefore:
 The positive boundary-collar result remains **ATTEMPTED, PENDING INDEPENDENT
 VERIFICATION** as stated in its committed report.  This addendum does not claim
 that independent verification has occurred.
+
+
+## Session 5 — 2026-09-18
+
+**Bridge Theorem attempted:**
+Two-sided transfer closure bridge.  At the actual first-survivor counts
+`A=217976794617`, `L=137528045312`, there do not exist an odd integer
+`
+2^71 <= m < 2^75,
+`
+a complete nonnegative defect excursion `h_0=h_L=0` with
+`
+a_j=c_j+h_j-h_(j+1)>=1,
+`
+and endpoint orbit data such that all of the following hold simultaneously:
+
+1. the first 75 exponents are the exact accelerated Collatz valuations of a
+   genuine forward orbit starting at `m`;
+2. every proper state in that 75-step prefix is strictly larger than `m`;
+3. the last 75 exponents are the exact accelerated Collatz valuations of a
+   genuine physical suffix ending at the **same** `m`;
+4. every proper state in that 75-step suffix is strictly larger than `m`;
+5. the prefix and suffix defect heights extend to one complete legal
+   nonnegative defect path with the inherited total counts.
+
+Every genuine fully owned least-rooted singleton cycle necessarily satisfies
+all five conditions, so this theorem would eliminate the whole surviving
+`g=1` branch without defect-area enumeration.
+
+**Attack attempted:**
+The theorem was attacked by constructing an explicit same-`m` countermodel.
+Take
+```
+m=2^75-1=37778931862957161709567.
+```
+This lies in the physical state window
+```
+2^71 <= m < 2^75.
+```
+
+Running the genuine accelerated Collatz map forward from this `m` for 75 odd
+steps gives the exact valuation word
+```
+1^74,2.
+```
+Its total exponent is `S_75=76`.  With
+`b_j=floor(Aj/L)`, the induced prefix defect `h_j=b_j-S_j` is
+nonnegative throughout and ends at
+```
+b_75=118,
+h_75=42.
+```
+The prefix defect area through phase 75 is already `1629`.  Every proper
+prefix state is strictly larger than `m`, and the exact terminal state is
+```
+304133393856678854559841996309430653.
+```
+Thus the prefix is an exact physical least-rooted segment, not merely a
+modular word.
+
+A physical 75-step suffix returning to the **same** `m` was then built
+backwards.  At each step `j`, with known odd `y_(j+1)` and defect
+`h_(j+1)`, choose the smallest positive exponent `a_j` of the parity
+required by
+```
+2^a_j y_(j+1) == 1 (mod 3)
+```
+which also gives
+```
+h_j=a_j-c_j+h_(j+1)>=0
+```
+and a predecessor
+```
+y_j=(2^a_j y_(j+1)-1)/3
+```
+not divisible by 3.  If the first parity-compatible exponent produces a
+multiple of 3, increase it by 2 and repeat.  For the actual final 75 phases
+this deterministic exact construction gives
+```
+h_(L-75)=53,
+```
+maximum suffix exponent `4`, maximum suffix defect `53`, and suffix-start
+state
+```
+371804656870741614109061597054976841273.
+```
+Replaying the suffix forward verifies every chosen exponent as the exact
+2-adic valuation and returns exactly to `m`.  Every proper suffix state is
+also strictly larger than `m`.
+
+The two physical ends are compatible with one complete legal defect path.
+After the prefix, drop from `h_75=42` to `h_76=0`; the corresponding
+exponent is positive.  Keep `h=0` through the long middle.  At
+```
+j_0=(L-75)-90=137528045147
+```
+start the tight recurrence
+```
+h_(j+1)=h_j+c_j-1.
+```
+Across those 90 actual phases it accumulates exactly 53 rises, so it reaches
+```
+h_(L-75)=53,
+```
+matching the physical suffix boundary.  Every tight-ramp exponent equals 1.
+The constructed suffix then returns the defect to `h_L=0`.
+
+Hence one complete nonnegative positive-exponent defect excursion exists with
+exact total counts.  The identity
+```
+a_j=c_j+h_j-h_(j+1)
+```
+telescopes to
+```
+sum a_j = sum c_j + h_0-h_L = A.
+```
+
+What is deliberately **not** asserted is that the physical state reached by
+the exact prefix evolves through the enormous middle to the physical
+suffix-start state.  That missing global middle connection is the only failed
+condition, and it is precisely the Bridge Problem that the attempted theorem
+was supposed to derive from the endpoint ownership-transfer data.
+
+Therefore exact prefix capture + exact suffix capture + the same candidate
+least state + the physical state window + least-root behavior on both ends +
+a complete legal nonnegative defect excursion do **not** imply global physical
+closure.
+
+The main exact artifact is
+`FINAL_CHANCE/verifiers/verify_session5_two_sided_transfer_countermodel.py`.
+Its reproduced literal stdout is:
+
+```
+FINAL_CHANCE Session 5 two-sided transfer countermodel verifier: PASS
+A,L = (217976794617, 137528045312)
+m = 37778931862957161709567
+m window = (2361183241434822606848, 37778931862957161709568)
+prefix exact exponents = 1^74,2
+prefix total exponent S_75 = 76
+prefix terminal defect h_75 = 42
+prefix defect area through 75 = 1629
+prefix terminal state = 304133393856678854559841996309430653
+suffix cut = 137528045237
+suffix boundary defect h_(L-75) = 53
+suffix start state = 371804656870741614109061597054976841273
+suffix maximum exponent = 4
+suffix maximum defect = 53
+middle tight-ramp length = 90
+middle tight-ramp terminal height = 53
+same m selected by exact physical prefix and suffix = True
+complete nonnegative positive-exponent defect grammar = True
+global middle physical connection = NOT ASSERTED
+scope=countermodel to two-sided-transfer bridge; not a cycle
+```
+
+Session 5 also red-teamed the coarser ownership consequence
+`m=Q_h/D in [2^71,2^75)`.  The supporting artifact
+`FINAL_CHANCE/verifiers/verify_session5_ownership_window_barrier.py` encodes
+the result that the state window alone does not control the Session 4 support
+or height obstructions.  The exact same-`m` countermodel above is the stronger
+Session 5 result and does not depend on that interval calculation.
+
+**Outcome:** KILLED
+
+The attempted two-sided ownership-transfer Bridge Theorem is false.  The
+RL154-style endpoint transfers remain exact necessary information, but they do
+not bridge the global middle orbit even when both ends select the same physical
+least-state candidate and the complete defect grammar is simultaneously
+satisfied.
+
+**Strike this session:** N — Session 5 stated a precise universal bridge and
+attacked it directly with an explicit exact structural countermodel.  This is
+a genuine Bridge-Problem kill, not local enumeration or a confidence update.
+
+**Cumulative strikes:** 2/3
+
+**Local work done and connection to Bridge Problem:**
+No unrelated local work.  Both Session 5 verifier artifacts directly test
+ownership-derived state-window / endpoint-transfer information.  No defect
+area was enumerated.
+
+**Carry-forward:**
+Do not begin Session 6 here.  Session 6 is the final budgeted FINAL_CHANCE
+session.  It must attack a theorem that enforces the **actual global physical
+middle connection** between ownership-compatible endpoint data.  Reusing
+state-window bounds, local defect grammar, prefix/suffix residues, matching a
+candidate `m`, bare resultants, or equivalent distinguished-root encodings is
+insufficient by the Session 4--5 countermodels.  If Session 6 cannot prove or
+structurally kill such a genuinely global bridge, the six-session budget is
+exhausted and the programme must close under the README verdict conventions.
+
+Verification status: exact integer countermodel reproduced by the committed
+verifier; no independent audit has been supplied.
