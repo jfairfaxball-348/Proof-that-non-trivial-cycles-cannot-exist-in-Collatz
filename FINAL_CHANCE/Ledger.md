@@ -1456,3 +1456,49 @@ interaction across the resonant cut**: a theorem must couple early and late
 defect contributions rather than bounding either endpoint in isolation.  The
 Session 5 endpoint-span theorem is the exact inherited reduction for that
 attack.
+
+
+## Session 5 concurrent-work integration note — 2026-09-18
+
+While Session 5 was in progress, a second ownership-specific attack landed on
+`main` under the same Session 5 scope:
+
+- `FINAL_CHANCE/session5_ownership_boundary_collar.md`;
+- `FINAL_CHANCE/verifiers/verify_session5_boundary_collar.py`;
+- `FINAL_CHANCE/verifiers/verify_session5_ownership_window_barrier.py`.
+
+This work is mathematically compatible with the Session 5 endpoint-lift entry
+above and is **strictly stronger as a positive owner reduction**.  It does not
+resurrect the killed endpoint-size bridge.  The connected height-one
+countermodel in the ledger is explicitly non-owned and only proves that
+state-window/grammar information cannot force either endpoint lift below
+`D`.  The boundary-collar attack instead uses exact physical first-defect and
+last-defect state cylinders, CRT, and the actual forward accelerated orbit.
+
+Subject to its stated independent-verification status, the boundary-collar
+result is
+```
+p + (L-q) <= 37
+```
+for every surviving actual owner.  Its committed exact verifier reports 1848
+boundary signatures with `p+(L-q)>=38`, 2,056,165 state candidates across
+those signatures, 1,370,780 distinct least-state candidates, and rejection of
+every candidate by phase 194.  The residual family has 744 boundary signatures
+supported on 21 possible first-defect positions, with largest first-defect
+phase 36.
+
+Programme-level interpretation of Session 5 is therefore:
+
+- the **endpoint-size** Bridge Theorem recorded above is `KILLED`;
+- a distinct **two-sided boundary-cylinder** Bridge Theorem remains unproved
+  but has been reduced to 744 exact boundary signatures;
+- Session 5 earns **no strike**; cumulative strikes remain **2/3**;
+- the stronger boundary-collar reduction, once independently accepted, should
+  supersede the weaker `p<=T+25, q>=T-25` endpoint-span theorem for Session 6
+  carry-forward;
+- Session 6 must not treat the 744 signatures as 744 complete defect profiles:
+  arbitrary middle area, height, component count, and run structure remain.
+
+The positive boundary-collar result remains **ATTEMPTED, PENDING INDEPENDENT
+VERIFICATION** as stated in its committed report.  This addendum does not claim
+that independent verification has occurred.
