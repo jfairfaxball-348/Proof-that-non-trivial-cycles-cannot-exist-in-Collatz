@@ -1,0 +1,736 @@
+{
+  "schema_version": "1.0",
+  "snapshot_commit": "de5586d",
+  "snapshot_description": "RL349 closeout / handover to RL350",
+  "entries": [
+    {
+      "snapshot_path": "authority/GLOBAL_PROOF_ROADMAP.md",
+      "source_path": "docs/GLOBAL_PROOF_ROADMAP.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "0cb1c1e9c71d10d74b2ac911f3d74b46e99916dcd23cd2338ed139d217cc1bd2",
+      "source_git_blob": "76ef2253d17f2429856b1f74e6f80b62fda44643"
+    },
+    {
+      "snapshot_path": "authority/PROOF_STATE_CLASSIFICATIONS.md",
+      "source_path": "docs/PROOF_STATE_CLASSIFICATIONS.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "2bf52ca40465b28b65954c58acecccec13a6a5e04314425d56812c3d68e3c4f8",
+      "source_git_blob": "d8769c4dd5afa5cc641508ceb07a9f38ff6f066e"
+    },
+    {
+      "snapshot_path": "authority/README_REPOSITORY.md",
+      "source_path": "README.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "ca4a5c4c20fc4ad6393b6e6518faec03414308df82f353854bb5df29f11803aa",
+      "source_git_blob": "a0a13fd054919f30b6d0d63269ab50f1ce47b24d"
+    },
+    {
+      "snapshot_path": "authority/RL343_CORRECTION_AND_DEMOTION_LEDGER.md",
+      "source_path": "sessions/RL343/RL343_CORRECTION_AND_DEMOTION_LEDGER.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "9c7bb2bdcf22fcaadddd13b370488cf73530b78afd972ee1bf9a337cf4b580fa",
+      "source_git_blob": "b3e09ed9cad5db9f07882f49745e780254bb2251"
+    },
+    {
+      "snapshot_path": "authority/RL343_EXACT_CERTIFICATE.md",
+      "source_path": "sessions/RL343/RL343_EXACT_CERTIFICATE.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "7d4ad5f3749c5cebeb97cd2137d50500d50f09bf56b4b99b90deba8ee79dfae0",
+      "source_git_blob": "056d20bdcacbb37fac6b9b7360b3b05ba212d7e3"
+    },
+    {
+      "snapshot_path": "authority/RL343_GLOBAL_PROOF_ROADMAP_STATUS.md",
+      "source_path": "sessions/RL343/RL343_GLOBAL_PROOF_ROADMAP_STATUS.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "b5546db6d248fcb21c8e666be68169c36ee4ed91298ea1dfe8d4fe3ccc06a0d2",
+      "source_git_blob": "1048c925a72cc2d81ee8bdbe072634a127f0b864"
+    },
+    {
+      "snapshot_path": "authority/RL343_PROOF_LEDGER.md",
+      "source_path": "sessions/RL343/RL343_PROOF_LEDGER.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "b3e6b962b88865e1d38d0f409ede7238de646017941ef6daf1cddb81e7569955",
+      "source_git_blob": "ac7d5586430a9d24d4c8aafa87a934623d7bde4b"
+    },
+    {
+      "snapshot_path": "authority/RL344_CLOSEOUT_VERIFICATION.md",
+      "source_path": "sessions/RL344/RL344_CLOSEOUT_VERIFICATION.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "833bbff4973fc25ff64e1dbf6b284d5ce26665a237fe2d669c0e24c2748af5cc",
+      "source_git_blob": "f43dff8755ea05c991bdd0285b8e435310b9bd48"
+    },
+    {
+      "snapshot_path": "authority/RL344_CORRECTION_AND_DEMOTION_LEDGER.md",
+      "source_path": "sessions/RL344/RL344_CORRECTION_AND_DEMOTION_LEDGER.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "f8bdd0c250ddea5cac0d66b1c584567fad5f742406b63d558312d5550003040c",
+      "source_git_blob": "9f5d000064a8a73aafd8176e9cc0248114531f96"
+    },
+    {
+      "snapshot_path": "authority/RL344_GLOBAL_PROOF_ROADMAP_STATUS.md",
+      "source_path": "sessions/RL344/RL344_GLOBAL_PROOF_ROADMAP_STATUS.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "1eda717f1f89fd4c234d4898df307b8a60f86a419474dd3a34544c821df24299",
+      "source_git_blob": "890a7dba3a5936fc1e0c4e310f74e55d0b937578"
+    },
+    {
+      "snapshot_path": "authority/RL344_PROOF_LEDGER.md",
+      "source_path": "sessions/RL344/RL344_PROOF_LEDGER.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "7e521276a61e249407ca35d130354adb1bfc13d2adca7cda3654415b10963f66",
+      "source_git_blob": "53ca7b28e5a2e403ef23366f8f4b64ac805e0811"
+    },
+    {
+      "snapshot_path": "authority/RL345_CLOSEOUT_VERIFICATION.md",
+      "source_path": "sessions/RL345/RL345_CLOSEOUT_VERIFICATION.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "1968c7ac141022c1538b986bd3501500306f58b7b5bff9da2e17ceb10ca51819",
+      "source_git_blob": "2bf34cfd698fe56ef590a7f6dc054c96204bcf77"
+    },
+    {
+      "snapshot_path": "authority/RL345_CORRECTION_AND_DEMOTION_LEDGER.md",
+      "source_path": "sessions/RL345/RL345_CORRECTION_AND_DEMOTION_LEDGER.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "17175cf27e3ba518e0ffefb30596aa0d8e5579344f57a994e642c0076bbd129e",
+      "source_git_blob": "86b78fe3853e532ad0d53f87a0fbaaa703ea9852"
+    },
+    {
+      "snapshot_path": "authority/RL345_EXACT_CERTIFICATE.md",
+      "source_path": "sessions/RL345/RL345_EXACT_CERTIFICATE.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "31c65d796af04d95156a4f19a78548aec0940c4adcc5da0658981720b31f389d",
+      "source_git_blob": "ab4568198fd4ad6e9468374849169bc9c29ecff4"
+    },
+    {
+      "snapshot_path": "authority/RL345_GLOBAL_PROOF_ROADMAP_STATUS.md",
+      "source_path": "sessions/RL345/RL345_GLOBAL_PROOF_ROADMAP_STATUS.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "56079cf16e403638285b734fd3d746b2b3c239744d10f4dc056cff3440e8f8c1",
+      "source_git_blob": "7ed1beed842f37109cdab2264d98bf0b3c522b72"
+    },
+    {
+      "snapshot_path": "authority/RL345_PROOF_LEDGER.md",
+      "source_path": "sessions/RL345/RL345_PROOF_LEDGER.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "7cd42e7570287bfabc2b0b8ff3d8c3506e610331719aa06bb695f18c63faf03b",
+      "source_git_blob": "b304d840e81ee412182a4f7f68fadd7b22a35a55"
+    },
+    {
+      "snapshot_path": "authority/RL346_CLOSEOUT_VERIFICATION.md",
+      "source_path": "sessions/RL346/RL346_CLOSEOUT_VERIFICATION.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "b6132a27fee018f9bbf66d6617197008d3ee192e0c73a2b6ca37b75f56ef1665",
+      "source_git_blob": "d7738ef73ce985cfc383ae87c7657a1c2a4b928c"
+    },
+    {
+      "snapshot_path": "authority/RL346_CORRECTION_AND_DEMOTION_LEDGER.md",
+      "source_path": "sessions/RL346/RL346_CORRECTION_AND_DEMOTION_LEDGER.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "28b19dc458072ba4ee9aa7a9ab77383f46d2b6313475ec8742ddc6c3f6f654a2",
+      "source_git_blob": "02d093ff9a3257cb4cc6cdb877c295b418d006a9"
+    },
+    {
+      "snapshot_path": "authority/RL346_EXACT_CERTIFICATE.md",
+      "source_path": "sessions/RL346/RL346_EXACT_CERTIFICATE.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "53c37da6343f1f7baa7ba326e2d263582c98cd6c1f402b43d3f1b8682913ae4b",
+      "source_git_blob": "a793d479c5fbade000a4d0cea287fe34a4288b05"
+    },
+    {
+      "snapshot_path": "authority/RL346_GLOBAL_PROOF_ROADMAP_STATUS.md",
+      "source_path": "sessions/RL346/RL346_GLOBAL_PROOF_ROADMAP_STATUS.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "0b63ae86f386d0668cbca17209dca2b87ff788afd1cba3d92d0e633c27cc38d7",
+      "source_git_blob": "f1c424313c8e0afd301c113217134a33048828a0"
+    },
+    {
+      "snapshot_path": "authority/RL346_PROOF_LEDGER.md",
+      "source_path": "sessions/RL346/RL346_PROOF_LEDGER.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "9b18e92f468e9a0f4482d78fb5561cc6336596a09c945244323a0fa85ea7fa9e",
+      "source_git_blob": "4dc3b488b9b76f2439bc1872027e1db19e099431"
+    },
+    {
+      "snapshot_path": "authority/RL347_CLOSEOUT_VERIFICATION.md",
+      "source_path": "sessions/RL347/RL347_CLOSEOUT_VERIFICATION.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "73b3ab1beffd76eee983f7d26a95e1049aac566bd942b8969e6629450f9be645",
+      "source_git_blob": "d749e2d82a3b87cc15b3a3cf3aa6d814f38791a9"
+    },
+    {
+      "snapshot_path": "authority/RL347_CORRECTION_AND_DEMOTION_LEDGER.md",
+      "source_path": "sessions/RL347/RL347_CORRECTION_AND_DEMOTION_LEDGER.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "00d7c6b88d81780913223734ab7c7950aceeb7b004856e9540008a03a2d3fa48",
+      "source_git_blob": "5d85ec12234044ec58f12501a920727b482633f4"
+    },
+    {
+      "snapshot_path": "authority/RL347_EXACT_CERTIFICATE.md",
+      "source_path": "sessions/RL347/RL347_EXACT_CERTIFICATE.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "432c3942289c9095fe01a1d221942c6ebf3dee4a41d3a127e98ac4c8455952a9",
+      "source_git_blob": "4bfd4d4af9b7ef9dd26f1f6ddf9ed02bd461374d"
+    },
+    {
+      "snapshot_path": "authority/RL347_GLOBAL_PROOF_ROADMAP_STATUS.md",
+      "source_path": "sessions/RL347/RL347_GLOBAL_PROOF_ROADMAP_STATUS.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "a9488cce0f44cbe94fb7641e4a9819c167278f27560a132ae071ce264ca861ef",
+      "source_git_blob": "607aef959cbebe0436d67bdfbd97f45de3735acd"
+    },
+    {
+      "snapshot_path": "authority/RL347_PROOF_LEDGER.md",
+      "source_path": "sessions/RL347/RL347_PROOF_LEDGER.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "97004e738423db970a95dc34c2ca1ea4b64347b5bfdbffbabed79b1bc6526703",
+      "source_git_blob": "ea44a9c87e039b3649f8b2eb5928fdf3dba7b741"
+    },
+    {
+      "snapshot_path": "authority/RL348_CLOSEOUT_VERIFICATION.md",
+      "source_path": "sessions/RL348/RL348_CLOSEOUT_VERIFICATION.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "e49ce45d6ec85b9a5a39ca726bd6438375a6d1515b1b9e52424d966895064009",
+      "source_git_blob": "e7180f1cf7e63769b208d363e904fd0c6384d362"
+    },
+    {
+      "snapshot_path": "authority/RL348_CORRECTION_AND_DEMOTION_LEDGER.md",
+      "source_path": "sessions/RL348/RL348_CORRECTION_AND_DEMOTION_LEDGER.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "5d07584b626e8020761849b8cdc099bc23088c6d114a16cdcb0afa90337e73e5",
+      "source_git_blob": "99e2d7a94ea3095850ce9ec52a43512c2e534520"
+    },
+    {
+      "snapshot_path": "authority/RL348_EXACT_CERTIFICATE.md",
+      "source_path": "sessions/RL348/RL348_EXACT_CERTIFICATE.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "b8efdd0e0944a7ff5964d6cb2c7b1ea85b2fd02978939910f7a309ae7f612665",
+      "source_git_blob": "ac2e86c7bb8f360e778ca9e76b4a06d4082102d0"
+    },
+    {
+      "snapshot_path": "authority/RL348_GLOBAL_PROOF_ROADMAP_STATUS.md",
+      "source_path": "sessions/RL348/RL348_GLOBAL_PROOF_ROADMAP_STATUS.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "dc3c0c719123909af4db108b8377c358dda5e10856d44391ef7af8a26bd9ff0f",
+      "source_git_blob": "38be6211cba25c6bf05c78566502a5baadd32db2"
+    },
+    {
+      "snapshot_path": "authority/RL348_PROOF_LEDGER.md",
+      "source_path": "sessions/RL348/RL348_PROOF_LEDGER.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "bb16741b1c20368cfc92085172b0f72cdfe2c047e50d63bdcd977642269dcd67",
+      "source_git_blob": "725d30d7378ff43243befdc79d757074357e8b55"
+    },
+    {
+      "snapshot_path": "authority/RL349_CLOSEOUT_VERIFICATION.md",
+      "source_path": "authoritative/RL349_CLOSEOUT_VERIFICATION.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "b827dfc1ed45d43543ab968a4f6ab8b9d987c137a88dbf60ba8fc7d08dea2e4b",
+      "source_git_blob": "8dd2546ae18375668086f816290040eb4d91f9d7"
+    },
+    {
+      "snapshot_path": "authority/RL349_CORRECTION_AND_DEMOTION_LEDGER.md",
+      "source_path": "authoritative/RL349_CORRECTION_AND_DEMOTION_LEDGER.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "d28992aebf1f48590a31eeaeb43f4aa51718cd66a3f73cba3fec654eee5515ab",
+      "source_git_blob": "4945e5479c9895cc63d582714dfc83391ac0d0b0"
+    },
+    {
+      "snapshot_path": "authority/RL349_EXACT_CERTIFICATE.md",
+      "source_path": "authoritative/RL349_EXACT_CERTIFICATE.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "eca8a1843cb41e2389ceef2e9e2445bb19de220cddbdcbbda8e154ddd1e7f9a8",
+      "source_git_blob": "e73b00565cbc915efcea9a951397b6471ffa2026"
+    },
+    {
+      "snapshot_path": "authority/RL349_GLOBAL_PROOF_ROADMAP_STATUS.md",
+      "source_path": "authoritative/RL349_GLOBAL_PROOF_ROADMAP_STATUS.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "8d0ab4a8bab906f8ef35c8ddd500e6c3f46a55a11f5ea716e6af3a2e16de05fd",
+      "source_git_blob": "a2cfc976b41a4d33ac01cd5f1b8c34c95df79747"
+    },
+    {
+      "snapshot_path": "authority/RL349_PHASE4_ONE_SESSION_AGGRESSIVE_CLOSURE_TARGET.md",
+      "source_path": "authoritative/RL349_PHASE4_ONE_SESSION_AGGRESSIVE_CLOSURE_TARGET.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "6d9b3465434e94c03b60a757f5b4f2c33c4a1fcbde1005557427b0fd524074eb",
+      "source_git_blob": "a966e5f81311ec330d3ec5b1068a70e136bc1abe"
+    },
+    {
+      "snapshot_path": "authority/RL349_PROOF_LEDGER.md",
+      "source_path": "authoritative/RL349_PROOF_LEDGER.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "09a7dad56e4d470b710eaa34bbc48c1d905e8114ab09c7651f78a322da0bf405",
+      "source_git_blob": "68150ebc4dfaea4a98a7244a77f483c4b00c6f92"
+    },
+    {
+      "snapshot_path": "authority/RL349_SCRATCH_FRONTIER.md",
+      "source_path": "authoritative/RL349_SCRATCH_FRONTIER.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "00478a6f4f7ab44bc3bb9336d1054dfcfece760d50c61092dc7fb2849bf3e303",
+      "source_git_blob": "d4749ddd330b13e8cf532caf2279e79225cacf0d"
+    },
+    {
+      "snapshot_path": "authority/VERIFICATION_AND_CLOSEOUT.md",
+      "source_path": "docs/VERIFICATION_AND_CLOSEOUT.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "c9cbb3aa960847a7b129a7304dad492595265f239c6fdf816773840dfbce3359",
+      "source_git_blob": "7f18cd13ea0fff48a57614246c0a88266e2be8a2"
+    },
+    {
+      "snapshot_path": "authority/full_cycle_canonical_bridge.md",
+      "source_path": "sessions/RL343/full_cycle_canonical_bridge.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "25fe112a24eed1d77fcc4b57b4fe1643544a17b0b36c25f265f297daa749efab",
+      "source_git_blob": "f22f3a8ce4de42ece59063e96d006c8e4e25366d"
+    },
+    {
+      "snapshot_path": "authority/matched_phase_pairing.md",
+      "source_path": "sessions/RL343/matched_phase_pairing.md",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "91fab2e460c0a089bf10a70b7a77d7d93555219a5f1402286a223081dfcdb370",
+      "source_git_blob": "e6d6d9dd56e989b73e49bffb65a79ec5d130c646"
+    },
+    {
+      "snapshot_path": "authority/phase_boundary.py",
+      "source_path": "sessions/RL343/phase_boundary.py",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "a04d9bd19cb50686a90d053cdd03e742e6d30b1fff126d8ce559dfff3cc2bbac",
+      "source_git_blob": "f390ddb2923b229e932966ec4d95499d3a4a6db2"
+    },
+    {
+      "snapshot_path": "authority/suffix75_boundary.py",
+      "source_path": "sessions/RL343/suffix75_boundary.py",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "79601d916e63defdb01c9bedc6c59e553ebe8a0279f902dc98959da7902622cd",
+      "source_git_blob": "b114690b9b98e3eeacc73e7f250da6fcdbea56f0"
+    },
+    {
+      "snapshot_path": "authority/terminal_ones_escape.json",
+      "source_path": "sessions/RL343/terminal_ones_escape.json",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "39a891b7627e2b0e83084a1ffcbc00c6c6e6ca668085fbbeb5880f66c3816e15",
+      "source_git_blob": "2b43b4f34840b378e7b36b0b238437b7e9c288e5"
+    },
+    {
+      "snapshot_path": "authority/verify_full_cycle_bridge.py",
+      "source_path": "sessions/RL343/verify_full_cycle_bridge.py",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "fed88f779116d8d0d8697771830aae0f4658e89faa25551f796d35a86ed415d8",
+      "source_git_blob": "9799f0ff2fb9206882d944c23ef787fa4453a427"
+    },
+    {
+      "snapshot_path": "authority/verify_matched_phase_pairing.py",
+      "source_path": "sessions/RL343/verify_matched_phase_pairing.py",
+      "source_commit": "de5586d",
+      "copy_class": "authority",
+      "verbatim_copy": true,
+      "sha256": "e23ee2146a086251112b2668b80a5760ff103cbb23ce602dd99482cd736272aa",
+      "source_git_blob": "49b198a0083f1553fb2b51a4115672efd243d39a"
+    },
+    {
+      "snapshot_path": "certificates/red_team_rl343.py",
+      "source_path": "authoritative/verification/red_team_rl343.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "faf82baec5672696c8478c6b8edcb951c81614839a7c394923307b504d5120d1",
+      "source_git_blob": "0400cc12ca5ff4e16d6633faeb7e712e5b9aeb34"
+    },
+    {
+      "snapshot_path": "certificates/red_team_rl344.py",
+      "source_path": "authoritative/verification/red_team_rl344.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "6223c52f899f4778bb39d624696d72d7b27c17d45d07e8d46804e5b4c7349573",
+      "source_git_blob": "378d3c06858ae22a1c1ff86227bdbdecaeaf1221"
+    },
+    {
+      "snapshot_path": "certificates/red_team_rl345.py",
+      "source_path": "authoritative/verification/red_team_rl345.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "37b498f5fe66d3c2c07c0655a4ea35bf6e4214d25ad474e1e7a0aca2ca49d579",
+      "source_git_blob": "6f19eba0540980f681a01eff2f781cf5820f09a6"
+    },
+    {
+      "snapshot_path": "certificates/red_team_rl347.py",
+      "source_path": "authoritative/verification/red_team_rl347.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "7b818826a93ce1c2b4a90cb637ade29eadb7a6d7ad0e62222986e31d45f69e05",
+      "source_git_blob": "667aaba3dcfb844d4950998821ad2ddcc95331ed"
+    },
+    {
+      "snapshot_path": "certificates/red_team_rl348.py",
+      "source_path": "authoritative/verification/red_team_rl348.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "3670ddbbc891552e534cbfb1b746d2826101a0a992ce947f390a11fdf3ca1b3a",
+      "source_git_blob": "6de8c8b3f1e363aa89d4e7c0aab61bda015e41aa"
+    },
+    {
+      "snapshot_path": "certificates/red_team_rl349.py",
+      "source_path": "authoritative/verification/red_team_rl349.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "488cd222ee05cdef30e94bc8e4334a0f7535d9ad48e566f28582dcf62656d499",
+      "source_git_blob": "24537d9929350f73225ba01e63c6f1fd379a7349"
+    },
+    {
+      "snapshot_path": "certificates/red_team_terminal_ones_60.py",
+      "source_path": "sessions/RL343/red_team_terminal_ones_60.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "db666c64f17df7e9834b9c21499254a43d6dd00f5a3ecf53d8fb5a7267bb85a0",
+      "source_git_blob": "8cf39de98654185747a02ea81b2ab74629a81131"
+    },
+    {
+      "snapshot_path": "certificates/verify_rl18_cubic_norm_reduction.py",
+      "source_path": "sessions/RL18/verify_rl18_cubic_norm_reduction.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "771bf07ee3057a446aab87aab1f9d93bf3da2c2938bf6c977532a6ddf1dce272",
+      "source_git_blob": "3df5486940ffa7d1979406ca25776b6372a00f7b"
+    },
+    {
+      "snapshot_path": "certificates/verify_rl18_global_orbit_identity.py",
+      "source_path": "sessions/RL18/verify_rl18_global_orbit_identity.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "dd52d9556a5a7e36f908b786f1959fe7ae463120624349cd543ea33e6fcaf332",
+      "source_git_blob": "ec0628094fc2e15c09a1b79125b1c3602935087f"
+    },
+    {
+      "snapshot_path": "certificates/verify_rl19_cubic_skew_closure.py",
+      "source_path": "sessions/RL19/verify_rl19_cubic_skew_closure.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "d3d351d799b8b94112aac55f1ed1c5d1a3d01d6032d51721b73ee53e3c7211f3",
+      "source_git_blob": "5e2f9440f135d9a5fa320780ac117c52c62a4780"
+    },
+    {
+      "snapshot_path": "certificates/verify_rl19_global_odd_step_product.py",
+      "source_path": "sessions/RL19/verify_rl19_global_odd_step_product.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "1f48776ca123a40ffd061fa6c273a43d4d569e5e4ceb8462a1e198e60e108a56",
+      "source_git_blob": "61ba11ffad31ec8eca191514fdd88aa3582cb593"
+    },
+    {
+      "snapshot_path": "certificates/verify_rl19_global_weighted_population.py",
+      "source_path": "sessions/RL19/verify_rl19_global_weighted_population.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "e20fd21b1d04ee9314b86284c414332ec3d8af693d8d45279c0084b2e49f0ac5",
+      "source_git_blob": "9b6827161b0995b63c685a3eeeef9f92801f5d2e"
+    },
+    {
+      "snapshot_path": "certificates/verify_rl20_bounded_bridge_countermodel.py",
+      "source_path": "sessions/RL20/verify_rl20_bounded_bridge_countermodel.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "89ffd7b816546cd5bf2f32f48e17aafc9b7a846a7bc29805cd1de3e769c231ba",
+      "source_git_blob": "c40110665fb0520b11481656c445b32a9b35edc0"
+    },
+    {
+      "snapshot_path": "certificates/verify_rl343_fast.py",
+      "source_path": "authoritative/verification/verify_rl343_fast.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "5a905c24fdb090bc18a207e6184be2b18410f9f431b785531ec5a601270bb6e9",
+      "source_git_blob": "29d7f2a0a50bbbb09650b0f70b7524884ed9c5cc"
+    },
+    {
+      "snapshot_path": "certificates/verify_rl344_fast.py",
+      "source_path": "authoritative/verification/verify_rl344_fast.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "88ab63ca3f621d300921411233a64d30d4b3b82b5b52b8cefefc9507f1495865",
+      "source_git_blob": "dfe3f1ee934aa32f01cf5692f780d4c21c73531e"
+    },
+    {
+      "snapshot_path": "certificates/verify_rl345_fast.py",
+      "source_path": "authoritative/verification/verify_rl345_fast.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "085d4803e4164fb8d66281320aa98208fa24d888b509c5eabd7171fdb2171960",
+      "source_git_blob": "56f181f13f562ca219aabad43600d50a4a92455b"
+    },
+    {
+      "snapshot_path": "certificates/verify_rl347_fast.py",
+      "source_path": "authoritative/verification/verify_rl347_fast.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "d68fa46e0ec41cc47729f9869380391683baee1325c169693940ab5f7ad6bbb3",
+      "source_git_blob": "709f4f66c8de55a4d6b12d69c8e5297085a05c00"
+    },
+    {
+      "snapshot_path": "certificates/verify_rl348_fast.py",
+      "source_path": "authoritative/verification/verify_rl348_fast.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "72a8dffa7ae98f21a74cc1894b332f35d34d97e8485ded9b87b8b9baf62c4813",
+      "source_git_blob": "f93c81efc8fe30284ed6249a9711006a35f2fd59"
+    },
+    {
+      "snapshot_path": "certificates/verify_rl349_fast.py",
+      "source_path": "authoritative/verification/verify_rl349_fast.py",
+      "source_commit": "de5586d",
+      "copy_class": "certificate",
+      "verbatim_copy": true,
+      "sha256": "b8b542d8afdd9f1eed1dde04146e574929acc680ee64d79c8ae88a4435547e6d",
+      "source_git_blob": "0a9b347025079cccb88a56376d0d27db5119bb2d"
+    },
+    {
+      "snapshot_path": "historical/RL18_GLOBAL_ORBIT_SUM_IDENTITY.md",
+      "source_path": "sessions/RL18/RL18_GLOBAL_ORBIT_SUM_IDENTITY.md",
+      "source_commit": "de5586d",
+      "copy_class": "historical",
+      "verbatim_copy": true,
+      "sha256": "a704c2c972c00133839c18cc14d5d474f20da3cff378924d4729e7a287989222",
+      "source_git_blob": "d49b99749829daf35ccc756f8244dc4fad5b669f"
+    },
+    {
+      "snapshot_path": "historical/RL18_REPAIRED_RADIUS3_PROOF_REPORT.md",
+      "source_path": "sessions/RL18/RL18_REPAIRED_RADIUS3_PROOF_REPORT.md",
+      "source_commit": "de5586d",
+      "copy_class": "historical",
+      "verbatim_copy": true,
+      "sha256": "b2ad11e39e9f38177f0aefa80599f779a09370b9f7ad0b6f0f4c610f16749471",
+      "source_git_blob": "50f8fd78a1078f6c556bec91089fa910b17999da"
+    },
+    {
+      "snapshot_path": "historical/RL19_SESSION_CLOSEOUT.md",
+      "source_path": "sessions/RL19/RL19_SESSION_CLOSEOUT.md",
+      "source_commit": "de5586d",
+      "copy_class": "historical",
+      "verbatim_copy": true,
+      "sha256": "a7db4e6f646c35763068d4cbd63101b694ef079ba5ee3c74d19e2bbe1d49d8c4",
+      "source_git_blob": "16cc66edc6a7960ce29a731a311d27c6a68373c6"
+    },
+    {
+      "snapshot_path": "historical/RL20_BOUNDED_RADIUS_BRIDGE_COUNTERMODEL.md",
+      "source_path": "sessions/RL20/RL20_BOUNDED_RADIUS_BRIDGE_COUNTERMODEL.md",
+      "source_commit": "de5586d",
+      "copy_class": "historical",
+      "verbatim_copy": true,
+      "sha256": "193ea64ad2ecd58d456125b38a06ccec2398d1495a0588c6904208ad44dc21aa",
+      "source_git_blob": "5b416cc486acf6f73cbcb0e2be99d973462dad8d"
+    },
+    {
+      "snapshot_path": "historical/RL255_CLOSEOUT_REPORT_2026-09-05.md",
+      "source_path": "sessions/RL255/RL255_CLOSEOUT_REPORT_2026-09-05.md",
+      "source_commit": "de5586d",
+      "copy_class": "historical",
+      "verbatim_copy": true,
+      "sha256": "caf41c84b5eb8d1879b6cbb233a86b59f648a4eecf966c08f3087ea5e23969ac",
+      "source_git_blob": "a15c73d49932e45c27225c0ba523dc557e5bbd0c"
+    },
+    {
+      "snapshot_path": "historical/RL255_CORRECTION_AND_DEMOTION_LEDGER_2026-09-05.md",
+      "source_path": "sessions/RL255/RL255_CORRECTION_AND_DEMOTION_LEDGER_2026-09-05.md",
+      "source_commit": "de5586d",
+      "copy_class": "historical",
+      "verbatim_copy": true,
+      "sha256": "0de3dd1b9af811f8d5e69d016fb2fd18ea144872848a9632f611d357e0dcf2a6",
+      "source_git_blob": "04fa4a215529f07fe5c6ef2bff85387c703913f5"
+    },
+    {
+      "snapshot_path": "historical/RL309_LEVERAGE_AUDIT.md",
+      "source_path": "sessions/RL309/RL309_LEVERAGE_AUDIT.md",
+      "source_commit": "de5586d",
+      "copy_class": "historical",
+      "verbatim_copy": true,
+      "sha256": "501b87e82e784bb742137382ce500dca707b14a7b14b1bca319bb93e588cfd95",
+      "source_git_blob": "d8a1c892a3fcad375f523d1ec428c080fdb48539"
+    },
+    {
+      "snapshot_path": "historical/RL314_AUDIT_REPORT.md",
+      "source_path": "sessions/RL314/RL314_AUDIT_REPORT.md",
+      "source_commit": "de5586d",
+      "copy_class": "historical",
+      "verbatim_copy": true,
+      "sha256": "a01fe5d91e6da4ca0245e8ddf85a72fefb73398db573b1aaf3ccc4b0d90090f8",
+      "source_git_blob": "01c41bfe84165c8193f80add273cbc9e16a691ce"
+    },
+    {
+      "snapshot_path": "historical/RL324_GLOBAL_PROOF_ROADMAP_STATUS.md",
+      "source_path": "sessions/RL324/RL324_GLOBAL_PROOF_ROADMAP_STATUS.md",
+      "source_commit": "de5586d",
+      "copy_class": "historical",
+      "verbatim_copy": true,
+      "sha256": "bbd774e03f918572c733ded74f34c173b1a620fe5e8b840706af7ab045779f5a",
+      "source_git_blob": "69dc02aa2c1abe3fbd63bde5165947c4b80363fa"
+    },
+    {
+      "snapshot_path": "historical/RL324_PROOF_LEDGER.md",
+      "source_path": "sessions/RL324/RL324_PROOF_LEDGER.md",
+      "source_commit": "de5586d",
+      "copy_class": "historical",
+      "verbatim_copy": true,
+      "sha256": "6f9b478d0cb23d183a14b8396812b511a0edc6df843d01439aa0716f6e897dac",
+      "source_git_blob": "204ce8ae0d7a67295559ca674c5af905a630243e"
+    },
+    {
+      "snapshot_path": "historical/RL349_SESSION_STATE_AND_RL350_KICKOFF_POST_BOUNDARY.md",
+      "source_path": "authoritative/RL349_SESSION_STATE_AND_RL350_KICKOFF.md",
+      "source_commit": "de5586d",
+      "copy_class": "historical",
+      "verbatim_copy": true,
+      "sha256": "31462b70085e72775bff93c2f3684fe29bf81e7aaea0f2db932d3ad63fa6d1a0",
+      "source_git_blob": "9557d76890d48f2343f05968e01edb88e27c07a7"
+    },
+    {
+      "snapshot_path": "historical/RL72_GLOBAL_AUDIT_LEMMA_CATALOGUE_SYNTHESIS_AND_ROADMAP.md",
+      "source_path": "sessions/RL72/RL72_GLOBAL_AUDIT_LEMMA_CATALOGUE_SYNTHESIS_AND_ROADMAP.md",
+      "source_commit": "de5586d",
+      "copy_class": "historical",
+      "verbatim_copy": true,
+      "sha256": "13efe7460598f17eeffcde3202009b6ed178c39618e597930c9c4bff002782b5",
+      "source_git_blob": "cd813652ef37cf42ea5a6c43bce9efbf1dd953a8"
+    },
+    {
+      "snapshot_path": "historical/RL75_GLOBAL_RL_CLOSURE_ROUTE_TOURNAMENT_AND_PRIMITIVE_PUMP_TRANSVERSALITY.md",
+      "source_path": "sessions/RL75/RL75_GLOBAL_RL_CLOSURE_ROUTE_TOURNAMENT_AND_PRIMITIVE_PUMP_TRANSVERSALITY.md",
+      "source_commit": "de5586d",
+      "copy_class": "historical",
+      "verbatim_copy": true,
+      "sha256": "034688b00997a80d3e402a2f3ac506fc314c4eb7ee2a9fcfe1728293d67ecfd0",
+      "source_git_blob": "2bdedae6d5176aa4e61d6b356c84ccb5603b19ff"
+    },
+    {
+      "snapshot_path": "historical/RL79_POST_TOURNAMENT_COMMON_BARRIER_SYNTHESIS_AND_UNIT_INCREMENT_RESET.md",
+      "source_path": "sessions/RL79/RL79_POST_TOURNAMENT_COMMON_BARRIER_SYNTHESIS_AND_UNIT_INCREMENT_RESET.md",
+      "source_commit": "de5586d",
+      "copy_class": "historical",
+      "verbatim_copy": true,
+      "sha256": "df403ea0b89dbc8a64a42a22704ffc4f7b4e992310ff83efbe9723dc43a1712d",
+      "source_git_blob": "d88dcf08f762df34068edc73017c52e1725dd7f5"
+    },
+    {
+      "snapshot_path": "historical/RL99_GLOBAL_AUDIT_SYNTHESIS_AND_RL100_ROADMAP.md",
+      "source_path": "sessions/RL100/RL99_GLOBAL_AUDIT_SYNTHESIS_AND_RL100_ROADMAP.md",
+      "source_commit": "de5586d",
+      "copy_class": "historical",
+      "verbatim_copy": true,
+      "sha256": "cb341e40677c8a6c7d68a36a594badeac126347388941756dea68ebeca21710d",
+      "source_git_blob": "fd0b749788eec45c5fd78e2af9c982d2600f92b4"
+    },
+    {
+      "snapshot_path": "historical/RL99_PROOF_STATE_LEMMA_AND_CORRECTION_LEDGER.md",
+      "source_path": "sessions/RL100/RL99_PROOF_STATE_LEMMA_AND_CORRECTION_LEDGER.md",
+      "source_commit": "de5586d",
+      "copy_class": "historical",
+      "verbatim_copy": true,
+      "sha256": "05fd5f010561e6d9eddef15ca293196f4455c7b35abc979253d3116847e58e13",
+      "source_git_blob": "95d7a216c304c0b9a01de4e6e9bb1384a7f4d276"
+    }
+  ]
+}
