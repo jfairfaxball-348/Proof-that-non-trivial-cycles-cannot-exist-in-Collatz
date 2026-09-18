@@ -313,3 +313,84 @@ two-spike ownership equation globally: either prove no admissible pair
 `(p,q)` can make the normalized quotient integral, or produce a genuinely
 owned pair.  If that route structurally fails, state the obstruction before
 moving to area at least three.
+
+
+## Session 1 / Session 2 verifier-artifact addendum — 2026-09-18
+
+Both sessions remain at their recorded **SURVIVED** status, but are classified
+here as **ATTEMPTED, PENDING THIRD-PARTY VERIFICATION**.  This addendum does
+not advance to Session 3.
+
+The computational claims are now backed by runnable repository artifacts:
+
+- `FINAL_CHANCE/verifiers/verify_session1_interval.py`
+  (introduced by commit `99671230c0a6b16e74d292ed71351739753e626b`);
+- `FINAL_CHANCE/verifiers/verify_session2_two_spike_screen.py`
+  (introduced by commit `ddd3309f790aa54cbdbd749eae221374de055f46`).
+
+Both require only the Python standard library.  Neither materializes
+`2^A`, `3^L`, `D`, or the full numerator.  The Session 1 script uses
+exact rational atanh-series bounds for `ln 2` and `ln 3`, an exact rational
+Taylor/remainder bound for `exp(Delta)-1`, and outward-rounded Decimal
+interval arithmetic for the Euclidean Beatty recursion.  Session 2 imports
+that same machinery and applies outward intervals to every one of the 170,236
+admissible two-spike pairs in the stated `p,q<=1000` screen.
+
+The verifier-produced decimal tails below supersede the earlier handwritten
+interval tails in the Session 1 correction and Session 2 entry.  The
+mathematical conclusions are unchanged.
+
+### Literal stdout — Session 1 verifier
+
+```
+FINAL_CHANCE Session 1 interval verifier: PASS
+A = 217976794617
+L = 137528045312
+profile = h_2=h_4=1, all other h_j=0
+method = exact rational log/expm1 bounds + outward Decimal Beatty recursion
+precision_digits = 140
+Q_h/D lower = 36797780658427066316156.390394816938125969055043075632729978547931258394192452757576388503574803981634883377308038366708954109182102125518785
+Q_h/D upper = 36797780658427066316156.390394816938125969055043075632729978547931258394192452757576388503574803981634883377308038369665779140219142145179179
+interval width = 2.956825031037040019660394E-93
+common integer part = 36797780658427066316156
+distance above floor >= 0.3903948169381259690550430756
+distance below next integer >= 0.6096051830618740309449569244
+D divides Q_h = False
+```
+
+### Literal stdout — Session 2 verifier
+
+```
+FINAL_CHANCE Session 2 two-spike screen: PASS
+A = 217976794617
+L = 137528045312
+screen phases = 1.. 1000
+admissible spike positions = 584
+screened pairs = 170236
+formula = (S-(rho_p+rho_q)/2)/(3*(exp(Delta)-1))
+Delta = A*ln(2)-L*ln(3)
+rho_j = 2^floor(A*j/L)/3^j
+S = sum_{j=0}^{L-1} rho_j
+precision_digits = 140
+possible owned pair in screen = False
+closest pair = (498, 972)
+b_p,b_q = (789, 1540)
+modified exponents a_497,a_498,a_971,a_972 = (1, 2, 1, 3)
+Q_pq/D lower = 36797780658465232971971.999998985664422595513118187123755030044390589682681548801387011151199258355596930463501983547687718525692993052787956
+Q_pq/D upper = 36797780658465232971971.999998985664422595513118187123755030044390589682681548801387011151199258355596930463501983550644543556730033072448350
+interval width = 2.956825031037040019660394E-93
+nearest integer = 36797780658465232971972
+closest miss distance lower = 0.000001014335577404486881812876245
+closest miss distance upper = 0.000001014335577404486881812876245
+second closest pair = (431, 549)
+second miss distance lower = 0.000002886967966117890667541213507
+second miss distance upper = 0.000002886967966117890667541213507
+best-vs-second certified separation = 0.000001872632388713403785728337262
+```
+
+Session 2's screen therefore contains no interval that meets an integer, and
+the nearest screened miss is `(498,972)`; its certified miss interval is
+strictly separated from the second-place pair.  This remains only a finite
+screen of `p,q<=1000`, not a theorem for all area-two profiles.
+
+No Session 3 work has begun.
