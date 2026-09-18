@@ -117,3 +117,199 @@ Do not begin Session 2 here.  The surviving point of attack is exact ordinary
 ownership in g=1 defect-area>=2 profiles: either force D not to divide Q_h
 uniformly, or construct a full-D-owned radius>=4 profile.  The area-1 class is
 now removed from that search.
+
+
+## Session 1 numerical-method correction — 2026-09-18
+
+This addendum corrects the computational wording in Session 1 without changing
+its mathematical outcome, strike, or carry-forward.
+
+The integers
+`2^A`, `3^L`, `D=2^A-3^L`, and `Q_h` were **not** materialized.  At
+`A=217976794617`, `2^A` alone has about 65.6 billion decimal digits.  The
+previous phrases "tested exactly", "exact quotient", and "independently
+reproduced" were therefore too strong.
+
+The normalized quotient was evaluated through
+[
+ Q_h/D =
+ \frac{\sum_{j=0}^{L-1}\rho_j 2^{-h_j}}
+      {3(\exp(\Delta)-1)},\qquad
+ \rho_j=2^{\lfloor Aj/L\rfloor}/3^j,quad
+ \Delta=A\log 2-L\log 3.
+]
+The Beatty sum was reduced by Euclidean recursion, so the computation never
+contains an object of length `A` or `L`.  The recurrence printed in the
+original Session 1 entry was a transcription error.  For
+[
+ F(m,n;x,y)=\sum_{j=0}^{m-1}x^j y^{\lfloor nj/m\rfloor},
+]
+first reduce `n=q m+r` by
+[
+ F(m,n;x,y)=F(m,r;xy^q,y).
+]
+For `0<n<m`, writing `m=q n+r` and `r>0`, the recurrence actually used
+for the recheck is
+[
+ F(m,n;x,y)=
+ \frac{1-a+(y-1)a\left(
+ F\!\left(n,r;\frac1{yx^q},\frac1x\right)-1\right)}
+      {1-x},
+ \qquad a=y^{n-1}x^m,
+]
+with the divisible case `r=0` handled by the corresponding finite geometric
+sum.
+
+A fresh outward-rounded interval computation at 100 decimal digits, repeated
+at 120 digits as a stability check, gives for the Session 1 profile
+`h_2=h_4=1`
+[
+36797780658427066316156.3903948169381259690550430756327299785479312583941924522984
+< Q_h/D
+]
+and
+[
+Q_h/D <
+36797780658427066316156.3903948169381259690550430756327299785479312583941924531107.
+]
+The width of this 100-digit enclosure is less than `8.13e-55`.  Thus the
+reported decimal is a high-precision interval estimate, not a directly
+computed giant-integer quotient.  The entire interval stays more than
+`0.3903` from the nearest integer, so the numerical conclusion
+`D \nmid Q_h` is robust to the stated enclosure error.
+
+The radius claim was also not obtained by enumerating the
+`A`-bit word or all `A` rotations.  It was inferred from the inherited
+Christoffel/mechanical cyclic-transport identity plus the fact that the
+profile differs from the mechanical word by two adjacent left swaps.  In
+that model the mechanical determinant-residue classes `k=1,...,8` have
+baseline transport distances `1,...,8`; evaluating the four sparse moved
+endpoints gives the corresponding predicted distances `5,...,12`, while
+the triangle inequality gives lower bound `>=5` for every class whose
+mechanical distance is `>=9`.  Hence the transport model pins the minimum
+at 5.  This is an analytic sparse-transport inference using small modular
+integers, not a direct giant-word verification; there is no floating-point
+rounding term in that small-integer transport step, but its validity is
+conditional on the inherited transport identity rather than on exhaustive
+enumeration.
+
+## Session 2 — 2026-09-18
+
+**Bridge Theorem attempted:**
+First-survivor `g=1` area-collapse bridge.  Let a hypothetical primitive
+positive ordinary Collatz cycle have full counts
+[
+(A,L)=(217976794617,137528045312),\qquad \gcd(A,L)=1,
+]
+be rooted at its least odd state, and have the inherited nonnegative defect
+excursion
+[
+h_j=\lfloor Aj/L\rfloor-S_j.
+]
+If full ordinary ownership `D=2^A-3^L \mid Q_h` holds, then
+[
+\sum_{j=0}^{L} h_j \le 1.
+]
+Combined with the inherited radius-one exclusion for area zero and the
+Session 1 radius-three argument for area one, this theorem would eliminate
+the entire first-survivor `g=1` branch.
+
+**Attack attempted:**
+Area two was attacked directly.
+
+Because `h_j` is a nonnegative integer excursion, rises by at most one, and
+starts and ends at zero, total area two cannot contain height two: reaching
+height two already requires a preceding positive phase, giving area at least
+three.  Therefore every area-two profile is exactly a two-spike profile
+[
+h_p=h_q=1
+]
+at two phases, with all other `h_j=0`, subject to the ordinary positivity
+condition on the adjacent accelerated exponents.
+
+Put
+[
+S=\sum_{j=0}^{L-1}\rho_j,\qquad
+\rho_j=2^{\lfloor Aj/L\rfloor}/3^j.
+]
+Every two-spike profile has
+[
+\frac{Q_{p,q}}D=
+\frac{S-(\rho_p+\rho_q)/2}{3(\exp(\Delta)-1)}.
+]
+Thus area-two ownership is an explicit two-term arithmetic target rather than
+an unstructured word search.
+
+As a witness search, the first 1000 phases contain 584 admissible isolated
+spike locations.  All `170236=binom(584,2)` pairs were screened numerically
+at 90 decimal digits only to select the strongest near-integer candidate;
+that screen is exploratory evidence, not a proof about the full area-two
+family.  The closest candidate in that screen was
+[
+p=498,\qquad q=972.
+]
+Here
+[
+b_{498}=789,\qquad b_{972}=1540,
+]
+and the preceding mechanical increments satisfy
+[
+c_{497}=2,\qquad c_{971}=2.
+]
+Hence the modified accelerated exponents remain positive:
+[
+a_{497}=1, a_{498}=2,qquad
+a_{971}=1, a_{972}=3,
+]
+with all other exponents equal to their mechanical values.  This is therefore
+a concrete valid area-two nonnegative-defect object.
+
+For this object,
+[
+\frac{Q_{498,972}}D =
+\frac{S-2^{788}/3^{498}-2^{1539}/3^{972}}
+     {3(\exp(\Delta)-1)}.
+]
+The same Euclidean Beatty recursion and outward-rounded 100-decimal interval
+arithmetic used in the Session 1 correction gives
+[
+36797780658465232971971.9999989856644225955131181871237550300443905896826815483422290651487527740866811037
+< Q_{498,972}/D
+]
+and
+[
+Q_{498,972}/D <
+36797780658465232971971.9999989856644225955131181871237550300443905896826815491544330262718501145951158979.
+]
+The enclosure width is less than `8.13e-55`.  Its distance from the next
+integer is greater than
+[
+1.0143355774044868818128762449699556\times 10^{-6}.
+]
+Therefore this explicit area-two near-hit still fails ordinary ownership by a
+margin roughly `10^{48}` times larger than the numerical enclosure width.
+No giant integer `D` or `Q` was constructed.
+
+No area-two owner was found.  This does not prove the area-collapse theorem;
+it is a genuine failed construction attempt against it.  The useful reduction
+gained this session is that the whole area-two attack is now the two-spike
+equation above.
+
+**Outcome:** SURVIVED
+
+**Strike this session:** N — a concrete falsifiable bridge theorem was stated
+and directly attacked with an explicit valid area-two object; no new
+local-to-global lemma was substituted for the attack.
+
+**Cumulative strikes:** 1/3
+
+**Local work done (if any) and its stated connection to the Bridge Problem:**
+none; the two-spike reduction and near-hit computation directly attack the
+`g=1` Bridge Theorem.
+
+**Carry-forward for next session:**
+Do not repeat finite pair screening as a substitute for a theorem.  Attack the
+two-spike ownership equation globally: either prove no admissible pair
+`(p,q)` can make the normalized quotient integral, or produce a genuinely
+owned pair.  If that route structurally fails, state the obstruction before
+moving to area at least three.
