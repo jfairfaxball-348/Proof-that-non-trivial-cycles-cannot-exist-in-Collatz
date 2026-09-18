@@ -394,3 +394,143 @@ strictly separated from the second-place pair.  This remains only a finite
 screen of `p,q<=1000`, not a theorem for all area-two profiles.
 
 No Session 3 work has begun.
+
+
+## Independent-audit repair addendum — 2026-09-18
+
+Sessions 1 and 2 remain **SURVIVED** and remain **ATTEMPTED, PENDING
+THIRD-PARTY RE-VERIFICATION OF THE REPAIRED ARTIFACTS**.  No Session 3 work
+has begun.
+
+An independent audit of the first committed verifier versions returned
+`VERIFIED WITH NON-MATERIAL CORRECTIONS` for both numerical conclusions,
+but identified verification-integrity defects in the repository artifacts:
+
+1. `Decimal.__pow__` is not guaranteed correctly rounded in every case, so
+   the old `ipow` implementation did not by itself prove outward containment.
+2. The Session 2 filter omitted 415 admissible adjacent-spike profiles, making
+   the correct `p,q<=1000` count 170651 rather than 170236.
+3. Nearest-integer distance subtractions were occurring in the default
+   28-digit Decimal context.
+4. The old closest-pair assertion compared the winner only with the pair having
+   the second-smallest upper bound rather than with the minimum lower bound
+   over the entire remaining field.
+5. No RL20-style verifier exists for the Session 1 radius-5 claim.
+
+The independent audit separately recomputed the ownership quotient with a
+different exact-integer/binary interval implementation and found the Session 1
+quotient strictly inside the old printed interval.  It also screened the 415
+omitted Session 2 profiles and found no owner; the closest pair remained
+`(498,972)` and the second closest remained `(431,549)`.  Those facts
+motivated repairs but do not substitute for the repository artifacts below.
+
+### Repairs committed
+
+`FINAL_CHANCE/verifiers/verify_session1_interval.py` was repaired in commit
+`359e73b0fd3f2e805464c200f457910a05dd6c34`.
+
+The verifier now:
+
+- forms integer powers by binary exponentiation through directed interval
+  multiplication, never through `Decimal.__pow__`;
+- uses explicit directed contexts for interval width and distance-to-integer
+  bounds;
+- keeps integer-candidate arithmetic in Python integers.
+
+`FINAL_CHANCE/verifiers/verify_session2_two_spike_screen.py` was repaired in
+commit `e6e69c9b0e7fa77300b6ec36d9658a3c135966c6`.
+
+The verifier now:
+
+- includes the adjacent case `q=p+1`, for which there is no second rise and
+  therefore no requirement `c_(q-1)=2`;
+- screens all 170651 admissible pairs with `1<=p<q<=1000`;
+- keeps scanning the full field even if an integer-containing interval were
+  encountered;
+- computes nearest-integer distance bounds with explicit directed rounding;
+- proves the winner against the entire field by asserting that its upper
+  miss-distance bound is below the minimum lower miss-distance bound of every
+  other pair.
+
+The phrases "certified" in the previous verifier-artifact addendum are
+superseded by the concrete statement "rigorous outward interval computation";
+no such adjective is being used as evidence for the Bridge Problem.
+
+### Literal stdout — repaired Session 1 verifier
+
+```
+FINAL_CHANCE Session 1 interval verifier: PASS
+A = 217976794617
+L = 137528045312
+profile = h_2=h_4=1, all other h_j=0
+method = exact rational log/expm1 bounds + directed-multiplication Decimal intervals
+precision_digits = 140
+Q_h/D lower = 36797780658427066316156.390394816938125969055043075632729978547931258394192452757576388503574803981634883377308038366696764940912155771739196
+Q_h/D upper = 36797780658427066316156.390394816938125969055043075632729978547931258394192452757576388503574803981634883377308038369677968308489230176038872
+interval width <= 2.981203367577074404299676E-93
+common integer part = 36797780658427066316156
+distance above floor >= 0.390394816938125969055043075632729978547931258394192452757576388503574803981634883377308038366696764940912155771739196
+distance below next integer >= 0.609605183061874030944956924367270021452068741605807547242423611496425196018365116622691961630322031691510769823961128
+D divides Q_h = False
+```
+
+This artifact establishes, subject to third-party execution/review of the
+repaired code, that the Session 1 profile `h_2=h_4=1` fails ordinary
+ownership.  It does not establish the Bridge Theorem.
+
+### Literal stdout — repaired Session 2 verifier
+
+```
+FINAL_CHANCE Session 2 two-spike screen: PASS
+A = 217976794617
+L = 137528045312
+screen phases = 1.. 1000
+rise-admissible spike positions = 584
+additional admissible adjacent pairs = 415
+screened admissible pairs = 170651
+formula = (S-(rho_p+rho_q)/2)/(3*(exp(Delta)-1))
+Delta = A*ln(2)-L*ln(3)
+rho_j = 2^floor(A*j/L)/3^j
+S = sum_{j=0}^{L-1} rho_j
+precision_digits = 140
+possible owned pair in screen = False
+closest pair = (498, 972)
+b_p,b_q = (789, 1540)
+modified exponents a_497,a_498,a_971,a_972 = (1, 2, 1, 3)
+Q_pq/D lower = 36797780658465232971971.999998985664422595513118187123755030044390589682681548801387011151199258355596930463501983547675529357423046699008367
+Q_pq/D upper = 36797780658465232971971.999998985664422595513118187123755030044390589682681548801387011151199258355596930463501983550656732725000121103308044
+interval width <= 2.981203367577074404299677E-93
+nearest integer = 36797780658465232971972
+closest miss distance lower = 0.000001014335577404486881812876244969955609410317318451198612988848800741644403069536498016449343267274999878896691956
+closest miss distance upper = 0.000001014335577404486881812876244969955609410317318451198612988848800741644403069536498016452324470642576953300991633
+second closest pair = (431, 549)
+second miss distance lower = 0.000002886967966117890667541213506789605844024301530936807294231097712126549732283140007262351235722505847156937230596
+second miss distance upper = 0.000002886967966117890667541213506789605844024301530936807294231097712126549732283140007262354216925873424231341530273
+minimum lower bound over all OTHER pairs = 0.000002886967966117890667541213506789605844024301530936807294231097712126549732283140007262351235722505847156937230596
+winner separated from whole field by >= 0.000001872632388713403785728337261819650234613984212485608681242248911384905329213603509245898911251863270203636238963
+```
+
+This artifact establishes, subject to third-party execution/review of the
+repaired code, that no admissible area-two profile with
+`1<=p<q<=1000` has an ownership interval meeting an integer.  It remains a
+finite screen only; it does not establish the area-collapse Bridge Theorem or
+exclude arbitrary area-two profiles.
+
+### Radius-5 correction
+
+The prior Session 1 sentence "the exact minimum all-rotation radius is 5" is
+not treated as verified.  What is presently supported is an analytic
+sparse-transport inference conditional on the inherited mechanical transport
+identity.  No committed verifier independently establishes the all-rotation
+minimum at the RL20 standard.  Until such an artifact exists, radius 5 does
+not count as independently verified evidence in FINAL_CHANCE.
+
+### Verification state
+
+- Session 1 outcome remains `SURVIVED`; strike remains `Y`; cumulative
+  strikes remain `1/3`.
+- Session 2 outcome remains `SURVIVED`; strike remains `N`; cumulative
+  strikes remain `1/3`.
+- The repaired numerical ownership artifacts are ready for independent
+  re-verification.
+- Session 3 is not opened.
