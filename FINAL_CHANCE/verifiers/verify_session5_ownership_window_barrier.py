@@ -46,7 +46,8 @@ assert q0.hi < 2**75
 # Family A: Session-4 connected height-one run, maximal certified length.
 # Each defective phase loses rho_j/2 < 1/2 in the normalized numerator.
 N = P - 1
-q_run_lower = q0.lo - C.hi * N / 2
+q_run = isub(q0, imul(C, rat_interval(N, 2)))
+q_run_lower = q_run.lo
 assert q_run_lower > 2**71
 support = 2 * N + 1
 assert support == 130_941_226_641
@@ -61,7 +62,8 @@ H = (M * J) // L
 assert H == 584_962_500
 assert c(0) in (1, 2)
 assert c(J - 1) in (1, 2)
-q_ramp_lower = q0.lo - C.hi * J
+q_ramp = isub(q0, imul(C, Interval(J)))
+q_ramp_lower = q_ramp.lo
 assert q_ramp_lower > 2**71
 
 # The final drop from h_J=H to zero is always allowed by
