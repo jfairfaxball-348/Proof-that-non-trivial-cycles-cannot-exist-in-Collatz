@@ -1234,3 +1234,225 @@ grammar is killed; no full-owner countermodel was claimed.
 Session 5 is now open at cumulative strikes **2/3**.  If Session 5 incurs a
 strike, the count becomes `3/3` and the next session must mechanically file a
 STOP verdict under `FINAL_CHANCE/README.md`.
+
+
+## Session 5 — 2026-09-18
+
+**Bridge Theorem attempted:**
+Two-sided endpoint-lift bridge.  Let `h` be any legal nonzero nonnegative
+first-survivor `g=1` defect excursion with `sum h_j>=3`, and suppose its real
+ordinary quotient lies in the inherited state window
+```
+2^71 <= Q_h/D < 2^75,
+D=2^A-3^L.
+```
+Let
+```
+p=min{j:h_j>0},
+q=max{j:h_j>0}.
+```
+Using the exact endpoint lifts `K_3(q)` and `K_2(p)` defined below, the
+attempted universal statement was:
+
+> at least one of `K_3(q)` or `K_2(p)` is a positive integer strictly below
+> `D`.
+
+Every actual full owner makes both endpoint lifts divisible by `D`.  Thus the
+statement, if true, would exclude every surviving profile at once.
+
+**Attack attempted:**
+Write the inherited Bezout data as
+```
+P=65470613321, U=103768467013,
+T=L-P=72057431991, S=A-U=114208327604,
+AP-UL=1, AT-SL=-1.
+```
+Retain the exact collapse
+```
+E_h(X)=2^(H-1)+(X-1)G_h(X),
+G_h(X)=sum d_j X^(r_j),
+d_j=2^H-2^(H-h_j),
+r_j=Aj mod L,
+```
+with full ownership implying `E_h(rho)=0 mod D`, and
+```
+rho=2^U 3^(-P)=3^T 2^(-S) mod D,
+rho^(r_j)=2^(b_j)3^(-j)=3^(L-j)2^(b_j-A) mod D.
+```
+
+For the last defect `q`, multiply by `3^(P+q)`.  The exact factor
+`2^(H-1)` cancels because `D` is odd.  With
+```
+R_3(q)=sum_(j<=q) 3^(q-j)(2^(b_j)-2^(b_j-h_j)),
+```
+every owner satisfies
+```
+D | K_3(q),
+K_3(q)=3^(P+q)+2(2^U-3^P)R_3(q).
+```
+Put `x_3=P log3-U log2>0`.  The floor lock gives
+`1/2<2^(b_j)/3^j<1`, hence
+```
+0<R_3(q)/3^q<q+1.
+```
+Since `1-exp(-x_3)<x_3`, the exact rational-log check
+```
+2 x_3 (T-25) < 1
+```
+shows `K_3(q)>0` for every `q<=T-26`.  Also
+```
+K_3(q)<3^(P+q)<=3^(L-26)<D.
+```
+Therefore every actual owner has
+```
+q >= T-25 = 72057431966.
+```
+
+For the first defect `p`, one has `h_p=1`.  Since the exponent sums
+`S_j=b_j-h_j` are strictly increasing, `S_j>=b_p-1` for `j>=p`, making
+```
+R_2(p)=sum_(j>=p) 3^(L-j)
+       (2^(b_j-b_p+1)-2^(b_j-h_j-b_p+1))
+```
+an integer.  The complementary lift gives
+```
+D | K_2(p),
+K_2(p)=2^(S+A-b_p)+(3^T-2^S)R_2(p).
+```
+Put `x_2=S log2-T log3>0`.  Since
+```
+3^(L-j)2^(b_j-A)<1,
+R_2(p)/2^(A-b_p)<2(L-p),
+```
+and `1-exp(-x_2)<x_2`.  The exact check
+```
+2 x_2 (P-26) < 1
+```
+therefore gives positivity for `p>=T+26`.  Exact floor arithmetic gives
+```
+b_(T+26)=S+41,
+```
+so in that range
+```
+0<K_2(p)<2^(A-41)<D.
+```
+Thus every actual owner has
+```
+p <= T+25 = 72057432016.
+```
+
+This proves the global owner reduction
+```
+p <= 72057432016,
+q >= 72057431966.
+```
+It is uniform in height, total defect area, component count, and run length.
+It does not assert that a defect occurs inside the central 51-phase window;
+early/late components may be separated by zero defect.
+
+The full endpoint-size Bridge Theorem was then attacked by the single connected
+height-one excursion
+```
+h_j=1 for 2<=j<=T,
+h_j=0 otherwise.
+```
+It is legal because `c_1=2`, has
+```
+p=2, q=T, sum h_j=T-1=72057431990,
+```
+and is not an area-by-area construction.
+
+Using only the verified global floor lock `1/2<rho_j<1`, its real quotient is
+bounded by
+```
+(P+1)/2+(T-1)/4
+ < sum rho_j 2^(-h_j)
+ < (P+1)+(T-1)/2.
+```
+The exact rational log/exponential bounds prove
+```
+2^71 < Q_h/D < 2^75.
+```
+Thus it lies inside the same inherited real state-size window required of an
+owner, although no integrality/ownership is asserted.
+
+For this profile the last-defect lift has `q=T`, hence
+```
+K_3(T)/3^L > 1-2x_3(T-1) > 1/4,
+D/3^L=exp(Delta)-1 < 1/1000,
+```
+so `K_3(T)>D`.
+
+The first-defect lift has `p=2`, `b_p=3`, and the same run has only `T-1`
+defect terms.  The exact bound
+```
+1-2x_2(T-1)>1/8
+```
+gives
+```
+K_2(2)>2^(S+A-6)>2^A>D.
+```
+Therefore both natural endpoint lifts exceed `D` for a legal connected
+profile already in the inherited real state window.  This is a direct
+countermodel to the proposed structural endpoint-size implication.  It is not
+claimed to satisfy full ownership.
+
+Detailed proof:
+`FINAL_CHANCE/session5_endpoint_lift_obstruction.md`.
+
+Exact verifier:
+`FINAL_CHANCE/verifiers/verify_session5_endpoint_lift_obstruction.py`.
+
+Literal verifier stdout:
+
+```
+FINAL_CHANCE Session 5 endpoint-lift obstruction verifier: PASS
+A,L,M = (217976794617, 137528045312, 80448749305)
+P,U,T,S = (65470613321, 103768467013, 72057431991, 114208327604)
+global floor lock delta_hi*L < ln2_lo = True
+owned last defect q <= 72057431965 = impossible
+owned first defect p >= 72057432017 = impossible
+owner endpoint span forced: p <= 72057432016 and q >= 72057431966
+countermodel = connected height-one run 2..T
+countermodel run length = 72057431990
+countermodel real quotient in [2^71,2^75) = True
+countermodel K3 > D = True
+countermodel K2 > D = True
+scope=structural endpoint-size countermodel; full ownership not asserted
+```
+
+**Outcome:** KILLED
+
+The proposed universal assertion that one of the two endpoint lifts must be a
+nonzero representative below `D` is false even after imposing the inherited
+real state-size window.  The one-sided complementary-lift mechanism therefore
+cannot by itself close arbitrary surviving profiles.
+
+A nontrivial global theorem survives the attack: every actual owner must have
+its first-to-last defect span cross the resonant window in the precise endpoint
+sense
+```
+p<=T+25, q>=T-25.
+```
+
+**Strike this session:** N — an exact global bridge was stated and attacked
+directly; the countermodel kills the proposed structural implication, while
+the same attack proves a uniform all-height/all-area owner reduction.  No
+finite area screen or substitute local lemma was used.
+
+**Cumulative strikes:** 2/3
+
+**Local work done and connection to Bridge Problem:**
+No unrelated local work.  The only finite arithmetic consists of exact
+constant/log inequalities needed for the endpoint lifts and the structural
+countermodel.
+
+**Carry-forward:**
+Session 6 is the final budgeted FINAL_CHANCE session unless a STOP verdict is
+triggered earlier.  Do not retry separate endpoint-size bounds, the killed
+Session 4 sparse/degree/Parseval route, or area-by-area enumeration.  The only
+surviving direction exposed here is a genuinely **two-sided ownership
+interaction across the resonant cut**: a theorem must couple early and late
+defect contributions rather than bounding either endpoint in isolation.  The
+Session 5 endpoint-span theorem is the exact inherited reduction for that
+attack.
