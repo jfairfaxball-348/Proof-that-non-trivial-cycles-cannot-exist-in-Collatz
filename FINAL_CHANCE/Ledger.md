@@ -1215,3 +1215,22 @@ phases separated by `P=A^(-1) mod L`, or a genuinely global complementary-lift
 mechanism not reducible to the failed residue-order norm/degree bound.
 
 Verification status: **ATTEMPTED, PENDING INDEPENDENT VERIFICATION**.
+
+
+## Strike-count / Session 4 verification disposition — 2026-09-18
+
+By explicit user instruction, the cumulative FINAL_CHANCE strike count entering
+Session 5 is **2/3** across the full FINAL_CHANCE programme.  This supersedes
+the `1/3` count written in the Session 4 entry without editing that append-only
+historical entry.
+
+The user also accepts the nature of the Session 4 result as a structural
+`KILLED` countermodel result and explicitly waives independent verification as
+a prerequisite to opening Session 5.  Session 4 is therefore treated as
+closed for programme-flow purposes.  Its mathematical scope remains exactly as
+stated: the uniform sparse/degree/Parseval consequence from the present defect
+grammar is killed; no full-owner countermodel was claimed.
+
+Session 5 is now open at cumulative strikes **2/3**.  If Session 5 incurs a
+strike, the count becomes `3/3` and the next session must mechanically file a
+STOP verdict under `FINAL_CHANCE/README.md`.
