@@ -1,23 +1,22 @@
-# RL348 authoritative start
+# RL349 authoritative start
 
-Status: RL347 CLOSED/FROZEN; RL348 is the unique incoming research session and has not started.
+Status: RL348 CLOSED/FROZEN; RL349 is the unique incoming research session and has not started.
 
-Transport is the committed flat Git-tree authority. Git tree/blob identities and the RL347 atomic
-commit/readback are the current lossless transport checks. Historical target files are provenance
-only.
+Transport is the committed flat Git-tree authority. Git tree/blob identities plus the RL348 atomic
+squash commit/readback are the current lossless transport checks. Historical target files are
+provenance only.
 
-## Unique RL348 target
+## Unique RL349 target
 
-Read and execute only `RL348_PHASE4_CLOSURE_ONLY_TARGET.md` after the start gate.
+Read and execute only `RL349_PHASE4_ONE_SESSION_AGGRESSIVE_CLOSURE_TARGET.md` after the start gate.
 
 ## Explicit sole mathematical goal
 
-RL348 exists for one purpose only:
+**CLOSE PHASE 4 IN THIS SESSION BY PROVING `O_75=empty`.**
 
-**CLOSE PHASE 4 by proving `O_75=empty`.**
+This is an aggressive theorem objective, not permission to weaken rigor.
 
-Do not work on Phase 5 in RL348. If Phase 4 closes, stop research and enter closeout immediately.
-Phase 5, R1 post-Phase-4 assembly, Gate A, Gate B, R2, and later stages belong to later sessions.
+Do not work on Phase 5 in RL349. If Phase 4 closes, stop research and enter closeout immediately.
 
 ## Current proof state
 
@@ -25,43 +24,36 @@ R1 Parent Bridge: OPEN.
 Phase 4: OPEN.
 Phase 5: NOT STARTED as authoritative work.
 
-RL347 promoted these contractions:
-- exact phase tag plus row identity determines one absolute physical rank and therefore one directed
-  return length for fixed decorated endpoints;
-- every complete `L>ell` return has strict late-row endpoints and all q=0 vertices on its short
-  complement;
-- in the inherited live high-carry scope, `R=2ell-L>=23135982579`, so
-  `L<=251920108045`;
-- after the H-carry crossing, the matched half-cycle quotient satisfies `1/lambda<h_i<1`; strict
-  matched ranks decrease it and contacts increase it;
-- a nondecreasing `L=ell` return is a matched contact pair with even physical endpoint difference
-  `2<=E-S<=2^36`.
+RL348 promoted:
+- universal Phase-4 terminal law `g_1=1`, `q_(L-1)=1`,
+  `1<=c_end<=80448749305`, endpoint `==3 mod 4`;
+- half-cycle physical parity words must mismatch within at most 36 binary phases;
+- over-half q=0 support has no early-row vertices and no contacts;
+- every over-half q=0 vertex lies on one strict-late complement interval containing `k`;
+- in the inherited high-carry scope, `R>=23135982580`, hence `L<=251920108044`;
+- if that complement begins on or before the H-carry crossing, `R>=61170756170`.
 
-The RL347 correction ledger is mandatory reading. It withdraws:
-- the live scratch claim that `L=ell` was impossible;
-- the right-endpoint source-defect skip estimate with wrong inverse orientation;
-- the transient one-unit-too-strong over-half integer bound.
+The RL348 correction ledger is mandatory reading. It prevents promotion of stronger live scratch.
 
 ## Read first
 
-- `RL347_PROOF_LEDGER.md`;
-- `RL347_EXACT_CERTIFICATE.md`;
-- `RL347_CORRECTION_AND_DEMOTION_LEDGER.md`;
-- `RL347_SCRATCH_FRONTIER.md`;
-- `RL347_GLOBAL_PROOF_ROADMAP_STATUS.md`;
-- `RL347_SESSION_STATE_AND_RL348_KICKOFF.md`;
-- `RL348_PHASE4_CLOSURE_ONLY_TARGET.md`.
+- `RL348_PROOF_LEDGER.md`;
+- `RL348_EXACT_CERTIFICATE.md`;
+- `RL348_CORRECTION_AND_DEMOTION_LEDGER.md`;
+- `RL348_SCRATCH_FRONTIER.md`;
+- `RL348_GLOBAL_PROOF_ROADMAP_STATUS.md`;
+- `RL348_SESSION_STATE_AND_RL349_KICKOFF.md`;
+- `RL349_PHASE4_ONE_SESSION_AGGRESSIVE_CLOSURE_TARGET.md`.
 
-Use inherited RL346/RL345/RL344/RL343 material only as needed by the target.
+Use RL347/RL346/RL345/RL344/RL343 authority only as needed by the target.
 
 ## Current portable verification
 
 Run:
+- `python3 -I verification/verify_rl348_fast.py`
+- `python3 -I verification/red_team_rl348.py`
 
-- `python3 -I verification/verify_rl347_fast.py`
-- `python3 -I verification/red_team_rl347.py`
-
-These check RL347's exact constants and integer-boundary arithmetic. The written analytic proofs in
-`RL347_PROOF_LEDGER.md` remain load-bearing for the structural theorems.
+These check RL348's exact constants and integer boundaries. The written analytic proofs remain
+load-bearing for structural theorems.
 
 Knowledge catalogues are stale/deferred.
