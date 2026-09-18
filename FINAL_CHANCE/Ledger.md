@@ -1695,3 +1695,124 @@ exhausted and the programme must close under the README verdict conventions.
 
 Verification status: exact integer countermodel reproduced by the committed
 verifier; no independent audit has been supplied.
+
+
+## Session 6 — 2026-09-18
+
+**Bridge Theorem attempted:**
+Full-affine middle bridge.  At the actual first-survivor counts
+A=217976794617 and L=137528045312, there is no positive rational cyclic
+solution of the ordinary accelerated +1 equations
+
+3 y_j + 1 = 2^(a_j) y_(j+1)
+
+which simultaneously has positive exponents summing to A, a complete
+nonnegative defect excursion h_j=floor(Aj/L)-S_j with area at least three,
+strict least root y_0, inherited state window 2^71<=y_0<2^75, and first/last
+defect boundary collar p+(L-q)<=37.
+
+Every genuine fully owned least-rooted integer g=1 cycle is a special case.
+If true, this theorem would supply the missing global physical middle bridge
+left by Session 5.
+
+**Attack attempted:**
+Take the explicit profile
+
+h_0=h_1=h_L=0,
+h_j=1 for every 2<=j<=L-1.
+
+Then p=2 and q=L-1, so
+
+p+(L-q)=3,
+
+far inside the Session 5 collar.  Its defect area is L-2=137528045310.
+
+With b_j=floor(Aj/L), c_j=b_(j+1)-b_j and
+a_j=c_j+h_j-h_(j+1), the actual endpoint increments are
+
+c_0=1, c_1=2, c_(L-1)=2,
+
+hence
+
+a_0=1, a_1=1, a_(L-1)=3,
+
+and every other interior exponent is c_j in {1,2}.  All exponents are
+positive, and telescoping h_0=h_L=0 gives sum a_j=A exactly.
+
+For any positive exponent word with D=2^A-3^L>0, composing the entire ordinary
+accelerated +1 recurrence gives the unique rational cyclic return
+
+D y_0 = Q_h.
+
+For this profile, with rho_j=2^floor(Aj/L)/3^j and
+S=sum rho_j,
+
+sum rho_j 2^(-h_j) = S/2 + 5/6.
+
+Using the rigorous outward interval machinery already committed for Session 1,
+a local closeout replay gives
+
+18398890329678333925084.865203331289733771357436326005784942633867092203763859573970283284744380731873371091868324264839575846945736746080741
+
+< Q_h/D <
+
+18398890329678333925084.865203331289733771357436326005784942633867092203763859573970283284744380731873371091868324266330177530734273948230581.
+
+The interval width is at most 1.490601683788537202149840e-93.  Hence
+
+2^71 < Q_h/D < 2^75,
+
+but the whole interval lies strictly between the consecutive integers
+18398890329678333925084 and 18398890329678333925085.  Therefore D does not
+divide Q_h.
+
+For every proper phase, S_j=b_j-h_j<=b_j and the inherited floor lock gives
+2^(S_j)<3^j.  The exact affine prefix identity then implies y_j>y_0.
+Thus the rational full-period +1 orbit is strictly least-rooted.
+
+The countermodel therefore has the exact (A,L) counts, positive exponents,
+complete nonnegative defect grammar, huge surviving area, collar size 3, the
+state window, strict least-root order, and the actual ordinary +1 recurrence
+through the whole middle with exact cyclic closure over positive rationals.
+It fails only integer ownership.
+
+The structural reason is exact: for a fixed positive word,
+
+D m = Q.
+
+Thus integer middle closure is equivalent to D|Q.  RL167 already proves that
+once one full affine numerator is divisible by D, all rotated quotients are
+automatically positive integer physical states.  Full integer middle closure
+is therefore not an intermediate bridge weaker than ownership; it is
+ownership itself.
+
+Detailed proof:
+FINAL_CHANCE/session6_full_affine_middle_bridge_barrier.md
+
+Verifier:
+FINAL_CHANCE/verifiers/verify_session6_full_affine_middle_barrier.py
+
+**Outcome:** KILLED
+
+The strongest remaining natural middle bridge is false over positive rationals.
+Adding integrality would make it exactly the original full-ownership condition,
+not a consequence supplied by the inherited local/finite/branch-restricted
+machinery.
+
+**Strike this session:** N — a concrete global falsifiable bridge was stated
+and attacked directly with an explicit full-period ordinary +1 affine
+countermodel.
+
+**Cumulative strikes:** 2/3
+
+**Local work done and connection to Bridge Problem:**
+None unrelated.  The only computation was the rigorous quotient enclosure for
+the direct global countermodel.
+
+**Carry-forward:**
+None inside FINAL_CHANCE.  The six-session budget is exhausted.  The remaining
+mathematical condition is full ordinary ownership D|Q_h itself.  Any future
+research would need genuinely new arithmetic that attacks that condition
+directly rather than another bridge from the already-proved local machinery.
+
+Programme verdict is filed in FINAL_CHANCE/VERDICT.md.
