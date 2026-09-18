@@ -11,6 +11,10 @@ The script never materializes 2^A, 3^L, D, or Q_h.  It uses:
         S = sum_{j=0}^{L-1} 2^floor(Aj/L) / 3^j;
   * Euclidean reciprocity for the bivariate floor-sum generating function.
 
+Decimal powers are formed only by repeated directed multiplication; this
+avoids Decimal.__pow__, whose implementation is not guaranteed to be
+correctly rounded in every case.
+
 Only the Python standard library is required.
 """
 
@@ -83,13 +87,17 @@ def idiv(a, b):
 
 
 def ipow(a, n):
+    """Rigorous nonnegative integer power via directed multiplication."""
     assert n >= 0 and a.lo >= 0
-    if n == 0:
-        return Interval(1)
-    return Interval(
-        rop(CTX_D, lambda: a.lo ** n),
-        rop(CTX_U, lambda: a.hi ** n),
-    )
+    result = Interval(1)
+    base = a
+    while n:
+        if n & 1:
+            result = imul(result, base)
+        n >>= 1
+        if n:
+            base = imul(base, base)
+    return result
 
 
 ONE = Interval(1)
@@ -207,24 +215,30 @@ def main():
     denominator = imul(Interval(3), expm1_delta)
     quotient = idiv(numerator, denominator)
 
-    floor_lo = quotient.lo.to_integral_value(rounding=ROUND_FLOOR)
-    floor_hi = quotient.hi.to_integral_value(rounding=ROUND_FLOOR)
+    floor_lo = int(quotient.lo.to_integral_value(rounding=ROUND_FLOOR))
+    floor_hi = int(quotient.hi.to_integral_value(rounding=ROUND_FLOOR))
     assert floor_lo == floor_hi
-    assert quotient.lo > floor_lo
-    assert quotient.hi < floor_lo + 1
+    next_integer = Decimal(floor_lo + 1)
+    floor_decimal = Decimal(floor_lo)
+    assert quotient.lo > floor_decimal
+    assert quotient.hi < next_integer
+
+    width_hi = rop(CTX_U, lambda: quotient.hi - quotient.lo)
+    dist_above = rop(CTX_D, lambda: quotient.lo - floor_decimal)
+    dist_below = rop(CTX_D, lambda: next_integer - quotient.hi)
 
     print("FINAL_CHANCE Session 1 interval verifier: PASS")
     print("A =", A)
     print("L =", L)
     print("profile = h_2=h_4=1, all other h_j=0")
-    print("method = exact rational log/expm1 bounds + outward Decimal Beatty recursion")
+    print("method = exact rational log/expm1 bounds + directed-multiplication Decimal intervals")
     print("precision_digits =", PREC)
     print("Q_h/D lower =", quotient.lo)
     print("Q_h/D upper =", quotient.hi)
-    print("interval width =", quotient.hi - quotient.lo)
+    print("interval width <=", width_hi)
     print("common integer part =", floor_lo)
-    print("distance above floor >=", quotient.lo - floor_lo)
-    print("distance below next integer >=", floor_lo + 1 - quotient.hi)
+    print("distance above floor >=", dist_above)
+    print("distance below next integer >=", dist_below)
     print("D divides Q_h = False")
 
 
